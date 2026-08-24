@@ -5,7 +5,7 @@ import { Product } from "./data";
 export interface CartItem {
   product: Product;
   quantity: number;
-  selectedVariant?: string;
+  selectedVariant?: string | undefined;
 }
 
 interface CartStore {
@@ -75,7 +75,10 @@ export const useCartStore = create<CartStore>()(
                 : item
             );
           } else {
-            newCart = [...state.cart, { product, quantity, selectedVariant }];
+            const newItem: CartItem = selectedVariant !== undefined
+              ? { product, quantity, selectedVariant }
+              : { product, quantity };
+            newCart = [...state.cart, newItem];
           }
 
           return { cart: newCart, isCartOpen: true };

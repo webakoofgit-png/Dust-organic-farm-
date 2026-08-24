@@ -13,7 +13,8 @@ import { useCartStore } from "@/lib/cart-store";
 
 export const ProductDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
-  const product: Product | undefined = products.find((p) => p.slug === slug) || products[0];
+  const defaultProduct = products[0] as Product;
+  const product: Product = products.find((p) => p.slug === slug) ?? defaultProduct;
 
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
@@ -25,6 +26,8 @@ export const ProductDetail: React.FC = () => {
   const images = product.images.length > 0
     ? product.images
     : [{ src: product.storyImage, alt: product.name }];
+
+  const activeImage = images[activeImageIndex] ?? images[0] ?? { src: product.storyImage, alt: product.name };
 
   const handleAddToCart = () => {
     addToCart(product, quantity);
@@ -55,8 +58,8 @@ export const ProductDetail: React.FC = () => {
           {/* Main Visual Frame */}
           <div className="relative aspect-[4/3] bg-emerald-50/40 border border-emerald-100 rounded-3xl overflow-hidden p-8 flex items-center justify-center shadow-xs">
             <img
-              src={images[activeImageIndex]?.src}
-              alt={images[activeImageIndex]?.alt || product.name}
+              src={activeImage.src}
+              alt={activeImage.alt || product.name}
               className="max-h-full max-w-full object-contain transition-all duration-500 hover:scale-105"
             />
             {product.savePercent && (
@@ -338,40 +341,43 @@ export const ProductDetail: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {otherProducts.map((item) => (
-              <div
-                key={item.id}
-                className="flex gap-6 p-6 bg-emerald-50/40 rounded-2xl border border-emerald-100 items-center shadow-xs"
-              >
-                <img
-                  src={item.images[0]?.src || item.storyImage}
-                  alt={item.name}
-                  className="w-28 h-32 object-contain bg-white p-2 rounded-xl border border-emerald-100"
-                />
-                <div className="space-y-2">
-                  <span className="text-[10px] font-mono uppercase text-emerald-700 font-bold">
-                    {item.categoryLabel}
-                  </span>
-                  <h3 className="text-lg font-serif font-bold text-emerald-950">
-                    {item.name}
-                  </h3>
-                  <p className="text-xs text-slate-600 line-clamp-1 font-light">
-                    "{item.pitch}"
-                  </p>
-                  <div className="pt-2 flex items-center gap-4">
-                    <span className="font-mono text-sm font-bold text-emerald-800">
-                      {item.priceDisplay}
+            {otherProducts.map((item) => {
+              const itemImg = item.images[0]?.src ?? item.storyImage;
+              return (
+                <div
+                  key={item.id}
+                  className="flex gap-6 p-6 bg-emerald-50/40 rounded-2xl border border-emerald-100 items-center shadow-xs"
+                >
+                  <img
+                    src={itemImg}
+                    alt={item.name}
+                    className="w-28 h-32 object-contain bg-white p-2 rounded-xl border border-emerald-100"
+                  />
+                  <div className="space-y-2">
+                    <span className="text-[10px] font-mono uppercase text-emerald-700 font-bold">
+                      {item.categoryLabel}
                     </span>
-                    <Link
-                      to={`/product/${item.slug}`}
-                      className="text-xs font-bold uppercase tracking-wider text-emerald-700 hover:text-emerald-900 underline underline-offset-4"
-                    >
-                      Explore →
-                    </Link>
+                    <h3 className="text-lg font-serif font-bold text-emerald-950">
+                      {item.name}
+                    </h3>
+                    <p className="text-xs text-slate-600 line-clamp-1 font-light">
+                      "{item.pitch}"
+                    </p>
+                    <div className="pt-2 flex items-center gap-4">
+                      <span className="font-mono text-sm font-bold text-emerald-800">
+                        {item.priceDisplay}
+                      </span>
+                      <Link
+                        to={`/product/${item.slug}`}
+                        className="text-xs font-bold uppercase tracking-wider text-emerald-700 hover:text-emerald-900 underline underline-offset-4"
+                      >
+                        Explore →
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
       )}

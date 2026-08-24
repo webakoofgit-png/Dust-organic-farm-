@@ -11,7 +11,7 @@ import {
   CheckCircle2,
   ChevronDown,
 } from "lucide-react";
-import { products, collections } from "@/lib/data";
+import { products, collections, Product } from "@/lib/data";
 import { useCartStore } from "@/lib/cart-store";
 
 export const Home: React.FC = () => {
@@ -25,6 +25,43 @@ export const Home: React.FC = () => {
     }, 1200);
     return () => clearTimeout(timer);
   }, []);
+
+  const heroProduct: Product = products[0] ?? {
+    id: "kacha-aam-01",
+    slug: "kacha-aam",
+    name: "Kacha Aam (Instant Aam Panna Mix)",
+    shortName: "Kacha Aam",
+    subtitle: "Pure Fruit Powder — Raw Mango",
+    pitch: "Refreshment Instantly",
+    category: "pure-fruit-powders",
+    categoryLabel: "Pure Fruit Powders",
+    price: 149,
+    priceDisplay: "₹149",
+    unitDisplay: "₹20 / Sachet",
+    netWeight: "20g / 1 Glass Serving",
+    badges: ["Premium Quality"],
+    description: ["Real raw mango powder blend."],
+    ingredients: "Cane sugar, raw mango powder, spices.",
+    storage: "Keep in a cool dry place.",
+    nutrition: { serving: "1 Sachet", note: "1 Serving", rows: [] },
+    claims: ["100% Real Fruit"],
+    ritualLabel: "How to Make It",
+    ritual: [],
+    heritageTitle: "Heritage",
+    heritageQuote: "Tastes like home",
+    images: [],
+    storyImage: "",
+    accent: "mango",
+    stock: 100,
+    sku: "DUST-MANGO-01",
+    fssai: "10021064000123",
+    featured: true,
+    newArrival: true,
+    bestSeller: true,
+  };
+
+  const storyMangoProduct = products[0] ?? heroProduct;
+  const storyPaanProduct = products[1] ?? heroProduct;
 
   return (
     <div className="bg-white text-emerald-950 min-h-screen">
@@ -89,8 +126,8 @@ export const Home: React.FC = () => {
           <div className="lg:col-span-5 relative flex justify-center">
             <div className="relative group w-full max-w-md aspect-[4/5] rounded-3xl overflow-hidden border border-emerald-200/80 bg-white p-6 flex flex-col justify-between shadow-xl">
               <img
-                src={products[0].storyImage}
-                alt={products[0].name}
+                src={heroProduct.storyImage}
+                alt={heroProduct.name}
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/90 via-emerald-950/30 to-transparent" />
@@ -100,30 +137,30 @@ export const Home: React.FC = () => {
                   BEST SELLER
                 </span>
                 <span className="font-mono text-xl font-bold text-white bg-emerald-950/70 px-3 py-1 rounded-lg backdrop-blur">
-                  {products[0].priceDisplay}
+                  {heroProduct.priceDisplay}
                 </span>
               </div>
 
               <div className="relative z-10 space-y-2 text-white">
                 <span className="text-xs uppercase font-mono tracking-widest text-emerald-300 font-bold">
-                  {products[0].subtitle}
+                  {heroProduct.subtitle}
                 </span>
                 <h3 className="text-2xl font-serif font-bold text-white">
-                  {products[0].name}
+                  {heroProduct.name}
                 </h3>
                 <p className="text-xs text-emerald-100 line-clamp-2">
-                  {products[0].pitch}
+                  {heroProduct.pitch}
                 </p>
 
                 <div className="pt-2 flex items-center gap-3">
                   <button
-                    onClick={() => addToCart(products[0])}
+                    onClick={() => addToCart(heroProduct)}
                     className="flex-1 py-3 bg-emerald-600 text-white font-bold text-xs uppercase tracking-wider rounded-xl hover:bg-emerald-700 transition-colors flex items-center justify-center gap-2 shadow-sm"
                   >
                     <ShoppingBag className="w-3.5 h-3.5" /> Add to Cart
                   </button>
                   <button
-                    onClick={() => setQuickViewProduct(products[0])}
+                    onClick={() => setQuickViewProduct(heroProduct)}
                     className="p-3 bg-white/20 backdrop-blur border border-white/40 text-white rounded-xl hover:bg-white/30"
                   >
                     <Eye className="w-4 h-4" />
@@ -165,8 +202,8 @@ export const Home: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {products.map((product) => {
             const inWishlist = isInWishlist(product.id);
-            const mainImg = product.images[0]?.src || product.storyImage;
-            const secondaryImg = product.images[1]?.src || product.storyImage;
+            const mainImg = product.images[0]?.src ?? product.storyImage;
+            const secondaryImg = product.images[1]?.src ?? product.storyImage;
 
             return (
               <div
@@ -319,12 +356,12 @@ export const Home: React.FC = () => {
 
           <div className="lg:col-span-6 grid grid-cols-2 gap-4">
             <img
-              src={products[0].storyImage}
+              src={storyMangoProduct.storyImage}
               alt="Story Mango"
               className="rounded-2xl border border-emerald-200 object-cover w-full h-80 shadow-md"
             />
             <img
-              src={products[1].storyImage}
+              src={storyPaanProduct.storyImage}
               alt="Story Paan"
               className="rounded-2xl border border-emerald-200 object-cover w-full h-80 mt-8 shadow-md"
             />
@@ -358,7 +395,7 @@ export const Home: React.FC = () => {
 
               <div className="relative z-10 flex justify-between items-start">
                 <span className="text-xs font-mono uppercase tracking-widest text-emerald-200 bg-emerald-900/80 px-3 py-1 rounded-full border border-emerald-700">
-                  {col.meta[0]?.value || "Collection"}
+                  {col.meta[0]?.value ?? "Collection"}
                 </span>
               </div>
 

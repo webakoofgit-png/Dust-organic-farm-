@@ -1,12 +1,13 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { ArrowUpRight, ShoppingBag, Eye, Heart } from "lucide-react";
-import { collections, products } from "@/lib/data";
+import { collections, products, Collection } from "@/lib/data";
 import { useCartStore } from "@/lib/cart-store";
 
 export const CollectionDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
-  const collection = collections.find((c) => c.slug === slug) || collections[0];
+  const defaultCollection = collections[0] as Collection;
+  const collection: Collection = collections.find((c) => c.slug === slug) ?? defaultCollection;
 
   const collectionProducts = products.filter(
     (p) => p.category === collection.slug
@@ -77,7 +78,7 @@ export const CollectionDetail: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {collectionProducts.map((product) => {
             const inWishlist = isInWishlist(product.id);
-            const mainImg = product.images[0]?.src || product.storyImage;
+            const mainImg = product.images[0]?.src ?? product.storyImage;
 
             return (
               <div
