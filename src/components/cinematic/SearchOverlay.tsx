@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { Search, X, ArrowRight } from "lucide-react";
 import { useCartStore } from "@/lib/cart-store";
 import { products } from "@/lib/data";
@@ -108,8 +108,7 @@ export const SearchOverlay: React.FC = () => {
                         Quick View
                       </button>
                       <Link
-                        to="/product/$slug"
-                        params={{ slug: product.slug }}
+                        to={`/product/${product.slug}`}
                         onClick={() => setSearchOpen(false)}
                         className="p-1.5 bg-emerald-700 text-white rounded hover:bg-emerald-800 transition-colors"
                       >

@@ -1,14 +1,10 @@
 import React from "react";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { Heart, ShoppingBag, Trash2, Eye } from "lucide-react";
 import { products } from "@/lib/data";
 import { useCartStore } from "@/lib/cart-store";
 
-export const Route = createFileRoute("/wishlist")({
-  component: WishlistPage,
-});
-
-function WishlistPage() {
+export const Wishlist: React.FC = () => {
   const { wishlist, toggleWishlist, addToCart, setQuickViewProduct } =
     useCartStore();
 
@@ -100,4 +96,4 @@ function WishlistPage() {
       )}
     </div>
   );
-}
+};

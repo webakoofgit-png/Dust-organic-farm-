@@ -1,15 +1,11 @@
 import React from "react";
-import { createFileRoute, Link, useParams } from "@tanstack/react-router";
+import { Link, useParams } from "react-router-dom";
 import { ArrowUpRight, ShoppingBag, Eye, Heart } from "lucide-react";
 import { collections, products } from "@/lib/data";
 import { useCartStore } from "@/lib/cart-store";
 
-export const Route = createFileRoute("/collections/$slug")({
-  component: CollectionPage,
-});
-
-function CollectionPage() {
-  const { slug } = useParams({ from: "/collections/$slug" });
+export const CollectionDetail: React.FC = () => {
+  const { slug } = useParams<{ slug: string }>();
   const collection = collections.find((c) => c.slug === slug) || collections[0];
 
   const collectionProducts = products.filter(
@@ -113,8 +109,7 @@ function CollectionPage() {
                       {product.categoryLabel}
                     </span>
                     <Link
-                      to="/product/$slug"
-                      params={{ slug: product.slug }}
+                      to={`/product/${product.slug}`}
                       className="block hover:text-emerald-700 transition-colors mt-1"
                     >
                       <h3 className="text-xl font-serif font-bold text-emerald-950">
@@ -149,8 +144,7 @@ function CollectionPage() {
                       <Eye className="w-4 h-4" />
                     </button>
                     <Link
-                      to="/product/$slug"
-                      params={{ slug: product.slug }}
+                      to={`/product/${product.slug}`}
                       className="p-2.5 bg-white border border-emerald-200 text-emerald-800 hover:text-emerald-950 rounded-xl transition-colors"
                     >
                       <ArrowUpRight className="w-4 h-4" />
@@ -164,4 +158,4 @@ function CollectionPage() {
       </div>
     </div>
   );
-}
+};

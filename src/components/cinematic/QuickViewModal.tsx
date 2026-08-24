@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { X, ShoppingBag, Heart, Check } from "lucide-react";
 import { useCartStore } from "@/lib/cart-store";
 
@@ -154,8 +154,7 @@ export const QuickViewModal: React.FC = () => {
 
             <div className="text-center pt-2">
               <Link
-                to="/product/$slug"
-                params={{ slug: quickViewProduct.slug }}
+                to={`/product/${quickViewProduct.slug}`}
                 onClick={() => setQuickViewProduct(null)}
                 className="text-xs uppercase tracking-widest font-bold text-emerald-700 hover:text-emerald-900 underline underline-offset-4 transition-colors"
               >

@@ -1,13 +1,9 @@
 import React, { useState } from "react";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { ShieldCheck, CheckCircle2, ArrowLeft } from "lucide-react";
 import { useCartStore } from "@/lib/cart-store";
 
-export const Route = createFileRoute("/checkout")({
-  component: CheckoutPage,
-});
-
-function CheckoutPage() {
+export const Checkout: React.FC = () => {
   const { cart, getSubtotal, clearCart } = useCartStore();
 
   const [promoCode, setPromoCode] = useState("");
@@ -277,4 +273,4 @@ function CheckoutPage() {
       </div>
     </div>
   );
-}
+};

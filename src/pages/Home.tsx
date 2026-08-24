@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import {
   ShoppingBag,
   Eye,
@@ -14,11 +14,7 @@ import {
 import { products, collections } from "@/lib/data";
 import { useCartStore } from "@/lib/cart-store";
 
-export const Route = createFileRoute("/")({
-  component: Homepage,
-});
-
-function Homepage() {
+export const Home: React.FC = () => {
   const [introFinished, setIntroFinished] = useState(false);
   const { addToCart, toggleWishlist, isInWishlist, setQuickViewProduct } =
     useCartStore();
@@ -81,8 +77,7 @@ function Homepage() {
                 Explore Catalogue <ArrowUpRight className="w-4 h-4" />
               </Link>
               <Link
-                to="/collections/$slug"
-                params={{ slug: "pure-fruit-powders" }}
+                to="/collections/pure-fruit-powders"
                 className="px-8 py-4 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-950 text-xs font-bold uppercase tracking-[0.2em] rounded-full transition-all"
               >
                 Fruit Powders
@@ -231,8 +226,7 @@ function Homepage() {
                     </div>
 
                     <Link
-                      to="/product/$slug"
-                      params={{ slug: product.slug }}
+                      to={`/product/${product.slug}`}
                       className="block group-hover:text-emerald-700 transition-colors mt-2"
                     >
                       <h3 className="text-2xl font-serif font-bold text-emerald-950">
@@ -277,8 +271,7 @@ function Homepage() {
                       Quick View
                     </button>
                     <Link
-                      to="/product/$slug"
-                      params={{ slug: product.slug }}
+                      to={`/product/${product.slug}`}
                       className="p-3 bg-white border border-emerald-200 text-emerald-800 hover:text-emerald-950 rounded-xl transition-colors"
                     >
                       <ArrowUpRight className="w-4 h-4" />
@@ -378,8 +371,7 @@ function Homepage() {
                 </p>
 
                 <Link
-                  to="/collections/$slug"
-                  params={{ slug: col.slug }}
+                  to={`/collections/${col.slug}`}
                   className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-amber-300 hover:text-white pt-2"
                 >
                   Explore Collection <ArrowUpRight className="w-4 h-4" />
@@ -417,8 +409,7 @@ function Homepage() {
               </li>
               <li>
                 <Link
-                  to="/collections/$slug"
-                  params={{ slug: "pure-fruit-powders" }}
+                  to="/collections/pure-fruit-powders"
                   className="hover:text-white transition-colors"
                 >
                   Pure Fruit Powders
@@ -426,8 +417,7 @@ function Homepage() {
               </li>
               <li>
                 <Link
-                  to="/collections/$slug"
-                  params={{ slug: "heritage-wellness" }}
+                  to="/collections/heritage-wellness"
                   className="hover:text-white transition-colors"
                 >
                   Heritage Wellness
@@ -461,4 +451,4 @@ function Homepage() {
       </footer>
     </div>
   );
-}
+};

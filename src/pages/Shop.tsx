@@ -1,14 +1,10 @@
 import React, { useState } from "react";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { ShoppingBag, Eye, Heart, Search, ArrowUpRight } from "lucide-react";
 import { products } from "@/lib/data";
 import { useCartStore } from "@/lib/cart-store";
 
-export const Route = createFileRoute("/shop")({
-  component: ShopPage,
-});
-
-function ShopPage() {
+export const Shop: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [sortBy, setSortBy] = useState<string>("featured");
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -153,8 +149,7 @@ function ShopPage() {
                     {product.categoryLabel}
                   </span>
                   <Link
-                    to="/product/$slug"
-                    params={{ slug: product.slug }}
+                    to={`/product/${product.slug}`}
                     className="block hover:text-emerald-700 transition-colors mt-1"
                   >
                     <h3 className="text-xl font-serif font-bold text-emerald-950">
@@ -189,8 +184,7 @@ function ShopPage() {
                     <Eye className="w-4 h-4" />
                   </button>
                   <Link
-                    to="/product/$slug"
-                    params={{ slug: product.slug }}
+                    to={`/product/${product.slug}`}
                     className="p-2.5 bg-white border border-emerald-200 text-emerald-800 hover:text-emerald-950 rounded-xl transition-colors"
                   >
                     <ArrowUpRight className="w-4 h-4" />
@@ -203,4 +197,4 @@ function ShopPage() {
       </div>
     </div>
   );
-}
+};

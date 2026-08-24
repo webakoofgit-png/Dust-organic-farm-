@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { createFileRoute, Link, useParams } from "@tanstack/react-router";
+import { Link, useParams } from "react-router-dom";
 import {
   ShoppingBag,
   Heart,
@@ -11,12 +11,8 @@ import {
 import { products, Product } from "@/lib/data";
 import { useCartStore } from "@/lib/cart-store";
 
-export const Route = createFileRoute("/product/$slug")({
-  component: ProductDetailPage,
-});
-
-function ProductDetailPage() {
-  const { slug } = useParams({ from: "/product/$slug" });
+export const ProductDetail: React.FC = () => {
+  const { slug } = useParams<{ slug: string }>();
   const product: Product | undefined = products.find((p) => p.slug === slug) || products[0];
 
   const [activeImageIndex, setActiveImageIndex] = useState(0);
@@ -367,8 +363,7 @@ function ProductDetailPage() {
                       {item.priceDisplay}
                     </span>
                     <Link
-                      to="/product/$slug"
-                      params={{ slug: item.slug }}
+                      to={`/product/${item.slug}`}
                       className="text-xs font-bold uppercase tracking-wider text-emerald-700 hover:text-emerald-900 underline underline-offset-4"
                     >
                       Explore →
@@ -382,4 +377,4 @@ function ProductDetailPage() {
       )}
     </div>
   );
-}
+};

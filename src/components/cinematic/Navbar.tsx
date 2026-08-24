@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "@tanstack/react-router";
+import { Link, useLocation } from "react-router-dom";
 import { Search, ShoppingBag, Heart, Menu, X } from "lucide-react";
 import { useCartStore } from "@/lib/cart-store";
 
@@ -73,8 +73,7 @@ export const Navbar: React.FC = () => {
               Shop All
             </Link>
             <Link
-              to="/collections/$slug"
-              params={{ slug: "pure-fruit-powders" }}
+              to="/collections/pure-fruit-powders"
               className={`text-xs uppercase tracking-[0.2em] font-semibold transition-colors hover:text-emerald-600 ${
                 location.pathname.includes("pure-fruit-powders")
                   ? "text-emerald-700 border-b-2 border-emerald-600 pb-0.5"
@@ -84,8 +83,7 @@ export const Navbar: React.FC = () => {
               Fruit Powders
             </Link>
             <Link
-              to="/collections/$slug"
-              params={{ slug: "heritage-wellness" }}
+              to="/collections/heritage-wellness"
               className={`text-xs uppercase tracking-[0.2em] font-semibold transition-colors hover:text-emerald-600 ${
                 location.pathname.includes("heritage-wellness")
                   ? "text-emerald-700 border-b-2 border-emerald-600 pb-0.5"
@@ -168,16 +166,14 @@ export const Navbar: React.FC = () => {
               Shop All
             </Link>
             <Link
-              to="/collections/$slug"
-              params={{ slug: "pure-fruit-powders" }}
+              to="/collections/pure-fruit-powders"
               className="text-2xl font-serif uppercase tracking-widest text-emerald-950 hover:text-emerald-600 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Pure Fruit Powders
             </Link>
             <Link
-              to="/collections/$slug"
-              params={{ slug: "heritage-wellness" }}
+              to="/collections/heritage-wellness"
               className="text-2xl font-serif uppercase tracking-widest text-emerald-950 hover:text-emerald-600 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >

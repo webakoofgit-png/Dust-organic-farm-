@@ -1,13 +1,9 @@
 import React from "react";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { Trash2, Plus, Minus, ArrowRight, ShoppingBag, ShieldCheck } from "lucide-react";
 import { useCartStore } from "@/lib/cart-store";
 
-export const Route = createFileRoute("/cart")({
-  component: DedicatedCartPage,
-});
-
-function DedicatedCartPage() {
+export const Cart: React.FC = () => {
   const { cart, removeFromCart, updateQuantity, getSubtotal, clearCart } =
     useCartStore();
 
@@ -162,4 +158,4 @@ function DedicatedCartPage() {
       )}
     </div>
   );
-}
+};

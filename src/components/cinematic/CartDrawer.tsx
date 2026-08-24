@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { X, Trash2, Plus, Minus, ArrowRight, ShoppingBag } from "lucide-react";
 import { useCartStore } from "@/lib/cart-store";
 
@@ -21,7 +21,7 @@ export const CartDrawer: React.FC = () => {
 
   return (
     <div className="fixed inset-0 z-50 overflow-hidden">
-      {/* Dark Backdrop */}
+      {/* Backdrop */}
       <div
         className="fixed inset-0 bg-emerald-950/40 backdrop-blur-xs transition-opacity"
         onClick={closeCart}
