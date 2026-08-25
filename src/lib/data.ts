@@ -252,8 +252,8 @@ export const products: Product[] = [
     heritageQuote:
       "For centuries, the royal Banarasi Paan was served in silver boxes to nobility as the ultimate after-meal digestif. Crafted with real betel leaf extract, fennel, and premium rose gulkand, every sip of DUST Banarasi Paan captures that exact traditional fresh digestif ritual.",
     images: [
-      { src: "/paan_image_1.jpeg", alt: "DUST Banarasi Paan Digestive Shot authentic pack box and glass shot" },
       { src: "/paan_image_2.jpeg", alt: "DUST Banarasi Paan standup pouch front and back with nutritional info" },
+      { src: "/paan_image_1.jpeg", alt: "DUST Banarasi Paan Digestive Shot authentic pack box and glass shot" },
       { src: "/paan_image_3.jpeg", alt: "DUST Banarasi Paan digestive shot box back and ingredient details" },
     ],
     storyImage: "/paan_image_1.jpeg",
