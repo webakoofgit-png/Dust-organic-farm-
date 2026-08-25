@@ -256,7 +256,7 @@ export const products: Product[] = [
       { src: "/paan_image_1.jpeg", alt: "DUST Banarasi Paan Digestive Shot authentic pack box and glass shot" },
       { src: "/paan_image_3.jpeg", alt: "DUST Banarasi Paan digestive shot box back and ingredient details" },
     ],
-    storyImage: "/paan_image_1.jpeg",
+    storyImage: "/paan_image_2.jpeg",
     accent: "rose",
     stock: 36,
     sku: "DUST-BP-20",
