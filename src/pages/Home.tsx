@@ -79,7 +79,7 @@ export const Home: React.FC = () => {
               />
             </div>
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-[0.3em] uppercase">
-              DUST<span className="text-[#E67E22]">™</span>
+              DUST
             </h1>
             <p className="text-xs font-bold tracking-[0.25em] text-[#E67E22] uppercase">
               CHOICE OF MOTHERLAND • 100% REAL FRUIT & HERITAGE
@@ -91,14 +91,13 @@ export const Home: React.FC = () => {
       {/* 2. Hero Section */}
       <section className="relative min-h-[90vh] flex flex-col justify-between pt-36 pb-12 px-4 sm:px-8 md:px-12 lg:px-16 w-full overflow-hidden">
         {/* Ambient glow backgrounds */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#74B487]/20 rounded-full blur-[150px] pointer-events-none" />
-        <div className="absolute bottom-10 right-10 w-[450px] h-[450px] bg-[#E67E22]/10 rounded-full blur-[130px] pointer-events-none" />
+        <div className="absolute bottom-10 right-10 w-[450px] h-[450px] bg-[#E67E22]/5 rounded-full blur-[130px] pointer-events-none" />
 
         <div className="relative z-10 my-auto text-center md:text-left grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-4">
           <div className="lg:col-span-7 space-y-6">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#E8F1E9] border border-[#74B487] rounded-full text-[#0E382E] text-xs font-extrabold uppercase tracking-wider">
               <Sparkles className="w-4 h-4 text-[#E67E22]" />
-              <span>DUST™ — CHOICE OF MOTHERLAND</span>
+              <span>DUST — CHOICE OF MOTHERLAND</span>
             </div>
 
             <h1 className="text-4xl sm:text-6xl xl:text-7xl font-extrabold text-[#0E382E] tracking-tight leading-[1.05]">
@@ -208,7 +207,7 @@ export const Home: React.FC = () => {
           <span>INSTANT SACHET RITUALS</span>
           <span>•</span>
           <span className="flex items-center gap-2">
-            <Award className="w-4 h-4" /> DUST™ — CHOICE OF MOTHERLAND
+            <Award className="w-4 h-4" /> DUST — CHOICE OF MOTHERLAND
           </span>
           <span>•</span>
           <span>100% REAL FRUIT POWDERS</span>
@@ -244,7 +243,7 @@ export const Home: React.FC = () => {
                 data-cursor="VIEW"
               >
                 {/* Image Container with Hover Swap */}
-                <div className="relative h-[360px] sm:h-[400px] bg-[#E8F1E9] p-8 flex items-center justify-center overflow-hidden border-b border-[#74B487]/30">
+                <div className="relative h-[360px] sm:h-[400px] bg-white p-8 flex items-center justify-center overflow-hidden border-b border-[#74B487]/30">
                   <img
                     src={mainImg}
                     alt={product.name}
@@ -428,9 +427,9 @@ export const Home: React.FC = () => {
               <img
                 src={col.heroImage}
                 alt={col.name}
-                className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700"
+                className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0E382E] via-[#0E382E]/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
 
               <div className="relative z-10 flex justify-between items-start">
                 <span className="text-xs font-extrabold uppercase tracking-widest text-[#F6F5F0] bg-[#E67E22] px-3 py-1 rounded-full shadow-xs">
@@ -472,7 +471,7 @@ export const Home: React.FC = () => {
               </div>
               <div>
                 <h2 className="text-3xl font-extrabold text-white tracking-widest leading-none">
-                  DUST<span className="text-[#E67E22]">™</span>
+                  DUST
                 </h2>
                 <p className="text-xs text-[#E67E22] font-extrabold uppercase tracking-widest mt-1">
                   CHOICE OF MOTHERLAND
@@ -535,8 +534,8 @@ export const Home: React.FC = () => {
         </div>
 
         <div className="max-w-7xl mx-auto pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-[#74B487] font-bold gap-4">
-          <p>© {new Date().getFullYear()} DUST™ Natural. All rights reserved.</p>
-          <p className="text-[#E67E22]">DUST™ — CHOICE OF MOTHERLAND</p>
+          <p>© {new Date().getFullYear()} DUST Natural. All rights reserved.</p>
+          <p className="text-[#E67E22]">DUST — CHOICE OF MOTHERLAND</p>
         </div>
       </footer>
     </div>

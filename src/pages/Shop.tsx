@@ -37,7 +37,7 @@ export const Shop: React.FC = () => {
       {/* Header */}
       <div className="mb-10 space-y-3">
         <span className="text-xs font-extrabold uppercase tracking-[0.25em] text-[#E67E22]">
-          DUST™ CATALOGUE
+          DUST CATALOGUE
         </span>
         <h1 className="text-4xl sm:text-6xl font-extrabold text-[#0E382E]">
           Shop All Creations
@@ -122,7 +122,7 @@ export const Shop: React.FC = () => {
               className="group bg-white rounded-3xl border border-[#74B487]/40 overflow-hidden hover:border-[#E67E22] transition-all flex flex-col justify-between shadow-xs hover:shadow-xl"
             >
               {/* Product Visual */}
-              <div className="relative h-72 bg-[#E8F1E9] p-6 flex items-center justify-center overflow-hidden border-b border-[#74B487]/30">
+              <div className="relative h-72 bg-white p-6 flex items-center justify-center overflow-hidden border-b border-[#74B487]/30">
                 <img
                   src={mainImg}
                   alt={product.name}

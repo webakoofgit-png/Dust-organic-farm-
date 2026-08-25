@@ -19,13 +19,13 @@ export const CollectionDetail: React.FC = () => {
   return (
     <div className="pt-32 pb-24 px-4 sm:px-8 md:px-12 lg:px-16 w-full min-h-screen bg-[#F6F5F0] text-[#0E382E]">
       {/* Hero Banner */}
-      <div className="relative rounded-3xl overflow-hidden border border-[#74B487]/40 bg-[#0E382E] p-8 sm:p-12 mb-16 shadow-xl">
+      <div className="relative rounded-3xl overflow-hidden border border-[#74B487]/40 bg-stone-900 p-8 sm:p-12 mb-16 shadow-xl">
         <img
           src={collection.heroImage}
           alt={collection.name}
-          className="absolute inset-0 w-full h-full object-cover opacity-45"
+          className="absolute inset-0 w-full h-full object-cover opacity-100"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0E382E] via-[#0E382E]/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
 
         <div className="relative z-10 max-w-2xl space-y-4 pt-12 text-white">
           <span className="text-xs uppercase tracking-[0.25em] text-[#E67E22] font-extrabold">
@@ -85,7 +85,7 @@ export const CollectionDetail: React.FC = () => {
                 key={product.id}
                 className="group bg-white rounded-3xl border border-[#74B487]/40 overflow-hidden hover:border-[#E67E22] transition-all flex flex-col justify-between shadow-xs hover:shadow-xl"
               >
-                <div className="relative h-72 bg-[#E8F1E9] p-6 flex items-center justify-center overflow-hidden border-b border-[#74B487]/30">
+                <div className="relative h-72 bg-white p-6 flex items-center justify-center overflow-hidden border-b border-[#74B487]/30">
                   <img
                     src={mainImg}
                     alt={product.name}

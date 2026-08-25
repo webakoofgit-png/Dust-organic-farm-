@@ -44,7 +44,7 @@ export const Wishlist: React.FC = () => {
               key={product.id}
               className="bg-white rounded-3xl border border-[#74B487]/40 p-6 space-y-4 flex flex-col justify-between shadow-xs hover:shadow-xl transition-all"
             >
-              <div className="relative h-64 bg-[#E8F1E9] p-4 rounded-2xl border border-[#74B487]/30 flex items-center justify-center">
+              <div className="relative h-64 bg-white p-4 rounded-2xl border border-[#74B487]/30 flex items-center justify-center">
                 <img
                   src={product.images[0]?.src || product.storyImage}
                   alt={product.name}

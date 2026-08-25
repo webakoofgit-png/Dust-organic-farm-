@@ -33,7 +33,7 @@ export const SearchOverlay: React.FC = () => {
       {/* Top Controls */}
       <div className="max-w-4xl mx-auto w-full flex items-center justify-between pb-8 border-b border-[#74B487]/40">
         <span className="text-xs uppercase tracking-widest text-[#E67E22] font-extrabold flex items-center gap-2">
-          DUST™ CATALOGUE SEARCH
+          DUST CATALOGUE SEARCH
         </span>
         <button
           onClick={() => setSearchOpen(false)}

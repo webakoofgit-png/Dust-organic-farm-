@@ -46,7 +46,7 @@ export const Navbar: React.FC = () => {
           Free Delivery Across India on Orders Above ₹499
         </span>
         <span className="text-[#E67E22] font-semibold text-xs tracking-wider">
-          • DUST™ — CHOICE OF MOTHERLAND
+          • DUST — CHOICE OF MOTHERLAND
         </span>
       </div>
 
@@ -67,13 +67,13 @@ export const Navbar: React.FC = () => {
             <div className="relative h-9 w-9 sm:h-10 sm:w-10 rounded-full overflow-hidden border border-[#74B487]/50 shadow-xs flex items-center justify-center bg-[#0E382E] shrink-0 group-hover:scale-105 transition-transform">
               <img
                 src="/logo.png"
-                alt="DUST™ — Choice of Motherland"
+                alt="DUST — Choice of Motherland"
                 className="w-full h-full object-cover scale-[1.38]"
               />
             </div>
             <div className="flex flex-col">
               <span className="font-extrabold text-[#0E382E] group-hover:text-[#E67E22] transition-colors font-sans text-xl leading-none tracking-widest">
-                DUST<span className="text-[#E67E22]">™</span>
+                DUST
               </span>
               <span className="text-[9px] tracking-[0.2em] font-sans font-extrabold text-[#E67E22] uppercase hidden sm:inline mt-0.5">
                 CHOICE OF MOTHERLAND

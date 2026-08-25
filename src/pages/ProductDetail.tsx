@@ -56,7 +56,7 @@ export const ProductDetail: React.FC = () => {
         {/* Left Gallery (7 cols) */}
         <div className="lg:col-span-7 space-y-6">
           {/* Main Visual Frame */}
-          <div className="relative aspect-[4/3] bg-[#E8F1E9] border border-[#74B487]/40 rounded-3xl overflow-hidden p-8 flex items-center justify-center shadow-sm">
+          <div className="relative aspect-[4/3] bg-white border border-[#74B487]/40 rounded-3xl overflow-hidden p-8 flex items-center justify-center shadow-sm">
             <img
               src={activeImage.src}
               alt={activeImage.alt || product.name}
@@ -91,13 +91,13 @@ export const ProductDetail: React.FC = () => {
           </div>
 
           {/* Product Story Photography Banner */}
-          <div className="relative rounded-3xl overflow-hidden border border-[#74B487]/40 bg-[#0E382E] mt-8 shadow-xl">
+          <div className="relative rounded-3xl overflow-hidden border border-[#74B487]/40 bg-stone-900 mt-8 shadow-xl">
             <img
               src={product.storyImage}
               alt={`${product.name} story`}
-              className="w-full h-80 object-cover opacity-50"
+              className="w-full h-80 object-cover opacity-100"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0E382E] via-[#0E382E]/40 to-transparent p-8 flex flex-col justify-end text-white">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-8 flex flex-col justify-end text-white">
               <span className="text-xs uppercase tracking-[0.2em] text-[#E67E22] font-extrabold">
                 HERITAGE STORY
               </span>

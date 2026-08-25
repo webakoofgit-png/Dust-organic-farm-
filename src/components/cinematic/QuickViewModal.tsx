@@ -46,7 +46,7 @@ export const QuickViewModal: React.FC = () => {
         </button>
 
         {/* Product Image Side */}
-        <div className="relative bg-[#E8F1E9] p-8 flex items-center justify-center min-h-[320px] border-r border-[#74B487]/30">
+        <div className="relative bg-white p-8 flex items-center justify-center min-h-[320px] border-r border-[#74B487]/30">
           <img
             src={mainImage}
             alt={quickViewProduct.name}
