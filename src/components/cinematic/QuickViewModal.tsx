@@ -30,33 +30,33 @@ export const QuickViewModal: React.FC = () => {
     <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4">
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-emerald-950/40 backdrop-blur-xs transition-opacity"
+        className="fixed inset-0 bg-[#0E382E]/50 backdrop-blur-xs transition-opacity"
         onClick={() => setQuickViewProduct(null)}
       />
 
       {/* Modal Card */}
-      <div className="relative z-10 w-full max-w-3xl bg-white border border-emerald-100 rounded-2xl overflow-hidden shadow-2xl text-emerald-950 grid grid-cols-1 md:grid-cols-2">
+      <div className="relative z-10 w-full max-w-3xl bg-[#F6F5F0] border border-[#74B487]/40 rounded-2xl overflow-hidden shadow-2xl text-[#0E382E] grid grid-cols-1 md:grid-cols-2">
         {/* Close Button */}
         <button
           onClick={() => setQuickViewProduct(null)}
-          className="absolute top-4 right-4 z-20 p-2 text-emerald-800 hover:text-emerald-950 bg-emerald-100/80 rounded-full transition-colors"
+          className="absolute top-4 right-4 z-20 p-2 text-[#0E382E] hover:text-[#E67E22] bg-[#E8F1E9] rounded-full transition-colors border border-[#74B487]/30"
           aria-label="Close modal"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Product Image Side */}
-        <div className="relative bg-emerald-50/60 p-8 flex items-center justify-center min-h-[320px] border-r border-emerald-100">
+        <div className="relative bg-[#E8F1E9] p-8 flex items-center justify-center min-h-[320px] border-r border-[#74B487]/30">
           <img
             src={mainImage}
             alt={quickViewProduct.name}
             className="max-h-[340px] w-auto object-contain transition-transform duration-500 hover:scale-105"
           />
-          <div className="absolute bottom-4 left-4 flex gap-2">
+          <div className="absolute bottom-4 left-4 flex gap-2 flex-wrap">
             {quickViewProduct.badges.map((badge, idx) => (
               <span
                 key={idx}
-                className="bg-emerald-700 text-white text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded-full shadow-xs"
+                className="bg-[#E67E22] text-white text-[10px] uppercase font-extrabold tracking-widest px-2.5 py-1 rounded-full shadow-xs"
               >
                 {badge}
               </span>
@@ -67,31 +67,31 @@ export const QuickViewModal: React.FC = () => {
         {/* Product Info Side */}
         <div className="p-6 md:p-8 flex flex-col justify-between space-y-6">
           <div>
-            <span className="text-[10px] uppercase tracking-[0.2em] text-emerald-700 font-bold">
+            <span className="text-[10px] uppercase tracking-[0.2em] text-[#E67E22] font-extrabold">
               {quickViewProduct.categoryLabel}
             </span>
-            <h2 className="text-2xl font-serif font-bold text-emerald-950 mt-1">
+            <h2 className="text-2xl font-extrabold text-[#0E382E] mt-1">
               {quickViewProduct.name}
             </h2>
-            <p className="text-xs text-emerald-700 italic mt-1 font-medium">
+            <p className="text-xs text-[#1F684B] italic mt-1 font-medium">
               "{quickViewProduct.pitch}"
             </p>
 
             <div className="flex items-baseline gap-3 mt-4">
-              <span className="text-2xl font-mono font-bold text-emerald-800">
+              <span className="text-2xl font-extrabold text-[#0E382E]">
                 {quickViewProduct.priceDisplay}
               </span>
               {quickViewProduct.originalPriceDisplay && (
-                <span className="text-sm font-mono line-through text-slate-400">
+                <span className="text-sm line-through text-stone-400 font-semibold">
                   {quickViewProduct.originalPriceDisplay}
                 </span>
               )}
-              <span className="text-xs text-emerald-700 font-sans border-l border-emerald-200 pl-3">
+              <span className="text-xs text-[#1F684B] font-bold border-l border-[#74B487]/40 pl-3">
                 {quickViewProduct.netWeight}
               </span>
             </div>
 
-            <p className="text-xs text-slate-600 leading-relaxed mt-4 line-clamp-3 font-light">
+            <p className="text-xs text-stone-600 leading-relaxed mt-4 line-clamp-3 font-normal">
               {quickViewProduct.description[0]}
             </p>
           </div>
@@ -100,19 +100,19 @@ export const QuickViewModal: React.FC = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-4">
               {/* Quantity */}
-              <div className="flex items-center border border-emerald-200 rounded-lg bg-emerald-50">
+              <div className="flex items-center border border-[#74B487]/40 rounded-lg bg-[#E8F1E9]">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  className="px-3 py-2 text-emerald-800 hover:text-emerald-950 font-bold"
+                  className="px-3 py-2 text-[#0E382E] hover:text-[#E67E22] font-bold"
                 >
                   -
                 </button>
-                <span className="px-3 font-mono text-sm font-bold text-emerald-950">
+                <span className="px-3 text-sm font-extrabold text-[#0E382E]">
                   {quantity}
                 </span>
                 <button
                   onClick={() => setQuantity(quantity + 1)}
-                  className="px-3 py-2 text-emerald-800 hover:text-emerald-950 font-bold"
+                  className="px-3 py-2 text-[#0E382E] hover:text-[#E67E22] font-bold"
                 >
                   +
                 </button>
@@ -124,7 +124,7 @@ export const QuickViewModal: React.FC = () => {
                 className={`p-3 rounded-lg border transition-colors ${
                   inWishlist
                     ? "bg-red-50 border-red-200 text-red-500"
-                    : "border-emerald-200 text-emerald-700 hover:bg-emerald-50"
+                    : "border-[#74B487]/40 text-[#0E382E] hover:bg-[#E8F1E9]"
                 }`}
                 aria-label="Toggle Wishlist"
               >
@@ -134,10 +134,10 @@ export const QuickViewModal: React.FC = () => {
 
             <button
               onClick={handleAddToCart}
-              className={`w-full py-3.5 px-6 rounded-xl font-bold text-xs uppercase tracking-widest transition-all flex items-center justify-center gap-2 shadow-sm ${
+              className={`w-full py-3.5 px-6 rounded-xl font-extrabold text-xs uppercase tracking-widest transition-all flex items-center justify-center gap-2 shadow-md ${
                 added
-                  ? "bg-emerald-800 text-white"
-                  : "bg-emerald-700 hover:bg-emerald-800 text-white"
+                  ? "bg-[#0E382E] text-white"
+                  : "btn-dust-orange text-white"
               }`}
             >
               {added ? (
@@ -156,7 +156,7 @@ export const QuickViewModal: React.FC = () => {
               <Link
                 to={`/product/${quickViewProduct.slug}`}
                 onClick={() => setQuickViewProduct(null)}
-                className="text-xs uppercase tracking-widest font-bold text-emerald-700 hover:text-emerald-900 underline underline-offset-4 transition-colors"
+                className="text-xs uppercase tracking-widest font-extrabold text-[#E67E22] hover:text-[#D35400] underline underline-offset-4 transition-colors"
               >
                 View Full Product Story & Ritual →
               </Link>

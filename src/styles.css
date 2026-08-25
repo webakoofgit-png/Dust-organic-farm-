@@ -4,10 +4,12 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/*
- * DUST — White & Green luxury design system.
- * Crisp clean white background, deep emerald forest typography,
- * lush mint green & vibrant green accents.
+/**
+ * DUST™ — Choice of Motherland Brand Design System
+ * Primary: Deep Forest Green (#0E382E), Emerald (#1F684B)
+ * Accents: Soft Green (#74B487), Sage (#E8F1E9), Warm Cream (#F6F5F0)
+ * Strategic High Contrast Accent: Motherland Orange (#E67E22)
+ * Typography: Poppins Bold / Regular
  */
 
 @theme inline {
@@ -16,6 +18,15 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 8px);
+  
+  --color-dust-forest: #0E382E;
+  --color-dust-emerald: #1F684B;
+  --color-dust-softgreen: #74B487;
+  --color-dust-sage: #E8F1E9;
+  --color-dust-cream: #F6F5F0;
+  --color-dust-orange: #E67E22;
+  --color-dust-orange-hover: #D35400;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -33,52 +44,69 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --font-display: "Fraunces", "Georgia", serif;
-  --font-body: "Work Sans", system-ui, sans-serif;
-  --font-mono: "Space Mono", ui-monospace, monospace;
+
+  --font-sans: "Poppins", system-ui, -apple-system, sans-serif;
+  --font-heading: "Poppins", system-ui, -apple-system, sans-serif;
+  --font-display: "Poppins", system-ui, -apple-system, sans-serif;
+  --font-body: "Poppins", system-ui, -apple-system, sans-serif;
 }
 
 :root {
   --radius: 0.5rem;
-  --background: #ffffff;
-  --foreground: #064e3b;
-  --card: #f0fdf4;
-  --card-foreground: #064e3b;
+  --dust-forest: #0E382E;
+  --dust-emerald: #1F684B;
+  --dust-softgreen: #74B487;
+  --dust-sage: #E8F1E9;
+  --dust-cream: #F6F5F0;
+  --dust-orange: #E67E22;
+  --dust-orange-hover: #D35400;
+
+  --background: #F6F5F0;
+  --foreground: #0E382E;
+  --card: #ffffff;
+  --card-foreground: #0E382E;
   --popover: #ffffff;
-  --popover-foreground: #064e3b;
-  --primary: #059669;
-  --primary-foreground: #ffffff;
-  --secondary: #ecfdf5;
-  --secondary-foreground: #064e3b;
-  --muted: #f0fdf4;
-  --muted-foreground: #047857;
-  --accent: #d1fae5;
-  --accent-foreground: #064e3b;
-  --border: #a7f3d0;
-  --input: #d1fae5;
-  --ring: #059669;
+  --popover-foreground: #0E382E;
+  --primary: #0E382E;
+  --primary-foreground: #F6F5F0;
+  --secondary: #E8F1E9;
+  --secondary-foreground: #0E382E;
+  --muted: #E8F1E9;
+  --muted-foreground: #1F684B;
+  --accent: #E67E22;
+  --accent-foreground: #ffffff;
+  --border: #74B487;
+  --input: #E8F1E9;
+  --ring: #E67E22;
   --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @layer base {
   * {
-    border-color: var(--color-border);
+    border-color: #E8F1E9;
   }
 
   html {
-    scroll-behavior: initial;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
   }
 
   body {
-    background-color: #ffffff;
-    color: #064e3b;
-    font-family: var(--font-body);
+    background-color: #F6F5F0;
+    color: #0E382E;
+    font-family: 'Poppins', sans-serif;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
 
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
   ::selection {
-    background: #059669;
+    background: #E67E22;
     color: #ffffff;
   }
 
@@ -91,15 +119,20 @@
   }
 }
 
-/* ---------- custom utilities ---------- */
+/* ---------- Custom Utilities ---------- */
 
 @utility text-stroke {
-  -webkit-text-stroke: 1px #064e3b;
+  -webkit-text-stroke: 1px #0E382E;
+  color: transparent;
+}
+
+@utility text-stroke-orange {
+  -webkit-text-stroke: 1px #E67E22;
   color: transparent;
 }
 
 @utility cinematic-transition {
-  transition-timing-function: var(--ease-cinematic);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @utility no-scrollbar {
@@ -107,4 +140,57 @@
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+/* Primary Button style with Motherland Orange */
+.btn-dust-orange {
+  background-color: #E67E22;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 14px rgba(230, 126, 34, 0.25);
+}
+.btn-dust-orange:hover {
+  background-color: #D35400;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(230, 126, 34, 0.35);
+}
+
+/* Secondary Button style with Deep Forest Green */
+.btn-dust-forest {
+  background-color: #0E382E;
+  color: #F6F5F0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+}
+.btn-dust-forest:hover {
+  background-color: #1F684B;
+  transform: translateY(-1px);
+}
+
+/* Outline Button with Motherland Orange border */
+.btn-dust-outline-orange {
+  border: 2px solid #E67E22;
+  color: #E67E22;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+}
+.btn-dust-outline-orange:hover {
+  background-color: #E67E22;
+  color: #ffffff;
+}
+
+/* Badge tags */
+.badge-orange {
+  background-color: #E67E22;
+  color: #ffffff;
+  font-weight: 700;
+}
+.badge-sage {
+  background-color: #E8F1E9;
+  color: #0E382E;
+  border: 1px solid #74B487;
 }

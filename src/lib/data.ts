@@ -252,12 +252,11 @@ export const products: Product[] = [
     heritageQuote:
       "For centuries, the royal Banarasi Paan was served in silver boxes to nobility as the ultimate after-meal digestif. Crafted with real betel leaf extract, fennel, and premium rose gulkand, every sip of DUST Banarasi Paan captures that exact traditional fresh digestif ritual.",
     images: [
-      { src: paanPouch, alt: "DUST Banarasi Paan Digestive Shot heritage green and gold pouch" },
-      { src: paanPack, alt: "Front and back of the DUST Banarasi Paan sachet with nutrition label" },
-      { src: paanDuo, alt: "DUST Banarasi Paan pouch pair with fresh betel leaf, rose and gulkand" },
-      { src: paanPoster, alt: "DUST Paan Digestive Shot campaign — refresh, digest, repeat" },
+      { src: "/paan_image_1.jpeg", alt: "DUST Banarasi Paan Digestive Shot authentic pack box and glass shot" },
+      { src: "/paan_image_2.jpeg", alt: "DUST Banarasi Paan standup pouch front and back with nutritional info" },
+      { src: "/paan_image_3.jpeg", alt: "DUST Banarasi Paan digestive shot box back and ingredient details" },
     ],
-    storyImage: storyPaan,
+    storyImage: "/paan_image_1.jpeg",
     accent: "rose",
     stock: 36,
     sku: "DUST-BP-20",
@@ -345,7 +344,7 @@ export const collections: Collection[] = [
       "Cross over to the sun side — instant aam panna and real-fruit coolers built for Indian summers.",
     crossCta: "Explore Pure Fruit",
     crossHref: "/shop/pure-fruit-powders",
-    heroImage: storyPaan,
+    heroImage: "/paan_image_1.jpeg",
   },
 ];
 

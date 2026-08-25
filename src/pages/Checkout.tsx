@@ -52,24 +52,24 @@ export const Checkout: React.FC = () => {
 
   if (orderComplete) {
     return (
-      <div className="pt-32 pb-24 px-4 sm:px-8 max-w-xl mx-auto min-h-screen text-center space-y-6 bg-white text-emerald-950">
-        <div className="w-20 h-20 bg-emerald-100 text-emerald-700 rounded-full border border-emerald-300 flex items-center justify-center mx-auto shadow-xs">
+      <div className="pt-36 pb-24 px-4 sm:px-8 max-w-xl mx-auto min-h-screen text-center space-y-6 bg-[#F6F5F0] text-[#0E382E]">
+        <div className="w-20 h-20 bg-[#E8F1E9] text-[#E67E22] rounded-full border border-[#74B487]/40 flex items-center justify-center mx-auto shadow-xs">
           <CheckCircle2 className="w-10 h-10" />
         </div>
-        <h1 className="text-3xl font-serif font-bold text-emerald-950">
+        <h1 className="text-3xl font-extrabold text-[#0E382E]">
           Order Confirmed!
         </h1>
-        <p className="text-sm text-slate-700 font-normal">
-          Thank you, <strong className="text-emerald-800">{formData.name}</strong>. Your order <span className="font-mono text-emerald-800 font-bold">{orderId}</span> has been placed successfully.
+        <p className="text-sm text-stone-700 font-normal">
+          Thank you, <strong className="text-[#0E382E]">{formData.name}</strong>. Your order <span className="text-[#E67E22] font-extrabold">{orderId}</span> has been placed successfully.
         </p>
-        <div className="p-6 bg-emerald-50/60 rounded-2xl border border-emerald-100 text-left text-xs font-mono space-y-2 text-slate-700 shadow-xs">
-          <p><strong className="text-emerald-950">Shipping Address:</strong> {formData.address}, {formData.city} - {formData.pincode}</p>
-          <p><strong className="text-emerald-950">Payment Method:</strong> {formData.paymentMethod.toUpperCase()}</p>
-          <p><strong className="text-emerald-950">Estimated Delivery:</strong> 2-4 Business Days</p>
+        <div className="p-6 bg-white rounded-2xl border border-[#74B487]/40 text-left text-xs space-y-2 text-stone-700 shadow-xs">
+          <p><strong className="text-[#0E382E]">Shipping Address:</strong> {formData.address}, {formData.city} - {formData.pincode}</p>
+          <p><strong className="text-[#0E382E]">Payment Method:</strong> {formData.paymentMethod.toUpperCase()}</p>
+          <p><strong className="text-[#0E382E]">Estimated Delivery:</strong> 2-4 Business Days</p>
         </div>
         <Link
           to="/"
-          className="inline-block px-8 py-3.5 bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-colors shadow-xs"
+          className="inline-block px-8 py-3.5 btn-dust-orange text-white font-extrabold text-xs uppercase tracking-widest rounded-xl transition-colors shadow-sm"
         >
           Return to Home
         </Link>
@@ -78,16 +78,16 @@ export const Checkout: React.FC = () => {
   }
 
   return (
-    <div className="pt-28 pb-24 px-4 sm:px-8 max-w-7xl mx-auto min-h-screen bg-white text-emerald-950">
+    <div className="pt-32 pb-24 px-4 sm:px-8 md:px-12 lg:px-16 w-full min-h-screen bg-[#F6F5F0] text-[#0E382E]">
       <div className="mb-8 flex items-center gap-4">
-        <Link to="/cart" className="text-emerald-700 hover:text-emerald-950 transition-colors">
+        <Link to="/cart" className="text-[#0E382E] hover:text-[#E67E22] transition-colors">
           <ArrowLeft className="w-5 h-5" />
         </Link>
         <div>
-          <span className="text-xs font-mono uppercase tracking-[0.3em] text-emerald-700 font-bold">
+          <span className="text-xs uppercase tracking-[0.25em] text-[#E67E22] font-extrabold">
             CHECKOUT
           </span>
-          <h1 className="text-3xl font-serif font-bold text-emerald-950">
+          <h1 className="text-3xl font-extrabold text-[#0E382E]">
             Complete Your Order
           </h1>
         </div>
@@ -97,8 +97,8 @@ export const Checkout: React.FC = () => {
         {/* Form (7 cols) */}
         <form onSubmit={handleCompleteOrder} className="lg:col-span-7 space-y-8">
           {/* Customer Details */}
-          <div className="bg-emerald-50/50 p-6 rounded-3xl border border-emerald-100 space-y-4 shadow-xs">
-            <h3 className="text-sm font-mono uppercase font-bold text-emerald-800 tracking-wider">
+          <div className="bg-white p-6 rounded-3xl border border-[#74B487]/40 space-y-4 shadow-xs">
+            <h3 className="text-xs uppercase font-extrabold text-[#E67E22] tracking-wider">
               1. Customer Information
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
@@ -108,7 +108,7 @@ export const Checkout: React.FC = () => {
                 placeholder="Full Name *"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="bg-white p-3 rounded-xl border border-emerald-200 text-emerald-950 outline-none focus:border-emerald-600 font-medium"
+                className="bg-[#F6F5F0] p-3 rounded-xl border border-[#74B487]/40 text-[#0E382E] outline-none focus:border-[#E67E22] font-medium"
               />
               <input
                 type="email"
@@ -116,7 +116,7 @@ export const Checkout: React.FC = () => {
                 placeholder="Email Address *"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="bg-white p-3 rounded-xl border border-emerald-200 text-emerald-950 outline-none focus:border-emerald-600 font-medium"
+                className="bg-[#F6F5F0] p-3 rounded-xl border border-[#74B487]/40 text-[#0E382E] outline-none focus:border-[#E67E22] font-medium"
               />
               <input
                 type="tel"
@@ -124,14 +124,14 @@ export const Checkout: React.FC = () => {
                 placeholder="Mobile Number (for delivery SMS) *"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="bg-white p-3 rounded-xl border border-emerald-200 text-emerald-950 outline-none focus:border-emerald-600 font-medium sm:col-span-2"
+                className="bg-[#F6F5F0] p-3 rounded-xl border border-[#74B487]/40 text-[#0E382E] outline-none focus:border-[#E67E22] font-medium sm:col-span-2"
               />
             </div>
           </div>
 
           {/* Shipping Address */}
-          <div className="bg-emerald-50/50 p-6 rounded-3xl border border-emerald-100 space-y-4 shadow-xs">
-            <h3 className="text-sm font-mono uppercase font-bold text-emerald-800 tracking-wider">
+          <div className="bg-white p-6 rounded-3xl border border-[#74B487]/40 space-y-4 shadow-xs">
+            <h3 className="text-xs uppercase font-extrabold text-[#E67E22] tracking-wider">
               2. Shipping Address
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
@@ -141,7 +141,7 @@ export const Checkout: React.FC = () => {
                 placeholder="Street Address / House No. *"
                 value={formData.address}
                 onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                className="bg-white p-3 rounded-xl border border-emerald-200 text-emerald-950 outline-none focus:border-emerald-600 font-medium sm:col-span-2"
+                className="bg-[#F6F5F0] p-3 rounded-xl border border-[#74B487]/40 text-[#0E382E] outline-none focus:border-[#E67E22] font-medium sm:col-span-2"
               />
               <input
                 type="text"
@@ -149,7 +149,7 @@ export const Checkout: React.FC = () => {
                 placeholder="City *"
                 value={formData.city}
                 onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                className="bg-white p-3 rounded-xl border border-emerald-200 text-emerald-950 outline-none focus:border-emerald-600 font-medium"
+                className="bg-[#F6F5F0] p-3 rounded-xl border border-[#74B487]/40 text-[#0E382E] outline-none focus:border-[#E67E22] font-medium"
               />
               <input
                 type="text"
@@ -157,14 +157,14 @@ export const Checkout: React.FC = () => {
                 placeholder="Pincode *"
                 value={formData.pincode}
                 onChange={(e) => setFormData({ ...formData, pincode: e.target.value })}
-                className="bg-white p-3 rounded-xl border border-emerald-200 text-emerald-950 outline-none focus:border-emerald-600 font-medium"
+                className="bg-[#F6F5F0] p-3 rounded-xl border border-[#74B487]/40 text-[#0E382E] outline-none focus:border-[#E67E22] font-medium"
               />
             </div>
           </div>
 
           {/* Payment Selection */}
-          <div className="bg-emerald-50/50 p-6 rounded-3xl border border-emerald-100 space-y-4 shadow-xs">
-            <h3 className="text-sm font-mono uppercase font-bold text-emerald-800 tracking-wider">
+          <div className="bg-white p-6 rounded-3xl border border-[#74B487]/40 space-y-4 shadow-xs">
+            <h3 className="text-xs uppercase font-extrabold text-[#E67E22] tracking-wider">
               3. Select Payment Method
             </h3>
             <div className="grid grid-cols-2 gap-3 text-xs">
@@ -178,10 +178,10 @@ export const Checkout: React.FC = () => {
                   type="button"
                   key={pm.id}
                   onClick={() => setFormData({ ...formData, paymentMethod: pm.id })}
-                  className={`p-4 rounded-2xl border text-left font-bold transition-all ${
+                  className={`p-4 rounded-2xl border text-left font-extrabold transition-all ${
                     formData.paymentMethod === pm.id
-                      ? "bg-emerald-700 text-white border-emerald-700 shadow-xs"
-                      : "bg-white border-emerald-200 text-emerald-950 hover:bg-emerald-50"
+                      ? "bg-[#E67E22] text-white border-[#E67E22] shadow-xs"
+                      : "bg-[#F6F5F0] border-[#74B487]/40 text-[#0E382E] hover:bg-[#E8F1E9]"
                   }`}
                 >
                   {pm.label}
@@ -192,15 +192,15 @@ export const Checkout: React.FC = () => {
 
           <button
             type="submit"
-            className="w-full py-4 bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-sm uppercase tracking-widest rounded-2xl transition-all shadow-md"
+            className="w-full py-4 btn-dust-orange text-white font-extrabold text-sm uppercase tracking-widest rounded-2xl transition-all shadow-md"
           >
             Place Order (₹{grandTotal})
           </button>
         </form>
 
         {/* Order Summary Sidebar (5 cols) */}
-        <div className="lg:col-span-5 bg-emerald-50/60 p-8 rounded-3xl border border-emerald-100 space-y-6 sticky top-28 shadow-sm">
-          <h3 className="text-xl font-serif font-bold text-emerald-950 border-b border-emerald-200 pb-4">
+        <div className="lg:col-span-5 bg-[#E8F1E9] p-8 rounded-3xl border border-[#74B487]/40 space-y-6 sticky top-28 shadow-sm">
+          <h3 className="text-xl font-extrabold text-[#0E382E] border-b border-[#74B487]/30 pb-4">
             Items in Order
           </h3>
 
@@ -211,14 +211,14 @@ export const Checkout: React.FC = () => {
                   <img
                     src={item.product.images[0]?.src || item.product.storyImage}
                     alt={item.product.name}
-                    className="w-12 h-14 object-contain bg-white p-1 rounded-lg border border-emerald-100"
+                    className="w-12 h-14 object-contain bg-white p-1 rounded-lg border border-[#74B487]/30"
                   />
                   <div>
-                    <h4 className="font-bold text-emerald-950">{item.product.shortName || item.product.name}</h4>
-                    <p className="text-slate-500">Qty: {item.quantity}</p>
+                    <h4 className="font-extrabold text-[#0E382E]">{item.product.shortName || item.product.name}</h4>
+                    <p className="text-stone-500 font-medium">Qty: {item.quantity}</p>
                   </div>
                 </div>
-                <span className="font-mono text-emerald-800 font-bold">
+                <span className="text-[#0E382E] font-extrabold">
                   ₹{item.product.price * item.quantity}
                 </span>
               </div>
@@ -226,47 +226,47 @@ export const Checkout: React.FC = () => {
           </div>
 
           {/* Promo Code Form */}
-          <form onSubmit={handleApplyPromo} className="flex gap-2 pt-2 border-t border-emerald-200">
+          <form onSubmit={handleApplyPromo} className="flex gap-2 pt-2 border-t border-[#74B487]/30">
             <input
               type="text"
               placeholder="Promo Code (DUST10)"
               value={promoCode}
               onChange={(e) => setPromoCode(e.target.value)}
-              className="flex-1 bg-white px-3 py-2 text-xs text-emerald-950 rounded-xl border border-emerald-200 outline-none uppercase font-mono font-bold"
+              className="flex-1 bg-white px-3 py-2 text-xs text-[#0E382E] rounded-xl border border-[#74B487]/40 outline-none uppercase font-extrabold"
             />
             <button
               type="submit"
-              className="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold uppercase tracking-wider rounded-xl shadow-xs"
+              className="px-4 py-2 btn-dust-orange text-white text-xs font-extrabold uppercase tracking-wider rounded-xl shadow-xs"
             >
               Apply
             </button>
           </form>
 
           {promoApplied && (
-            <p className="text-xs text-emerald-700 font-mono font-bold">
+            <p className="text-xs text-[#E67E22] font-extrabold">
               ✓ Promo code applied! 10% Discount included.
             </p>
           )}
 
           {/* Calculation Breakdown */}
-          <div className="space-y-2.5 text-xs font-mono text-emerald-950 font-medium pt-4 border-t border-emerald-200">
+          <div className="space-y-2.5 text-xs text-[#0E382E] font-medium pt-4 border-t border-[#74B487]/30">
             <div className="flex justify-between">
-              <span className="text-slate-600">Subtotal</span>
-              <span>₹{subtotal}</span>
+              <span className="text-stone-600">Subtotal</span>
+              <span className="font-bold">₹{subtotal}</span>
             </div>
             {discountAmount > 0 && (
-              <div className="flex justify-between text-emerald-700 font-bold">
+              <div className="flex justify-between text-[#E67E22] font-extrabold">
                 <span>Discount (10%)</span>
                 <span>-₹{discountAmount}</span>
               </div>
             )}
             <div className="flex justify-between">
-              <span className="text-slate-600">Shipping</span>
-              <span>{shippingFee === 0 ? "FREE" : `₹${shippingFee}`}</span>
+              <span className="text-stone-600">Shipping</span>
+              <span className="font-bold">{shippingFee === 0 ? "FREE" : `₹${shippingFee}`}</span>
             </div>
-            <div className="flex justify-between border-t border-emerald-200 pt-3 text-sm font-bold text-emerald-950">
+            <div className="flex justify-between border-t border-[#74B487]/30 pt-3 text-sm font-extrabold text-[#0E382E]">
               <span>Total Payable</span>
-              <span className="text-emerald-800 text-lg">₹{grandTotal}</span>
+              <span className="text-[#E67E22] text-xl font-extrabold">₹{grandTotal}</span>
             </div>
           </div>
         </div>
