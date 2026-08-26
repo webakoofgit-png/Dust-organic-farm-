@@ -27,6 +27,28 @@ export const img = {
   storyPaan,
 };
 
+export const companyInfo = {
+  name: "Everest Edges Pvt. Ltd.",
+  brand: "DUST",
+  cin: "U10309PN2026PTC258739",
+  pan: "AAJCE8999E",
+  tan: "PNEE12048B",
+  gstin: "27AAJCE8999E1ZX",
+  fssai: "In Process",
+  phone: "8806808008",
+  phoneFormatted: "+91 8806808008",
+  whatsapp: "8806808008",
+  whatsappLink: "https://wa.me/918806808008?text=Hi%20DUST%20Team%2C%20I%20have%20an%20enquiry",
+  email: "customercare@dustofficial.com",
+  businessEmail: "everestedges@gmail.com",
+  domain: "dustofficial.com",
+  address: "Silver Gracia, Ravet, Pune – 412101, Maharashtra, India",
+  tagline: "CHOICE OF MOTHERLAND",
+  coreProposition: "Indian Taste × Convenience × Ingredient Transparency × Accessible Pricing",
+  purpose: "Building India’s next generation of consumer beverage brands.",
+  vision: "Build a nationally recognized Indian consumer brand that originates in India and scales globally.",
+};
+
 export interface RitualStep {
   title: string;
   detail: string;

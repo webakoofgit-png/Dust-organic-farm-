@@ -13,7 +13,7 @@ import {
   Flame,
   Award,
 } from "lucide-react";
-import { products, collections, Product } from "@/lib/data";
+import { products, collections, Product, companyInfo } from "@/lib/data";
 import { useCartStore } from "@/lib/cart-store";
 
 export const Home: React.FC = () => {
@@ -457,87 +457,6 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* 6. Footer */}
-      <footer className="bg-[#0E382E] text-[#F6F5F0] pt-16 pb-12 px-4 sm:px-8 md:px-12 lg:px-16 border-t border-[#1F684B]">
-        <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-[#1F684B]">
-          <div className="space-y-4 md:col-span-2">
-            <div className="flex items-center gap-3">
-              <div className="relative w-14 h-14 rounded-full overflow-hidden border border-[#74B487]/50 shadow-md flex items-center justify-center bg-[#0E382E] shrink-0">
-                <img
-                  src="/logo.png"
-                  alt="DUST™ — Choice of Motherland"
-                  className="w-full h-full object-cover scale-[1.38]"
-                />
-              </div>
-              <div>
-                <h2 className="text-3xl font-extrabold text-white tracking-widest leading-none">
-                  DUST
-                </h2>
-                <p className="text-xs text-[#E67E22] font-extrabold uppercase tracking-widest mt-1">
-                  CHOICE OF MOTHERLAND
-                </p>
-              </div>
-            </div>
-            <p className="text-xs text-[#E8F1E9] max-w-sm leading-relaxed font-normal">
-              Ultra-premium, cinematic FMCG commerce for authentic Indian fruit powders and heritage wellness creations.
-            </p>
-            <div className="text-xs text-[#74B487] pt-2 font-bold">
-              FSSAI Lic No. 10021064000123 • 100% Real Fruit Guaranteed
-            </div>
-          </div>
-
-          <div>
-            <h4 className="text-xs uppercase tracking-widest text-[#E67E22] mb-4 font-extrabold">
-              Navigation
-            </h4>
-            <ul className="space-y-2 text-xs text-[#E8F1E9] font-medium">
-              <li>
-                <Link to="/shop" className="hover:text-[#E67E22] transition-colors">
-                  Shop Catalogue
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/collections/pure-fruit-powders"
-                  className="hover:text-[#E67E22] transition-colors"
-                >
-                  Pure Fruit Powders
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/collections/heritage-wellness"
-                  className="hover:text-[#E67E22] transition-colors"
-                >
-                  Heritage Wellness
-                </Link>
-              </li>
-              <li>
-                <Link to="/wishlist" className="hover:text-[#E67E22] transition-colors">
-                  Saved Wishlist
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-xs uppercase tracking-widest text-[#E67E22] mb-4 font-extrabold">
-              Customer Support
-            </h4>
-            <ul className="space-y-2 text-xs text-[#E8F1E9] font-medium">
-              <li>Contact: care@dustnatural.com</li>
-              <li>Hours: Mon–Sat, 10am–6pm IST</li>
-              <li>Shipping: Nationwide India</li>
-              <li>100% Secure Checkout</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="max-w-7xl mx-auto pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-[#74B487] font-bold gap-4">
-          <p>© {new Date().getFullYear()} DUST Natural. All rights reserved.</p>
-          <p className="text-[#E67E22]">DUST — CHOICE OF MOTHERLAND</p>
-        </div>
-      </footer>
     </div>
   );
 };

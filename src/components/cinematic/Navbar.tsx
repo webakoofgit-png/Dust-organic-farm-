@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Search, ShoppingBag, Heart, Menu, X, Sparkles } from "lucide-react";
+import { Search, ShoppingBag, Heart, Menu, X, Sparkles, Phone } from "lucide-react";
 import { useCartStore } from "@/lib/cart-store";
 
 export const Navbar: React.FC = () => {
@@ -82,10 +82,10 @@ export const Navbar: React.FC = () => {
           </Link>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden md:flex items-center gap-8 font-sans">
+          <nav className="hidden xl:flex items-center gap-6 font-sans">
             <Link
               to="/shop"
-              className={`text-xs uppercase tracking-[0.18em] font-bold transition-all hover:text-[#E67E22] ${
+              className={`text-xs uppercase tracking-[0.15em] font-bold transition-all hover:text-[#E67E22] ${
                 location.pathname === "/shop"
                   ? "text-[#E67E22] border-b-2 border-[#E67E22] pb-0.5"
                   : "text-[#0E382E]"
@@ -95,29 +95,58 @@ export const Navbar: React.FC = () => {
               Shop All
             </Link>
             <Link
-              to="/collections/pure-fruit-powders"
-              className={`text-xs uppercase tracking-[0.18em] font-bold transition-all hover:text-[#E67E22] ${
-                location.pathname.includes("pure-fruit-powders")
+              to="/combos"
+              className={`text-xs uppercase tracking-[0.15em] font-bold transition-all hover:text-[#E67E22] ${
+                location.pathname === "/combos"
                   ? "text-[#E67E22] border-b-2 border-[#E67E22] pb-0.5"
                   : "text-[#0E382E]"
               }`}
             >
-              Fruit Powders
+              Combos
             </Link>
             <Link
-              to="/collections/heritage-wellness"
-              className={`text-xs uppercase tracking-[0.18em] font-bold transition-all hover:text-[#E67E22] ${
-                location.pathname.includes("heritage-wellness")
+              to="/about"
+              className={`text-xs uppercase tracking-[0.15em] font-bold transition-all hover:text-[#E67E22] ${
+                location.pathname === "/about"
                   ? "text-[#E67E22] border-b-2 border-[#E67E22] pb-0.5"
                   : "text-[#0E382E]"
               }`}
             >
-              Heritage Wellness
+              About Us
+            </Link>
+            <Link
+              to="/contact"
+              className={`text-xs uppercase tracking-[0.15em] font-bold transition-all hover:text-[#E67E22] ${
+                location.pathname === "/contact"
+                  ? "text-[#E67E22] border-b-2 border-[#E67E22] pb-0.5"
+                  : "text-[#0E382E]"
+              }`}
+            >
+              Contact
+            </Link>
+            <Link
+              to="/faq"
+              className={`text-xs uppercase tracking-[0.15em] font-bold transition-all hover:text-[#E67E22] ${
+                location.pathname === "/faq"
+                  ? "text-[#E67E22] border-b-2 border-[#E67E22] pb-0.5"
+                  : "text-[#0E382E]"
+              }`}
+            >
+              FAQ
             </Link>
           </nav>
 
           {/* Right Action Icons */}
           <div className="flex items-center gap-1 sm:gap-3 md:gap-4 shrink-0">
+            {/* Phone Call Link */}
+            <a
+              href="tel:8806808008"
+              className="p-2 text-[#0E382E] hover:text-[#E67E22] transition-colors rounded-full hover:bg-[#E8F1E9] hidden sm:flex items-center gap-1.5"
+              title="Call Customer Care (8806808008)"
+            >
+              <Phone className="w-5 h-5" />
+            </a>
+
             {/* Search Trigger */}
             <button
               onClick={toggleSearch}
@@ -189,18 +218,32 @@ export const Navbar: React.FC = () => {
               Shop All
             </Link>
             <Link
-              to="/collections/pure-fruit-powders"
-              className="text-2xl font-bold uppercase tracking-widest text-[#0E382E] hover:text-[#E67E22] transition-colors"
+              to="/combos"
+              className="text-xl font-bold uppercase tracking-widest text-[#0E382E] hover:text-[#E67E22] transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Pure Fruit Powders
+              Combos & Offers
             </Link>
             <Link
-              to="/collections/heritage-wellness"
-              className="text-2xl font-bold uppercase tracking-widest text-[#0E382E] hover:text-[#E67E22] transition-colors"
+              to="/about"
+              className="text-xl font-bold uppercase tracking-widest text-[#0E382E] hover:text-[#E67E22] transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Heritage Wellness
+              About Us
+            </Link>
+            <Link
+              to="/contact"
+              className="text-xl font-bold uppercase tracking-widest text-[#0E382E] hover:text-[#E67E22] transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Contact Us
+            </Link>
+            <Link
+              to="/faq"
+              className="text-xl font-bold uppercase tracking-widest text-[#0E382E] hover:text-[#E67E22] transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              FAQ
             </Link>
             <Link
               to="/wishlist"
