@@ -8,7 +8,7 @@ export const WhatsAppWidget: React.FC = () => {
       href={companyInfo.whatsappLink}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-[#25D366] text-white px-4 py-3.5 rounded-full shadow-2xl hover:scale-105 hover:bg-[#20ba5a] transition-all group print:hidden"
+      className="fixed bottom-6 left-6 z-50 flex items-center gap-3 bg-[#25D366] text-white px-4 py-3.5 rounded-full shadow-2xl hover:scale-105 hover:bg-[#20ba5a] transition-all group print:hidden"
       aria-label="Chat on WhatsApp"
       data-cursor="CHAT"
     >
