@@ -194,3 +194,59 @@
   color: #0E382E;
   border: 1px solid #74B487;
 }
+
+/* Print Media Styles for Clean PDF Invoice Export */
+@media print {
+  body, html {
+    background: #ffffff !important;
+    color: #0E382E !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* Hide header, navbar, footer, grain, cursor, floating widgets */
+  nav,
+  footer,
+  header,
+  .film-grain,
+  .custom-cursor,
+  .no-print,
+  .print\:hidden,
+  [data-cursor] {
+    display: none !important;
+  }
+
+  /* Target main container */
+  main {
+    min-height: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .pt-32, .pb-24 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Hide success card header during print */
+  .invoice-success-card {
+    display: none !important;
+  }
+
+  /* Invoice printable container */
+  .printable-invoice {
+    display: block !important;
+    box-shadow: none !important;
+    border: 1px solid #0E382E !important;
+    border-radius: 12px !important;
+    padding: 32px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    background: #ffffff !important;
+    page-break-inside: avoid !important;
+  }
+}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Search, ShoppingBag, Heart, Menu, X, Sparkles, Phone } from "lucide-react";
+import { Search, ShoppingBag, Heart, Menu, X, Sparkles, Phone, User } from "lucide-react";
 import { useCartStore } from "@/lib/cart-store";
 
 export const Navbar: React.FC = () => {
@@ -38,7 +38,7 @@ export const Navbar: React.FC = () => {
   return (
     <>
       {/* Top Announcement Bar */}
-      <div className="bg-[#0E382E] text-[#F6F5F0] py-1.5 px-4 text-center text-xs font-medium tracking-wide flex items-center justify-center gap-3 border-b border-[#1F684B]/50">
+      <div className="bg-[#0E382E] text-[#F6F5F0] py-1.5 px-4 text-center text-xs font-medium tracking-wide flex items-center justify-center gap-3 border-b border-[#1F684B]/50 print:hidden">
         <span className="inline-flex items-center gap-1 text-[#E67E22] font-bold text-[11px] uppercase tracking-wider bg-[#E67E22]/15 px-2 py-0.5 rounded-full border border-[#E67E22]/30">
           <Sparkles className="w-3 h-3 text-[#E67E22]" /> Offer
         </span>
@@ -51,7 +51,7 @@ export const Navbar: React.FC = () => {
       </div>
 
       <header
-        className={`fixed top-[33px] left-0 right-0 z-40 transition-all duration-300 ${
+        className={`fixed top-[33px] left-0 right-0 z-40 transition-all duration-300 print:hidden ${
           scrolled
             ? "bg-[#F6F5F0]/95 backdrop-blur-md border-b border-[#74B487]/30 py-3 shadow-md"
             : "bg-gradient-to-b from-[#F6F5F0]/95 via-[#F6F5F0]/80 to-transparent py-4"
@@ -156,6 +156,16 @@ export const Navbar: React.FC = () => {
             >
               <Search className="w-5 h-5" />
             </button>
+
+            {/* User Account Link */}
+            <Link
+              to="/account"
+              className="p-2 text-[#0E382E] hover:text-[#E67E22] transition-colors rounded-full hover:bg-[#E8F1E9]"
+              title="My Account & Orders"
+              aria-label="My Account"
+            >
+              <User className="w-5 h-5" />
+            </Link>
 
             {/* Wishlist Link */}
             <Link

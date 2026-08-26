@@ -4,7 +4,7 @@ import { companyInfo } from "@/lib/data";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#0E382E] text-[#F6F5F0] pt-16 pb-12 px-4 sm:px-8 md:px-12 lg:px-16 border-t border-[#1F684B]">
+    <footer className="bg-[#0E382E] text-[#F6F5F0] pt-16 pb-12 px-4 sm:px-8 md:px-12 lg:px-16 border-t border-[#1F684B] print:hidden">
       <div className="w-full grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-[#1F684B]">
         <div className="space-y-4 md:col-span-4">
           <div className="flex items-center gap-3">

@@ -25,6 +25,10 @@ import { TermsConditions } from "@/pages/TermsConditions";
 import { ShippingPolicy } from "@/pages/ShippingPolicy";
 import { ReturnRefundPolicy } from "@/pages/ReturnRefundPolicy";
 import { CancellationPolicy } from "@/pages/CancellationPolicy";
+import { OrderConfirmation } from "@/pages/OrderConfirmation";
+import { OrderTracking } from "@/pages/OrderTracking";
+import { Account } from "@/pages/Account";
+import { FirstOrderModal } from "@/components/cinematic/FirstOrderModal";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -62,6 +66,9 @@ export default function App() {
             <Route path="/shipping-policy" element={<ShippingPolicy />} />
             <Route path="/return-refund-policy" element={<ReturnRefundPolicy />} />
             <Route path="/cancellation-policy" element={<CancellationPolicy />} />
+            <Route path="/order-confirmation" element={<OrderConfirmation />} />
+            <Route path="/order-tracking" element={<OrderTracking />} />
+            <Route path="/account" element={<Account />} />
           </Routes>
         </main>
         <Footer />
@@ -69,6 +76,7 @@ export default function App() {
         <QuickViewModal />
         <SearchOverlay />
         <WhatsAppWidget />
+        <FirstOrderModal />
       </div>
     </BrowserRouter>
   );
