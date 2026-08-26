@@ -5,8 +5,8 @@ import { companyInfo } from "@/lib/data";
 export const Footer: React.FC = () => {
   return (
     <footer className="bg-[#0E382E] text-[#F6F5F0] pt-16 pb-12 px-4 sm:px-8 md:px-12 lg:px-16 border-t border-[#1F684B]">
-      <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-[#1F684B]">
-        <div className="space-y-4 md:col-span-2">
+      <div className="w-full grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-[#1F684B]">
+        <div className="space-y-4 md:col-span-4">
           <div className="flex items-center gap-3">
             <div className="relative w-14 h-14 rounded-full overflow-hidden border border-[#74B487]/50 shadow-md flex items-center justify-center bg-[#0E382E] shrink-0">
               <img
@@ -33,7 +33,7 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div>
+        <div className="md:col-span-2">
           <h4 className="text-xs uppercase tracking-widest text-[#E67E22] mb-4 font-extrabold">
             Quick Links
           </h4>
@@ -66,20 +66,53 @@ export const Footer: React.FC = () => {
           </ul>
         </div>
 
-        <div>
+        <div className="md:col-span-3">
+          <h4 className="text-xs uppercase tracking-widest text-[#E67E22] mb-4 font-extrabold">
+            Legal & Policies
+          </h4>
+          <ul className="space-y-2 text-xs text-[#E8F1E9] font-medium">
+            <li>
+              <Link to="/privacy-policy" className="hover:text-[#E67E22] transition-colors">
+                Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <Link to="/terms-conditions" className="hover:text-[#E67E22] transition-colors">
+                Terms & Conditions
+              </Link>
+            </li>
+            <li>
+              <Link to="/shipping-policy" className="hover:text-[#E67E22] transition-colors">
+                Shipping & Delivery Policy
+              </Link>
+            </li>
+            <li>
+              <Link to="/return-refund-policy" className="hover:text-[#E67E22] transition-colors">
+                Return & Refund Policy
+              </Link>
+            </li>
+            <li>
+              <Link to="/cancellation-policy" className="hover:text-[#E67E22] transition-colors">
+                Cancellation Policy
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        <div className="md:col-span-3">
           <h4 className="text-xs uppercase tracking-widest text-[#E67E22] mb-4 font-extrabold">
             Contact & Support
           </h4>
           <ul className="space-y-2 text-xs text-[#E8F1E9] font-medium">
             <li>
               Customer Care:{" "}
-              <a href={`mailto:${companyInfo.email}`} className="text-[#E67E22] font-bold hover:underline">
+              <a href={`mailto:${companyInfo.email}`} className="text-[#E67E22] font-bold hover:underline block truncate">
                 {companyInfo.email}
               </a>
             </li>
             <li>
               Business Email:{" "}
-              <a href={`mailto:${companyInfo.businessEmail}`} className="text-[#E67E22] font-bold hover:underline">
+              <a href={`mailto:${companyInfo.businessEmail}`} className="text-[#E67E22] font-bold hover:underline block truncate">
                 {companyInfo.businessEmail}
               </a>
             </li>
@@ -92,7 +125,7 @@ export const Footer: React.FC = () => {
             <li>
               WhatsApp:{" "}
               <a href={companyInfo.whatsappLink} target="_blank" rel="noopener noreferrer" className="text-[#25D366] font-bold hover:underline">
-                Chat on WhatsApp ({companyInfo.phone})
+                Chat on WhatsApp
               </a>
             </li>
           </ul>

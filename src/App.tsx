@@ -20,6 +20,11 @@ import { About } from "@/pages/About";
 import { Contact } from "@/pages/Contact";
 import { Combos } from "@/pages/Combos";
 import { FAQ } from "@/pages/FAQ";
+import { PrivacyPolicy } from "@/pages/PrivacyPolicy";
+import { TermsConditions } from "@/pages/TermsConditions";
+import { ShippingPolicy } from "@/pages/ShippingPolicy";
+import { ReturnRefundPolicy } from "@/pages/ReturnRefundPolicy";
+import { CancellationPolicy } from "@/pages/CancellationPolicy";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -52,6 +57,11 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/combos" element={<Combos />} />
             <Route path="/faq" element={<FAQ />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-conditions" element={<TermsConditions />} />
+            <Route path="/shipping-policy" element={<ShippingPolicy />} />
+            <Route path="/return-refund-policy" element={<ReturnRefundPolicy />} />
+            <Route path="/cancellation-policy" element={<CancellationPolicy />} />
           </Routes>
         </main>
         <Footer />
