@@ -129,7 +129,7 @@ export const About: React.FC = () => {
             </li>
             <li className="flex items-center gap-3">
               <span className="w-2 h-2 rounded-full bg-[#E67E22]" />
-              <span>Heritage Indian Wellness Digestifs</span>
+              <span>Heritage Indian Wellness Digestives</span>
             </li>
             <li className="flex items-center gap-3">
               <span className="w-2 h-2 rounded-full bg-[#E67E22]" />

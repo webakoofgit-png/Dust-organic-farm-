@@ -272,7 +272,7 @@ export const products: Product[] = [
     ],
     heritageTitle: "The Royal Paan Legacy",
     heritageQuote:
-      "For centuries, the royal Banarasi Paan was served in silver boxes to nobility as the ultimate after-meal digestif. Crafted with real betel leaf extract, fennel, and premium rose gulkand, every sip of DUST Banarasi Paan captures that exact traditional fresh digestif ritual.",
+      "For centuries, the royal Banarasi Paan was served in silver boxes to nobility as the ultimate after-meal Digestive. Crafted with real betel leaf extract, fennel, and premium rose gulkand, every sip of DUST Banarasi Paan captures that exact traditional fresh Digestive ritual.",
     images: [
       { src: "/paan_image_2.jpeg", alt: "DUST Banarasi Paan standup pouch front and back with nutritional info" },
       { src: "/paan_image_1.jpeg", alt: "DUST Banarasi Paan Digestive Shot authentic pack box and glass shot" },
@@ -335,7 +335,7 @@ export const collections: Collection[] = [
     titleLines: ["Heritage", "Wellness."],
     tagline: "Ancient rituals of the Indian table, distilled into modern shots.",
     description:
-      "Real betel leaf, rose-petal gulkand and warming spice — the royal digestif tradition of Banaras, ready in a glass.",
+      "Real betel leaf, rose-petal gulkand and warming spice — the royal Digestive tradition of Banaras, ready in a glass.",
     meta: [
       { label: "Serving Format", value: "Digestive Shots" },
       { label: "Per Sachet", value: "Makes 2 Shots" },
@@ -402,8 +402,8 @@ export const journalPosts: JournalPost[] = [
       "The galis of Banaras smell of gulkand and betel leaf. We trace the heritage of paan from street corner to modern wellness.",
     body: [
       "In the royal courts of old Banaras, dining was not merely sustenance; it was an elaborate ritual that concluded with the presentation of paan in silver boxes.",
-      "This final mouth freshener and digestif was a sign of hospitality, slow indulgence, and cellular care — a tradition that never really left the galis of the old city.",
-      "DUST Banarasi Paan revives this heritage digestif: spray-dried betel leaf extract, premium rose petal preserve, cardamom, and prebiotic fiber inulin — the royal freshness of Banaras, instantly, wherever you are.",
+      "This final mouth freshener and Digestive was a sign of hospitality, slow indulgence, and cellular care — a tradition that never really left the galis of the old city.",
+      "DUST Banarasi Paan revives this heritage Digestive: spray-dried betel leaf extract, premium rose petal preserve, cardamom, and prebiotic fiber inulin — the royal freshness of Banaras, instantly, wherever you are.",
     ],
   },
   {
