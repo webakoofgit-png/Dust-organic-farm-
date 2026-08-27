@@ -28,6 +28,7 @@ import { CancellationPolicy } from "@/pages/CancellationPolicy";
 import { OrderConfirmation } from "@/pages/OrderConfirmation";
 import { OrderTracking } from "@/pages/OrderTracking";
 import { Account } from "@/pages/Account";
+import { Admin } from "@/pages/Admin";
 import { FirstOrderModal } from "@/components/cinematic/FirstOrderModal";
 
 function ScrollToTop() {
@@ -69,6 +70,7 @@ export default function App() {
             <Route path="/order-confirmation" element={<OrderConfirmation />} />
             <Route path="/order-tracking" element={<OrderTracking />} />
             <Route path="/account" element={<Account />} />
+            <Route path="/admin" element={<Admin />} />
           </Routes>
         </main>
         <Footer />
