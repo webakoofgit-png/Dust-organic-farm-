@@ -1,27 +1,67 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { User, Package, MapPin, Heart, LogOut, ArrowUpRight, Truck, CheckCircle2 } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { User as UserIcon, Package, MapPin, Heart, LogOut, ArrowUpRight, Truck, CheckCircle2, Lock } from "lucide-react";
 import { companyInfo } from "@/lib/data";
+import { useAuthStore } from "@/lib/auth-store";
 
 export const Account: React.FC = () => {
+  const navigate = useNavigate();
+  const { user, isAuthenticated, logout, openAuthModal } = useAuthStore();
   const [activeTab, setActiveTab] = useState<"orders" | "profile" | "addresses">("orders");
 
-  const mockOrders = [
-    {
-      id: "DST-8806-9482",
-      date: "26 August 2026",
-      total: 647,
-      status: "In Transit",
-      items: "2× Kacha Aam Powder + 1× Banarasi Paan Box",
-    },
-    {
-      id: "DST-8806-3810",
-      date: "12 August 2026",
-      total: 398,
-      status: "Delivered",
-      items: "2× Kacha Aam Instant Refreshment Powder",
-    },
-  ];
+  if (!isAuthenticated || !user) {
+    return (
+      <div className="pt-32 pb-24 px-4 sm:px-8 md:px-12 lg:px-16 w-full min-h-screen bg-[#F6F5F0] text-[#0E382E] flex items-center justify-center">
+        <div className="max-w-md w-full bg-white p-8 sm:p-12 rounded-3xl border border-[#74B487]/40 shadow-xl text-center space-y-4">
+          <div className="w-16 h-16 bg-[#E8F1E9] text-[#E67E22] rounded-full flex items-center justify-center mx-auto border-2 border-[#74B487]/50 shadow-md">
+            <Lock className="w-8 h-8" />
+          </div>
+          <h2 className="text-2xl font-extrabold text-[#0E382E]">
+            Account Log In Required
+          </h2>
+          <p className="text-xs text-[#1F684B]">
+            Please log in or create an account to view your order history and saved addresses.
+          </p>
+          <div className="pt-2 flex flex-col gap-3">
+            <button
+              onClick={() => openAuthModal("login")}
+              className="btn-dust-orange py-3 text-white font-extrabold text-xs uppercase tracking-wider rounded-full shadow-md"
+            >
+              Log In to Account
+            </button>
+            <button
+              onClick={() => openAuthModal("signup")}
+              className="bg-[#0E382E] text-white hover:bg-[#1F684B] py-3 font-extrabold text-xs uppercase tracking-wider rounded-full shadow-md transition-colors"
+            >
+              Create New Account
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  const userInitial = user.name ? user.name.charAt(0).toUpperCase() : "U";
+
+  const userOrders =
+    user.email === "rajesh.kumar@example.com"
+      ? [
+          {
+            id: "DST-8806-9482",
+            date: "26 August 2026",
+            total: 647,
+            status: "In Transit",
+            items: "2× Kacha Aam Powder + 1× Banarasi Paan Box",
+          },
+          {
+            id: "DST-8806-3810",
+            date: "12 August 2026",
+            total: 398,
+            status: "Delivered",
+            items: "2× Kacha Aam Instant Refreshment Powder",
+          },
+        ]
+      : [];
 
   return (
     <div className="pt-32 pb-24 px-4 sm:px-8 md:px-12 lg:px-16 w-full min-h-screen bg-[#F6F5F0] text-[#0E382E]">
@@ -30,22 +70,28 @@ export const Account: React.FC = () => {
         <div className="bg-[#0E382E] text-white p-8 sm:p-10 rounded-3xl border border-[#74B487]/40 shadow-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <div className="w-16 h-16 rounded-full bg-[#E8F1E9] text-[#0E382E] flex items-center justify-center text-2xl font-extrabold border-2 border-[#E67E22]">
-              R
+              {userInitial}
             </div>
             <div>
               <span className="text-xs uppercase tracking-widest text-[#E67E22] font-bold">
                 WELCOME BACK
               </span>
               <h1 className="text-2xl sm:text-3xl font-extrabold text-white">
-                Rajesh Kumar
+                {user.name}
               </h1>
               <p className="text-xs text-[#E8F1E9] font-medium">
-                rajesh.kumar@example.com • +91 98765 43210
+                {user.email} • {user.phone}
               </p>
             </div>
           </div>
 
-          <button className="bg-[#1F684B] hover:bg-[#E67E22] text-white text-xs font-extrabold uppercase tracking-wider px-5 py-2.5 rounded-full inline-flex items-center gap-2 transition-colors">
+          <button
+            onClick={() => {
+              logout();
+              navigate("/");
+            }}
+            className="bg-[#1F684B] hover:bg-[#E67E22] text-white text-xs font-extrabold uppercase tracking-wider px-5 py-2.5 rounded-full inline-flex items-center gap-2 transition-colors shadow-md"
+          >
             <LogOut className="w-4 h-4" /> Sign Out
           </button>
         </div>
@@ -73,7 +119,7 @@ export const Account: React.FC = () => {
                   : "bg-white text-[#0E382E] hover:bg-[#E8F1E9]"
               }`}
             >
-              <User className="w-4 h-4 text-[#E67E22]" /> My Profile
+              <UserIcon className="w-4 h-4 text-[#E67E22]" /> My Profile
             </button>
 
             <button
@@ -88,7 +134,7 @@ export const Account: React.FC = () => {
             </button>
           </div>
 
-          {/* Tab Content Display */}
+          {/* Tab Content Panel */}
           <div className="lg:col-span-9">
             {activeTab === "orders" && (
               <div className="bg-white p-8 rounded-3xl border border-[#74B487]/40 shadow-sm space-y-6">
@@ -96,47 +142,67 @@ export const Account: React.FC = () => {
                   Your Recent Orders
                 </h3>
 
-                <div className="space-y-4">
-                  {mockOrders.map((order) => (
-                    <div
-                      key={order.id}
-                      className="p-6 bg-[#F6F5F0] rounded-2xl border border-[#74B487]/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
-                    >
-                      <div className="space-y-1">
-                        <div className="flex items-center gap-2">
-                          <span className="font-mono text-xs font-extrabold text-[#0E382E]">
-                            {order.id}
-                          </span>
-                          <span
-                            className={`text-[10px] font-extrabold px-2.5 py-0.5 rounded-full ${
-                              order.status === "Delivered"
-                                ? "bg-[#25D366]/20 text-[#0E382E]"
-                                : "bg-[#E67E22]/20 text-[#E67E22]"
-                            }`}
-                          >
-                            {order.status}
-                          </span>
-                        </div>
-                        <p className="text-xs text-[#1F684B] font-semibold">{order.items}</p>
-                        <p className="text-[11px] text-[#74B487] font-medium">Placed on {order.date}</p>
-                      </div>
-
-                      <div className="flex items-center gap-3 shrink-0">
-                        <div className="text-right pr-2">
-                          <span className="text-xs text-[#1F684B] font-medium block">Total Paid</span>
-                          <span className="text-lg font-extrabold text-[#0E382E]">₹{order.total}</span>
-                        </div>
-
-                        <Link
-                          to={`/order-confirmation?id=${order.id}`}
-                          className="btn-dust-orange px-4 py-2 text-white font-extrabold text-xs uppercase tracking-wider rounded-xl inline-flex items-center gap-1 shadow-xs"
-                        >
-                          View Invoice <ArrowUpRight className="w-3.5 h-3.5" />
-                        </Link>
-                      </div>
+                {userOrders.length === 0 ? (
+                  <div className="text-center py-12 px-4 space-y-4 bg-[#F6F5F0] rounded-2xl border border-[#74B487]/30">
+                    <div className="w-16 h-16 bg-[#E8F1E9] text-[#E67E22] rounded-full flex items-center justify-center mx-auto border-2 border-[#74B487]/40 shadow-sm">
+                      <Package className="w-8 h-8" />
                     </div>
-                  ))}
-                </div>
+                    <div className="space-y-1">
+                      <h4 className="text-lg font-extrabold text-[#0E382E]">No Orders Placed Yet</h4>
+                      <p className="text-xs text-[#1F684B] max-w-sm mx-auto font-medium">
+                        You haven't placed any orders yet. Explore our handcrafted herbal & fruit powders to experience pure wellness!
+                      </p>
+                    </div>
+                    <Link
+                      to="/shop"
+                      className="btn-dust-orange px-6 py-3.5 text-white font-extrabold text-xs uppercase tracking-widest rounded-full inline-flex items-center gap-2 shadow-md hover:scale-105 transition-all"
+                    >
+                      Explore Product Catalogue <ArrowUpRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                ) : (
+                  <div className="space-y-4">
+                    {userOrders.map((order) => (
+                      <div
+                        key={order.id}
+                        className="p-6 bg-[#F6F5F0] rounded-2xl border border-[#74B487]/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+                      >
+                        <div className="space-y-1">
+                          <div className="flex items-center gap-2">
+                            <span className="font-mono text-xs font-extrabold text-[#0E382E]">
+                              {order.id}
+                            </span>
+                            <span
+                              className={`text-[10px] font-extrabold px-2.5 py-0.5 rounded-full ${
+                                order.status === "Delivered"
+                                  ? "bg-[#25D366]/20 text-[#0E382E]"
+                                  : "bg-[#E67E22]/20 text-[#E67E22]"
+                              }`}
+                            >
+                              {order.status}
+                            </span>
+                          </div>
+                          <p className="text-xs text-[#1F684B] font-semibold">{order.items}</p>
+                          <p className="text-[11px] text-[#74B487] font-medium">Placed on {order.date}</p>
+                        </div>
+
+                        <div className="flex items-center gap-3 shrink-0">
+                          <div className="text-right pr-2">
+                            <span className="text-xs text-[#1F684B] font-medium block">Total Paid</span>
+                            <span className="text-lg font-extrabold text-[#0E382E]">₹{order.total}</span>
+                          </div>
+
+                          <Link
+                            to={`/order-confirmation?id=${order.id}`}
+                            className="btn-dust-orange px-4 py-2 text-white font-extrabold text-xs uppercase tracking-wider rounded-xl inline-flex items-center gap-1 shadow-xs"
+                          >
+                            View Invoice <ArrowUpRight className="w-3.5 h-3.5" />
+                          </Link>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             )}
 
@@ -151,7 +217,7 @@ export const Account: React.FC = () => {
                     <label className="block text-[#74B487] font-bold mb-1">Full Name</label>
                     <input
                       type="text"
-                      defaultValue="Rajesh Kumar"
+                      defaultValue={user.name}
                       className="w-full bg-[#F6F5F0] border border-[#74B487]/40 rounded-xl p-3 text-[#0E382E] font-semibold"
                     />
                   </div>
@@ -159,7 +225,7 @@ export const Account: React.FC = () => {
                     <label className="block text-[#74B487] font-bold mb-1">Email Address</label>
                     <input
                       type="email"
-                      defaultValue="rajesh.kumar@example.com"
+                      defaultValue={user.email}
                       className="w-full bg-[#F6F5F0] border border-[#74B487]/40 rounded-xl p-3 text-[#0E382E] font-semibold"
                     />
                   </div>
@@ -167,7 +233,7 @@ export const Account: React.FC = () => {
                     <label className="block text-[#74B487] font-bold mb-1">Mobile Number</label>
                     <input
                       type="tel"
-                      defaultValue="+91 98765 43210"
+                      defaultValue={user.phone}
                       className="w-full bg-[#F6F5F0] border border-[#74B487]/40 rounded-xl p-3 text-[#0E382E] font-semibold"
                     />
                   </div>

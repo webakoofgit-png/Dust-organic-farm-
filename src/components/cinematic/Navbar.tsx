@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Search, ShoppingBag, Heart, Menu, X, Sparkles, Phone, User } from "lucide-react";
 import { useCartStore } from "@/lib/cart-store";
+import { useAuthStore } from "@/lib/auth-store";
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
+  const { user, isAuthenticated, openAuthModal } = useAuthStore();
   const {
     getTotalItems,
     toggleCart,
@@ -157,15 +159,27 @@ export const Navbar: React.FC = () => {
               <Search className="w-5 h-5" />
             </button>
 
-            {/* User Account Link */}
-            <Link
-              to="/account"
-              className="p-2 text-[#0E382E] hover:text-[#E67E22] transition-colors rounded-full hover:bg-[#E8F1E9]"
-              title="My Account & Orders"
-              aria-label="My Account"
-            >
-              <User className="w-5 h-5" />
-            </Link>
+            {/* User Account Link / Auth Modal Trigger */}
+            {isAuthenticated ? (
+              <Link
+                to="/account"
+                className="p-2 text-[#0E382E] hover:text-[#E67E22] transition-colors rounded-full hover:bg-[#E8F1E9] relative"
+                title={`Logged in as ${user?.name || "Account"}`}
+                aria-label="My Account"
+              >
+                <User className="w-5 h-5 text-[#0E382E]" />
+                <span className="absolute top-1 right-1 bg-[#25D366] w-2.5 h-2.5 rounded-full border border-white"></span>
+              </Link>
+            ) : (
+              <button
+                onClick={() => openAuthModal("login")}
+                className="p-2 text-[#0E382E] hover:text-[#E67E22] transition-colors rounded-full hover:bg-[#E8F1E9]"
+                title="Log In / Sign Up"
+                aria-label="Log In / Sign Up"
+              >
+                <User className="w-5 h-5" />
+              </button>
+            )}
 
             {/* Wishlist Link */}
             <Link

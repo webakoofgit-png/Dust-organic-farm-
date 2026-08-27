@@ -29,7 +29,9 @@ import { OrderConfirmation } from "@/pages/OrderConfirmation";
 import { OrderTracking } from "@/pages/OrderTracking";
 import { Account } from "@/pages/Account";
 import { Admin } from "@/pages/Admin";
+import { Login } from "@/pages/Login";
 import { FirstOrderModal } from "@/components/cinematic/FirstOrderModal";
+import { AuthModal } from "@/components/cinematic/AuthModal";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -71,6 +73,7 @@ export default function App() {
             <Route path="/order-tracking" element={<OrderTracking />} />
             <Route path="/account" element={<Account />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </main>
         <Footer />
@@ -79,6 +82,7 @@ export default function App() {
         <SearchOverlay />
         <WhatsAppWidget />
         <FirstOrderModal />
+        <AuthModal />
       </div>
     </BrowserRouter>
   );
