@@ -124,6 +124,32 @@ app.post("/api/auth/login", async (req, res) => {
   }
 });
 
+// POST /api/admin/login - Authenticate Admin Portal Users
+app.post("/api/admin/login", async (req, res) => {
+  const { email, password } = req.body;
+
+  if (email.toLowerCase() === "admin@dustofficial.com" && password === "DustAdmin@2026") {
+    return res.json({
+      success: true,
+      user: { id: 1, name: "Everest Edges Admin", email: "admin@dustofficial.com", role: "admin" },
+    });
+  }
+
+  try {
+    const users = await query("SELECT * FROM users WHERE email = ? AND role = 'admin'", [email]);
+    if (users.length === 0 || users[0].password_hash !== password) {
+      return res.status(401).json({ success: false, message: "Invalid Admin email or password." });
+    }
+
+    return res.json({
+      success: true,
+      user: { id: users[0].id, name: users[0].full_name, email: users[0].email, role: "admin" },
+    });
+  } catch (err) {
+    return res.status(500).json({ success: false, message: "Database error: " + err.message });
+  }
+});
+
 // GET /api/users - Fetch all registered users in MySQL
 app.get("/api/users", async (req, res) => {
   try {

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate, Navigate } from "react-router-dom";
 import {
   LayoutDashboard,
   Package,
@@ -17,10 +18,19 @@ import {
   FileText,
   Save,
   Trash2,
+  LogOut,
 } from "lucide-react";
 import { products as initialProducts, companyInfo, Product } from "@/lib/data";
+import { useAdminAuthStore } from "@/lib/admin-auth-store";
 
 export const Admin: React.FC = () => {
+  const navigate = useNavigate();
+  const { isAdminLoggedIn, adminLogout, adminUser } = useAdminAuthStore();
+
+  if (!isAdminLoggedIn) {
+    return <Navigate to="/admin-login" replace />;
+  }
+
   const [activeTab, setActiveTab] = useState<
     "overview" | "products" | "orders" | "distributors" | "inquiries"
   >("overview");
@@ -116,16 +126,27 @@ export const Admin: React.FC = () => {
               <Building2 className="w-4 h-4" /> CENTRAL ADMIN CMS PORTAL
             </span>
             <h1 className="text-3xl sm:text-4xl font-extrabold text-white">
-              DUST™ Operations Management
+              DUST Operations Management
             </h1>
             <p className="text-xs text-[#E8F1E9] mt-1 font-semibold">
               Parented by <strong>{companyInfo.name}</strong> • CIN: {companyInfo.cin}
             </p>
           </div>
 
-          <div className="bg-[#1F684B] px-4 py-2 rounded-2xl text-right text-xs">
-            <span className="text-[#E67E22] font-bold block uppercase">Database Status</span>
-            <span className="text-white font-extrabold">Hostinger / MySQL Connected</span>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+            <div className="bg-[#1F684B] px-4 py-2 rounded-2xl text-right text-xs">
+              <span className="text-[#E67E22] font-bold block uppercase">Admin Logged In</span>
+              <span className="text-white font-extrabold">{adminUser?.name || "Master Admin"}</span>
+            </div>
+            <button
+              onClick={() => {
+                adminLogout();
+                navigate("/admin-login");
+              }}
+              className="bg-[#E67E22] hover:bg-[#d67018] text-white px-4 py-2.5 rounded-2xl text-xs font-extrabold uppercase tracking-wider inline-flex items-center gap-1.5 transition-colors shadow-md"
+            >
+              <LogOut className="w-4 h-4" /> Sign Out
+            </button>
           </div>
         </div>
 
@@ -133,44 +154,40 @@ export const Admin: React.FC = () => {
         <div className="flex flex-wrap gap-3 border-b border-[#74B487]/30 pb-4">
           <button
             onClick={() => setActiveTab("overview")}
-            className={`px-6 py-3 rounded-full font-extrabold text-xs uppercase tracking-wider inline-flex items-center gap-2 transition-all ${
-              activeTab === "overview"
+            className={`px-6 py-3 rounded-full font-extrabold text-xs uppercase tracking-wider inline-flex items-center gap-2 transition-all ${activeTab === "overview"
                 ? "bg-[#0E382E] text-white shadow-md"
                 : "bg-white text-[#0E382E] hover:bg-[#E8F1E9]"
-            }`}
+              }`}
           >
             <LayoutDashboard className="w-4 h-4 text-[#E67E22]" /> Overview KPIs
           </button>
 
           <button
             onClick={() => setActiveTab("products")}
-            className={`px-6 py-3 rounded-full font-extrabold text-xs uppercase tracking-wider inline-flex items-center gap-2 transition-all ${
-              activeTab === "products"
+            className={`px-6 py-3 rounded-full font-extrabold text-xs uppercase tracking-wider inline-flex items-center gap-2 transition-all ${activeTab === "products"
                 ? "bg-[#0E382E] text-white shadow-md"
                 : "bg-white text-[#0E382E] hover:bg-[#E8F1E9]"
-            }`}
+              }`}
           >
             <Package className="w-4 h-4 text-[#E67E22]" /> Product Catalog ({productsList.length})
           </button>
 
           <button
             onClick={() => setActiveTab("orders")}
-            className={`px-6 py-3 rounded-full font-extrabold text-xs uppercase tracking-wider inline-flex items-center gap-2 transition-all ${
-              activeTab === "orders"
+            className={`px-6 py-3 rounded-full font-extrabold text-xs uppercase tracking-wider inline-flex items-center gap-2 transition-all ${activeTab === "orders"
                 ? "bg-[#0E382E] text-white shadow-md"
                 : "bg-white text-[#0E382E] hover:bg-[#E8F1E9]"
-            }`}
+              }`}
           >
             <ShoppingBag className="w-4 h-4 text-[#E67E22]" /> Customer Orders ({orders.length})
           </button>
 
           <button
             onClick={() => setActiveTab("distributors")}
-            className={`px-6 py-3 rounded-full font-extrabold text-xs uppercase tracking-wider inline-flex items-center gap-2 transition-all ${
-              activeTab === "distributors"
+            className={`px-6 py-3 rounded-full font-extrabold text-xs uppercase tracking-wider inline-flex items-center gap-2 transition-all ${activeTab === "distributors"
                 ? "bg-[#0E382E] text-white shadow-md"
                 : "bg-white text-[#0E382E] hover:bg-[#E8F1E9]"
-            }`}
+              }`}
           >
             <Building2 className="w-4 h-4 text-[#E67E22]" /> B2B Leads ({distributorLeads.length})
           </button>
