@@ -151,7 +151,7 @@ export const Contact: React.FC = () => {
                   Message Received!
                 </h3>
                 <p className="text-xs text-[#1F684B] max-w-md mx-auto">
-                  Thank you for contacting DUST™. Our customer care team will respond to <strong>{formData.email}</strong> within 24 hours.
+                  Thank you for contacting DUST. Our customer care team will respond to <strong>{formData.email}</strong> within 24 hours.
                 </p>
               </div>
             ) : (

@@ -54,7 +54,7 @@ const reviewsData: Review[] = [
     date: "Verified Buyer • 2 weeks ago",
     productName: "Banarasi Paan Digestive Shots",
     comment:
-      "As a physician, I appreciate real betel leaf solids and natural prebiotic fiber. Superb ayurvedic digestif after heavy dinners.",
+      "As a physician, I appreciate real betel leaf solids and natural prebiotic fiber. Superb ayurvedic Digestive after heavy dinners.",
     mediaType: "video",
     mediaUrl: paanPosterImg,
     videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-pour-of-a-fresh-herbal-tea-42171-large.mp4",
@@ -223,9 +223,8 @@ export const CustomerReviewsCarousel: React.FC = () => {
                 <button
                   key={idx}
                   onClick={() => setCurrentIndex(idx)}
-                  className={`h-2.5 rounded-full transition-all ${
-                    idx === currentIndex ? "w-8 bg-[#E67E22]" : "w-2.5 bg-white/40 hover:bg-white/70"
-                  }`}
+                  className={`h-2.5 rounded-full transition-all ${idx === currentIndex ? "w-8 bg-[#E67E22]" : "w-2.5 bg-white/40 hover:bg-white/70"
+                    }`}
                   aria-label={`Go to slide ${idx + 1}`}
                 />
               ))}

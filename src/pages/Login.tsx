@@ -46,7 +46,7 @@ export const Login: React.FC = () => {
             <Lock className="w-7 h-7" />
           </div>
           <h1 className="text-3xl font-extrabold text-[#0E382E]">
-            {isSignup ? "Sign Up for DUST™" : "Log In to DUST™"}
+            {isSignup ? "Sign Up for DUST" : "Log In to DUST"}
           </h1>
           <p className="text-xs text-[#1F684B] font-medium">
             {isSignup

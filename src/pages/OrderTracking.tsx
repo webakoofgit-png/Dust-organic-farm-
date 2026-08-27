@@ -27,7 +27,7 @@ export const OrderTracking: React.FC = () => {
             <Truck className="w-4 h-4" /> LIVE SHIPMENT TRACKING
           </span>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-[#0E382E]">
-            Track Your DUST™ Order
+            Track Your DUST Order
           </h1>
           <p className="text-xs text-[#1F684B] max-w-md mx-auto">
             Enter your Order ID (e.g. DST-8806-9482) or registered 10-digit mobile number to track real-time delivery status.
@@ -85,13 +85,12 @@ export const OrderTracking: React.FC = () => {
                 {trackingSteps.map((step, idx) => (
                   <div key={idx} className="relative flex items-start gap-4">
                     <div
-                      className={`absolute -left-6 sm:-left-8 top-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs font-bold shrink-0 z-10 ${
-                        step.status === "completed"
+                      className={`absolute -left-6 sm:-left-8 top-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs font-bold shrink-0 z-10 ${step.status === "completed"
                           ? "bg-[#0E382E] text-white"
                           : step.status === "active"
-                          ? "bg-[#E67E22] text-white animate-pulse"
-                          : "bg-[#F6F5F0] text-stone-400 border border-stone-300"
-                      }`}
+                            ? "bg-[#E67E22] text-white animate-pulse"
+                            : "bg-[#F6F5F0] text-stone-400 border border-stone-300"
+                        }`}
                     >
                       {step.status === "completed" ? (
                         <CheckCircle2 className="w-4 h-4 text-[#25D366]" />

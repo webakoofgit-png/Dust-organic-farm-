@@ -81,7 +81,7 @@ export const Admin: React.FC = () => {
 
   // State 4: Homepage Banners
   const [banners, setBanners] = useState([
-    { id: 1, title: "Royal Banarasi Paan Digestif", subtitle: "Real Betel Leaf & Gulkand After-Meal Shot", cta: "Shop Digestifs", status: "Active" },
+    { id: 1, title: "Royal Banarasi Paan Digestive", subtitle: "Real Betel Leaf & Gulkand After-Meal Shot", cta: "Shop Digestives", status: "Active" },
     { id: 2, title: "Pure Spray-Dried Fruit Powders", subtitle: "100% Natural Indian Street Cooler Flavors", cta: "Explore Range", status: "Active" },
   ]);
 
@@ -98,7 +98,7 @@ export const Admin: React.FC = () => {
   ]);
 
   const [recipes, setRecipes] = useState([
-    { id: 1, title: "5-Second Chilled Banarasi Paan Digestif", prep: "5 Secs", product: "Banarasi Paan Shot Box" },
+    { id: 1, title: "5-Second Chilled Banarasi Paan Digestive", prep: "5 Secs", product: "Banarasi Paan Shot Box" },
     { id: 2, title: "Royal Gulkand & Paan Mocktail", prep: "2 Mins", product: "Banarasi Paan Digestive Shots" },
   ]);
 
@@ -252,112 +252,102 @@ export const Admin: React.FC = () => {
         <div className="flex flex-wrap gap-2.5 border-b border-[#74B487]/30 pb-4">
           <button
             onClick={() => setActiveTab("reports")}
-            className={`px-5 py-2.5 rounded-full font-extrabold text-xs uppercase tracking-wider inline-flex items-center gap-2 transition-all ${
-              activeTab === "reports"
-                ? "bg-[#0E382E] text-white shadow-md"
-                : "bg-white text-[#0E382E] hover:bg-[#E8F1E9]"
-            }`}
+            className={`px-5 py-2.5 rounded-full font-extrabold text-xs uppercase tracking-wider inline-flex items-center gap-2 transition-all ${activeTab === "reports"
+              ? "bg-[#0E382E] text-white shadow-md"
+              : "bg-white text-[#0E382E] hover:bg-[#E8F1E9]"
+              }`}
           >
-            <TrendingUp className="w-4 h-4 text-[#E67E22]" /> Sales Reports (#16)
+            <TrendingUp className="w-4 h-4 text-[#E67E22]" /> Sales Reports
           </button>
 
           <button
             onClick={() => setActiveTab("products")}
-            className={`px-5 py-2.5 rounded-full font-extrabold text-xs uppercase tracking-wider inline-flex items-center gap-2 transition-all ${
-              activeTab === "products"
-                ? "bg-[#0E382E] text-white shadow-md"
-                : "bg-white text-[#0E382E] hover:bg-[#E8F1E9]"
-            }`}
+            className={`px-5 py-2.5 rounded-full font-extrabold text-xs uppercase tracking-wider inline-flex items-center gap-2 transition-all ${activeTab === "products"
+              ? "bg-[#0E382E] text-white shadow-md"
+              : "bg-white text-[#0E382E] hover:bg-[#E8F1E9]"
+              }`}
           >
-            <Package className="w-4 h-4 text-[#E67E22]" /> Products & Images (#1, #11)
+            <Package className="w-4 h-4 text-[#E67E22]" /> Products & Images
           </button>
 
           <button
             onClick={() => setActiveTab("categories")}
-            className={`px-5 py-2.5 rounded-full font-extrabold text-xs uppercase tracking-wider inline-flex items-center gap-2 transition-all ${
-              activeTab === "categories"
-                ? "bg-[#0E382E] text-white shadow-md"
-                : "bg-white text-[#0E382E] hover:bg-[#E8F1E9]"
-            }`}
+            className={`px-5 py-2.5 rounded-full font-extrabold text-xs uppercase tracking-wider inline-flex items-center gap-2 transition-all ${activeTab === "categories"
+              ? "bg-[#0E382E] text-white shadow-md"
+              : "bg-white text-[#0E382E] hover:bg-[#E8F1E9]"
+              }`}
           >
-            <Building2 className="w-4 h-4 text-[#E67E22]" /> Categories & Variants (#2, #3)
+            <Building2 className="w-4 h-4 text-[#E67E22]" /> Categories & Variants
           </button>
 
           <button
             onClick={() => setActiveTab("inventory")}
-            className={`px-5 py-2.5 rounded-full font-extrabold text-xs uppercase tracking-wider inline-flex items-center gap-2 transition-all ${
-              activeTab === "inventory"
-                ? "bg-[#0E382E] text-white shadow-md"
-                : "bg-white text-[#0E382E] hover:bg-[#E8F1E9]"
-            }`}
+            className={`px-5 py-2.5 rounded-full font-extrabold text-xs uppercase tracking-wider inline-flex items-center gap-2 transition-all ${activeTab === "inventory"
+              ? "bg-[#0E382E] text-white shadow-md"
+              : "bg-white text-[#0E382E] hover:bg-[#E8F1E9]"
+              }`}
           >
-            <DollarSign className="w-4 h-4 text-[#E67E22]" /> Price & Stock Control (#4, #5)
+            <DollarSign className="w-4 h-4 text-[#E67E22]" /> Price & Stock Control
           </button>
 
           <button
             onClick={() => setActiveTab("orders")}
-            className={`px-5 py-2.5 rounded-full font-extrabold text-xs uppercase tracking-wider inline-flex items-center gap-2 transition-all ${
-              activeTab === "orders"
-                ? "bg-[#0E382E] text-white shadow-md"
-                : "bg-white text-[#0E382E] hover:bg-[#E8F1E9]"
-            }`}
+            className={`px-5 py-2.5 rounded-full font-extrabold text-xs uppercase tracking-wider inline-flex items-center gap-2 transition-all ${activeTab === "orders"
+              ? "bg-[#0E382E] text-white shadow-md"
+              : "bg-white text-[#0E382E] hover:bg-[#E8F1E9]"
+              }`}
           >
-            <ShoppingBag className="w-4 h-4 text-[#E67E22]" /> Order Fulfillment (#6)
+            <ShoppingBag className="w-4 h-4 text-[#E67E22]" /> Order Fulfillment
           </button>
 
           <button
             onClick={() => setActiveTab("customers")}
-            className={`px-5 py-2.5 rounded-full font-extrabold text-xs uppercase tracking-wider inline-flex items-center gap-2 transition-all ${
-              activeTab === "customers"
-                ? "bg-[#0E382E] text-white shadow-md"
-                : "bg-white text-[#0E382E] hover:bg-[#E8F1E9]"
-            }`}
+            className={`px-5 py-2.5 rounded-full font-extrabold text-xs uppercase tracking-wider inline-flex items-center gap-2 transition-all ${activeTab === "customers"
+              ? "bg-[#0E382E] text-white shadow-md"
+              : "bg-white text-[#0E382E] hover:bg-[#E8F1E9]"
+              }`}
           >
-            <Users className="w-4 h-4 text-[#E67E22]" /> Customer Directory (#7)
+            <Users className="w-4 h-4 text-[#E67E22]" /> Customer Directory
           </button>
 
           <button
             onClick={() => setActiveTab("coupons")}
-            className={`px-5 py-2.5 rounded-full font-extrabold text-xs uppercase tracking-wider inline-flex items-center gap-2 transition-all ${
-              activeTab === "coupons"
-                ? "bg-[#0E382E] text-white shadow-md"
-                : "bg-white text-[#0E382E] hover:bg-[#E8F1E9]"
-            }`}
+            className={`px-5 py-2.5 rounded-full font-extrabold text-xs uppercase tracking-wider inline-flex items-center gap-2 transition-all ${activeTab === "coupons"
+              ? "bg-[#0E382E] text-white shadow-md"
+              : "bg-white text-[#0E382E] hover:bg-[#E8F1E9]"
+              }`}
           >
-            <Ticket className="w-4 h-4 text-[#E67E22]" /> Coupons & Offers (#8, #9)
+            <Ticket className="w-4 h-4 text-[#E67E22]" /> Coupons & Offers
           </button>
 
           <button
             onClick={() => setActiveTab("banners")}
-            className={`px-5 py-2.5 rounded-full font-extrabold text-xs uppercase tracking-wider inline-flex items-center gap-2 transition-all ${
-              activeTab === "banners"
-                ? "bg-[#0E382E] text-white shadow-md"
-                : "bg-white text-[#0E382E] hover:bg-[#E8F1E9]"
-            }`}
+            className={`px-5 py-2.5 rounded-full font-extrabold text-xs uppercase tracking-wider inline-flex items-center gap-2 transition-all ${activeTab === "banners"
+              ? "bg-[#0E382E] text-white shadow-md"
+              : "bg-white text-[#0E382E] hover:bg-[#E8F1E9]"
+              }`}
           >
-            <ImageIcon className="w-4 h-4 text-[#E67E22]" /> Homepage Banners (#10)
+            <ImageIcon className="w-4 h-4 text-[#E67E22]" /> Homepage Banners
           </button>
 
           <button
             onClick={() => setActiveTab("content")}
-            className={`px-5 py-2.5 rounded-full font-extrabold text-xs uppercase tracking-wider inline-flex items-center gap-2 transition-all ${
-              activeTab === "content"
-                ? "bg-[#0E382E] text-white shadow-md"
-                : "bg-white text-[#0E382E] hover:bg-[#E8F1E9]"
-            }`}
+            className={`px-5 py-2.5 rounded-full font-extrabold text-xs uppercase tracking-wider inline-flex items-center gap-2 transition-all ${activeTab === "content"
+              ? "bg-[#0E382E] text-white shadow-md"
+              : "bg-white text-[#0E382E] hover:bg-[#E8F1E9]"
+              }`}
           >
-            <BookOpen className="w-4 h-4 text-[#E67E22]" /> Reviews, Blogs & Recipes (#12, #13, #14)
+            <BookOpen className="w-4 h-4 text-[#E67E22]" /> Reviews, Blogs & Recipes
           </button>
 
           <button
             onClick={() => setActiveTab("leads")}
-            className={`px-5 py-2.5 rounded-full font-extrabold text-xs uppercase tracking-wider inline-flex items-center gap-2 transition-all ${
-              activeTab === "leads"
-                ? "bg-[#0E382E] text-white shadow-md"
-                : "bg-white text-[#0E382E] hover:bg-[#E8F1E9]"
-            }`}
+            className={`px-5 py-2.5 rounded-full font-extrabold text-xs uppercase tracking-wider inline-flex items-center gap-2 transition-all ${activeTab === "leads"
+              ? "bg-[#0E382E] text-white shadow-md"
+              : "bg-white text-[#0E382E] hover:bg-[#E8F1E9]"
+              }`}
           >
-            <MessageSquare className="w-4 h-4 text-[#E67E22]" /> Inquiries & B2B Leads (#15)
+            <MessageSquare className="w-4 h-4 text-[#E67E22]" /> Inquiries & B2B Leads
           </button>
         </div>
 
@@ -397,7 +387,7 @@ export const Admin: React.FC = () => {
                   <span className="text-xs uppercase font-extrabold tracking-wider">Top Selling SKU</span>
                   <Package className="w-5 h-5 text-[#E67E22]" />
                 </div>
-                <div className="text-xl font-extrabold text-[#0E382E]">Banarasi Paan Digestif</div>
+                <div className="text-xl font-extrabold text-[#0E382E]">Banarasi Paan Digestive</div>
                 <p className="text-[11px] text-[#E67E22] font-bold">78% of Total Sales Revenue</p>
               </div>
             </div>
@@ -517,7 +507,7 @@ export const Admin: React.FC = () => {
                 <ul className="space-y-2 text-xs">
                   <li className="bg-white p-3 rounded-xl border border-[#74B487]/30 flex justify-between items-center">
                     <div>
-                      <p className="font-extrabold text-[#0E382E]">20g Digestif Pouch</p>
+                      <p className="font-extrabold text-[#0E382E]">20g Digestive Pouch</p>
                       <span className="text-[10px] text-[#74B487]">Makes 4 After-Meal Shots</span>
                     </div>
                     <span className="text-xs font-extrabold text-[#0E382E]">₹249</span>
@@ -781,7 +771,7 @@ export const Admin: React.FC = () => {
           <div className="bg-white p-8 rounded-3xl border border-[#74B487]/40 shadow-sm space-y-8">
             {/* Section 1: Customer Reviews Moderation */}
             <div className="space-y-4">
-              <h3 className="text-xl font-extrabold text-[#0E382E]">Customer Reviews Moderation (#12)</h3>
+              <h3 className="text-xl font-extrabold text-[#0E382E]">Customer Reviews Moderation</h3>
               <div className="space-y-3">
                 {reviews.map((rev) => (
                   <div key={rev.id} className="p-4 bg-[#F6F5F0] rounded-2xl border border-[#74B487]/30 flex justify-between items-center text-xs">
@@ -804,7 +794,7 @@ export const Admin: React.FC = () => {
             {/* Section 2: Blog Articles & Recipes */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-[#74B487]/30">
               <div className="space-y-3">
-                <h4 className="font-extrabold text-[#0E382E]">Wellness Blogs (#13)</h4>
+                <h4 className="font-extrabold text-[#0E382E]">Wellness Blogs</h4>
                 {blogs.map((b) => (
                   <div key={b.id} className="p-3.5 bg-[#F6F5F0] rounded-xl border border-[#74B487]/30 text-xs flex justify-between items-center">
                     <p className="font-bold text-[#0E382E]">{b.title}</p>
@@ -814,7 +804,7 @@ export const Admin: React.FC = () => {
               </div>
 
               <div className="space-y-3">
-                <h4 className="font-extrabold text-[#0E382E]">Product Recipes (#14)</h4>
+                <h4 className="font-extrabold text-[#0E382E]">Product Recipes</h4>
                 {recipes.map((r) => (
                   <div key={r.id} className="p-3.5 bg-[#F6F5F0] rounded-xl border border-[#74B487]/30 text-xs flex justify-between items-center">
                     <div>
@@ -891,7 +881,7 @@ export const Admin: React.FC = () => {
                   required
                   value={newProductName}
                   onChange={(e) => setNewProductName(e.target.value)}
-                  placeholder="e.g. Banarasi Paan Digestif Pack"
+                  placeholder="e.g. Banarasi Paan Digestive Pack"
                   className="w-full bg-[#F6F5F0] border border-[#74B487]/40 rounded-xl p-3 text-[#0E382E] font-semibold"
                 />
               </div>

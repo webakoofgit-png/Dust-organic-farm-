@@ -16,7 +16,7 @@ export const Combos: React.FC = () => {
             Combos & Variety Boxes
           </h1>
           <p className="text-sm text-[#E8F1E9] font-normal leading-relaxed">
-            Get the complete DUST™ taste experience. Multipacks, Digestive duos, and seasonal refreshment bundles at exclusive direct-to-consumer prices.
+            Get the complete DUST taste experience. Multipacks, Digestive duos, and seasonal refreshment bundles at exclusive direct-to-consumer prices.
           </p>
         </div>
       </div>

@@ -214,5 +214,5 @@ app.get("/api/health", async (req, res) => {
 
 const PORT = 5000;
 app.listen(PORT, () => {
-  console.log(`🚀 DUST™ Backend API Server running on http://localhost:${PORT}`);
+  console.log(`🚀 DUST Backend API Server running on http://localhost:${PORT}`);
 });

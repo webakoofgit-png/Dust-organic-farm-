@@ -22,7 +22,7 @@ export const PrivacyPolicy: React.FC = () => {
           <section className="space-y-2">
             <h2 className="text-lg font-extrabold text-[#0E382E]">1. Overview</h2>
             <p>
-              This Privacy Policy describes how <strong>{companyInfo.name}</strong> (CIN: {companyInfo.cin}) ("we", "us", "DUST™") collects, uses, and protects your personal information when you visit or make a purchase from <strong>{companyInfo.domain}</strong>.
+              This Privacy Policy describes how <strong>{companyInfo.name}</strong> (CIN: {companyInfo.cin}) ("we", "us", "DUST") collects, uses, and protects your personal information when you visit or make a purchase from <strong>{companyInfo.domain}</strong>.
             </p>
           </section>
 

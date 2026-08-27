@@ -75,7 +75,7 @@ export const Home: React.FC = () => {
             <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-[#74B487]/50 shadow-2xl flex items-center justify-center bg-[#0E382E] mb-2 shrink-0">
               <img
                 src="/logo.png"
-                alt="DUST™ Logo"
+                alt="DUST Logo"
                 className="w-full h-full object-cover scale-[1.38]"
               />
             </div>
@@ -196,7 +196,7 @@ export const Home: React.FC = () => {
       <section className="bg-[#E67E22] text-white py-3.5 overflow-hidden shadow-inner">
         <div className="flex gap-8 whitespace-nowrap animate-marquee font-extrabold text-xs tracking-[0.25em] uppercase">
           <span className="flex items-center gap-2">
-            <Award className="w-4 h-4" /> DUST™ — CHOICE OF MOTHERLAND
+            <Award className="w-4 h-4" /> DUST — CHOICE OF MOTHERLAND
           </span>
           <span>•</span>
           <span>100% REAL FRUIT POWDERS</span>
@@ -259,11 +259,10 @@ export const Home: React.FC = () => {
                   {/* Wishlist Button */}
                   <button
                     onClick={() => toggleWishlist(product.id)}
-                    className={`absolute top-4 right-4 p-3 rounded-full border transition-colors shadow-xs ${
-                      inWishlist
+                    className={`absolute top-4 right-4 p-3 rounded-full border transition-colors shadow-xs ${inWishlist
                         ? "bg-red-50 border-red-200 text-red-500"
                         : "bg-white border-[#74B487]/40 text-[#0E382E] hover:text-[#E67E22]"
-                    }`}
+                      }`}
                     aria-label="Wishlist"
                   >
                     <Heart className="w-4 h-4 fill-current" />

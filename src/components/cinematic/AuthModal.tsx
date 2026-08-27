@@ -76,8 +76,8 @@ export const AuthModal: React.FC = () => {
             <Lock className="w-6 h-6" />
           </div>
           <h2 className="text-2xl font-extrabold text-[#0E382E]">
-            {authView === "login" && "Welcome Back to DUST™"}
-            {authView === "signup" && "Create Your DUST™ Account"}
+            {authView === "login" && "Welcome Back to DUST"}
+            {authView === "signup" && "Create Your DUST Account"}
             {authView === "forgot" && "Reset Password"}
           </h2>
           <p className="text-xs text-[#1F684B] font-medium">
