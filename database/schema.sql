@@ -1,7 +1,9 @@
 -- =====================================================================
 -- DUST™ — Choice of Motherland (Everest Edges Pvt. Ltd.)
--- Complete Production Database Schema for MySQL / Hostinger phpMyAdmin
+-- Production Database Schema for MySQL / Hostinger phpMyAdmin
 -- CIN: U10309PN2026PTC258739 | GSTIN: 27AAJCE8999E1ZX
+-- Includes: Products, Categories, Variants, Orders, Users, Coupons, 
+--           Banners, Reviews, Blogs, Recipes, Contact & B2B Leads.
 -- =====================================================================
 
 CREATE DATABASE IF NOT EXISTS `dust_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -19,7 +21,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ---------------------------------------------------------------------
--- Table 2: Products
+-- Table 2: Products & Variants
 -- ---------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `products` (
   `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -33,9 +35,11 @@ CREATE TABLE IF NOT EXISTS `products` (
   `servings` VARCHAR(50) NOT NULL,
   `stock_qty` INT UNSIGNED DEFAULT 100,
   `image_url` VARCHAR(500) NOT NULL,
+  `gallery_images` TEXT NULL,
   `description` TEXT NOT NULL,
   `ingredients` TEXT NULL,
   `is_best_seller` TINYINT(1) DEFAULT 0,
+  `is_featured` TINYINT(1) DEFAULT 0,
   `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (`category_id`) REFERENCES `categories`(`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -93,7 +97,78 @@ CREATE TABLE IF NOT EXISTS `order_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ---------------------------------------------------------------------
--- Table 6: Distributor & B2B Leads
+-- Table 6: Coupons & Discounts
+-- ---------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `coupons` (
+  `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  `code` VARCHAR(50) NOT NULL UNIQUE,
+  `discount_type` ENUM('percentage', 'fixed') DEFAULT 'percentage',
+  `discount_value` DECIMAL(10, 2) NOT NULL,
+  `min_order_amount` DECIMAL(10, 2) DEFAULT 0.00,
+  `expiry_date` DATE NOT NULL,
+  `is_active` TINYINT(1) DEFAULT 1,
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ---------------------------------------------------------------------
+-- Table 7: Banners & Offers
+-- ---------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `banners` (
+  `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  `title` VARCHAR(255) NOT NULL,
+  `subtitle` VARCHAR(255) NULL,
+  `image_url` VARCHAR(500) NOT NULL,
+  `cta_link` VARCHAR(255) DEFAULT '/shop',
+  `cta_text` VARCHAR(100) DEFAULT 'Explore Now',
+  `is_active` TINYINT(1) DEFAULT 1,
+  `sort_order` INT DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ---------------------------------------------------------------------
+-- Table 8: Customer Reviews & Ratings
+-- ---------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `reviews` (
+  `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  `product_name` VARCHAR(255) NOT NULL DEFAULT 'Banarasi Paan Digestive Shots',
+  `customer_name` VARCHAR(150) NOT NULL,
+  `location` VARCHAR(150) NOT NULL,
+  `rating` INT UNSIGNED DEFAULT 5,
+  `comment` TEXT NOT NULL,
+  `media_type` ENUM('photo', 'video') DEFAULT 'photo',
+  `media_url` VARCHAR(500) NOT NULL,
+  `is_approved` TINYINT(1) DEFAULT 1,
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ---------------------------------------------------------------------
+-- Table 9: Blogs & Wellness Articles
+-- ---------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `blogs` (
+  `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  `slug` VARCHAR(150) NOT NULL UNIQUE,
+  `title` VARCHAR(255) NOT NULL,
+  `excerpt` TEXT NOT NULL,
+  `content` LONGTEXT NOT NULL,
+  `image_url` VARCHAR(500) NOT NULL,
+  `author` VARCHAR(100) DEFAULT 'DUST Wellness Team',
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ---------------------------------------------------------------------
+-- Table 10: Recipes & Mixology
+-- ---------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `recipes` (
+  `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  `title` VARCHAR(255) NOT NULL,
+  `prep_time` VARCHAR(50) DEFAULT '5 seconds',
+  `ingredients` TEXT NOT NULL,
+  `instructions` TEXT NOT NULL,
+  `image_url` VARCHAR(500) NOT NULL,
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ---------------------------------------------------------------------
+-- Table 11: Distributor & B2B Leads
 -- ---------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `distributor_leads` (
   `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -110,7 +185,7 @@ CREATE TABLE IF NOT EXISTS `distributor_leads` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ---------------------------------------------------------------------
--- Table 7: Contact Form Inquiries
+-- Table 12: Contact Form Inquiries
 -- ---------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `contact_inquiries` (
   `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -124,28 +199,20 @@ CREATE TABLE IF NOT EXISTS `contact_inquiries` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- =====================================================================
--- SEED DATA (Pre-populating DUST™ Product Catalog & Admin Records)
+-- SEED DATA
 -- =====================================================================
 
--- Insert Categories
 INSERT INTO `categories` (`id`, `slug`, `name`, `description`) VALUES
 (1, 'pure-fruit-powders', 'Pure Fruit Powders', 'Spray-dried real fruit instant powders with zero synthetic chemicals.'),
 (2, 'heritage-wellness', 'Heritage Wellness', 'Post-meal digestive mixes and royal paan shots inspired by Banaras traditions.')
 ON DUPLICATE KEY UPDATE `name` = VALUES(`name`);
 
--- Insert Products
-INSERT INTO `products` (`id`, `slug`, `name`, `sub_heading`, `category_id`, `price`, `compare_price`, `weight`, `servings`, `stock_qty`, `image_url`, `description`, `ingredients`, `is_best_seller`) VALUES
-(1, 'kacha-aam-01', 'Kacha Aam Instant Powder', 'Tangy Raw Mango Summer Cooler Mix', 1, 199.00, 249.00, '100g', 'Makes 10 Coolers', 150, '/paan_image_1.jpeg', 'Experience authentic Indian summer street flavor made with spray-dried raw mango solids and rock salt. Just stir in chilled water.', 'Raw Mango Solids, Rock Salt, Cumin, Mint Extract, Malic Acid', 1),
-(2, 'banarasi-paan-01', 'Banarasi Paan Digestive Shot Box', 'Royal Betel Leaf & Gulkand After-Meal Digestif', 2, 249.00, 299.00, '20g', 'Makes 4 Shots', 200, '/paan_image_2.jpeg', 'Crafted with authentic Banarasi betel leaf extracts, rose petal gulkand, fennel, and prebiotic inulin fiber for digestive health.', 'Real Betel Leaf Solids, Gulkand, Fennel, Cardamom, Inulin Fiber', 1),
-(3, 'anardana-digestive-01', 'Anardana Digestive Shot', 'Pomegranate & Black Salt Ayurvedic Digestif', 2, 189.00, 229.00, '25g', 'Makes 5 Shots', 120, '/paan_image_3.jpeg', 'Pure wild pomegranate seeds blended with black salt, asafoetida, and digestive spices for post-heavy-meal comfort.', 'Wild Anardana, Black Salt, Hing, Ginger, Black Pepper', 0)
+INSERT INTO `products` (`id`, `slug`, `name`, `sub_heading`, `category_id`, `price`, `compare_price`, `weight`, `servings`, `stock_qty`, `image_url`, `description`, `ingredients`, `is_best_seller`, `is_featured`) VALUES
+(1, 'banarasi-paan-01', 'Banarasi Paan Digestive Shots', 'Royal Betel Leaf & Gulkand After-Meal Digestif', 2, 249.00, 299.00, '20g', 'Makes 4 Shots', 200, '/paan_image_2.jpeg', 'Crafted with authentic Banarasi betel leaf extracts, rose petal gulkand, fennel, and prebiotic inulin fiber for digestive health.', 'Real Betel Leaf Solids, Gulkand, Fennel, Cardamom, Inulin Fiber', 1, 1),
+(2, 'kacha-aam-01', 'Kacha Aam Instant Powder', 'Tangy Raw Mango Summer Cooler Mix (Coming Soon)', 1, 199.00, 249.00, '100g', 'Makes 10 Coolers', 150, '/paan_image_1.jpeg', 'Experience authentic Indian summer street flavor made with spray-dried raw mango solids and rock salt.', 'Raw Mango Solids, Rock Salt, Cumin, Mint Extract', 0, 0)
 ON DUPLICATE KEY UPDATE `price` = VALUES(`price`);
 
--- Insert Sample Orders
-INSERT INTO `orders` (`id`, `order_reference`, `customer_name`, `customer_email`, `customer_phone`, `shipping_address`, `city`, `state`, `pincode`, `subtotal_amount`, `tax_amount`, `shipping_amount`, `total_amount`, `payment_method`, `payment_status`, `order_status`, `tracking_awb`) VALUES
-(1, 'DST-8806-9482', 'Rajesh Kumar', 'rajesh.kumar@example.com', '9876543210', 'Flat 402, Green Acres Apartment, Baner Road', 'Pune', 'Maharashtra', '411045', 647.00, 98.69, 0.00, 647.00, 'UPI', 'PAID', 'Handed to Courier', 'SR-994821')
-ON DUPLICATE KEY UPDATE `order_status` = VALUES(`order_status`);
-
--- Insert Sample Distributor Lead
-INSERT INTO `distributor_leads` (`id`, `contact_name`, `company_name`, `phone`, `email`, `city_state`, `channel`, `investment_capacity`, `message`, `status`) VALUES
-(1, 'Rajesh Kumar', 'Om Traders & Agency', '9876543210', 'rajesh@omtraders.com', 'Pune, Maharashtra', 'Regional Distributor', '₹2 Lakhs – ₹5 Lakhs', 'Interested in exclusive district distribution for Pune & Pimpri Chinchwad region.', 'New')
-ON DUPLICATE KEY UPDATE `status` = VALUES(`status`);
+INSERT INTO `coupons` (`id`, `code`, `discount_type`, `discount_value`, `min_order_amount`, `expiry_date`, `is_active`) VALUES
+(1, 'DUSTFIRST10', 'percentage', 10.00, 200.00, '2026-12-31', 1),
+(2, 'PANINDIA15', 'percentage', 15.00, 500.00, '2026-12-31', 1)
+ON DUPLICATE KEY UPDATE `code` = VALUES(`code`);
