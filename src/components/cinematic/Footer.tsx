@@ -133,7 +133,7 @@ export const Footer: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-[#74B487] font-bold gap-4">
-        <p>© {new Date().getFullYear()} {companyInfo.name}. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} {companyInfo.name}. All rights reserved. Design by <a href="https://webakoof.com/" target="_blank" rel="noopener noreferrer" className="text-[#E67E22] font-bold hover:underline">Webakoof</a></p>
         <p className="text-[#E67E22]">DUST — CHOICE OF MOTHERLAND</p>
       </div>
     </footer>
