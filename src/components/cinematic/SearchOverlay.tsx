@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Search, X, ArrowRight } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { Search, X, ArrowRight, Zap } from "lucide-react";
 import { useCartStore } from "@/lib/cart-store";
-import { products } from "@/lib/data";
+import { products, Product } from "@/lib/data";
 
 export const SearchOverlay: React.FC = () => {
-  const { isSearchOpen, setSearchOpen, setQuickViewProduct } = useCartStore();
+  const navigate = useNavigate();
+  const { isSearchOpen, setSearchOpen, addToCart } = useCartStore();
   const [query, setQuery] = useState("");
+
+  const handleBuyNow = (product: Product) => {
+    addToCart(product, 1);
+    setSearchOpen(false);
+    navigate("/checkout");
+  };
 
   useEffect(() => {
     if (isSearchOpen) {
@@ -99,13 +106,11 @@ export const SearchOverlay: React.FC = () => {
                     </span>
                     <div className="flex items-center gap-2">
                       <button
-                        onClick={() => {
-                          setSearchOpen(false);
-                          setQuickViewProduct(product);
-                        }}
-                        className="text-[11px] font-extrabold uppercase tracking-wider text-[#0E382E] px-2.5 py-1 bg-[#E8F1E9] rounded hover:bg-[#74B487]/20 border border-[#74B487]/40 transition-colors"
+                        onClick={() => handleBuyNow(product)}
+                        data-cursor="BUY"
+                        className="text-[11px] font-extrabold uppercase tracking-wider text-white px-3 py-1.5 bg-[#0E382E] rounded hover:bg-[#1F684B] transition-colors inline-flex items-center gap-1"
                       >
-                        Quick View
+                        <Zap className="w-3 h-3 text-[#E67E22]" /> Buy Now
                       </button>
                       <Link
                         to={`/product/${product.slug}`}

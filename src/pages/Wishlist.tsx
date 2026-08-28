@@ -1,14 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Heart, ShoppingBag, Trash2, Eye } from "lucide-react";
-import { products } from "@/lib/data";
+import { Link, useNavigate } from "react-router-dom";
+import { Heart, ShoppingBag, Trash2, Eye, Zap } from "lucide-react";
+import { products, Product } from "@/lib/data";
 import { useCartStore } from "@/lib/cart-store";
 
 export const Wishlist: React.FC = () => {
-  const { wishlist, toggleWishlist, addToCart, setQuickViewProduct } =
+  const navigate = useNavigate();
+  const { wishlist, toggleWishlist, addToCart } =
     useCartStore();
 
   const savedProducts = products.filter((p) => wishlist.includes(p.id));
+
+  const handleBuyNow = (product: Product) => {
+    addToCart(product, 1);
+    navigate("/checkout");
+  };
 
   return (
     <div className="pt-32 pb-24 px-4 sm:px-8 md:px-12 lg:px-16 w-full min-h-screen bg-[#F6F5F0] text-[#0E382E]">
@@ -84,10 +90,11 @@ export const Wishlist: React.FC = () => {
                   <ShoppingBag className="w-4 h-4" /> Add to Cart
                 </button>
                 <button
-                  onClick={() => setQuickViewProduct(product)}
-                  className="p-2.5 bg-[#E8F1E9] hover:bg-[#74B487]/20 text-[#0E382E] font-bold rounded-xl transition-colors border border-[#74B487]/40"
+                  onClick={() => handleBuyNow(product)}
+                  data-cursor="BUY"
+                  className="px-3.5 py-2.5 bg-[#0E382E] hover:bg-[#1F684B] text-white font-extrabold text-xs uppercase tracking-wider rounded-xl transition-colors shadow-xs flex items-center gap-1"
                 >
-                  <Eye className="w-4 h-4" />
+                  <Zap className="w-3.5 h-3.5 text-[#E67E22]" /> Buy Now
                 </button>
               </div>
             </div>

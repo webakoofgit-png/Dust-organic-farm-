@@ -39,26 +39,28 @@ export const Navbar: React.FC = () => {
 
   return (
     <>
-      {/* Top Announcement Bar */}
-      <div className="bg-[#0E382E] text-[#F6F5F0] py-1.5 px-4 text-center text-xs font-medium tracking-wide flex items-center justify-center gap-3 border-b border-[#1F684B]/50 print:hidden">
-        <span className="inline-flex items-center gap-1 text-[#E67E22] font-bold text-[11px] uppercase tracking-wider bg-[#E67E22]/15 px-2 py-0.5 rounded-full border border-[#E67E22]/30">
-          <Sparkles className="w-3 h-3 text-[#E67E22]" /> Offer
-        </span>
-        <span className="hidden sm:inline text-white/90">
-          Free Delivery Across India on Orders Above ₹499
-        </span>
-        <span className="text-[#E67E22] font-semibold text-xs tracking-wider">
-          • DUST — CHOICE OF MOTHERLAND
-        </span>
-      </div>
+      <div className="fixed top-0 left-0 right-0 z-40 print:hidden">
+        {/* Top Announcement Bar */}
+        <div className="bg-[#0E382E] text-[#F6F5F0] py-1.5 px-4 text-center text-xs font-medium tracking-wide flex items-center justify-center gap-3 border-b border-[#1F684B]/50">
+          <span className="inline-flex items-center gap-1 text-[#E67E22] font-bold text-[11px] uppercase tracking-wider bg-[#E67E22]/15 px-2 py-0.5 rounded-full border border-[#E67E22]/30">
+            <Sparkles className="w-3 h-3 text-[#E67E22]" /> Offer
+          </span>
+          <span className="hidden sm:inline text-white/90">
+            Free Delivery Across India on Orders Above ₹499
+          </span>
+          <span className="text-[#E67E22] font-semibold text-xs tracking-wider">
+            • DUST — CHOICE OF MOTHERLAND
+          </span>
+        </div>
 
-      <header
-        className={`fixed top-[33px] left-0 right-0 z-40 transition-all duration-300 print:hidden ${
-          scrolled
-            ? "bg-[#F6F5F0]/95 backdrop-blur-md border-b border-[#74B487]/30 py-3 shadow-md"
-            : "bg-gradient-to-b from-[#F6F5F0]/95 via-[#F6F5F0]/80 to-transparent py-4"
-        }`}
-      >
+        {/* Main Header / Navbar */}
+        <header
+          className={`w-full transition-all duration-300 border-b border-[#74B487]/30 ${
+            scrolled
+              ? "bg-[#F6F5F0]/95 backdrop-blur-md py-2.5 shadow-md"
+              : "bg-[#F6F5F0]/95 backdrop-blur-md py-3.5"
+          }`}
+        >
         <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 flex items-center justify-between">
           {/* Logo */}
           <Link
@@ -222,6 +224,7 @@ export const Navbar: React.FC = () => {
           </div>
         </div>
       </header>
+    </div>
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (

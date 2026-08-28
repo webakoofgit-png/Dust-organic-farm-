@@ -1,10 +1,11 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
-import { ArrowUpRight, ShoppingBag, Eye, Heart } from "lucide-react";
-import { collections, products, Collection } from "@/lib/data";
+import { Link, useParams, useNavigate } from "react-router-dom";
+import { ArrowUpRight, ShoppingBag, Eye, Heart, Zap } from "lucide-react";
+import { collections, products, Collection, Product } from "@/lib/data";
 import { useCartStore } from "@/lib/cart-store";
 
 export const CollectionDetail: React.FC = () => {
+  const navigate = useNavigate();
   const { slug } = useParams<{ slug: string }>();
   const defaultCollection = collections[0] as Collection;
   const collection: Collection = collections.find((c) => c.slug === slug) ?? defaultCollection;
@@ -13,8 +14,13 @@ export const CollectionDetail: React.FC = () => {
     (p) => p.category === collection.slug
   );
 
-  const { addToCart, toggleWishlist, isInWishlist, setQuickViewProduct } =
+  const { addToCart, toggleWishlist, isInWishlist } =
     useCartStore();
+
+  const handleBuyNow = (product: Product) => {
+    addToCart(product, 1);
+    navigate("/checkout");
+  };
 
   return (
     <div className="pt-32 pb-24 px-4 sm:px-8 md:px-12 lg:px-16 w-full min-h-screen bg-[#F6F5F0] text-[#0E382E]">
@@ -139,10 +145,11 @@ export const CollectionDetail: React.FC = () => {
                       <ShoppingBag className="w-3.5 h-3.5" /> Add
                     </button>
                     <button
-                      onClick={() => setQuickViewProduct(product)}
-                      className="p-2.5 bg-[#E8F1E9] hover:bg-[#74B487]/20 text-[#0E382E] font-bold text-xs rounded-xl transition-colors border border-[#74B487]/40"
+                      onClick={() => handleBuyNow(product)}
+                      data-cursor="BUY"
+                      className="px-3.5 py-2.5 bg-[#0E382E] hover:bg-[#1F684B] text-white font-extrabold text-xs uppercase tracking-wider rounded-xl transition-colors shadow-xs flex items-center gap-1"
                     >
-                      <Eye className="w-4 h-4" />
+                      <Zap className="w-3.5 h-3.5 text-[#E67E22]" /> Buy Now
                     </button>
                     <Link
                       to={`/product/${product.slug}`}

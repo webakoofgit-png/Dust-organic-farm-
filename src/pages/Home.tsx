@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   ShoppingBag,
   Eye,
@@ -12,15 +12,23 @@ import {
   ChevronDown,
   Flame,
   Award,
+  Zap,
 } from "lucide-react";
 import { products, collections, Product, companyInfo } from "@/lib/data";
 import { useCartStore } from "@/lib/cart-store";
 import { CustomerReviewsCarousel } from "@/components/cinematic/CustomerReviewsCarousel";
+import dustStandeeImg from "@/assets/dust-brand-usp-standee.jpg";
 
 export const Home: React.FC = () => {
+  const navigate = useNavigate();
   const [introFinished, setIntroFinished] = useState(false);
   const { addToCart, toggleWishlist, isInWishlist, setQuickViewProduct } =
     useCartStore();
+
+  const handleBuyNow = (product: Product) => {
+    addToCart(product, 1);
+    navigate("/checkout");
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -169,10 +177,11 @@ export const Home: React.FC = () => {
                     <ShoppingBag className="w-4 h-4" /> Add to Cart
                   </button>
                   <button
-                    onClick={() => setQuickViewProduct(heroProduct)}
-                    className="p-3 bg-white/20 backdrop-blur border border-white/40 text-white rounded-xl hover:bg-white/30 transition-colors"
+                    onClick={() => handleBuyNow(heroProduct)}
+                    data-cursor="BUY"
+                    className="px-4 py-3.5 bg-[#0E382E] hover:bg-[#1F684B] text-white font-extrabold text-xs uppercase tracking-wider rounded-xl transition-colors shadow-md flex items-center gap-1.5"
                   >
-                    <Eye className="w-4 h-4" />
+                    <Zap className="w-4 h-4 text-[#E67E22]" /> Buy Now
                   </button>
                 </div>
               </div>
@@ -241,7 +250,7 @@ export const Home: React.FC = () => {
               <div
                 key={product.id}
                 className="group relative bg-white rounded-3xl border border-[#74B487]/40 overflow-hidden hover:border-[#E67E22] transition-all duration-500 flex flex-col justify-between shadow-sm hover:shadow-xl"
-                data-cursor="VIEW"
+                data-cursor="BUY"
               >
                 {/* Image Container with Hover Swap */}
                 <div className="relative h-[360px] sm:h-[400px] bg-white p-8 flex items-center justify-center overflow-hidden border-b border-[#74B487]/30">
@@ -260,8 +269,8 @@ export const Home: React.FC = () => {
                   <button
                     onClick={() => toggleWishlist(product.id)}
                     className={`absolute top-4 right-4 p-3 rounded-full border transition-colors shadow-xs ${inWishlist
-                        ? "bg-red-50 border-red-200 text-red-500"
-                        : "bg-white border-[#74B487]/40 text-[#0E382E] hover:text-[#E67E22]"
+                      ? "bg-red-50 border-red-200 text-red-500"
+                      : "bg-white border-[#74B487]/40 text-[#0E382E] hover:text-[#E67E22]"
                       }`}
                     aria-label="Wishlist"
                   >
@@ -340,10 +349,11 @@ export const Home: React.FC = () => {
                       <ShoppingBag className="w-4 h-4" /> Add to Cart
                     </button>
                     <button
-                      onClick={() => setQuickViewProduct(product)}
-                      className="px-4 py-3.5 bg-[#E8F1E9] hover:bg-[#74B487]/20 text-[#0E382E] font-extrabold text-xs uppercase tracking-wider rounded-xl transition-colors border border-[#74B487]/40"
+                      onClick={() => handleBuyNow(product)}
+                      data-cursor="BUY"
+                      className="px-4 py-3.5 bg-[#E8F1E9] hover:bg-[#74B487]/30 text-[#0E382E] font-extrabold text-xs uppercase tracking-wider rounded-xl transition-colors border border-[#74B487]/40 flex items-center gap-1"
                     >
-                      Quick View
+                      <Zap className="w-3.5 h-3.5 text-[#E67E22]" /> Buy Now
                     </button>
                     <Link
                       to={`/product/${product.slug}`}
@@ -356,6 +366,122 @@ export const Home: React.FC = () => {
               </div>
             );
           })}
+        </div>
+      </section>
+
+      {/* 3.5 OUR USP & USAGE RITUAL SECTION */}
+      <section className="py-24 bg-[#0E382E] text-white px-4 sm:px-8 md:px-12 lg:px-16 relative overflow-hidden">
+        {/* Ambient Glow */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#74B487]/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#E67E22]/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto space-y-16 relative z-10">
+          {/* Section Header */}
+          <div className="text-center space-y-3 max-w-3xl mx-auto">
+            <span className="text-xs uppercase tracking-[0.3em] text-[#E67E22] font-extrabold bg-[#1F684B]/60 px-4 py-1.5 rounded-full border border-[#74B487]/40 inline-block">
+              ANYTIME. ANYWHERE. PURE REFRESHMENT.
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+              REFRESH. DIGEST. REPEAT.
+            </h2>
+            <p className="text-sm sm:text-base text-[#E8F1E9] font-medium leading-relaxed">
+              DUST™ Paan Digestive Shot is a modern take on a timeless Banaras tradition. Carefully crafted with real betel leaf extracts, rose petal gulkand, fennel, and cardamom to support digestion, freshen breath, and leave you feeling light — anytime, anywhere.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Standee Graphic Display */}
+            <div className="lg:col-span-5 flex justify-center">
+              <div className="relative group max-w-md w-full bg-[#1F684B]/80 p-4 sm:p-6 rounded-3xl border border-[#74B487]/40 shadow-2xl backdrop-blur-md overflow-hidden">
+                <img
+                  src={dustStandeeImg}
+                  alt="DUST Brand USP & Usage Standee"
+                  className="w-full h-auto object-cover rounded-2xl border border-[#74B487]/30 shadow-lg group-hover:scale-102 transition-transform duration-500"
+                />
+                <div className="pt-4 text-center">
+                  <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#E67E22]">
+                    PROUDLY INDIAN • NATURALLY REFRESHING
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* 5 USPs Grid + 4 Uses Grid */}
+            <div className="lg:col-span-7 space-y-10">
+              {/* USPs List */}
+              <div className="space-y-4">
+                <h3 className="text-xl font-extrabold text-white flex items-center gap-2 border-b border-[#74B487]/30 pb-3">
+                  <Award className="w-5 h-5 text-[#E67E22]" /> OUR USP — THE DUST ADVANTAGE
+                </h3>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="p-4 bg-[#1F684B]/60 rounded-2xl border border-[#74B487]/30 space-y-1.5">
+                    <div className="flex items-center gap-2 text-[#E67E22] font-extrabold text-xs uppercase tracking-wider">
+                      <Leaf className="w-4 h-4" /> Traditional Goodness
+                    </div>
+                    <p className="text-xs text-[#E8F1E9]">Classic paan flavor in an instant, mess-free format.</p>
+                  </div>
+
+                  <div className="p-4 bg-[#1F684B]/60 rounded-2xl border border-[#74B487]/30 space-y-1.5">
+                    <div className="flex items-center gap-2 text-[#E67E22] font-extrabold text-xs uppercase tracking-wider">
+                      <ShieldCheck className="w-4 h-4" /> Natural & Clean Label
+                    </div>
+                    <p className="text-xs text-[#E8F1E9]">100% natural ingredients you can trust, zero artificial dyes.</p>
+                  </div>
+
+                  <div className="p-4 bg-[#1F684B]/60 rounded-2xl border border-[#74B487]/30 space-y-1.5">
+                    <div className="flex items-center gap-2 text-[#E67E22] font-extrabold text-xs uppercase tracking-wider">
+                      <Sparkles className="w-4 h-4" /> Supports Digestion
+                    </div>
+                    <p className="text-xs text-[#E8F1E9]">Helps soothe your stomach and supports post-meal digestif wellness.</p>
+                  </div>
+
+                  <div className="p-4 bg-[#1F684B]/60 rounded-2xl border border-[#74B487]/30 space-y-1.5">
+                    <div className="flex items-center gap-2 text-[#E67E22] font-extrabold text-xs uppercase tracking-wider">
+                      <CheckCircle2 className="w-4 h-4" /> Freshens Breath
+                    </div>
+                    <p className="text-xs text-[#E8F1E9]">Keeps your mouth feeling fresh, clean, and invigorated.</p>
+                  </div>
+                </div>
+
+                <div className="p-4 bg-[#1F684B]/60 rounded-2xl border border-[#74B487]/30 space-y-1.5">
+                  <div className="flex items-center gap-2 text-[#E67E22] font-extrabold text-xs uppercase tracking-wider">
+                    <Zap className="w-4 h-4" /> On-The-Go Convenience
+                  </div>
+                  <p className="text-xs text-[#E8F1E9]">Easy-to-carry sachet — just add 150ml chilled water, stir & enjoy!</p>
+                </div>
+              </div>
+
+              {/* 4 Occasions / Uses */}
+              <div className="space-y-4">
+                <h3 className="text-xl font-extrabold text-white flex items-center gap-2 border-b border-[#74B487]/30 pb-3">
+                  <Flame className="w-5 h-5 text-[#E67E22]" /> WHEN & WHERE TO ENJOY
+                </h3>
+
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  <div className="p-4 bg-[#1F684B]/80 rounded-2xl border border-[#74B487]/30 text-center space-y-2">
+                    <span className="text-2xl block">🍽️</span>
+                    <span className="text-xs font-extrabold text-white block uppercase">AFTER MEALS</span>
+                  </div>
+
+                  <div className="p-4 bg-[#1F684B]/80 rounded-2xl border border-[#74B487]/30 text-center space-y-2">
+                    <span className="text-2xl block">🧳</span>
+                    <span className="text-xs font-extrabold text-white block uppercase">WHILE TRAVELLING</span>
+                  </div>
+
+                  <div className="p-4 bg-[#1F684B]/80 rounded-2xl border border-[#74B487]/30 text-center space-y-2">
+                    <span className="text-2xl block">💻</span>
+                    <span className="text-xs font-extrabold text-white block uppercase">AT WORK / STUDY</span>
+                  </div>
+
+                  <div className="p-4 bg-[#1F684B]/80 rounded-2xl border border-[#74B487]/30 text-center space-y-2">
+                    <span className="text-2xl block">👥</span>
+                    <span className="text-xs font-extrabold text-white block uppercase">ANYTIME REFRESH</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
