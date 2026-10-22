@@ -1,6 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Sparkles, ShieldCheck, HeartHandshake, Globe, Leaf } from "lucide-react";
+import {
+  ArrowUpRight,
+  Sparkles,
+  ShieldCheck,
+  HeartHandshake,
+  Globe,
+  Leaf,
+  Compass,
+  Target,
+  Award,
+} from "lucide-react";
 import { companyInfo } from "@/lib/data";
 
 export const About: React.FC = () => {
@@ -32,6 +42,123 @@ export const About: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Brand Identity & Manifesto Section */}
+      <section className="mb-20 bg-white rounded-3xl border border-[#74B487]/40 p-8 sm:p-12 shadow-sm relative overflow-hidden">
+        {/* Subtle accent glow */}
+        <div className="absolute top-0 right-0 w-80 h-80 bg-[#E67E22]/5 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="relative z-10 max-w-5xl mx-auto space-y-10">
+          {/* Header Title */}
+          <div className="text-center space-y-3">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#E8F1E9] border border-[#74B487]/40 rounded-full text-xs font-extrabold uppercase tracking-widest text-[#E67E22]">
+              <Sparkles className="w-4 h-4" />
+              <span>DUST™ — CHOICE OF MOTHERLAND</span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0E382E]">
+              Rooted in Heritage. Designed for Today.
+            </h2>
+            <p className="text-sm font-bold text-[#E67E22] italic tracking-wide">
+              A consumer brand by Everest Edges Pvt. Ltd.
+            </p>
+          </div>
+
+          {/* Narrative Paragraphs */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-[#1F684B] text-sm leading-relaxed font-normal">
+            <div className="p-6 bg-[#F6F5F0] rounded-2xl border border-[#74B487]/30 space-y-2">
+              <span className="text-xl block">🌾</span>
+              <p>
+                Rooted in India's rich food heritage and designed for modern lifestyles, <strong>DUST™</strong> is building a new generation of convenient consumer products inspired by flavour, quality and everyday needs.
+              </p>
+            </div>
+
+            <div className="p-6 bg-[#F6F5F0] rounded-2xl border border-[#74B487]/30 space-y-2">
+              <span className="text-xl block">🥭</span>
+              <p>
+                Our vision is to create accessible, distinctive products across fruit-based refreshments, traditional Indian refreshments and other carefully selected FMCG categories.
+              </p>
+            </div>
+
+            <div className="p-6 bg-[#F6F5F0] rounded-2xl border border-[#74B487]/30 space-y-2">
+              <span className="text-xl block">✨</span>
+              <p>
+                We believe great products begin with thoughtful ingredient selection, consistent quality and a deep understanding of Indian consumers.
+              </p>
+            </div>
+          </div>
+
+          {/* Vision, Mission & Values Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+            {/* Vision */}
+            <div className="p-6 bg-[#0E382E] text-white rounded-2xl border border-[#74B487]/30 shadow-md space-y-3 flex flex-col justify-between">
+              <div className="space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-white/10 text-[#E67E22] flex items-center justify-center">
+                  <Compass className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-extrabold text-white uppercase tracking-wider">
+                  Our Vision
+                </h3>
+                <p className="text-xs text-[#E8F1E9] leading-relaxed font-normal">
+                  To build a trusted Indian consumer brand with the potential to reach households across India and global markets.
+                </p>
+              </div>
+              <span className="text-[10px] uppercase tracking-widest text-[#E67E22] font-black pt-2 border-t border-white/10">
+                Nationally Rooted • Globally Scaled
+              </span>
+            </div>
+
+            {/* Mission */}
+            <div className="p-6 bg-[#0E382E] text-white rounded-2xl border border-[#74B487]/30 shadow-md space-y-3 flex flex-col justify-between">
+              <div className="space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-white/10 text-[#E67E22] flex items-center justify-center">
+                  <Target className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-extrabold text-white uppercase tracking-wider">
+                  Our Mission
+                </h3>
+                <p className="text-xs text-[#E8F1E9] leading-relaxed font-normal">
+                  To bring flavour, convenience and thoughtful product innovation into everyday life.
+                </p>
+              </div>
+              <span className="text-[10px] uppercase tracking-widest text-[#E67E22] font-black pt-2 border-t border-white/10">
+                Flavour • Convenience • Quality
+              </span>
+            </div>
+
+            {/* Values */}
+            <div className="p-6 bg-[#0E382E] text-white rounded-2xl border border-[#74B487]/30 shadow-md space-y-3 flex flex-col justify-between">
+              <div className="space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-white/10 text-[#E67E22] flex items-center justify-center">
+                  <Award className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-extrabold text-white uppercase tracking-wider">
+                  Our Values
+                </h3>
+                <div className="flex flex-wrap gap-1.5 pt-1">
+                  {["Quality", "Innovation", "Trust", "Convenience", "Indian Roots"].map((val, idx) => (
+                    <span
+                      key={idx}
+                      className="px-2.5 py-1 bg-white/10 hover:bg-[#E67E22] border border-white/15 rounded-lg text-[11px] font-extrabold tracking-wide transition-colors"
+                    >
+                      {val}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <span className="text-[10px] uppercase tracking-widest text-[#E67E22] font-black pt-2 border-t border-white/10">
+                5 Guiding Principles
+              </span>
+            </div>
+          </div>
+
+          {/* Concluding Quote Banner */}
+          <div className="p-4 bg-[#E8F1E9] border-2 border-[#E67E22]/50 rounded-2xl text-center shadow-xs">
+            <p className="text-xs sm:text-sm font-black uppercase tracking-[0.2em] text-[#0E382E]">
+              <span className="text-[#E67E22]">✦</span> Building India's next generation of consumer brands. <span className="text-[#E67E22]">✦</span>
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* 4 Core Pillars Grid */}
       <div className="mb-20 space-y-8">
