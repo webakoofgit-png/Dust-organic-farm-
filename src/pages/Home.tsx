@@ -113,17 +113,19 @@ export const Home: React.FC = () => {
               <span className="text-[#E67E22] font-black tracking-[0.14em]">MADE FOR THOSE WHO CHOOSE BETTER</span>
             </div>
 
+            <div className="text-xs uppercase tracking-[0.25em] text-[#E67E22] font-extrabold flex items-center justify-center md:justify-start gap-2">
+              <Sparkles className="w-4 h-4" /> DUST™ — CHOICE OF MOTHERLAND
+            </div>
+
             <h1 className="text-4xl sm:text-6xl xl:text-7xl font-extrabold text-[#0E382E] tracking-tight leading-[1.05]">
-              WHOLESOME <br />
+              ROOTED IN NATURE. <br />
               <span className="text-[#E67E22]">
-                MILLETS &
-              </span>{" "}
-              <br />
-              HERITAGE WELLNESS
+                MADE FOR MODERN INDIA.
+              </span>
             </h1>
 
             <p className="text-base sm:text-lg text-[#1F684B] max-w-xl font-normal leading-relaxed">
-              Nutritious Ragi, crunchy dry fruits, and authentic Banarasi betel leaf infusion — ethically sourced wholesome ingredients crafted into authentic Indian rituals.
+              Discover nourishing food blends, fruit-powered refreshments, everyday nutrition and nature-inspired personal care — thoughtfully brought together for modern living.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-4 justify-center md:justify-start">

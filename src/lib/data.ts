@@ -46,7 +46,7 @@ export const companyInfo = {
   address: "Silver Gracia, Ravet, Pune – 412101, Maharashtra, India",
   tagline: "CHOICE OF MOTHERLAND",
   coreProposition: "Indian Taste × Convenience × Ingredient Transparency × Accessible Pricing",
-  purpose: "Building India’s next generation of consumer beverage brands.",
+  purpose: "Building India’s next generation of consumer brands — from nourishing food and beverages to fruit powders and personal care.",
   vision: "Build a nationally recognized Indian consumer brand that originates in India and scales globally.",
 };
 
@@ -574,7 +574,7 @@ export const brand = {
   name: "DUST",
   tagline: "Choice of Motherland",
   mission:
-    "A bridge between India's rich agricultural heritage and modern convenience. Real fruit. Real roots.",
+    "Rooted in nature. Made for modern India. Discover nourishing food blends, fruit-powered refreshments, everyday nutrition and nature-inspired personal care.",
   newsletter: {
     title: "Join the Ritual",
     text: "Seasonal launches, folklore recipes & honest stories from the fields — direct to your inbox.",

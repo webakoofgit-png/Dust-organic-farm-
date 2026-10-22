@@ -19,7 +19,7 @@ export const About: React.FC = () => {
           </h1>
 
           <p className="text-base sm:text-xl text-[#E8F1E9] font-normal leading-relaxed">
-            {companyInfo.brand} is a modern Indian FMCG brand focused on creating familiar Indian taste experiences in convenient, transparent, and accessible sachet formats.
+            {companyInfo.brand} is rooted in nature and made for modern India — thoughtfully bringing together nourishing food blends, fruit-powered refreshments, everyday nutrition, and nature-inspired personal care.
           </p>
 
           <div className="pt-4 flex flex-wrap gap-4">
