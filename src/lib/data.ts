@@ -50,7 +50,7 @@ export const companyInfo = {
   address: "Silver Gracia, Ravet, Pune – 412101, Maharashtra, India",
   tagline: "CHOICE OF MOTHERLAND",
   coreProposition: "Indian Taste × Convenience × Ingredient Transparency × Accessible Pricing",
-  purpose: "Building India’s next generation of consumer brands — from nourishing food and beverages to fruit powders and personal care.",
+  purpose: "Building India’s next generation of consumer brands — from nourishing food and wholesome millet mixes to fruit powders and personal care.",
   vision: "Build a nationally recognized Indian consumer brand that originates in India and scales globally.",
 };
 

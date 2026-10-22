@@ -22,7 +22,7 @@ export const ReturnRefundPolicy: React.FC = () => {
           <section className="space-y-2">
             <h2 className="text-lg font-extrabold text-[#0E382E]">1. Food Product Safety Standard</h2>
             <p>
-              Due to strict food safety & FSSAI hygiene guidelines, opened or consumed beverage sachets cannot be returned. However, we offer <strong>100% replacement or refund</strong> if your package arrives damaged, defective, or expired.
+              Due to strict food safety & FSSAI hygiene guidelines, opened or consumed food sachets or packs cannot be returned. However, we offer <strong>100% replacement or refund</strong> if your package arrives damaged, defective, or expired.
             </p>
           </section>
 

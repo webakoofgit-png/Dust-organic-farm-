@@ -25,7 +25,7 @@ export const Footer: React.FC = () => {
             </div>
           </div>
           <p className="text-xs text-[#E8F1E9] max-w-md leading-relaxed font-normal">
-            Parented by <strong>{companyInfo.name}</strong>. Building India's next generation of consumer beverage brands.
+            Parented by <strong>{companyInfo.name}</strong>. Building India's next generation of consumer brands.
           </p>
           <div className="space-y-1 text-xs text-[#74B487] font-semibold">
             <p>CIN: {companyInfo.cin} | GSTIN: {companyInfo.gstin}</p>

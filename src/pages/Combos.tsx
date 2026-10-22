@@ -140,7 +140,7 @@ export const Combos: React.FC = () => {
             </h2>
 
             <p className="text-xs text-[#1F684B] leading-relaxed font-medium">
-              Partner with <strong>{companyInfo.name}</strong> to bring India's fastest-growing hygienic sachet beverage and heritage wellness brand to your regional retail network.
+              Partner with <strong>{companyInfo.name}</strong> to bring India's fastest-growing wholesome consumer brand and heritage wellness products to your regional retail network.
             </p>
 
             <div className="space-y-4 pt-2">

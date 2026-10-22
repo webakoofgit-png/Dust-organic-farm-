@@ -36,7 +36,7 @@ export const TermsConditions: React.FC = () => {
           <section className="space-y-2">
             <h2 className="text-lg font-extrabold text-[#0E382E]">3. Pricing & Product Disclaimers</h2>
             <p>
-              Prices listed are in Indian Rupees (INR) inclusive of applicable taxes. DUST sachet beverages are non-alcoholic instant beverage mixes and digestive shots formulated with real fruit and spices.
+              Prices listed are in Indian Rupees (INR) inclusive of applicable taxes. DUST products are packaged food products, wholesome mixes, and digestive shots formulated with traditional Indian ingredients, real fruits, and spices.
             </p>
           </section>
 

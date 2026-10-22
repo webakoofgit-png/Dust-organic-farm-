@@ -11,8 +11,8 @@ interface FAQItem {
 const faqData: FAQItem[] = [
   {
     category: "Products & Ingredients",
-    question: "What makes DUST sachet beverages unique?",
-    answer: "DUST sachet beverages combine real spray-dried fruits and authentic Indian botanicals (like gulkand, fennel, and betel leaf) into hygienic on-the-go sachet formats. We use zero artificial dyes or synthetic preservatives.",
+    question: "What makes DUST consumer products unique?",
+    answer: "DUST products combine wholesome traditional ingredients, real spray-dried fruits, and authentic Indian botanicals into convenient, hygienic formats. We use zero artificial dyes, zero synthetic preservatives, and zero added sugar.",
   },
   {
     category: "Products & Ingredients",

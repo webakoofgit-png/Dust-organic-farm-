@@ -15,7 +15,7 @@ export const About: React.FC = () => {
           </div>
 
           <h1 className="text-4xl sm:text-6xl font-extrabold leading-tight">
-            Building India’s Next Generation of Consumer Beverage Brands.
+            Building India’s Next Generation of Consumer Brands.
           </h1>
 
           <p className="text-base sm:text-xl text-[#E8F1E9] font-normal leading-relaxed">
@@ -84,7 +84,7 @@ export const About: React.FC = () => {
             </div>
             <h3 className="text-xl font-extrabold text-[#0E382E]">Accessible Price</h3>
             <p className="text-xs text-[#1F684B] leading-relaxed">
-              Premium quality FMCG beverages priced fairly so every Indian household can enjoy daily hygienic refreshment.
+              Premium quality FMCG consumer products priced fairly so every Indian household can enjoy daily wholesome nutrition.
             </p>
           </div>
         </div>
@@ -100,10 +100,10 @@ export const About: React.FC = () => {
             Originated in India. Scaled for the World.
           </h2>
           <p className="text-sm text-[#1F684B] leading-relaxed font-normal">
-            {companyInfo.brand} is parented by <strong>{companyInfo.name}</strong>. Our vision goes beyond a single beverage category. Starting with convenient fruit-based powders and heritage digestive shots, we are building a broad portfolio of Indian consumer products.
+            {companyInfo.brand} is parented by <strong>{companyInfo.name}</strong>. Our vision goes beyond a single product category. Starting with wholesome millet mixes, convenient fruit powders, and heritage digestive shots, we are building a broad portfolio of Indian consumer products.
           </p>
           <p className="text-sm text-[#1F684B] leading-relaxed font-normal">
-            We believe traditional Indian food and beverage wisdom holds global appeal when paired with modern hygienic packaging discipline.
+            We believe traditional Indian culinary and wellness wisdom holds global appeal when paired with modern hygienic packaging discipline.
           </p>
           <div className="pt-2 flex items-center gap-4">
             <div className="p-3 bg-[#E8F1E9] rounded-2xl text-[#E67E22]">
@@ -133,7 +133,7 @@ export const About: React.FC = () => {
             </li>
             <li className="flex items-center gap-3">
               <span className="w-2 h-2 rounded-full bg-[#E67E22]" />
-              <span>Functional Consumer Beverages & Mixes</span>
+              <span>Functional Consumer Products & Wholesome Mixes</span>
             </li>
             <li className="flex items-center gap-3">
               <span className="w-2 h-2 rounded-full bg-[#E67E22]" />
