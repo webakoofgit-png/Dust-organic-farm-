@@ -8,6 +8,7 @@
 import ragiHero from "@/assets/ragi-hero.png";
 import ragiPouch from "@/assets/ragi-pouch.png";
 import ragiPack from "@/assets/ragi-pack.png";
+import laddooMix from "@/assets/laddooMix.png";
 import paanPack from "@/assets/paan-pack.png";
 import paanPouch from "@/assets/paan-pouch.jpg";
 import paanDuo from "@/assets/paan-duo.jpg";
@@ -18,6 +19,7 @@ export const img = {
   ragiHero,
   ragiPouch,
   ragiPack,
+  laddooMix,
   paanPack,
   paanPouch,
   paanDuo,
@@ -337,7 +339,7 @@ export const collections: Collection[] = [
       "Transition from morning wholesome superfoods to our royal digestives — traditional post-meal mouth fresheners.",
     crossCta: "Explore Heritage Wellness",
     crossHref: "/collections/heritage-wellness",
-    heroImage: ragiHero,
+    heroImage: laddooMix,
   },
   {
     slug: "heritage-wellness",
