@@ -32,9 +32,9 @@ export const ShippingPolicy: React.FC = () => {
           </div>
 
           <div className="bg-white p-6 rounded-3xl border border-[#74B487]/40 shadow-xs space-y-2">
-            <div className="text-2xl font-extrabold text-[#E67E22]">₹499+</div>
-            <h3 className="text-xs font-extrabold text-[#0E382E] uppercase">Free Shipping</h3>
-            <p className="text-[11px] text-[#1F684B]">Zero delivery fee automatically applied on orders above ₹499.</p>
+            <div className="text-2xl font-extrabold text-[#E67E22]">₹799+</div>
+            <h3 className="text-xs font-extrabold text-[#0E382E] uppercase">Free Prepaid Shipping</h3>
+            <p className="text-[11px] text-[#1F684B]">Zero delivery fee automatically applied on prepaid orders ₹799 and above.</p>
           </div>
         </div>
 
@@ -47,9 +47,16 @@ export const ShippingPolicy: React.FC = () => {
           </section>
 
           <section className="space-y-2">
-            <h2 className="text-lg font-extrabold text-[#0E382E]">2. Cash on Delivery (COD) Rules</h2>
+            <h2 className="text-lg font-extrabold text-[#0E382E]">2. Free Shipping Policy (Prepaid Only)</h2>
             <p>
-              COD is available for orders up to ₹2,500. Please ensure a valid mobile number ({companyInfo.phone}) is provided at checkout for OTP confirmation.
+              Free Express Shipping is available across India exclusively for <strong>prepaid orders</strong> (UPI, Credit/Debit Cards, Net Banking) of <strong>₹799 and above</strong>. Prepaid orders below ₹799 are subject to a nominal standard shipping fee of ₹50.
+            </p>
+          </section>
+
+          <section className="space-y-2">
+            <h2 className="text-lg font-extrabold text-[#0E382E]">3. Cash on Delivery (COD) Policy</h2>
+            <p>
+              Cash on Delivery (COD) is available across all serviceable PIN codes in India. Please note that COD orders do not qualify for free shipping and are subject to a <strong>flat delivery and handling fee of ₹120</strong>.
             </p>
           </section>
         </div>

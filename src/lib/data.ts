@@ -483,7 +483,7 @@ export const faqs = [
   },
   {
     q: "Do you offer free shipping?",
-    a: "Yes! We offer free shipping on all orders nationwide with no minimum cart value requirements.",
+    a: "Yes! We offer Free Express Shipping on all prepaid orders of ₹799 and above. For Cash on Delivery (COD) orders, a delivery fee of ₹120 applies.",
   },
   {
     q: "How long does shipping take?",

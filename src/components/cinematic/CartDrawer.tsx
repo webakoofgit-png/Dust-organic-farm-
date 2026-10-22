@@ -16,7 +16,7 @@ export const CartDrawer: React.FC = () => {
   if (!isCartOpen) return null;
 
   const subtotal = getSubtotal();
-  const freeShippingThreshold = 500;
+  const freeShippingThreshold = 799;
   const progressPercent = Math.min(100, (subtotal / freeShippingThreshold) * 100);
 
   return (
@@ -47,12 +47,12 @@ export const CartDrawer: React.FC = () => {
           </div>
 
           {/* Free Shipping Progress */}
-          <div className="bg-[#E8F1E9] px-6 py-3 border-b border-[#74B487]/30">
-            <div className="flex justify-between text-xs mb-1.5 font-sans">
+          <div className="bg-[#E8F1E9] px-6 py-3.5 border-b border-[#74B487]/30 space-y-1.5">
+            <div className="flex justify-between text-xs font-sans">
               <span className="text-[#0E382E] font-medium">
                 {subtotal >= freeShippingThreshold ? (
                   <span className="text-[#0E382E] font-bold flex items-center gap-1">
-                    ✓ <strong className="text-[#E67E22]">Free Shipping Unlocked!</strong>
+                    ✓ <strong className="text-[#E67E22]">Free Prepaid Shipping Unlocked!</strong>
                   </span>
                 ) : (
                   <>
@@ -60,7 +60,7 @@ export const CartDrawer: React.FC = () => {
                     <strong className="text-[#E67E22] font-bold">
                       ₹{freeShippingThreshold - subtotal}
                     </strong>{" "}
-                    more for Free Delivery
+                    more for Free Shipping (Prepaid ₹799+)
                   </>
                 )}
               </span>
@@ -71,6 +71,9 @@ export const CartDrawer: React.FC = () => {
                 style={{ width: `${progressPercent}%` }}
               />
             </div>
+            <p className="text-[10px] text-stone-600 leading-tight">
+              *Free delivery on prepaid orders ₹799+. For COD orders, ₹120 delivery fee applies.
+            </p>
           </div>
 
           {/* Cart List */}

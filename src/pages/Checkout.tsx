@@ -25,7 +25,8 @@ export const Checkout: React.FC = () => {
 
   const subtotal = getSubtotal();
   const discountAmount = Math.round((subtotal * discountPercent) / 100);
-  const shippingFee = subtotal >= 500 || subtotal === 0 ? 0 : 49;
+  const isCOD = formData.paymentMethod === "cod";
+  const shippingFee = subtotal === 0 ? 0 : isCOD ? 120 : subtotal >= 799 ? 0 : 50;
   const grandTotal = Math.max(0, subtotal - discountAmount + shippingFee);
 
   const handleApplyPromo = (e: React.FormEvent) => {
@@ -167,24 +168,27 @@ export const Checkout: React.FC = () => {
             <h3 className="text-xs uppercase font-extrabold text-[#E67E22] tracking-wider">
               3. Select Payment Method
             </h3>
-            <div className="grid grid-cols-2 gap-3 text-xs">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
               {[
-                { id: "upi", label: "UPI / GPay / PhonePe" },
-                { id: "card", label: "Credit / Debit Card" },
-                { id: "netbanking", label: "Net Banking" },
-                { id: "cod", label: "Cash on Delivery" },
+                { id: "upi", label: "UPI / GPay / PhonePe", note: "Prepaid • Free Shipping on ₹799+" },
+                { id: "card", label: "Credit / Debit Card", note: "Prepaid • Free Shipping on ₹799+" },
+                { id: "netbanking", label: "Net Banking", note: "Prepaid • Free Shipping on ₹799+" },
+                { id: "cod", label: "Cash on Delivery", note: "₹120 Delivery fee applies" },
               ].map((pm) => (
                 <button
                   type="button"
                   key={pm.id}
                   onClick={() => setFormData({ ...formData, paymentMethod: pm.id })}
-                  className={`p-4 rounded-2xl border text-left font-extrabold transition-all ${
+                  className={`p-4 rounded-2xl border text-left transition-all ${
                     formData.paymentMethod === pm.id
                       ? "bg-[#E67E22] text-white border-[#E67E22] shadow-xs"
                       : "bg-[#F6F5F0] border-[#74B487]/40 text-[#0E382E] hover:bg-[#E8F1E9]"
                   }`}
                 >
-                  {pm.label}
+                  <div className="font-extrabold">{pm.label}</div>
+                  <div className={`text-[10px] mt-1 ${formData.paymentMethod === pm.id ? "text-white/90" : "text-stone-500 font-medium"}`}>
+                    {pm.note}
+                  </div>
                 </button>
               ))}
             </div>
@@ -260,10 +264,31 @@ export const Checkout: React.FC = () => {
                 <span>-₹{discountAmount}</span>
               </div>
             )}
-            <div className="flex justify-between">
-              <span className="text-stone-600">Shipping</span>
-              <span className="font-bold">{shippingFee === 0 ? "FREE" : `₹${shippingFee}`}</span>
+            <div className="flex justify-between items-center">
+              <span className="text-stone-600">
+                Shipping {isCOD ? "(COD Delivery Fee)" : "(Prepaid)"}
+              </span>
+              <span className="font-bold">
+                {shippingFee === 0 ? (
+                  <span className="text-[#25D366]">FREE</span>
+                ) : (
+                  `₹${shippingFee}`
+                )}
+              </span>
             </div>
+            {isCOD ? (
+              <p className="text-[10px] text-[#E67E22] font-semibold leading-tight">
+                *Cash on Delivery incurs a ₹120 fee. Switch to Prepaid (UPI/Card) for Free Shipping on orders ₹799+!
+              </p>
+            ) : subtotal < 799 ? (
+              <p className="text-[10px] text-stone-500 leading-tight">
+                *Add ₹{799 - subtotal} more to unlock Free Shipping on this prepaid order.
+              </p>
+            ) : (
+              <p className="text-[10px] text-[#25D366] font-semibold leading-tight">
+                ✓ Free Shipping unlocked on your prepaid order!
+              </p>
+            )}
             <div className="flex justify-between border-t border-[#74B487]/30 pt-3 text-sm font-extrabold text-[#0E382E]">
               <span>Total Payable</span>
               <span className="text-[#E67E22] text-xl font-extrabold">₹{grandTotal}</span>

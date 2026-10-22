@@ -8,7 +8,8 @@ export const Cart: React.FC = () => {
     useCartStore();
 
   const subtotal = getSubtotal();
-  const shippingFee = subtotal >= 500 || subtotal === 0 ? 0 : 49;
+  const isPrepaidFree = subtotal >= 799;
+  const shippingFee = subtotal === 0 ? 0 : isPrepaidFree ? 0 : 50;
   const grandTotal = subtotal + shippingFee;
 
   return (
@@ -133,9 +134,12 @@ export const Cart: React.FC = () => {
                 <span className="font-bold">₹{subtotal}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-stone-600">Shipping Estimate</span>
+                <span className="text-stone-600">Shipping (Prepaid)</span>
                 <span className="font-bold">{shippingFee === 0 ? "FREE" : `₹${shippingFee}`}</span>
               </div>
+              <p className="text-[10px] text-stone-500 leading-tight">
+                *Free shipping on prepaid orders ₹799+. COD orders incur ₹120 delivery fee.
+              </p>
               <div className="flex justify-between border-t border-[#74B487]/30 pt-3 text-sm font-extrabold text-[#0E382E]">
                 <span>Grand Total</span>
                 <span className="text-[#E67E22] text-xl font-extrabold">₹{grandTotal}</span>
