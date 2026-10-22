@@ -25,15 +25,15 @@ export const CollectionDetail: React.FC = () => {
   return (
     <div className="pt-32 pb-24 px-4 sm:px-8 md:px-12 lg:px-16 w-full min-h-screen bg-[#F6F5F0] text-[#0E382E]">
       {/* Hero Banner */}
-      <div className="relative rounded-3xl overflow-hidden border border-[#74B487]/40 bg-stone-900 p-8 sm:p-12 mb-16 shadow-xl">
+      <div className="relative rounded-3xl overflow-hidden border border-[#74B487]/40 bg-stone-900 p-6 sm:p-12 mb-16 shadow-xl min-h-[500px] sm:min-h-[600px] lg:min-h-[680px] flex flex-col justify-end">
         <img
           src={collection.heroImage}
           alt={collection.name}
-          className="absolute inset-0 w-full h-full object-cover opacity-100"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-100"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent" />
 
-        <div className="relative z-10 max-w-2xl space-y-4 pt-12 text-white">
+        <div className="relative z-10 max-w-2xl space-y-4 text-white">
           <span className="text-xs uppercase tracking-[0.25em] text-[#E67E22] font-extrabold">
             COLLECTION SHOWCASE
           </span>
@@ -44,11 +44,11 @@ export const CollectionDetail: React.FC = () => {
             {collection.description}
           </p>
 
-          <div className="flex flex-wrap gap-4 pt-4">
+          <div className="flex flex-wrap gap-4 pt-2">
             {collection.meta.map((item, idx) => (
               <div
                 key={idx}
-                className="px-4 py-2 bg-[#0E382E]/80 border border-[#74B487]/40 rounded-xl text-xs font-bold"
+                className="px-4 py-2 bg-[#0E382E]/80 border border-[#74B487]/40 rounded-xl text-xs font-bold backdrop-blur-xs"
               >
                 <span className="text-[#E8F1E9]">{item.label}: </span>
                 <span className="text-[#E67E22] font-extrabold">{item.value}</span>

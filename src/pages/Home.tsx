@@ -593,7 +593,7 @@ export const Home: React.FC = () => {
           {collections.map((col) => (
             <div
               key={col.slug}
-              className="relative group h-96 rounded-3xl overflow-hidden border border-[#74B487]/40 bg-[#0E382E] p-8 flex flex-col justify-between shadow-xl"
+              className="relative group h-[460px] sm:h-[520px] rounded-3xl overflow-hidden border border-[#74B487]/40 bg-[#0E382E] p-8 flex flex-col justify-between shadow-xl"
             >
               <img
                 src={col.heroImage}
