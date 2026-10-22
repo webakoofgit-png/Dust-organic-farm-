@@ -54,7 +54,7 @@ export const About: React.FC = () => {
             </div>
             <h3 className="text-xl font-extrabold text-[#0E382E]">Indian Taste</h3>
             <p className="text-xs text-[#1F684B] leading-relaxed">
-              Authentic nostalgic flavours from traditional Shahi Ragi Laddoo Mix to royal Banarasi Paan, crafted with regional Indian wholesome recipes.
+              Authentic nostalgic flavours from traditional Shahi Ragi Laddoo Mix to royal Paan Digestive Shot, crafted with regional Indian wholesome recipes.
             </p>
           </div>
 

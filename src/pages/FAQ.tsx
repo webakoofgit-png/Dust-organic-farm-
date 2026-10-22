@@ -21,8 +21,8 @@ const faqData: FAQItem[] = [
   },
   {
     category: "Preparation & Usage",
-    question: "How do I prepare DUST Shahi Ragi Laddoo Mix or Banarasi Paan shots?",
-    answer: "For Shahi Ragi Laddoo Mix: Add ghee as per your requirement of mix, knead thoroughly, and shape into wholesome laddoos. For Banarasi Paan shots: Mix 10g into 100ml chilled water, stir for 15 seconds, and drink after meals.",
+    question: "How do I prepare DUST Shahi Ragi Laddoo Mix or Paan Digestive Shots?",
+    answer: "For Shahi Ragi Laddoo Mix: Add ghee as per your requirement of mix, knead thoroughly, and shape into wholesome laddoos. For Paan Digestive Shots: Mix 10g into 100ml chilled water, stir for 15 seconds, and drink after meals.",
   },
   {
     category: "Preparation & Usage",

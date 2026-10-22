@@ -81,14 +81,14 @@ export const Admin: React.FC = () => {
 
   // State 4: Homepage Banners
   const [banners, setBanners] = useState([
-    { id: 1, title: "Royal Banarasi Paan Digestive", subtitle: "Real Betel Leaf & Gulkand After-Meal Shot", cta: "Shop Digestives", status: "Active" },
+    { id: 1, title: "Royal Paan Digestive Shot", subtitle: "Real Betel Leaf & Gulkand After-Meal Shot", cta: "Shop Digestives", status: "Active" },
     { id: 2, title: "Shahi Ragi & Dry Fruit Laddoo Mix", subtitle: "Wholesome Millets & Real Nuts - Zero Added Sugar", cta: "Explore Range", status: "Active" },
   ]);
 
   // State 5: Customer Reviews Moderation
   const [reviews, setReviews] = useState([
-    { id: 1, author: "Ananya Sharma", location: "Pune", rating: 5, comment: "Tastes exactly like royal Banarasi paan after dinner!", product: "Banarasi Paan Digestive Shots", status: "Approved" },
-    { id: 2, author: "Rajesh Kulkarni", location: "Mumbai", rating: 5, comment: "Authentic Banarasi betel leaf and gulkand flavor in seconds!", product: "Banarasi Paan Digestive Shots", status: "Approved" },
+    { id: 1, author: "Ananya Sharma", location: "Pune", rating: 5, comment: "Tastes exactly like royal paan after dinner!", product: "Paan Digestive Shot", status: "Approved" },
+    { id: 2, author: "Rajesh Kulkarni", location: "Mumbai", rating: 5, comment: "Authentic betel leaf and gulkand flavor in seconds!", product: "Paan Digestive Shot", status: "Approved" },
   ]);
 
   // State 6: Blogs & Recipes
@@ -98,8 +98,8 @@ export const Admin: React.FC = () => {
   ]);
 
   const [recipes, setRecipes] = useState([
-    { id: 1, title: "5-Second Chilled Banarasi Paan Digestive", prep: "5 Secs", product: "Banarasi Paan Shot Box" },
-    { id: 2, title: "Royal Gulkand & Paan Mocktail", prep: "2 Mins", product: "Banarasi Paan Digestive Shots" },
+    { id: 1, title: "5-Second Chilled Paan Digestive", prep: "5 Secs", product: "Paan Digestive Shot Box" },
+    { id: 2, title: "Royal Gulkand & Paan Mocktail", prep: "2 Mins", product: "Paan Digestive Shot" },
   ]);
 
   // State 7: Customers
@@ -387,7 +387,7 @@ export const Admin: React.FC = () => {
                   <span className="text-xs uppercase font-extrabold tracking-wider">Top Selling SKU</span>
                   <Package className="w-5 h-5 text-[#E67E22]" />
                 </div>
-                <div className="text-xl font-extrabold text-[#0E382E]">Banarasi Paan Digestive</div>
+                <div className="text-xl font-extrabold text-[#0E382E]">Paan Digestive Shot</div>
                 <p className="text-[11px] text-[#E67E22] font-bold">78% of Total Sales Revenue</p>
               </div>
             </div>
@@ -881,7 +881,7 @@ export const Admin: React.FC = () => {
                   required
                   value={newProductName}
                   onChange={(e) => setNewProductName(e.target.value)}
-                  placeholder="e.g. Banarasi Paan Digestive Pack"
+                  placeholder="e.g. Paan Digestive Shot Box"
                   className="w-full bg-[#F6F5F0] border border-[#74B487]/40 rounded-xl p-3 text-[#0E382E] font-semibold"
                 />
               </div>

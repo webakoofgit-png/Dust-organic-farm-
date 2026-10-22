@@ -220,7 +220,7 @@ export const Home: React.FC = () => {
           <span>•</span>
           <span>WHOLESOME MILLETS & DRY FRUITS</span>
           <span>•</span>
-          <span>ROYAL BANARASI PAAN</span>
+          <span>ROYAL PAAN DIGESTIVE SHOT</span>
           <span>•</span>
           <span>ZERO ADDED SUGAR</span>
           <span>•</span>
@@ -249,7 +249,7 @@ export const Home: React.FC = () => {
           <span>•</span>
           <span>WHOLESOME MILLETS & DRY FRUITS</span>
           <span>•</span>
-          <span>ROYAL BANARASI PAAN</span>
+          <span>ROYAL PAAN DIGESTIVE SHOT</span>
           <span>•</span>
           <span>ZERO ADDED SUGAR</span>
           <span>•</span>
@@ -570,7 +570,7 @@ export const Home: React.FC = () => {
             />
             <img
               src={storyPaanProduct.storyImage}
-              alt="DUST Banarasi Paan"
+              alt="DUST Paan Digestive Shot"
               className="rounded-2xl border-2 border-[#74B487]/50 object-cover w-full h-80 mt-8 shadow-md"
             />
           </div>

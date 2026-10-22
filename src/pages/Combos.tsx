@@ -40,7 +40,7 @@ export const Combos: React.FC = () => {
             </h2>
 
             <p className="text-xs text-[#1F684B] leading-relaxed">
-              1× Shahi Ragi & Dry Fruit Laddoo Mix (250g) + 1× Banarasi Paan Digestive Shot Box (20g). The ideal combination of wholesome millet nutrition and royal post-meal digestive freshness.
+              1× Shahi Ragi & Dry Fruit Laddoo Mix (250g) + 1× Paan Digestive Shot Box (20g). The ideal combination of wholesome millet nutrition and royal post-meal digestive freshness.
             </p>
 
             <ul className="space-y-2 text-xs text-[#0E382E] font-semibold">
@@ -50,7 +50,7 @@ export const Combos: React.FC = () => {
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#E67E22]" />
-                <span>4 Royal Banarasi Paan Digestive Shots</span>
+                <span>4 Royal Paan Digestive Shots</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#E67E22]" />
@@ -87,11 +87,11 @@ export const Combos: React.FC = () => {
             </div>
 
             <h2 className="text-2xl font-extrabold text-[#0E382E]">
-              Banarasi Paan Digestive Family Box (3 Packs)
+              Paan Digestive Shot Family Box (3 Packs)
             </h2>
 
             <p className="text-xs text-[#1F684B] leading-relaxed">
-              Stock up on Banaras' finest after-meal digestive shots. 3 boxes of real betel leaf and gulkand Digestives for post-dinner family rituals.
+              Stock up on the finest after-meal digestive shots. 3 boxes of real betel leaf and gulkand Digestives for post-dinner family rituals.
             </p>
 
             <ul className="space-y-2 text-xs text-[#0E382E] font-semibold">
@@ -117,7 +117,7 @@ export const Combos: React.FC = () => {
             </div>
 
             <Link
-              to="/product/banarasi-paan-01"
+              to="/product/paan-digestive-shot"
               className="btn-dust-orange px-6 py-3 text-white font-extrabold text-xs uppercase tracking-wider rounded-full inline-flex items-center gap-2 shadow-md"
             >
               Order Combo <ArrowUpRight className="w-4 h-4" />

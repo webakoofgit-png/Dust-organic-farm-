@@ -14,7 +14,9 @@ import { useCartStore } from "@/lib/cart-store";
 export const ProductDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const defaultProduct = products[0] as Product;
-  const product: Product = products.find((p) => p.slug === slug || p.id === slug) ?? defaultProduct;
+  const product: Product =
+    products.find((p) => p.slug === slug || p.id === slug || (slug?.includes("paan") && p.slug.includes("paan"))) ??
+    defaultProduct;
 
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);

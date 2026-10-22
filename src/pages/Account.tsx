@@ -51,7 +51,7 @@ export const Account: React.FC = () => {
             date: "26 August 2026",
             total: 647,
             status: "In Transit",
-            items: "2× Shahi Ragi Laddoo Mix + 1× Banarasi Paan Box",
+            items: "2× Shahi Ragi Laddoo Mix + 1× Paan Digestive Shot Box",
           },
           {
             id: "DST-8600-3810",

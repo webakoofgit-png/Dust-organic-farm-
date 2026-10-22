@@ -117,7 +117,7 @@ export const OrderConfirmation: React.FC = () => {
                   </tr>
                   <tr>
                     <td className="p-3 font-semibold text-[#0E382E]">
-                      Banarasi Paan Digestive Shot Box (20g Multipack)
+                      Paan Digestive Shot Box (20g Multipack)
                     </td>
                     <td className="p-3 text-center font-bold">1</td>
                     <td className="p-3 text-right">₹249</td>

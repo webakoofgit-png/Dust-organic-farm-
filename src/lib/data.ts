@@ -213,12 +213,12 @@ export const products: Product[] = [
     bestSeller: true,
   },
   {
-    id: "banarasi-paan-01",
-    slug: "banarasi-paan",
-    name: "Banarasi Paan Digestive Shot",
-    shortName: "Banarasi Paan",
+    id: "paan-digestive-shot-01",
+    slug: "paan-digestive-shot",
+    name: "Paan Digestive Shot",
+    shortName: "Paan Digestive Shot",
     subtitle: "Heritage Wellness — Digestive Blend",
-    pitch: "Experience the royal taste of Banaras",
+    pitch: "Experience the royal taste of Paan",
     category: "heritage-wellness",
     categoryLabel: "Heritage Wellness",
     price: 249,
@@ -231,7 +231,7 @@ export const products: Product[] = [
     badges: ["Royal Blend", "Digestive Shot"],
     description: [
       "Crafted with real betel leaf extract, aromatic gulkand, fennel, rose and cardamom.",
-      "DUST Banarasi Paan is your perfect after-meal ritual for freshness and digestion — a love letter to the lanes of Banaras.",
+      "DUST Paan Digestive Shot is your perfect after-meal ritual for freshness and digestion.",
       "Mix half sachet (10g) in 100ml cold water and drink within 5 minutes of your meal.",
     ],
     caution:
@@ -284,11 +284,11 @@ export const products: Product[] = [
     ],
     heritageTitle: "The Royal Paan Legacy",
     heritageQuote:
-      "For centuries, the royal Banarasi Paan was served in silver boxes to nobility as the ultimate after-meal Digestive. Crafted with real betel leaf extract, fennel, and premium rose gulkand, every sip of DUST Banarasi Paan captures that exact traditional fresh Digestive ritual.",
+      "For centuries, royal Paan was served in silver boxes to nobility as the ultimate after-meal Digestive. Crafted with real betel leaf extract, fennel, and premium rose gulkand, every sip of DUST Paan Digestive Shot captures that exact traditional fresh Digestive ritual.",
     images: [
-      { src: "/paan_image_2.jpeg", alt: "DUST Banarasi Paan standup pouch front and back with nutritional info" },
-      { src: "/paan_image_1.jpeg", alt: "DUST Banarasi Paan Digestive Shot authentic pack box and glass shot" },
-      { src: "/paan_image_3.jpeg", alt: "DUST Banarasi Paan digestive shot box back and ingredient details" },
+      { src: "/paan_image_2.jpeg", alt: "DUST Paan Digestive Shot standup pouch front and back with nutritional info" },
+      { src: "/paan_image_1.jpeg", alt: "DUST Paan Digestive Shot authentic pack box and glass shot" },
+      { src: "/paan_image_3.jpeg", alt: "DUST Paan Digestive Shot box back and ingredient details" },
     ],
     storyImage: "/paan_image_2.jpeg",
     accent: "rose",
@@ -347,7 +347,7 @@ export const collections: Collection[] = [
     titleLines: ["Heritage", "Wellness."],
     tagline: "Ancient rituals of the Indian table, distilled into modern shots.",
     description:
-      "Real betel leaf, rose-petal gulkand and warming spice — the royal Digestive tradition of Banaras, ready in a glass.",
+      "Real betel leaf, rose-petal gulkand and warming spice — the royal Digestive tradition, ready in a glass.",
     meta: [
       { label: "Serving Format", value: "Digestive Shots" },
       { label: "Per Sachet", value: "Makes 2 Shots" },
@@ -362,7 +362,7 @@ export const collections: Collection[] = [
     pillars: [
       {
         title: "The After-Meal Ritual",
-        text: "A digestive shot to close the meal the way Banaras always has — fresh, floral, unhurried.",
+        text: "A digestive shot to close the meal the way royal courts always have — fresh, floral, unhurried.",
       },
       {
         title: "Rooted in Royal Courts",
@@ -409,13 +409,13 @@ export const journalPosts: JournalPost[] = [
     slug: "banaras-and-the-paan-tradition",
     tag: "Heritage",
     date: "May 2025",
-    title: "Banaras and the Paan Tradition That Never Left",
+    title: "The Royal Paan Tradition That Never Left",
     excerpt:
-      "The galis of Banaras smell of gulkand and betel leaf. We trace the heritage of paan from street corner to modern wellness.",
+      "The fragrant aroma of gulkand and betel leaf. We trace the heritage of paan from tradition to modern wellness.",
     body: [
-      "In the royal courts of old Banaras, dining was not merely sustenance; it was an elaborate ritual that concluded with the presentation of paan in silver boxes.",
-      "This final mouth freshener and Digestive was a sign of hospitality, slow indulgence, and cellular care — a tradition that never really left the galis of the old city.",
-      "DUST Banarasi Paan revives this heritage Digestive: spray-dried betel leaf extract, premium rose petal preserve, cardamom, and prebiotic fiber inulin — the royal freshness of Banaras, instantly, wherever you are.",
+      "In royal Indian courts, dining was not merely sustenance; it was an elaborate ritual that concluded with the presentation of paan in silver boxes.",
+      "This final mouth freshener and Digestive was a sign of hospitality, slow indulgence, and cellular care — a tradition celebrated across centuries.",
+      "DUST Paan Digestive Shot revives this heritage Digestive: spray-dried betel leaf extract, premium rose petal preserve, cardamom, and prebiotic fiber inulin — royal freshness, instantly, wherever you are.",
     ],
   },
   {
@@ -440,7 +440,7 @@ export const journalPosts: JournalPost[] = [
       "Ancient India resolved digestive imbalances using natural prebiotic fibers. We look at the modern science of inulin and gulkand.",
     body: [
       "Long before the word prebiotic existed, the Indian table closed heavy meals with fennel, betel leaf and rose preserves — botanicals chosen for how they made the body feel after eating.",
-      "Modern gut science has caught up: inulin, the prebiotic fiber in our Banarasi Paan shot, feeds beneficial gut bacteria, while fennel's volatile oils ease post-meal heaviness.",
+      "Modern gut science has caught up: inulin, the prebiotic fiber in our Paan shot, feeds beneficial gut bacteria, while fennel's volatile oils ease post-meal heaviness.",
       "Gulkand — slow-cured rose petal preserve — brings its own cooling tradition. Time-tested botanicals, modern clean-label discipline.",
     ],
   },
@@ -465,9 +465,9 @@ export const journalPosts: JournalPost[] = [
     excerpt:
       "The volatile oils in cardamom and fennel seeds have been used for centuries to clarify the palate and soothe the stomach.",
     body: [
-      "Walk out of any Banarasi dinner and you will be offered a pinch of fennel — not decoration, but technology. Its volatile oils cut through richness and reset the palate within seconds.",
+      "Walk out of any traditional feast and you will be offered a pinch of fennel — not decoration, but technology. Its volatile oils cut through richness and reset the palate within seconds.",
       "Cardamom works differently: warm, floral, almost camphorous, it lifts aroma upward and lingers as sweetness long after the meal ends.",
-      "Together they are the lungs of our Banarasi Paan shot — the reason one small glass can close an entire meal.",
+      "Together they are the lungs of our Paan Digestive Shot — the reason one small glass can close an entire meal.",
     ],
   },
 ];
@@ -479,7 +479,7 @@ export const faqs = [
   },
   {
     q: "How do I prepare a DUST sachet?",
-    a: "Tear and empty one sachet into a glass. Add 180-200ml of chilled water, stir well for 10-15 seconds, and add ice to taste. For the Banarasi Paan shot, consume after meals.",
+    a: "Tear and empty one sachet into a glass. Add 180-200ml of chilled water, stir well for 10-15 seconds, and add ice to taste. For the Paan Digestive Shot, consume after meals.",
   },
   {
     q: "Do you offer free shipping?",
@@ -511,11 +511,11 @@ export const faqs = [
   },
   {
     q: "Are DUST products vegetarian and clean-label?",
-    a: "Yes! DUST Shahi Ragi & Dry Fruit Laddoo Mix is 100% vegetarian, made with wholesome grains, dates, and nuts. Our Heritage Wellness series (like the Banarasi Paan shot) is also 100% vegetarian. Check the ingredients list on respective product pages for exact details.",
+    a: "Yes! DUST Shahi Ragi & Dry Fruit Laddoo Mix is 100% vegetarian, made with wholesome grains, dates, and nuts. Our Heritage Wellness series (like the Paan Digestive Shot) is also 100% vegetarian. Check the ingredients list on respective product pages for exact details.",
   },
   {
     q: "Do DUST products contain added sugar?",
-    a: "DUST Shahi Ragi & Dry Fruit Laddoo Mix contains 0g added sugar — it is naturally sweetened with pure date powder. DUST Banarasi Paan contains sugars sourced entirely from natural gulkand powder. We never use high-fructose corn syrup or artificial sweeteners.",
+    a: "DUST Shahi Ragi & Dry Fruit Laddoo Mix contains 0g added sugar — it is naturally sweetened with pure date powder. DUST Paan Digestive Shot contains sugars sourced entirely from natural gulkand powder. We never use high-fructose corn syrup or artificial sweeteners.",
   },
   {
     q: "What is the shelf life of the products?",
@@ -529,7 +529,7 @@ export const testimonials = [
     author: "Ananya R. · Pune",
   },
   {
-    quote: "The Banarasi Paan shot is a game changer. It's become my favorite post-dinner ritual.",
+    quote: "The Paan Digestive Shot is a game changer. It's become my favorite post-dinner ritual.",
     author: "Vikram S. · Lucknow",
   },
   {

@@ -39,9 +39,9 @@ const reviewsData: Review[] = [
     location: "Mumbai, Maharashtra",
     rating: 5,
     date: "Verified Buyer • 1 week ago",
-    productName: "Banarasi Paan Digestive Shots",
+    productName: "Paan Digestive Shot",
     comment:
-      "Authentic Banarasi betel leaf and gulkand flavor in seconds! Replaced heavy sugary desserts after every meal.",
+      "Authentic betel leaf and gulkand flavor in seconds! Replaced heavy sugary desserts after every meal.",
     mediaType: "photo",
     mediaUrl: "/paan_image_2.jpeg",
   },
@@ -63,9 +63,9 @@ const reviewsData: Review[] = [
     location: "Ahmedabad, Gujarat",
     rating: 5,
     date: "Verified Buyer • 3 weeks ago",
-    productName: "Banarasi Paan Digestive Shots",
+    productName: "Paan Digestive Shot",
     comment:
-      "Served these Banarasi Paan shots at our family get-together and guests were blown away! Super easy to prepare in 5 seconds.",
+      "Served these Paan shots at our family get-together and guests were blown away! Super easy to prepare in 5 seconds.",
     mediaType: "photo",
     mediaUrl: paanPouchImg,
   },
@@ -75,7 +75,7 @@ const reviewsData: Review[] = [
     location: "Kochi, Kerala",
     rating: 5,
     date: "Verified Buyer • 1 month ago",
-    productName: "Banarasi Paan Digestive Shots",
+    productName: "Paan Digestive Shot",
     comment:
       "The cardamom, fennel, and rose gulkand balance is pure perfection. Gives refreshing breath and soothing digestion instantly.",
     mediaType: "photo",
