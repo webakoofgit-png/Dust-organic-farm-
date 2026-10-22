@@ -7,6 +7,8 @@ import {
   Sparkles,
   ArrowRight,
   ShieldCheck,
+  Eye,
+  X,
 } from "lucide-react";
 import { products, Product } from "@/lib/data";
 import { useCartStore } from "@/lib/cart-store";
@@ -21,6 +23,7 @@ export const ProductDetail: React.FC = () => {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [added, setAdded] = useState(false);
+  const [zoomImage, setZoomImage] = useState<string | null>(null);
 
   const { addToCart, toggleWishlist, isInWishlist } = useCartStore();
   const inWishlist = isInWishlist(product.id);
@@ -354,6 +357,119 @@ export const ProductDetail: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Visual Infographic & Brand Poster Showcase */}
+      {(product.infographicImage || product.posterImage) && (
+        <section className="mt-20 pt-16 border-t border-[#74B487]/40 space-y-10">
+          <div className="text-center max-w-2xl mx-auto space-y-2">
+            <span className="text-xs uppercase tracking-[0.25em] text-[#E67E22] font-extrabold bg-[#E8F1E9] border border-[#74B487]/40 px-3 py-1 rounded-full inline-block">
+              VISUAL GUIDE & AUTHENTICITY
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0E382E]">
+              Ingredients, Nutrition & Craft
+            </h2>
+            <p className="text-xs sm:text-sm text-[#1F684B]">
+              100% ingredient transparency and traditional heritage. Click any image to view in high resolution.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto items-stretch">
+            {product.infographicImage && (
+              <div className="bg-white rounded-3xl border border-[#74B487]/40 p-6 sm:p-8 shadow-sm flex flex-col justify-between group hover:border-[#E67E22] transition-all">
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center justify-between">
+                    <span className="badge-orange text-[10px] uppercase font-extrabold tracking-widest px-3 py-1 rounded-full shadow-xs">
+                      INFOGRAPHIC
+                    </span>
+                    <span className="text-xs font-bold text-[#1F684B]">Nutritional Breakdown</span>
+                  </div>
+                  <h3 className="text-xl font-extrabold text-[#0E382E]">
+                    {product.shortName} Infographic
+                  </h3>
+                </div>
+
+                <div
+                  onClick={() => setZoomImage(product.infographicImage || null)}
+                  className="relative rounded-2xl overflow-hidden border border-[#74B487]/30 bg-stone-50 cursor-pointer group/img flex items-center justify-center p-2 min-h-[380px]"
+                >
+                  <img
+                    src={product.infographicImage}
+                    alt={`${product.name} Infographic`}
+                    className="w-full h-auto max-h-[500px] object-contain group-hover/img:scale-102 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black/25 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-extrabold uppercase tracking-widest gap-2 backdrop-blur-xs">
+                    <Eye className="w-4 h-4" /> Click to Zoom
+                  </div>
+                </div>
+
+                <p className="text-[11px] text-stone-500 mt-4 text-center font-medium">
+                  Detailed illustration of finger millet, nuts, seeds, and preparation ritual.
+                </p>
+              </div>
+            )}
+
+            {product.posterImage && (
+              <div className="bg-white rounded-3xl border border-[#74B487]/40 p-6 sm:p-8 shadow-sm flex flex-col justify-between group hover:border-[#E67E22] transition-all">
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center justify-between">
+                    <span className="bg-[#0E382E] text-white text-[10px] uppercase font-extrabold tracking-widest px-3 py-1 rounded-full shadow-xs">
+                      OFFICIAL POSTER
+                    </span>
+                    <span className="text-xs font-bold text-[#E67E22]">Choice of Motherland</span>
+                  </div>
+                  <h3 className="text-xl font-extrabold text-[#0E382E]">
+                    {product.name} Poster
+                  </h3>
+                </div>
+
+                <div
+                  onClick={() => setZoomImage(product.posterImage || null)}
+                  className="relative rounded-2xl overflow-hidden border border-[#74B487]/30 bg-stone-50 cursor-pointer group/img flex items-center justify-center p-2 min-h-[380px]"
+                >
+                  <img
+                    src={product.posterImage}
+                    alt={`${product.name} Poster`}
+                    className="w-full h-auto max-h-[500px] object-contain group-hover/img:scale-102 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black/25 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-extrabold uppercase tracking-widest gap-2 backdrop-blur-xs">
+                    <Eye className="w-4 h-4" /> Click to Zoom
+                  </div>
+                </div>
+
+                <p className="text-[11px] text-stone-500 mt-4 text-center font-medium">
+                  "NOT MADE FOR EVERYONE • MADE FOR THOSE WHO CHOOSE BETTER"
+                </p>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
+      {/* Lightbox Zoom Modal */}
+      {zoomImage && (
+        <div
+          onClick={() => setZoomImage(null)}
+          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-8 animate-in fade-in duration-200"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative max-w-4xl max-h-[90vh] bg-white rounded-3xl p-4 sm:p-6 overflow-hidden shadow-2xl flex flex-col items-center"
+          >
+            <button
+              onClick={() => setZoomImage(null)}
+              className="absolute top-4 right-4 z-10 p-2.5 rounded-full bg-[#0E382E] text-white hover:bg-[#E67E22] transition-colors"
+              aria-label="Close Preview"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            <img
+              src={zoomImage}
+              alt="Zoomed Detail"
+              className="max-h-[82vh] w-auto object-contain rounded-2xl"
+            />
+          </div>
+        </div>
+      )}
 
       {/* You May Also Like */}
       {otherProducts.length > 0 && (

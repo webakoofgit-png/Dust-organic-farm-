@@ -8,6 +8,8 @@
 import ragiHero from "@/assets/ragi-hero.png";
 import ragiPouch from "@/assets/ragi-pouch.png";
 import ragiPack from "@/assets/ragi-pack.png";
+import ragiPoster from "@/assets/ragi-poster.png";
+import ragiInfographic from "@/assets/ragi-infographic.png";
 import laddooMix from "@/assets/laddooMix.png";
 import paanPack from "@/assets/paan-pack.png";
 import paanPouch from "@/assets/paan-pouch.jpg";
@@ -19,6 +21,8 @@ export const img = {
   ragiHero,
   ragiPouch,
   ragiPack,
+  ragiPoster,
+  ragiInfographic,
   laddooMix,
   paanPack,
   paanPouch,
@@ -87,6 +91,8 @@ export interface Product {
   heritageQuote: string;
   images: { src: string; alt: string }[];
   storyImage: string;
+  posterImage?: string;
+  infographicImage?: string;
   accent: "amber" | "rose" | "emerald";
   stock: number;
   sku: string;
@@ -195,6 +201,14 @@ export const products: Product[] = [
         alt: "DUST Shahi Ragi & Dry Fruit Laddoo Mix 250g front pouch packaging",
       },
       {
+        src: ragiPoster,
+        alt: "DUST Shahi Ragi & Dry Fruit Laddoo Mix official brand poster",
+      },
+      {
+        src: ragiInfographic,
+        alt: "DUST Shahi Ragi & Dry Fruit Laddoo Mix nutritional & ingredient infographic",
+      },
+      {
         src: ragiPack,
         alt: "DUST Shahi Ragi & Dry Fruit Laddoo Mix back packaging with nutritional facts and preparation",
       },
@@ -204,6 +218,8 @@ export const products: Product[] = [
       },
     ],
     storyImage: ragiPouch,
+    posterImage: ragiPoster,
+    infographicImage: ragiInfographic,
     accent: "amber",
     stock: 50,
     sku: "DUST-RAGI-250",

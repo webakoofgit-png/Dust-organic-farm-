@@ -164,6 +164,52 @@ export const CollectionDetail: React.FC = () => {
           })}
         </div>
       </div>
+
+      {/* Featured Collection Visuals */}
+      {collection.slug === "wholesome-millets" && (
+        <section className="mt-20 pt-16 border-t border-[#74B487]/40 space-y-8">
+          <div className="text-center max-w-2xl mx-auto space-y-2">
+            <span className="text-xs uppercase tracking-widest text-[#E67E22] font-extrabold bg-[#E8F1E9] border border-[#74B487]/40 px-3 py-1 rounded-full inline-block">
+              FEATURED VISUAL SPOTLIGHT
+            </span>
+            <h2 className="text-3xl font-extrabold text-[#0E382E]">
+              The Ragi Laddoo Mix Story
+            </h2>
+            <p className="text-xs sm:text-sm text-[#1F684B]">
+              Discover why traditional finger millet is the superfood grain of tomorrow. 100% transparent ingredients and traditional goodness.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="bg-white rounded-3xl border border-[#74B487]/40 p-4 sm:p-6 shadow-sm flex flex-col items-center group hover:border-[#E67E22] transition-colors">
+              <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#E67E22] mb-3">
+                OFFICIAL BRAND POSTER
+              </span>
+              <img
+                src="/ragi-poster.png"
+                alt="Ragi & Dry Fruit Laddoo Mix Poster"
+                className="w-full h-auto max-h-[460px] object-contain rounded-2xl border border-[#74B487]/20"
+              />
+              <p className="text-[11px] text-stone-500 mt-3 font-medium text-center">
+                Not Made For Everyone • Made For Those Who Choose Better
+              </p>
+            </div>
+            <div className="bg-white rounded-3xl border border-[#74B487]/40 p-4 sm:p-6 shadow-sm flex flex-col items-center group hover:border-[#E67E22] transition-colors">
+              <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#E67E22] mb-3">
+                NUTRITION & INGREDIENT INFOGRAPHIC
+              </span>
+              <img
+                src="/ragi-infographic.png"
+                alt="Ragi Dry Fruit Laddoo Mix Infographic"
+                className="w-full h-auto max-h-[460px] object-contain rounded-2xl border border-[#74B487]/20"
+              />
+              <p className="text-[11px] text-stone-500 mt-3 font-medium text-center">
+                Complete breakdown of finger millet, roasted nuts, seeds, and preparation ritual.
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
     </div>
   );
 };

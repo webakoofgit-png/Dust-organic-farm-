@@ -14,11 +14,15 @@ export const QuickViewModal: React.FC = () => {
 
   const [quantity, setQuantity] = useState(1);
   const [added, setAdded] = useState(false);
+  const [activeImgIndex, setActiveImgIndex] = useState(0);
 
   if (!quickViewProduct) return null;
 
   const inWishlist = isInWishlist(quickViewProduct.id);
-  const mainImage = quickViewProduct.images[0]?.src || quickViewProduct.storyImage;
+  const productImages = quickViewProduct.images?.length > 0
+    ? quickViewProduct.images
+    : [{ src: quickViewProduct.storyImage, alt: quickViewProduct.name }];
+  const mainImage = productImages[activeImgIndex]?.src || productImages[0]?.src || quickViewProduct.storyImage;
 
   const handleAddToCart = () => {
     addToCart(quickViewProduct, quantity);
@@ -46,22 +50,47 @@ export const QuickViewModal: React.FC = () => {
         </button>
 
         {/* Product Image Side */}
-        <div className="relative bg-white p-8 flex items-center justify-center min-h-[320px] border-r border-[#74B487]/30">
-          <img
-            src={mainImage}
-            alt={quickViewProduct.name}
-            className="max-h-[340px] w-auto object-contain transition-transform duration-500 hover:scale-105"
-          />
-          <div className="absolute bottom-4 left-4 flex gap-2 flex-wrap">
-            {quickViewProduct.badges.map((badge, idx) => (
-              <span
-                key={idx}
-                className="bg-[#E67E22] text-white text-[10px] uppercase font-extrabold tracking-widest px-2.5 py-1 rounded-full shadow-xs"
-              >
-                {badge}
-              </span>
-            ))}
+        <div className="relative bg-white p-6 flex flex-col items-center justify-between min-h-[360px] border-r border-[#74B487]/30">
+          <div className="relative w-full flex-1 flex items-center justify-center p-2">
+            <img
+              src={mainImage}
+              alt={quickViewProduct.name}
+              className="max-h-[280px] w-auto object-contain transition-transform duration-500 hover:scale-105"
+            />
+            <div className="absolute top-2 left-2 flex gap-1.5 flex-wrap">
+              {quickViewProduct.badges.map((badge, idx) => (
+                <span
+                  key={idx}
+                  className="bg-[#E67E22] text-white text-[9px] uppercase font-extrabold tracking-widest px-2 py-0.5 rounded-full shadow-xs"
+                >
+                  {badge}
+                </span>
+              ))}
+            </div>
           </div>
+
+          {/* Thumbnails */}
+          {productImages.length > 1 && (
+            <div className="flex items-center gap-2 pt-3 overflow-x-auto max-w-full pb-1">
+              {productImages.map((imgItem, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setActiveImgIndex(idx)}
+                  className={`w-12 h-12 rounded-lg border p-1 transition-all overflow-hidden shrink-0 ${
+                    activeImgIndex === idx
+                      ? "border-[#E67E22] ring-2 ring-[#E67E22]/30"
+                      : "border-[#74B487]/30 opacity-70 hover:opacity-100"
+                  }`}
+                >
+                  <img
+                    src={imgItem.src}
+                    alt={imgItem.alt}
+                    className="w-full h-full object-contain"
+                  />
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Product Info Side */}

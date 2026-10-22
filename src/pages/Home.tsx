@@ -17,6 +17,8 @@ import {
 import { products, collections, Product, companyInfo } from "@/lib/data";
 import { useCartStore } from "@/lib/cart-store";
 import dustStandeeImg from "@/assets/dust-brand-usp-standee.jpg";
+import ragiPoster from "@/assets/ragi-poster.png";
+import ragiInfographic from "@/assets/ragi-infographic.png";
 
 export const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -410,6 +412,134 @@ export const Home: React.FC = () => {
               </div>
             );
           })}
+        </div>
+      </section>
+
+      {/* 3.4 SHAHI RAGI & DRY FRUIT LADDOO MIX — SUPERFOOD SHOWCASE */}
+      <section className="py-24 bg-[#E8F1E9] text-[#0E382E] px-4 sm:px-8 md:px-12 lg:px-16 border-t border-[#74B487]/40 relative overflow-hidden">
+        {/* Ambient Glow */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#74B487]/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#E67E22]/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto space-y-16 relative z-10">
+          <div className="text-center space-y-3 max-w-3xl mx-auto">
+            <span className="text-xs uppercase tracking-[0.3em] text-[#E67E22] font-extrabold bg-white px-4 py-1.5 rounded-full border border-[#74B487]/40 inline-block shadow-xs">
+              WHOLESOME MILLETS • 100% NATURAL NUTRITION
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0E382E] tracking-tight">
+              TRADITION REIMAGINED. <br />
+              <span className="text-[#E67E22]">READY IN 2 MINUTES.</span>
+            </h2>
+            <p className="text-sm sm:text-base text-[#1F684B] font-normal leading-relaxed">
+              Made with nutritious Ragi and a rich blend of dry fruits, our Shahi Ragi & Dry Fruit Laddoo Mix is the most convenient way to prepare fresh, wholesome laddoos at home — naturally sweetened with pure date powder and zero added sugar.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Poster Graphic Display */}
+            <div className="lg:col-span-5 flex justify-center">
+              <div className="relative group max-w-md w-full bg-white p-4 sm:p-6 rounded-3xl border border-[#74B487]/50 shadow-2xl overflow-hidden">
+                <img
+                  src={ragiPoster}
+                  alt="DUST Shahi Ragi & Dry Fruit Laddoo Mix Poster"
+                  className="w-full h-auto object-cover rounded-2xl border border-[#74B487]/30 shadow-md group-hover:scale-102 transition-transform duration-500"
+                />
+                <div className="pt-4 text-center flex items-center justify-between">
+                  <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#E67E22]">
+                    SHAHI RAGI & DRY FRUIT LADDOO MIX
+                  </span>
+                  <Link
+                    to="/product/shahi-ragi-dry-fruit-laddoo-mix"
+                    className="text-xs font-extrabold text-[#0E382E] hover:text-[#E67E22] flex items-center gap-1"
+                  >
+                    View Details →
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* USPs Grid & Actions */}
+            <div className="lg:col-span-7 space-y-8">
+              <h3 className="text-2xl font-extrabold text-[#0E382E] flex items-center gap-2 border-b border-[#74B487]/40 pb-3">
+                <Award className="w-5 h-5 text-[#E67E22]" /> WHY CHOOSE DUST RAGI LADDOO MIX?
+              </h3>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="p-5 bg-white rounded-2xl border border-[#74B487]/40 space-y-1.5 shadow-xs">
+                  <div className="flex items-center gap-2 text-[#E67E22] font-extrabold text-xs uppercase tracking-wider">
+                    <Leaf className="w-4 h-4" /> Finger Millet (Ragi) Power
+                  </div>
+                  <p className="text-xs text-stone-600">
+                    High in natural calcium, iron, and fiber to strengthen bone health and provide sustained vitality.
+                  </p>
+                </div>
+
+                <div className="p-5 bg-white rounded-2xl border border-[#74B487]/40 space-y-1.5 shadow-xs">
+                  <div className="flex items-center gap-2 text-[#E67E22] font-extrabold text-xs uppercase tracking-wider">
+                    <ShieldCheck className="w-4 h-4" /> 5 Superfood Seeds & Nuts
+                  </div>
+                  <p className="text-xs text-stone-600">
+                    Loaded with almonds, cashews, pumpkin seeds, sunflower seeds, and watermelon seeds.
+                  </p>
+                </div>
+
+                <div className="p-5 bg-white rounded-2xl border border-[#74B487]/40 space-y-1.5 shadow-xs">
+                  <div className="flex items-center gap-2 text-[#E67E22] font-extrabold text-xs uppercase tracking-wider">
+                    <Sparkles className="w-4 h-4" /> Zero Added Sugar
+                  </div>
+                  <p className="text-xs text-stone-600">
+                    Naturally sweetened with pure date powder. 0% added sugar, 0% artificial flavors or preservatives.
+                  </p>
+                </div>
+
+                <div className="p-5 bg-white rounded-2xl border border-[#74B487]/40 space-y-1.5 shadow-xs">
+                  <div className="flex items-center gap-2 text-[#E67E22] font-extrabold text-xs uppercase tracking-wider">
+                    <Zap className="w-4 h-4" /> 3 Simple Steps
+                  </div>
+                  <p className="text-xs text-stone-600">
+                    Add warm ghee as per requirement, knead thoroughly, and shape into fresh round laddoos.
+                  </p>
+                </div>
+              </div>
+
+              {/* Infographic Preview Callout */}
+              <div className="p-5 bg-white rounded-2xl border-2 border-[#E67E22]/40 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="space-y-1 text-center sm:text-left">
+                  <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#E67E22] bg-[#E8F1E9] px-2.5 py-0.5 rounded-full inline-block">
+                    TRANSPARENT INGREDIENTS
+                  </span>
+                  <h4 className="text-sm font-extrabold text-[#0E382E]">
+                    See the Complete Nutritional Infographic
+                  </h4>
+                  <p className="text-xs text-stone-600">
+                    Explore macro breakdown, serving information, and allergen clarity on the product page.
+                  </p>
+                </div>
+                <Link
+                  to="/product/shahi-ragi-dry-fruit-laddoo-mix"
+                  className="px-5 py-3 btn-dust-orange text-white font-extrabold text-xs uppercase tracking-wider rounded-xl whitespace-nowrap shadow-xs hover:shadow-md transition-all flex items-center gap-2"
+                >
+                  <Eye className="w-4 h-4" /> View Infographic
+                </Link>
+              </div>
+
+              {/* Purchase Actions */}
+              <div className="flex flex-wrap items-center gap-3 pt-2">
+                <button
+                  onClick={() => addToCart(storyRagiProduct)}
+                  className="py-3.5 px-6 btn-dust-orange text-white font-extrabold text-xs uppercase tracking-wider rounded-xl flex items-center gap-2 shadow-md"
+                >
+                  <ShoppingBag className="w-4 h-4" /> Add to Cart (₹199)
+                </button>
+                <button
+                  onClick={() => handleBuyNow(storyRagiProduct)}
+                  className="py-3.5 px-6 bg-[#0E382E] hover:bg-[#1F684B] text-white font-extrabold text-xs uppercase tracking-wider rounded-xl transition-colors shadow-md flex items-center gap-2"
+                >
+                  <Zap className="w-4 h-4 text-[#E67E22]" /> Buy Now
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
