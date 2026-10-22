@@ -29,7 +29,7 @@ export const Cart: React.FC = () => {
             Your cart is empty
           </h2>
           <p className="text-xs text-[#1F684B] font-medium">
-            Explore our authentic raw mango and paan instant powder sachets.
+            Explore our authentic Shahi Ragi laddoo mix and royal paan digestive shots.
           </p>
           <Link
             to="/shop"

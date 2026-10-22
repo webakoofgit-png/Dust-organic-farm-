@@ -51,14 +51,14 @@ export const Account: React.FC = () => {
             date: "26 August 2026",
             total: 647,
             status: "In Transit",
-            items: "2× Kacha Aam Powder + 1× Banarasi Paan Box",
+            items: "2× Shahi Ragi Laddoo Mix + 1× Banarasi Paan Box",
           },
           {
             id: "DST-8806-3810",
             date: "12 August 2026",
             total: 398,
             status: "Delivered",
-            items: "2× Kacha Aam Instant Refreshment Powder",
+            items: "2× Shahi Ragi & Dry Fruit Laddoo Mix",
           },
         ]
       : [];

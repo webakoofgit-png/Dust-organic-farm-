@@ -36,17 +36,17 @@ export const Combos: React.FC = () => {
             </div>
 
             <h2 className="text-2xl font-extrabold text-[#0E382E]">
-              The Ultimate Dual Refreshment Pack
+              The Royal Heritage & Superfood Pack
             </h2>
 
             <p className="text-xs text-[#1F684B] leading-relaxed">
-              1× Kacha Aam Instant Powder (100g) + 1× Banarasi Paan Digestive Shot Box (20g). The ideal combination of daytime tanginess and royal post-meal digestive freshness.
+              1× Shahi Ragi & Dry Fruit Laddoo Mix (250g) + 1× Banarasi Paan Digestive Shot Box (20g). The ideal combination of wholesome millet nutrition and royal post-meal digestive freshness.
             </p>
 
             <ul className="space-y-2 text-xs text-[#0E382E] font-semibold">
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#E67E22]" />
-                <span>10 Servings of Instant Kacha Aam Coolers</span>
+                <span>250g Pure Millet & Nut Laddoo Mix (Zero Added Sugar)</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#E67E22]" />
@@ -61,12 +61,12 @@ export const Combos: React.FC = () => {
 
           <div className="pt-4 border-t border-[#74B487]/30 flex items-center justify-between">
             <div>
-              <span className="text-xs line-through text-stone-400 font-bold block">₹398</span>
-              <span className="text-3xl font-extrabold text-[#0E382E]">₹318</span>
+              <span className="text-xs line-through text-stone-400 font-bold block">₹448</span>
+              <span className="text-3xl font-extrabold text-[#0E382E]">₹358</span>
             </div>
 
             <Link
-              to="/product/kacha-aam-01"
+              to="/product/shahi-ragi-dry-fruit-laddoo-mix"
               className="btn-dust-orange px-6 py-3 text-white font-extrabold text-xs uppercase tracking-wider rounded-full inline-flex items-center gap-2 shadow-md"
             >
               Order Combo <ArrowUpRight className="w-4 h-4" />

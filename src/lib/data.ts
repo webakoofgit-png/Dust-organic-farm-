@@ -5,25 +5,24 @@
  * these literals behind the same Product/Collection interfaces.
  */
 
-import kachaHero from "@/assets/kacha-hero.jpg";
-import kachaPouch from "@/assets/kacha-pouch.png";
-import kachaPack from "@/assets/kacha-pack.jpg";
+import ragiHero from "@/assets/ragi-hero.png";
+import ragiPouch from "@/assets/ragi-pouch.png";
+import ragiPack from "@/assets/ragi-pack.png";
 import paanPack from "@/assets/paan-pack.png";
 import paanPouch from "@/assets/paan-pouch.jpg";
 import paanDuo from "@/assets/paan-duo.jpg";
 import paanPoster from "@/assets/paan-poster.jpeg";
-import storyMango from "@/assets/story-mango-dark.jpg";
 import storyPaan from "@/assets/story-paan-dark.jpg";
 
 export const img = {
-  kachaHero,
-  kachaPouch,
-  kachaPack,
+  ragiHero,
+  ragiPouch,
+  ragiPack,
   paanPack,
   paanPouch,
   paanDuo,
   paanPoster,
-  storyMango,
+  storyRagi: ragiPouch,
   storyPaan,
 };
 
@@ -61,7 +60,7 @@ export interface Product {
   shortName: string;
   subtitle: string;
   pitch: string;
-  category: "pure-fruit-powders" | "heritage-wellness";
+  category: "wholesome-millets" | "pure-fruit-powders" | "heritage-wellness";
   categoryLabel: string;
   price: number;
   originalPrice?: number;
@@ -74,7 +73,10 @@ export interface Product {
   description: string[];
   caution?: string;
   ingredients: string;
+  allergen?: string;
   storage: string;
+  disclaimer?: string;
+  preparation?: string;
   nutrition: { serving: string; note: string; rows: [string, string, string][] };
   claims: string[];
   ritual: RitualStep[];
@@ -83,7 +85,7 @@ export interface Product {
   heritageQuote: string;
   images: { src: string; alt: string }[];
   storyImage: string;
-  accent: "mango" | "rose";
+  accent: "amber" | "rose" | "emerald";
   stock: number;
   sku: string;
   fssai: string;
@@ -93,7 +95,7 @@ export interface Product {
 }
 
 export interface Collection {
-  slug: "pure-fruit-powders" | "heritage-wellness";
+  slug: "wholesome-millets" | "pure-fruit-powders" | "heritage-wellness";
   name: string;
   titleLines: [string, string];
   tagline: string;
@@ -114,87 +116,95 @@ export interface Collection {
 
 export const products: Product[] = [
   {
-    id: "kacha-aam-01",
-    slug: "kacha-aam",
-    name: "Kacha Aam (Instant Aam Panna Mix)",
-    shortName: "Kacha Aam",
-    subtitle: "Pure Fruit Powder — Raw Mango",
-    pitch: "Refreshment Instantly",
-    category: "pure-fruit-powders",
-    categoryLabel: "Pure Fruit Powders",
-    price: 149,
-    originalPrice: 199,
-    priceDisplay: "₹149",
-    originalPriceDisplay: "₹199",
-    unitDisplay: "₹20 / Sachet",
-    savePercent: 25,
-    netWeight: "20g / 1 Glass Serving",
-    badges: ["Premium Quality", "1 Glass Serving"],
+    id: "ragi-laddoo-01",
+    slug: "shahi-ragi-dry-fruit-laddoo-mix",
+    name: "Shahi Ragi & Dry Fruit Laddoo Mix",
+    shortName: "Ragi Laddoo Mix",
+    subtitle: "Wholesome Millets | Premium Nuts | Traditional Taste",
+    pitch: "Wholesome Millets & Premium Nuts — Ready to Shape",
+    category: "wholesome-millets",
+    categoryLabel: "Wholesome Millets",
+    price: 199,
+    originalPrice: 249,
+    priceDisplay: "₹199",
+    originalPriceDisplay: "₹249",
+    unitDisplay: "₹199 / 250g Pack",
+    savePercent: 20,
+    netWeight: "250g",
+    badges: ["Wholesome Millets", "Premium Dry Fruits", "No Added Sugar"],
     description: [
-      "We grew up chasing the whistle of cookers roasting raw mangoes on summer afternoons.",
-      "Every sachet of DUST Kacha Aam blends 100% real raw mango and mint powder with hand-roasted desi spices like Jeera and Kala Namak — capturing pure, honest hydration that tastes like home.",
-      "Reconstitutes in seconds. Tastes like memory.",
+      "Made with nutritious Ragi and a delicious blend of dry fruits, our Ragi & Dry Fruit Laddoo Mix is a convenient way to prepare tasty, wholesome laddoos at home.",
+      "Perfect for breakfast, snacking, or whenever you crave something naturally delicious.",
+      "Rooted in Indian tradition and packed with natural nutrition for a healthier tomorrow.",
     ],
+    disclaimer:
+      "Product image shown for illustrative purposes only. Actual product, ingredients, appearance and packaging may vary. Please refer to the actual product label for complete details.",
+    preparation:
+      "Add ghee as per your requirement of mix. Mix knead thoroughly and shape into laddoos.enjoy it .",
     ingredients:
-      "Cane sugar, spray-dried raw mango powder (22%), maltodextrin (carrier), black salt (kala namak), roasted cumin powder, black pepper, acidity regulator (INS 330), anti-caking agent (INS 551).",
+      "Ragi, Date Powder, Almond, Cashew, Pumpkin Seed, Sunflower Seed, Watermelon Seed, Flax Seed, Cardamom.",
+    allergen:
+      "Contains: Ghee, Almonds, Cashews, Pistachios & Other Tree Nuts.",
     storage:
-      "Keep in a cool, dry place. Best enjoyed within 9 months of manufacture.",
+      "Keep in a cool, dry place away from direct sunlight. Best enjoyed within 9 months of manufacture.",
     nutrition: {
-      serving: "Serving Size: 1 Sachet (20g)",
-      note: "1 Glass Serving",
+      serving: "Per 100g",
+      note: "Pack Net Wt: 250g",
       rows: [
-        ["Energy", "72 kcal", "4%*"],
-        ["Protein", "~1g", "2%*"],
-        ["Total Carbs", "17.8g", "6%*"],
-        ["Added Sugar", "11g", "22%*"],
-        ["Total Fat", "0g", "0%*"],
-        ["Sodium", "210mg", "9%*"],
+        ["Energy", "423.63 kcal", "21%*"],
+        ["Protein", "14.66g", "27%*"],
+        ["Fat", "16.75g", "25%*"],
+        ["Carbohydrate", "53.56g", "19%*"],
+        ["Total Sugar", "40.76g", "—"],
+        ["Added Sugar", "0g", "0%*"],
       ],
     },
     claims: [
-      "100% Real Fruit — spray-dried raw mango and fresh mint powder",
-      "Desi Spices — nostalgic digestive punch of roasted Jeera & Kala Namak",
-      "No Artificials — strictly no synthetic food colors or artificial flavors",
-      "Premium Quality — ethically sourced ingredients, hygienically processed",
+      "Energy Snack — natural, sustained fuel throughout the day",
+      "Supports Bone Health — calcium and mineral rich finger millet (ragi)",
+      "Keeps You Fuller For Longer — nutrient-dense seeds and wholesome dry fruits",
+      "No Added Sugar — naturally sweetened with pure date powder",
+      "100% Wholesome Ingredients & Premium Nuts",
     ],
-    ritualLabel: "How to Make It",
+    ritualLabel: "Preparation Method",
     ritual: [
       {
-        title: "Tear and Empty",
+        title: "Measure & Add Ghee",
         detail:
-          "Tear open the sachet and empty the fine Raw Mango powder blend into a tall glass.",
+          "Add ghee as per your requirement of mix into a clean mixing bowl.",
       },
       {
-        title: "Add Water",
-        detail: "Pour 180ml of chilled water directly over the powder concentrate.",
+        title: "Knead Thoroughly",
+        detail:
+          "Mix and knead thoroughly until the warm ghee blends evenly with the roasted ragi and nut mix.",
       },
       {
-        title: "Stir and Add Ice",
+        title: "Shape into Laddoos & Enjoy",
         detail:
-          "Stir well for a few seconds until fully dissolved. Throw in ice cubes for that perfect summer chill.",
+          "Shape the mixture by hand into round, wholesome laddoos. Enjoy fresh, healthy nutrition anytime.",
       },
     ],
-    heritageTitle: "Our Heritage Promise",
+    heritageTitle: "Wholesome Millet Heritage",
     heritageQuote:
-      "Grew up chasing the whistle of cookers roasting raw mangoes — every sachet blends real fruit and desi spices for pure, honest hydration.",
+      "Natural nutrition for a healthier tomorrow. Made for those who choose better — crafted with pure finger millet (ragi), crunchy roasted nuts, and pure date powder.",
     images: [
       {
-        src: kachaPouch,
-        alt: "DUST Kacha Aam Instant drink pouch next to a glass of refreshing Aam Panna",
+        src: ragiPouch,
+        alt: "DUST Shahi Ragi & Dry Fruit Laddoo Mix 250g front pouch packaging",
       },
       {
-        src: kachaHero,
-        alt: "DUST Kacha Aam pouch standing upright next to its premium storage box",
+        src: ragiPack,
+        alt: "DUST Shahi Ragi & Dry Fruit Laddoo Mix back packaging with nutritional facts and preparation",
       },
       {
-        src: kachaPack,
-        alt: "Close-up of the back label on DUST Kacha Aam pouch showing packaging details",
+        src: ragiHero,
+        alt: "DUST Shahi Ragi & Dry Fruit Laddoo Mix full pack display",
       },
     ],
-    storyImage: storyMango,
-    accent: "mango",
-    stock: 48,
-    sku: "DUST-KA-20",
+    storyImage: ragiPouch,
+    accent: "amber",
+    stock: 50,
+    sku: "DUST-RAGI-250",
     fssai: "12545678901024",
     featured: true,
     newArrival: true,
@@ -291,43 +301,43 @@ export const products: Product[] = [
 
 export const collections: Collection[] = [
   {
-    slug: "pure-fruit-powders",
-    name: "Pure Fruit Powders",
-    titleLines: ["Pure Fruit", "Powders."],
-    tagline: "Instant real-fruit refreshment, designed to reconstitute in your glass.",
+    slug: "wholesome-millets",
+    name: "Wholesome Millets",
+    titleLines: ["Wholesome", "Millets."],
+    tagline: "Ancient grains & traditional dry fruit mixes crafted for everyday nutrition.",
     description:
-      "100% real fruit concentrates, cooling mint, and hand-roasted traditional spices — nothing else.",
+      "100% wholesome Ragi, date powder sweetness, and premium roasted dry fruits — pure natural fuel with zero added sugar.",
     meta: [
-      { label: "Serving Format", value: "Tear & Pour Sachets" },
-      { label: "Shelf Life", value: "9 Months" },
-      { label: "Promise", value: "100% Real Fruit" },
+      { label: "Format", value: "Ready-to-Shape Mix" },
+      { label: "Net Wt.", value: "250g" },
+      { label: "Promise", value: "No Added Sugar" },
     ],
-    shelfTitle: "Available Flavors",
+    shelfTitle: "The Millet Shelf",
     shelfDescription:
-      "Instant summer hydration rooted in true Indian tradition — built to grow as new flavors join the line.",
-    shelfNote: "01 Flavor · More Roasting",
-    comingTitle: "Next harvest loading",
-    comingText: "New fruit powders are being roasted, ground and tasted right now.",
+      "Wholesome traditional superfoods packed with calcium, protein, and energy for the modern Indian family.",
+    shelfNote: "01 Creation · More Roasting",
+    comingTitle: "Next superfood loading",
+    comingText: "New millet blends and wholesome traditional mixes are being crafted.",
     pillars: [
       {
-        title: "100% Real Fruit & Mint Powder",
-        text: "Guaranteed spray-dried natural fruit concentrates with no hidden synthetic fillers.",
+        title: "100% Wholesome Ragi & Nuts",
+        text: "Finger millet rich in calcium and iron, blended with almonds, cashews, and healthy seeds.",
       },
       {
-        title: "Desi Spices — Jeera & Kala Namak",
-        text: "Freshly roasted cumin and black salt blends for that nostalgic digestive punch.",
+        title: "Zero Added Sugar",
+        text: "Naturally sweetened with real date powder for pure guilt-free energy.",
       },
       {
-        title: "No Artificial Colors or Flavors",
-        text: "Purely clean labels with ingredients you can read and recognize instantly.",
+        title: "Convenient Preparation",
+        text: "Just add warm ghee, knead thoroughly, and shape into fresh nutritious laddoos in minutes.",
       },
     ],
     crossTitle: "Looking for something after meals?",
     crossText:
-      "Transition from summer coolers to our premium digestives — traditional post-meal mouth fresheners and wellness shots.",
+      "Transition from morning wholesome superfoods to our royal digestives — traditional post-meal mouth fresheners.",
     crossCta: "Explore Heritage Wellness",
-    crossHref: "/shop/heritage-wellness",
-    heroImage: storyMango,
+    crossHref: "/collections/heritage-wellness",
+    heroImage: ragiHero,
   },
   {
     slug: "heritage-wellness",
@@ -361,11 +371,11 @@ export const collections: Collection[] = [
         text: "Gulkand, fennel and prebiotic inulin — time-tested botanicals, modern clean-label discipline.",
       },
     ],
-    crossTitle: "Thirsty for daylight instead?",
+    crossTitle: "Looking for wholesome nutrition?",
     crossText:
-      "Cross over to the sun side — instant aam panna and real-fruit coolers built for Indian summers.",
-    crossCta: "Explore Pure Fruit",
-    crossHref: "/shop/pure-fruit-powders",
+      "Cross over to our superfoods shelf — traditional Shahi Ragi & Dry Fruit Laddoo Mix for everyday bone health and sustained energy.",
+    crossCta: "Explore Wholesome Millets",
+    crossHref: "/collections/wholesome-millets",
     heroImage: "/paan_image_1.jpeg",
   },
 ];
@@ -381,16 +391,16 @@ export interface JournalPost {
 
 export const journalPosts: JournalPost[] = [
   {
-    slug: "the-art-of-roasting-mangoes",
-    tag: "Pure Fruit",
+    slug: "the-art-of-traditional-ragi-laddoos",
+    tag: "Wholesome Millets",
     date: "June 2025",
-    title: "The Art of Roasting Mangoes Over an Open Flame",
+    title: "The Art of Wholesome Ragi & Dry Fruit Laddoos",
     excerpt:
-      "A slow process, a patient ritual. How DUST captures the smokiness of a summer mango in every sachet.",
+      "A slow roasted millet tradition. How DUST blends pure ragi, dates, and crunchy nuts into wholesome everyday fuel.",
     body: [
-      "We grew up chasing the whistle of cookers roasting raw mangoes on summer afternoons. It's a ritual of patience and reward — salt-crusted verandas, blistering May heat, and the sudden relief of a tall metal glass of Aam Panna.",
-      "Roasting over an open flame does what no oven can: it caramelises the fruit's edge, smokes the skin, and deepens the tang into something rounder, older, more remembered.",
-      "Every DUST sachet blends real fruit and hand-roasted desi spices like Jeera and Kala Namak for pure, honest hydration that tastes like home. Reconstitutes in seconds. Tastes like memory.",
+      "In traditional Indian homes, mornings and festive gatherings were incomplete without the comforting aroma of roasted ragi and pure ghee.",
+      "Finger millet (ragi) is celebrated across centuries for its exceptional calcium content, fiber, and bone-strengthening power. Blended with pure date powder and crunchy dry fruits, it delivers balanced energy without refined sugar spikes.",
+      "Every pack of DUST Shahi Ragi & Dry Fruit Laddoo Mix honors this time-tested heritage: just add ghee, knead, and shape into wholesome laddoos that keep you energized and fuller for longer.",
     ],
   },
   {
@@ -407,16 +417,16 @@ export const journalPosts: JournalPost[] = [
     ],
   },
   {
-    slug: "what-kala-namak-does-to-a-drink",
+    slug: "why-ragi-and-dry-fruits-are-the-ultimate-superfood",
     tag: "Ingredient Deep Dive",
     date: "April 2025",
-    title: "What Kala Namak Does to a Drink (Hint: Everything)",
+    title: "Why Ragi and Dry Fruits are the Ultimate Daily Superfood",
     excerpt:
-      "The sulphurous, earthy black salt that makes chaas and Kacha Aam irreplaceable. A chemistry and culture explainer.",
+      "High calcium, plant protein, and healthy fats. Why ancient finger millet outshines modern processed snacks.",
     body: [
-      "Kala Namak — black salt — is the quiet backbone of the Indian summer cooler. Its faint sulphurous edge reads as eggy on its own, but in a glass of aam panna it becomes depth itself.",
-      "Chemically, those trace sulphur compounds amplify sourness and make sweetness feel rounder, which is why a drink seasoned with kala namak tastes complete with far less sugar.",
-      "It is the difference between mango-flavoured water and the thing you remember from your grandmother's kitchen. That is why it is in every sachet of DUST Kacha Aam.",
+      "Ragi (finger millet) has three times more calcium than milk per 100g, making it one of the most potent natural sources of bone health and mineral density.",
+      "When paired with heart-healthy almonds, cashews, sunflower, pumpkin, watermelon, and flax seeds, you get a complete macronutrient profile of protein, healthy fats, and sustained satiety.",
+      "That is why DUST Shahi Ragi Laddoo Mix uses zero refined sugar and zero preservatives — pure traditional superfood nutrition as mother nature intended.",
     ],
   },
   {
@@ -434,15 +444,15 @@ export const journalPosts: JournalPost[] = [
   },
   {
     slug: "solar-dehydration-in-food-preservation",
-    tag: "Pure Fruit",
+    tag: "Wholesome Heritage",
     date: "February 2025",
     title: "Solar Dehydration: The Cleanest Preservation Method",
     excerpt:
-      "Sun-drying captures the soul of the harvest. A look at how solar energy preserves fruits without chemicals or loss of bio-actives.",
+      "Sun-drying captures the soul of the harvest. A look at how solar energy preserves wholesome botanicals without chemicals or loss of bio-actives.",
     body: [
-      "Before preservatives, there was the sun. Indian households have dehydrated mangoes, herbs and spices on terraces for centuries — not as a compromise, but as a craft.",
+      "Before preservatives, there was the sun. Indian households have sun-cured grains, herbs and spices on terraces for centuries — not as a compromise, but as a craft.",
       "Gentle, low-temperature drying protects heat-sensitive vitamins and bio-actives that industrial high-heat processing destroys, and it needs no chemical assistance of any kind.",
-      "Our spray-drying and dehydration discipline follows the same principle: preserve what the harvest gave, add nothing it didn't.",
+      "Our processing and dehydration discipline follows the same principle: preserve what the harvest gave, add nothing it didn't.",
     ],
   },
   {
@@ -498,22 +508,22 @@ export const faqs = [
     a: "Yes, absolutely. Our checkout is protected by industry-standard SSL encryption and processed through PCI-DSS compliant payment gateways, ensuring that your banking data is never exposed.",
   },
   {
-    q: "Are DUST products vegetarian and vegan?",
-    a: "All DUST Pure Fruit Powders are 100% vegan and vegetarian. Our Heritage Wellness series (like the Banarasi Paan shot) is also 100% vegetarian. Check the ingredients list on respective product pages for exact details.",
+    q: "Are DUST products vegetarian and clean-label?",
+    a: "Yes! DUST Shahi Ragi & Dry Fruit Laddoo Mix is 100% vegetarian, made with wholesome grains, dates, and nuts. Our Heritage Wellness series (like the Banarasi Paan shot) is also 100% vegetarian. Check the ingredients list on respective product pages for exact details.",
   },
   {
     q: "Do DUST products contain added sugar?",
-    a: "DUST Kacha Aam contains 11g of added organic cane sugar to balance the extreme natural acidity of raw mango. DUST Banarasi Paan contains 14g of sugars sourced entirely from natural gulkand powder. We never use high-fructose corn syrup or artificial sweeteners.",
+    a: "DUST Shahi Ragi & Dry Fruit Laddoo Mix contains 0g added sugar — it is naturally sweetened with pure date powder. DUST Banarasi Paan contains sugars sourced entirely from natural gulkand powder. We never use high-fructose corn syrup or artificial sweeteners.",
   },
   {
-    q: "What is the shelf life of the sachets?",
-    a: "Each individual sachet remains fresh for 9 months from the date of manufacture when stored in cool, dry conditions. Once opened, consume within 10 minutes.",
+    q: "What is the shelf life of the products?",
+    a: "Each pack remains fresh for 9 months from the date of manufacture when stored in cool, dry conditions away from direct sunlight.",
   },
 ];
 
 export const testimonials = [
   {
-    quote: "Reminds me exactly of the raw mangoes from my childhood summers. The tang is perfect.",
+    quote: "The Shahi Ragi Laddoo Mix is incredible! Just added warm ghee and rolled fresh, nutritious laddoos in 5 minutes.",
     author: "Ananya R. · Pune",
   },
   {
@@ -521,11 +531,11 @@ export const testimonials = [
     author: "Vikram S. · Lucknow",
   },
   {
-    quote: "Pure, honest flavors. You can tell it's made from real roots. Highly recommended.",
+    quote: "Pure, honest flavors. You can tell it's made from real roots and wholesome ingredients. Highly recommended.",
     author: "Meera K. · Bengaluru",
   },
   {
-    quote: "Carried a handful of sachets on a trek — instant aam panna at 3,000 metres. Unreal.",
+    quote: "Packed with energy and keeps me full for hours without any sugar crashes. The kids love it too!",
     author: "Rohan D. · Manali",
   },
   {

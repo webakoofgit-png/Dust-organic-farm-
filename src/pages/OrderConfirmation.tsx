@@ -109,7 +109,7 @@ export const OrderConfirmation: React.FC = () => {
                 <tbody className="divide-y divide-[#74B487]/20 text-[#1F684B]">
                   <tr>
                     <td className="p-3 font-semibold text-[#0E382E]">
-                      Kacha Aam Instant Powder (100g Pouch Box)
+                      Shahi Ragi & Dry Fruit Laddoo Mix (250g Pack)
                     </td>
                     <td className="p-3 text-center font-bold">2</td>
                     <td className="p-3 text-right">₹199</td>

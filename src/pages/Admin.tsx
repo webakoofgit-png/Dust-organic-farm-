@@ -59,18 +59,18 @@ export const Admin: React.FC = () => {
 
   // New Product Form State
   const [newProductName, setNewProductName] = useState("");
-  const [newProductCategory, setNewProductCategory] = useState<"pure-fruit-powders" | "heritage-wellness">("heritage-wellness");
-  const [newProductPrice, setNewProductPrice] = useState(249);
-  const [newProductOriginalPrice, setNewProductOriginalPrice] = useState(299);
-  const [newProductWeight, setNewProductWeight] = useState("20g");
-  const [newProductServings, setNewProductServings] = useState("Makes 4 Shots");
-  const [newProductImageUrl, setNewProductImageUrl] = useState("/paan_image_2.jpeg");
+  const [newProductCategory, setNewProductCategory] = useState<"wholesome-millets" | "heritage-wellness">("wholesome-millets");
+  const [newProductPrice, setNewProductPrice] = useState(199);
+  const [newProductOriginalPrice, setNewProductOriginalPrice] = useState(249);
+  const [newProductWeight, setNewProductWeight] = useState("250g");
+  const [newProductServings, setNewProductServings] = useState("Makes 10-12 Laddoos");
+  const [newProductImageUrl, setNewProductImageUrl] = useState("/ragi_pouch.png");
   const [newProductDescription, setNewProductDescription] = useState("");
 
   // State 2: Categories
   const [categories, setCategories] = useState([
-    { id: 1, name: "Pure Fruit Powders", slug: "pure-fruit-powders", count: 1, desc: "Spray-dried real fruit instant powders with zero synthetic chemicals." },
-    { id: 2, name: "Heritage Wellness", slug: "heritage-wellness", count: 2, desc: "Post-meal digestive mixes and royal paan shots inspired by Banaras traditions." },
+    { id: 1, name: "Wholesome Millets", slug: "wholesome-millets", count: 1, desc: "Traditional millet mixes and dry fruit laddoo premixes with zero added sugar." },
+    { id: 2, name: "Heritage Wellness", slug: "heritage-wellness", count: 1, desc: "Post-meal digestive mixes and royal paan shots inspired by Banaras traditions." },
   ]);
 
   // State 3: Coupons
@@ -82,7 +82,7 @@ export const Admin: React.FC = () => {
   // State 4: Homepage Banners
   const [banners, setBanners] = useState([
     { id: 1, title: "Royal Banarasi Paan Digestive", subtitle: "Real Betel Leaf & Gulkand After-Meal Shot", cta: "Shop Digestives", status: "Active" },
-    { id: 2, title: "Pure Spray-Dried Fruit Powders", subtitle: "100% Natural Indian Street Cooler Flavors", cta: "Explore Range", status: "Active" },
+    { id: 2, title: "Shahi Ragi & Dry Fruit Laddoo Mix", subtitle: "Wholesome Millets & Real Nuts - Zero Added Sugar", cta: "Explore Range", status: "Active" },
   ]);
 
   // State 5: Customer Reviews Moderation
@@ -162,7 +162,7 @@ export const Admin: React.FC = () => {
       subtitle: newProductServings,
       pitch: newProductDescription,
       category: newProductCategory,
-      categoryLabel: newProductCategory === "pure-fruit-powders" ? "Pure Fruit Powders" : "Heritage Wellness",
+      categoryLabel: newProductCategory === "wholesome-millets" ? "Wholesome Millets" : "Heritage Wellness",
       price: newProductPrice,
       originalPrice: newProductOriginalPrice,
       priceDisplay: `₹${newProductPrice}`,
@@ -894,8 +894,8 @@ export const Admin: React.FC = () => {
                     onChange={(e) => setNewProductCategory(e.target.value as any)}
                     className="w-full bg-[#F6F5F0] border border-[#74B487]/40 rounded-xl p-3 text-[#0E382E] font-semibold"
                   >
+                    <option value="wholesome-millets">Wholesome Millets</option>
                     <option value="heritage-wellness">Heritage Wellness</option>
-                    <option value="pure-fruit-powders">Pure Fruit Powders</option>
                   </select>
                 </div>
 

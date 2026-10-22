@@ -21,8 +21,8 @@ const faqData: FAQItem[] = [
   },
   {
     category: "Preparation & Usage",
-    question: "How do I prepare DUST Kacha Aam or Banarasi Paan shots?",
-    answer: "Mix 1 sachet (or 10g half-pouch) into 100ml–150ml of chilled water. Stir vigorously for 15 seconds until completely dissolved and enjoy immediately.",
+    question: "How do I prepare DUST Shahi Ragi Laddoo Mix or Banarasi Paan shots?",
+    answer: "For Shahi Ragi Laddoo Mix: Add ghee as per your requirement of mix, knead thoroughly, and shape into wholesome laddoos. For Banarasi Paan shots: Mix 10g into 100ml chilled water, stir for 15 seconds, and drink after meals.",
   },
   {
     category: "Preparation & Usage",

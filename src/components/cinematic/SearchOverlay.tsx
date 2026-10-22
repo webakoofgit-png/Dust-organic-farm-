@@ -59,7 +59,7 @@ export const SearchOverlay: React.FC = () => {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search Kacha Aam, Paan, Fruit Powders..."
+            placeholder="Search Ragi Laddoo Mix, Paan, Millets..."
             className="w-full bg-transparent pl-14 pr-4 py-4 text-2xl md:text-4xl font-extrabold text-[#0E382E] placeholder:text-[#1F684B]/40 outline-none border-b-2 border-[#74B487] focus:border-[#E67E22] transition-colors"
             autoFocus
           />

@@ -49,7 +49,7 @@ export const Shop: React.FC = () => {
           Shop All Creations
         </h1>
         <p className="text-[#1F684B] text-sm max-w-xl font-normal">
-          Explore our range of 100% natural fruit powders and heritage wellness instant sachets — Choice of Motherland.
+          Explore our range of wholesome millets, nutritious laddoo mixes, and heritage wellness creations — Choice of Motherland.
         </p>
       </div>
 
@@ -68,14 +68,14 @@ export const Shop: React.FC = () => {
             All Products ({products.length})
           </button>
           <button
-            onClick={() => setSelectedCategory("pure-fruit-powders")}
+            onClick={() => setSelectedCategory("wholesome-millets")}
             className={`px-4 py-2 rounded-xl text-xs font-extrabold uppercase tracking-wider transition-colors ${
-              selectedCategory === "pure-fruit-powders"
+              selectedCategory === "wholesome-millets"
                 ? "bg-[#E67E22] text-white shadow-xs"
                 : "bg-white text-[#0E382E] hover:bg-[#74B487]/20 border border-[#74B487]/40"
             }`}
           >
-            Fruit Powders
+            Wholesome Millets
           </button>
           <button
             onClick={() => setSelectedCategory("heritage-wellness")}

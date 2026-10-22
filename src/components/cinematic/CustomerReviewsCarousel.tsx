@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Star, Play, ChevronLeft, ChevronRight, CheckCircle2, X, Quote } from "lucide-react";
 import paanPouchImg from "@/assets/paan-pouch.jpg";
-import kachaPouchImg from "@/assets/kacha-pouch.png";
+import ragiPouchImg from "@/assets/ragi-pouch.png";
 import storyPaanImg from "@/assets/story-paan-dark.jpg";
-import storyMangoImg from "@/assets/story-mango-dark.jpg";
 import paanPosterImg from "@/assets/paan-poster.jpeg";
 import paanDigestiveShotPouchImg from "@/assets/paan-digestive-shot-pouch.png";
 
@@ -28,11 +27,11 @@ const reviewsData: Review[] = [
     location: "Pune, Maharashtra",
     rating: 5,
     date: "Verified Buyer • 2 days ago",
-    productName: "Banarasi Paan Digestive Shots",
+    productName: "Shahi Ragi & Dry Fruit Laddoo Mix",
     comment:
-      "Tastes exactly like royal Banarasi paan after dinner! Clean, natural, and gives instant digestive comfort. Buying 3 more boxes for my family.",
+      "The Shahi Ragi Laddoo Mix is a lifesaver! Just added warm ghee and rolled fresh, nutritious laddoos for my kids. Nutritious, delicious, and no added sugar.",
     mediaType: "photo",
-    mediaUrl: "/paan_image_2.jpeg",
+    mediaUrl: ragiPouchImg,
   },
   {
     id: 2,
@@ -52,12 +51,11 @@ const reviewsData: Review[] = [
     location: "Bengaluru, Karnataka",
     rating: 5,
     date: "Verified Buyer • 2 weeks ago",
-    productName: "Banarasi Paan Digestive Shots",
+    productName: "Shahi Ragi & Dry Fruit Laddoo Mix",
     comment:
-      "As a physician, I appreciate real betel leaf solids and natural prebiotic fiber. Superb ayurvedic Digestive after heavy dinners.",
-    mediaType: "video",
-    mediaUrl: paanPosterImg,
-    videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-pour-of-a-fresh-herbal-tea-42171-large.mp4",
+      "As a physician, I appreciate real millets, dates, and whole nuts. Exceptional calcium and sustained energy for active mornings.",
+    mediaType: "photo",
+    mediaUrl: ragiPouchImg,
   },
   {
     id: 4,

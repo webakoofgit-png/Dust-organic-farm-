@@ -152,6 +152,12 @@ export const QuickViewModal: React.FC = () => {
               )}
             </button>
 
+            {quickViewProduct.disclaimer && (
+              <p className="text-[10px] text-stone-500 italic pt-2 border-t border-[#74B487]/30 leading-relaxed">
+                <span className="font-bold text-[#0E382E] not-italic">Disclaimer:</span> {quickViewProduct.disclaimer}
+              </p>
+            )}
+
             <div className="text-center pt-2">
               <Link
                 to={`/product/${quickViewProduct.slug}`}

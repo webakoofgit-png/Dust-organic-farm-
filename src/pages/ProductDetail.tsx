@@ -14,7 +14,7 @@ import { useCartStore } from "@/lib/cart-store";
 export const ProductDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const defaultProduct = products[0] as Product;
-  const product: Product = products.find((p) => p.slug === slug) ?? defaultProduct;
+  const product: Product = products.find((p) => p.slug === slug || p.id === slug) ?? defaultProduct;
 
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
@@ -253,6 +253,17 @@ export const ProductDetail: React.FC = () => {
             Preparation Ritual
           </h2>
 
+          {product.preparation && (
+            <div className="p-5 bg-[#E8F1E9] rounded-2xl border border-[#74B487]/50 shadow-xs">
+              <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#E67E22] block mb-1">
+                Preparation Instructions
+              </span>
+              <p className="text-xs text-[#0E382E] font-bold leading-relaxed">
+                "{product.preparation}"
+              </p>
+            </div>
+          )}
+
           <div className="space-y-6">
             {product.ritual.map((step, idx) => (
               <div
@@ -312,9 +323,21 @@ export const ProductDetail: React.FC = () => {
                 <strong className="text-[#0E382E]">Ingredients:</strong>{" "}
                 {product.ingredients}
               </p>
+              {product.allergen && (
+                <p>
+                  <strong className="text-[#0E382E]">Allergen Info:</strong>{" "}
+                  {product.allergen}
+                </p>
+              )}
               <p>
                 <strong className="text-[#0E382E]">Storage:</strong> {product.storage}
               </p>
+              {product.disclaimer && (
+                <p className="pt-2 text-[10px] text-stone-500 italic border-t border-[#74B487]/20 leading-relaxed">
+                  <strong className="not-italic text-[#0E382E] font-bold">Disclaimer:</strong>{" "}
+                  {product.disclaimer}
+                </p>
+              )}
             </div>
           </div>
         </div>

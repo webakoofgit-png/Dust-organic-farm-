@@ -38,40 +38,43 @@ export const Home: React.FC = () => {
   }, []);
 
   const heroProduct: Product = products[0] ?? {
-    id: "kacha-aam-01",
-    slug: "kacha-aam",
-    name: "Kacha Aam (Instant Aam Panna Mix)",
-    shortName: "Kacha Aam",
-    subtitle: "Pure Fruit Powder — Raw Mango",
-    pitch: "Refreshment Instantly",
-    category: "pure-fruit-powders",
-    categoryLabel: "Pure Fruit Powders",
-    price: 149,
-    priceDisplay: "₹149",
-    unitDisplay: "₹20 / Sachet",
-    netWeight: "20g / 1 Glass Serving",
-    badges: ["Premium Quality"],
-    description: ["Real raw mango powder blend."],
-    ingredients: "Cane sugar, raw mango powder, spices.",
+    id: "ragi-laddoo-01",
+    slug: "shahi-ragi-dry-fruit-laddoo-mix",
+    name: "Shahi Ragi & Dry Fruit Laddoo Mix",
+    shortName: "Ragi Laddoo Mix",
+    subtitle: "Wholesome Millets | Premium Nuts | Traditional Taste",
+    pitch: "Wholesome Millets & Premium Nuts — Ready to Shape",
+    category: "wholesome-millets",
+    categoryLabel: "Wholesome Millets",
+    price: 199,
+    originalPrice: 249,
+    priceDisplay: "₹199",
+    originalPriceDisplay: "₹249",
+    unitDisplay: "₹199 / 250g Pack",
+    savePercent: 20,
+    netWeight: "250g",
+    badges: ["Wholesome Millets", "Premium Dry Fruits", "No Added Sugar"],
+    description: ["Made with nutritious Ragi and a delicious blend of dry fruits."],
+    ingredients: "Ragi, Date Powder, Almond, Cashew, Pumpkin Seed, Sunflower Seed, Watermelon Seed, Flax Seed, Cardamom.",
     storage: "Keep in a cool dry place.",
-    nutrition: { serving: "1 Sachet", note: "1 Serving", rows: [] },
-    claims: ["100% Real Fruit"],
-    ritualLabel: "How to Make It",
+    nutrition: { serving: "Per 100g", note: "Pack Net Wt: 250g", rows: [] },
+    claims: ["100% Wholesome Ingredients & Premium Nuts"],
+    ritualLabel: "Preparation Method",
     ritual: [],
     heritageTitle: "Heritage",
-    heritageQuote: "Tastes like home",
+    heritageQuote: "Made for those who choose better",
     images: [],
-    storyImage: "",
-    accent: "mango",
-    stock: 100,
-    sku: "DUST-MANGO-01",
-    fssai: "10021064000123",
+    storyImage: "/ragi_pouch.png",
+    accent: "amber",
+    stock: 50,
+    sku: "DUST-RAGI-250",
+    fssai: "12545678901024",
     featured: true,
     newArrival: true,
     bestSeller: true,
   };
 
-  const storyMangoProduct = products[0] ?? heroProduct;
+  const storyRagiProduct = products[0] ?? heroProduct;
   const storyPaanProduct = products[1] ?? heroProduct;
 
   return (
@@ -110,16 +113,16 @@ export const Home: React.FC = () => {
             </div>
 
             <h1 className="text-4xl sm:text-6xl xl:text-7xl font-extrabold text-[#0E382E] tracking-tight leading-[1.05]">
-              PURE FRUIT <br />
+              WHOLESOME <br />
               <span className="text-[#E67E22]">
-                POWDERS &
+                MILLETS &
               </span>{" "}
               <br />
               HERITAGE WELLNESS
             </h1>
 
             <p className="text-base sm:text-lg text-[#1F684B] max-w-xl font-normal leading-relaxed">
-              Real raw mangoes, roasted desi spices, and authentic betel leaf infusion — ethically sourced ingredients hygienically crafted into instant sachet rituals.
+              Nutritious Ragi, crunchy dry fruits, and authentic Banarasi betel leaf infusion — ethically sourced wholesome ingredients crafted into authentic Indian rituals.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-4 justify-center md:justify-start">
@@ -131,10 +134,10 @@ export const Home: React.FC = () => {
                 Explore Catalogue <ArrowUpRight className="w-4 h-4" />
               </Link>
               <Link
-                to="/collections/pure-fruit-powders"
+                to="/collections/wholesome-millets"
                 className="px-8 py-4 bg-[#E8F1E9] hover:bg-[#74B487]/20 border border-[#74B487] text-[#0E382E] text-xs font-extrabold uppercase tracking-[0.2em] rounded-full transition-all"
               >
-                Fruit Powders
+                Wholesome Millets
               </Link>
             </div>
           </div>
@@ -202,10 +205,10 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Marquee Accent Strip */}
-      <section className="bg-[#E67E22] text-white py-3.5 overflow-hidden shadow-inner">
-        <div className="flex gap-8 whitespace-nowrap animate-marquee font-extrabold text-xs tracking-[0.25em] uppercase">
+      <section className="bg-[#E67E22] text-white py-3.5 overflow-hidden shadow-inner flex border-y border-[#D35400] select-none">
+        <div className="flex gap-8 whitespace-nowrap animate-marquee font-extrabold text-xs tracking-[0.25em] uppercase pr-8">
           <span className="flex items-center gap-2">
-            <Award className="w-4 h-4" /> DUST — CHOICE OF MOTHERLAND
+            <Award className="w-4 h-4 text-white" /> DUST — CHOICE OF MOTHERLAND
           </span>
           <span>•</span>
           <span>100% REAL FRUIT POWDERS</span>
@@ -216,11 +219,53 @@ export const Home: React.FC = () => {
           <span>•</span>
           <span>INSTANT SACHET RITUALS</span>
           <span>•</span>
+          <span>100% NATURAL & FRESH</span>
+          <span>•</span>
           <span className="flex items-center gap-2">
-            <Award className="w-4 h-4" /> DUST — CHOICE OF MOTHERLAND
+            <Award className="w-4 h-4 text-white" /> DUST — CHOICE OF MOTHERLAND
           </span>
           <span>•</span>
           <span>100% REAL FRUIT POWDERS</span>
+          <span>•</span>
+          <span>ZERO SYNTHETIC COLORS</span>
+          <span>•</span>
+          <span>AUTHENTIC INDIAN RECIPES</span>
+          <span>•</span>
+          <span>INSTANT SACHET RITUALS</span>
+          <span>•</span>
+          <span>100% NATURAL & FRESH</span>
+          <span>•</span>
+        </div>
+
+        <div aria-hidden="true" className="flex gap-8 whitespace-nowrap animate-marquee font-extrabold text-xs tracking-[0.25em] uppercase pr-8">
+          <span className="flex items-center gap-2">
+            <Award className="w-4 h-4 text-white" /> DUST — CHOICE OF MOTHERLAND
+          </span>
+          <span>•</span>
+          <span>100% REAL FRUIT POWDERS</span>
+          <span>•</span>
+          <span>ZERO SYNTHETIC COLORS</span>
+          <span>•</span>
+          <span>AUTHENTIC INDIAN RECIPES</span>
+          <span>•</span>
+          <span>INSTANT SACHET RITUALS</span>
+          <span>•</span>
+          <span>100% NATURAL & FRESH</span>
+          <span>•</span>
+          <span className="flex items-center gap-2">
+            <Award className="w-4 h-4 text-white" /> DUST — CHOICE OF MOTHERLAND
+          </span>
+          <span>•</span>
+          <span>100% REAL FRUIT POWDERS</span>
+          <span>•</span>
+          <span>ZERO SYNTHETIC COLORS</span>
+          <span>•</span>
+          <span>AUTHENTIC INDIAN RECIPES</span>
+          <span>•</span>
+          <span>INSTANT SACHET RITUALS</span>
+          <span>•</span>
+          <span>100% NATURAL & FRESH</span>
+          <span>•</span>
         </div>
       </section>
 
@@ -497,7 +542,7 @@ export const Home: React.FC = () => {
               Tastes Like Memory.
             </h2>
             <p className="text-[#0E382E] text-sm sm:text-base leading-relaxed font-normal">
-              We grew up chasing the whistle of cookers roasting raw mangoes on summer afternoons and savoring fragrant paan after celebratory meals. DUST brings these nostalgic Indian rituals into modern instant sachets without compromising on quality or tradition.
+              From wholesome traditional Ragi & Dry Fruit Laddoos to fragrant royal paan after celebratory meals, DUST brings authentic Indian nutrition and heritage rituals into modern households without compromising on quality or tradition.
             </p>
 
             <div className="grid grid-cols-2 gap-6 pt-4">
@@ -505,14 +550,14 @@ export const Home: React.FC = () => {
                 <ShieldCheck className="w-6 h-6 text-[#E67E22]" />
                 <h4 className="text-sm font-extrabold text-[#0E382E]">100% Real Ingredients</h4>
                 <p className="text-xs text-stone-600 font-normal">
-                  Spray-dried real fruit, mint powder, and hand-roasted spices.
+                  Nutritious Ragi, pure date powder, crunchy almonds, and premium cashews.
                 </p>
               </div>
               <div className="p-5 bg-white rounded-2xl border border-[#74B487]/40 space-y-2 shadow-xs">
                 <Leaf className="w-6 h-6 text-[#E67E22]" />
-                <h4 className="text-sm font-extrabold text-[#0E382E]">No Synthetic Colors</h4>
+                <h4 className="text-sm font-extrabold text-[#0E382E]">No Added Sugar</h4>
                 <p className="text-xs text-stone-600 font-normal">
-                  Strictly zero artificial colors, synthetic flavors, or harmful additives.
+                  Naturally sweetened with wholesome dates, zero artificial colors or preservatives.
                 </p>
               </div>
             </div>
@@ -520,13 +565,13 @@ export const Home: React.FC = () => {
 
           <div className="lg:col-span-6 grid grid-cols-2 gap-4">
             <img
-              src={storyMangoProduct.storyImage}
-              alt="Story Mango"
+              src={storyRagiProduct.storyImage}
+              alt="DUST Shahi Ragi Laddoo Mix"
               className="rounded-2xl border-2 border-[#74B487]/50 object-cover w-full h-80 shadow-md"
             />
             <img
               src={storyPaanProduct.storyImage}
-              alt="Story Paan"
+              alt="DUST Banarasi Paan"
               className="rounded-2xl border-2 border-[#74B487]/50 object-cover w-full h-80 mt-8 shadow-md"
             />
           </div>
