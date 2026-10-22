@@ -247,26 +247,61 @@ export const About: React.FC = () => {
           </div>
         </div>
 
-        <div className="lg:col-span-6 bg-[#0E382E] text-white p-8 rounded-3xl space-y-6 border border-[#74B487]/30 shadow-lg">
-          <h3 className="text-2xl font-extrabold text-white">Future Portfolio Expansion</h3>
-          <ul className="space-y-3 text-xs text-[#E8F1E9] font-medium">
-            <li className="flex items-center gap-3">
-              <span className="w-2 h-2 rounded-full bg-[#E67E22]" />
-              <span>Real Fruit & Botanical Instant Coolers</span>
-            </li>
-            <li className="flex items-center gap-3">
-              <span className="w-2 h-2 rounded-full bg-[#E67E22]" />
-              <span>Heritage Indian Wellness Digestives</span>
-            </li>
-            <li className="flex items-center gap-3">
-              <span className="w-2 h-2 rounded-full bg-[#E67E22]" />
-              <span>Functional Consumer Products & Wholesome Mixes</span>
-            </li>
-            <li className="flex items-center gap-3">
-              <span className="w-2 h-2 rounded-full bg-[#E67E22]" />
-              <span>On-the-go sachet convenience formats</span>
-            </li>
-          </ul>
+        <div className="lg:col-span-6 bg-[#0E382E] text-white p-8 sm:p-10 rounded-3xl space-y-6 border border-[#74B487]/30 shadow-lg relative overflow-hidden">
+          <div className="flex items-center justify-between border-b border-[#74B487]/30 pb-4">
+            <div>
+              <span className="text-[10px] uppercase tracking-[0.25em] text-[#E67E22] font-extrabold block">
+                ROADMAP & CATEGORIES
+              </span>
+              <h3 className="text-2xl font-extrabold text-white mt-1">
+                Future Portfolio Expansion
+              </h3>
+            </div>
+            <span className="px-3 py-1 bg-[#1F684B] border border-[#74B487]/40 rounded-full text-[10px] font-extrabold uppercase tracking-wider text-[#E8F1E9]">
+              5 Product Lines
+            </span>
+          </div>
+
+          <div className="space-y-3">
+            {[
+              { num: "01", title: "Traditional Foods & Nutrition", status: "Active Launch" },
+              { num: "02", title: "Beverages & Refreshments", status: "Active Pipeline" },
+              { num: "03", title: "Heritage Flavours & Digestives", status: "Active Launch" },
+              { num: "04", title: "Herbal Infusions", status: "Coming Soon" },
+              { num: "05", title: "Personal Care", status: "Future Extension" },
+            ].map((line, idx) => (
+              <div
+                key={idx}
+                className="flex items-center justify-between p-3.5 bg-[#1F684B]/60 hover:bg-[#1F684B] rounded-2xl border border-[#74B487]/30 transition-colors"
+              >
+                <div className="flex items-center gap-3.5">
+                  <span className="w-7 h-7 rounded-xl bg-[#E67E22] text-white font-extrabold text-xs flex items-center justify-center shrink-0 shadow-xs">
+                    {line.num}
+                  </span>
+                  <span className="text-xs sm:text-sm font-extrabold text-white tracking-wide">
+                    {line.title}
+                  </span>
+                </div>
+                <span
+                  className={`text-[9px] uppercase font-black tracking-wider px-2.5 py-1 rounded-full ${
+                    line.status === "Active Launch"
+                      ? "bg-[#74B487]/20 text-[#74B487] border border-[#74B487]/40"
+                      : line.status === "Future Extension"
+                      ? "bg-amber-500/20 text-[#E67E22] border border-[#E67E22]/40"
+                      : "bg-white/10 text-[#E8F1E9] border border-white/20"
+                  }`}
+                >
+                  {line.status}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <div className="pt-2 text-center border-t border-[#74B487]/20">
+            <p className="text-[11px] text-[#E8F1E9] italic font-medium">
+              "Building India's next generation of consumer brands."
+            </p>
+          </div>
         </div>
       </div>
     </div>
