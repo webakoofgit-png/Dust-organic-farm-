@@ -116,7 +116,7 @@ export const Home: React.FC = () => {
             </div>
 
             <div className="text-xs uppercase tracking-[0.25em] text-[#E67E22] font-extrabold flex items-center justify-center md:justify-start gap-2">
-              <Sparkles className="w-4 h-4" /> DUST™ — CHOICE OF MOTHERLAND
+              <Sparkles className="w-4 h-4" /> DUST — CHOICE OF MOTHERLAND
             </div>
 
             <h1 className="text-4xl sm:text-6xl xl:text-7xl font-extrabold text-[#0E382E] tracking-tight leading-[1.05]">
@@ -559,7 +559,7 @@ export const Home: React.FC = () => {
               REFRESH. DIGEST. REPEAT.
             </h2>
             <p className="text-sm sm:text-base text-[#E8F1E9] font-medium leading-relaxed">
-              DUST™ Paan Digestive Shot is a modern take on a timeless Banaras tradition. Carefully crafted with real betel leaf extracts, rose petal gulkand, fennel, and cardamom to support digestion, freshen breath, and leave you feeling light — anytime, anywhere.
+              DUST Paan Digestive Shot is a modern take on a timeless Banaras tradition. Carefully crafted with real betel leaf extracts, rose petal gulkand, fennel, and cardamom to support digestion, freshen breath, and leave you feeling light — anytime, anywhere.
             </p>
           </div>
 
