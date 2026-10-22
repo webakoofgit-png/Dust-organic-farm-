@@ -77,6 +77,13 @@ export const QuickViewModal: React.FC = () => {
               "{quickViewProduct.pitch}"
             </p>
 
+            {/* Quote Seal */}
+            <div className="mt-2.5 py-1 px-2.5 bg-[#0E382E] border border-[#E67E22] rounded-lg inline-flex items-center gap-1.5 text-[9px] font-black uppercase tracking-wider text-[#E67E22]">
+              <span className="text-stone-200">NOT MADE FOR EVERYONE</span>
+              <span>•</span>
+              <span>MADE FOR THOSE WHO CHOOSE BETTER</span>
+            </div>
+
             <div className="flex items-baseline gap-3 mt-4">
               <span className="text-2xl font-extrabold text-[#0E382E]">
                 {quickViewProduct.priceDisplay}

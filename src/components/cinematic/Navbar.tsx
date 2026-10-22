@@ -40,17 +40,17 @@ export const Navbar: React.FC = () => {
   return (
     <>
       <div className="fixed top-0 left-0 right-0 z-40 print:hidden">
-        {/* Top Announcement Bar */}
-        <div className="bg-[#0E382E] text-[#F6F5F0] py-1.5 px-4 text-center text-xs font-medium tracking-wide flex items-center justify-center gap-3 border-b border-[#1F684B]/50">
-          <span className="inline-flex items-center gap-1 text-[#E67E22] font-bold text-[11px] uppercase tracking-wider bg-[#E67E22]/15 px-2 py-0.5 rounded-full border border-[#E67E22]/30">
-            <Sparkles className="w-3 h-3 text-[#E67E22]" /> Offer
+        {/* Top Announcement Bar / Display Line */}
+        <div className="bg-[#0E382E] text-[#F6F5F0] py-2 px-4 text-center text-xs tracking-wider flex items-center justify-center gap-2 sm:gap-3 border-b border-[#E67E22]/30 shadow-xs">
+          <span className="text-[#E67E22] text-xs font-black">✦</span>
+          <span className="font-extrabold uppercase tracking-[0.16em] text-stone-200 text-[11px] sm:text-xs">
+            NOT MADE FOR EVERYONE
           </span>
-          <span className="hidden sm:inline text-white/90">
-            Free Delivery Across India on Orders Above ₹499
+          <span className="text-[#E67E22] font-black text-xs">•</span>
+          <span className="font-black uppercase tracking-[0.16em] text-[#E67E22] text-[11px] sm:text-xs">
+            MADE FOR THOSE WHO CHOOSE BETTER
           </span>
-          <span className="text-[#E67E22] font-semibold text-xs tracking-wider">
-            • DUST — CHOICE OF MOTHERLAND
-          </span>
+          <span className="text-[#E67E22] text-xs font-black">✦</span>
         </div>
 
         {/* Main Header / Navbar */}

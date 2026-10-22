@@ -130,6 +130,16 @@ export const ProductDetail: React.FC = () => {
               "{product.pitch}"
             </p>
 
+            {/* Brand Quote Authenticity Seal */}
+            <div className="mt-4 p-3 bg-[#0E382E] border-2 border-[#E67E22] rounded-2xl flex items-center gap-2.5 text-white shadow-xs">
+              <span className="text-[#E67E22] text-xs font-black">✦</span>
+              <div className="text-[10px] sm:text-[11px] font-black uppercase tracking-[0.16em]">
+                <span className="text-stone-200">NOT MADE FOR EVERYONE</span>
+                <span className="text-[#E67E22] mx-2">•</span>
+                <span className="text-[#E67E22]">MADE FOR THOSE WHO CHOOSE BETTER</span>
+              </div>
+            </div>
+
             <div className="flex items-baseline gap-4 mt-6 pt-4 border-t border-[#74B487]/30">
               <span className="text-3xl font-extrabold text-[#0E382E]">
                 {product.priceDisplay}

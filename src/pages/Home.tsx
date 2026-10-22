@@ -106,9 +106,11 @@ export const Home: React.FC = () => {
 
         <div className="relative z-10 my-auto text-center md:text-left grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-4">
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#E8F1E9] border border-[#74B487] rounded-full text-[#0E382E] text-xs font-extrabold uppercase tracking-wider">
-              <Sparkles className="w-4 h-4 text-[#E67E22]" />
-              <span>DUST — CHOICE OF MOTHERLAND</span>
+            <div className="inline-flex items-center gap-2 sm:gap-3 px-4 py-1.5 bg-[#0E382E] border-2 border-[#E67E22] rounded-full text-white text-xs font-extrabold uppercase tracking-wider shadow-md">
+              <span className="text-[#E67E22] font-black">✦</span>
+              <span className="text-white/90 font-extrabold tracking-[0.14em]">NOT MADE FOR EVERYONE</span>
+              <span className="text-[#E67E22] font-black">•</span>
+              <span className="text-[#E67E22] font-black tracking-[0.14em]">MADE FOR THOSE WHO CHOOSE BETTER</span>
             </div>
 
             <h1 className="text-4xl sm:text-6xl xl:text-7xl font-extrabold text-[#0E382E] tracking-tight leading-[1.05]">
@@ -210,29 +212,27 @@ export const Home: React.FC = () => {
             <Award className="w-4 h-4 text-white" /> DUST — CHOICE OF MOTHERLAND
           </span>
           <span>•</span>
-          <span>100% REAL FRUIT POWDERS</span>
+          <span className="bg-[#0E382E] text-white px-3 py-0.5 rounded-full border border-white/30">
+            NOT MADE FOR EVERYONE • MADE FOR THOSE WHO CHOOSE BETTER
+          </span>
           <span>•</span>
-          <span>ZERO SYNTHETIC COLORS</span>
+          <span>WHOLESOME MILLETS & DRY FRUITS</span>
           <span>•</span>
-          <span>AUTHENTIC INDIAN RECIPES</span>
+          <span>ROYAL BANARASI PAAN</span>
           <span>•</span>
-          <span>INSTANT SACHET RITUALS</span>
-          <span>•</span>
-          <span>100% NATURAL & FRESH</span>
+          <span>ZERO ADDED SUGAR</span>
           <span>•</span>
           <span className="flex items-center gap-2">
             <Award className="w-4 h-4 text-white" /> DUST — CHOICE OF MOTHERLAND
           </span>
           <span>•</span>
-          <span>100% REAL FRUIT POWDERS</span>
+          <span className="bg-[#0E382E] text-white px-3 py-0.5 rounded-full border border-white/30">
+            NOT MADE FOR EVERYONE • MADE FOR THOSE WHO CHOOSE BETTER
+          </span>
           <span>•</span>
-          <span>ZERO SYNTHETIC COLORS</span>
+          <span>WHOLESOME MILLETS & DRY FRUITS</span>
           <span>•</span>
-          <span>AUTHENTIC INDIAN RECIPES</span>
-          <span>•</span>
-          <span>INSTANT SACHET RITUALS</span>
-          <span>•</span>
-          <span>100% NATURAL & FRESH</span>
+          <span>ZERO ADDED SUGAR</span>
           <span>•</span>
         </div>
 
@@ -241,29 +241,27 @@ export const Home: React.FC = () => {
             <Award className="w-4 h-4 text-white" /> DUST — CHOICE OF MOTHERLAND
           </span>
           <span>•</span>
-          <span>100% REAL FRUIT POWDERS</span>
+          <span className="bg-[#0E382E] text-white px-3 py-0.5 rounded-full border border-white/30">
+            NOT MADE FOR EVERYONE • MADE FOR THOSE WHO CHOOSE BETTER
+          </span>
           <span>•</span>
-          <span>ZERO SYNTHETIC COLORS</span>
+          <span>WHOLESOME MILLETS & DRY FRUITS</span>
           <span>•</span>
-          <span>AUTHENTIC INDIAN RECIPES</span>
+          <span>ROYAL BANARASI PAAN</span>
           <span>•</span>
-          <span>INSTANT SACHET RITUALS</span>
-          <span>•</span>
-          <span>100% NATURAL & FRESH</span>
+          <span>ZERO ADDED SUGAR</span>
           <span>•</span>
           <span className="flex items-center gap-2">
             <Award className="w-4 h-4 text-white" /> DUST — CHOICE OF MOTHERLAND
           </span>
           <span>•</span>
-          <span>100% REAL FRUIT POWDERS</span>
+          <span className="bg-[#0E382E] text-white px-3 py-0.5 rounded-full border border-white/30">
+            NOT MADE FOR EVERYONE • MADE FOR THOSE WHO CHOOSE BETTER
+          </span>
           <span>•</span>
-          <span>ZERO SYNTHETIC COLORS</span>
+          <span>WHOLESOME MILLETS & DRY FRUITS</span>
           <span>•</span>
-          <span>AUTHENTIC INDIAN RECIPES</span>
-          <span>•</span>
-          <span>INSTANT SACHET RITUALS</span>
-          <span>•</span>
-          <span>100% NATURAL & FRESH</span>
+          <span>ZERO ADDED SUGAR</span>
           <span>•</span>
         </div>
       </section>
