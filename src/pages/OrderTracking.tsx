@@ -30,7 +30,7 @@ export const OrderTracking: React.FC = () => {
             Track Your DUST Order
           </h1>
           <p className="text-xs text-[#1F684B] max-w-md mx-auto">
-            Enter your Order ID (e.g. DST-8806-9482) or registered 10-digit mobile number to track real-time delivery status.
+            Enter your Order ID (e.g. DST-8600-9482) or registered 10-digit mobile number to track real-time delivery status.
           </p>
 
           <form onSubmit={(e) => { e.preventDefault(); setSearched(true); }} className="max-w-md mx-auto flex gap-2 pt-2">

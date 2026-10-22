@@ -5,7 +5,7 @@ import { companyInfo, products } from "@/lib/data";
 
 export const OrderConfirmation: React.FC = () => {
   const [searchParams] = useSearchParams();
-  const orderId = searchParams.get("id") || "DST-8806-9482";
+  const orderId = searchParams.get("id") || "DST-8600-9482";
   const dateStr = new Date().toLocaleDateString("en-IN", {
     day: "numeric",
     month: "long",

@@ -36,10 +36,10 @@ export const companyInfo = {
   tan: "PNEE12048B",
   gstin: "27AAJCE8999E1ZX",
   fssai: "In Process",
-  phone: "8806808008",
-  phoneFormatted: "+91 8806808008",
-  whatsapp: "8806808008",
-  whatsappLink: "https://wa.me/918806808008?text=Hi%20DUST%20Team%2C%20I%20have%20an%20enquiry",
+  phone: "8600694906",
+  phoneFormatted: "+91 86006 94906",
+  whatsapp: "8600694906",
+  whatsappLink: "https://wa.me/918600694906?text=Hi%20DUST%20Team%2C%20I%20have%20an%20enquiry",
   email: "customercare@dustofficial.com",
   businessEmail: "everestedges@gmail.com",
   domain: "dustofficial.com",
@@ -566,7 +566,7 @@ export const waysToEnjoy = [
 export const contact = {
   email: "support@dustfoods.com",
   hello: "hello@dustfoods.com",
-  phone: "+91 99999 99999",
+  phone: "+91 86006 94906",
   response: "Questions, wholesale inquiries, or feedback on our recipes—we read every message and respond within 12 hours.",
 };
 

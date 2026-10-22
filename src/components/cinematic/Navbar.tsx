@@ -144,9 +144,9 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center gap-1 sm:gap-3 md:gap-4 shrink-0">
             {/* Phone Call Link */}
             <a
-              href="tel:8806808008"
+              href="tel:8600694906"
               className="p-2 text-[#0E382E] hover:text-[#E67E22] transition-colors rounded-full hover:bg-[#E8F1E9] hidden sm:flex items-center gap-1.5"
-              title="Call Customer Care (8806808008)"
+              title="Call Customer Care (8600694906)"
             >
               <Phone className="w-5 h-5" />
             </a>

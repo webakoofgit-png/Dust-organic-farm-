@@ -111,7 +111,7 @@ export const Admin: React.FC = () => {
   // State 8: Customer Orders
   const [orders, setOrders] = useState([
     {
-      id: "DST-8806-9482",
+      id: "DST-8600-9482",
       customer: "Rajesh Kumar",
       email: "rajesh.kumar@example.com",
       phone: "9876543210",
@@ -122,7 +122,7 @@ export const Admin: React.FC = () => {
       date: "26 Aug 2026",
     },
     {
-      id: "DST-8806-3810",
+      id: "DST-8600-3810",
       customer: "Priya Sharma",
       email: "priya.sharma@example.com",
       phone: "9812345678",
