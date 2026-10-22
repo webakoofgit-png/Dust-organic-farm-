@@ -16,7 +16,6 @@ import {
 } from "lucide-react";
 import { products, collections, Product, companyInfo } from "@/lib/data";
 import { useCartStore } from "@/lib/cart-store";
-import { CustomerReviewsCarousel } from "@/components/cinematic/CustomerReviewsCarousel";
 import dustStandeeImg from "@/assets/dust-brand-usp-standee.jpg";
 
 export const Home: React.FC = () => {
@@ -627,10 +626,6 @@ export const Home: React.FC = () => {
           ))}
         </div>
       </section>
-
-      {/* Customer Photo & Video Reviews Auto-Carousel */}
-      <CustomerReviewsCarousel />
-
     </div>
   );
 };
