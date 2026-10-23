@@ -701,7 +701,7 @@ export const Home: React.FC = () => {
             <img
               src={storyPaanProduct.storyImage}
               alt="DUST Paan Digestive Shot"
-              className="rounded-2xl border-2 border-[#74B487]/50 object-cover w-full h-80 mt-8 shadow-md"
+              className="rounded-2xl border-2 border-[#74B487]/50 object-cover w-full h-80 shadow-md"
             />
           </div>
         </div>
