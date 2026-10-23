@@ -13,6 +13,14 @@ import {
   Flame,
   Award,
   Zap,
+  AlertCircle,
+  TrendingUp,
+  Package,
+  Users,
+  BadgeCheck,
+  IndianRupee,
+  FlaskConical,
+  Truck,
 } from "lucide-react";
 import { products, collections, Product, companyInfo } from "@/lib/data";
 import { useCartStore } from "@/lib/cart-store";
@@ -707,9 +715,163 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* WHY DUST — Problem + Solution Trust Section */}
+      <section className="py-24 bg-[#F6F5F0] px-4 sm:px-8 md:px-12 lg:px-16 border-t border-[#74B487]/30">
+        <div className="max-w-7xl mx-auto space-y-16">
+          {/* Header */}
+          <div className="text-center max-w-3xl mx-auto space-y-4">
+            <span className="text-xs uppercase tracking-[0.3em] text-[#E67E22] font-extrabold bg-[#E8F1E9] border border-[#74B487]/40 px-4 py-1.5 rounded-full inline-block">
+              WHY DUST EXISTS
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0E382E]">
+              We Understood the Problem. <br />
+              <span className="text-[#E67E22]">Then We Built the Solution.</span>
+            </h2>
+            <p className="text-sm text-[#1F684B] leading-relaxed">
+              Most natural products are either too expensive, too inconvenient, or full of hidden additives. DUST was built to fix exactly that.
+            </p>
+          </div>
+
+          {/* Problem vs Solution Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+            {/* Problems */}
+            <div className="space-y-4">
+              <h3 className="text-sm font-extrabold uppercase tracking-widest text-stone-400 flex items-center gap-2">
+                <AlertCircle className="w-4 h-4 text-stone-400" /> The Problem
+              </h3>
+              {[
+                {
+                  icon: <Package className="w-5 h-5" />,
+                  text: "Natural products are hard to find and require significant preparation time.",
+                },
+                {
+                  icon: <IndianRupee className="w-5 h-5" />,
+                  text: "Affordable and natural rarely go together — most clean-label products charge a premium.",
+                },
+                {
+                  icon: <FlaskConical className="w-5 h-5" />,
+                  text: "Supermarket options are loaded with artificial additives, preservatives and synthetic chemicals.",
+                },
+                {
+                  icon: <TrendingUp className="w-5 h-5" />,
+                  text: "Busy lifestyles leave no time for healthy home preparation from scratch.",
+                },
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-start gap-4 p-5 bg-white rounded-2xl border border-stone-200 shadow-xs">
+                  <div className="w-9 h-9 rounded-xl bg-stone-100 text-stone-400 flex items-center justify-center shrink-0">
+                    {item.icon}
+                  </div>
+                  <p className="text-xs text-stone-600 leading-relaxed font-medium">{item.text}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Solutions */}
+            <div className="space-y-4">
+              <h3 className="text-sm font-extrabold uppercase tracking-widest text-[#E67E22] flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#E67E22]" /> The DUST Solution
+              </h3>
+              {[
+                {
+                  icon: <Leaf className="w-5 h-5" />,
+                  title: "Clean-Label Formulations",
+                  text: "Every DUST product is formulated with natural ingredients — zero artificial dyes, zero synthetic preservatives.",
+                },
+                {
+                  icon: <IndianRupee className="w-5 h-5" />,
+                  title: "Affordable Wellness",
+                  text: "High-quality natural products priced fairly, so every Indian household can access wholesome nutrition daily.",
+                },
+                {
+                  icon: <Zap className="w-5 h-5" />,
+                  title: "Instant Convenience",
+                  text: "Ready-to-mix and easy-to-prepare formats designed for modern on-the-go lifestyles.",
+                },
+                {
+                  icon: <FlaskConical className="w-5 h-5" />,
+                  title: "Proprietary Formulations",
+                  text: "Unique, developed in-house recipes that larger mass-market brands struggle to adapt or replicate.",
+                },
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-start gap-4 p-5 bg-[#E8F1E9] rounded-2xl border border-[#74B487]/40 shadow-xs">
+                  <div className="w-9 h-9 rounded-xl bg-[#E67E22] text-white flex items-center justify-center shrink-0">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-extrabold text-[#0E382E] uppercase tracking-wide mb-0.5">{item.title}</h4>
+                    <p className="text-xs text-[#1F684B] leading-relaxed font-medium">{item.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WHY CHOOSE DUST — Competitive Advantage Badge Strip */}
+      <section className="py-20 bg-[#0E382E] text-white px-4 sm:px-8 md:px-12 lg:px-16 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiM3NEI0ODciIG9wYWNpdHk9IjAuMDUiPjxjaXJjbGUgY3g9IjMwIiBjeT0iMzAiIHI9IjIiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40 pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto relative z-10 space-y-12">
+          <div className="text-center space-y-3">
+            <span className="text-xs uppercase tracking-[0.3em] text-[#E67E22] font-extrabold bg-[#1F684B]/60 px-4 py-1.5 rounded-full border border-[#74B487]/40 inline-block">
+              THE DUST ADVANTAGE
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-white">
+              Why Thousands Choose DUST
+            </h2>
+            <p className="text-sm text-[#E8F1E9] max-w-xl mx-auto leading-relaxed">
+              We don't just make products — we build trust through every ingredient, every pack, every delivery.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {[
+              {
+                icon: <FlaskConical className="w-6 h-6" />,
+                title: "Proprietary\nFormulations",
+                desc: "Unique in-house recipes — hard to copy, built to last.",
+              },
+              {
+                icon: <BadgeCheck className="w-6 h-6" />,
+                title: "Clean-Label\nPositioning",
+                desc: "Minimal ingredients. Full transparency. Zero hidden chemicals.",
+              },
+              {
+                icon: <IndianRupee className="w-6 h-6" />,
+                title: "Affordable\nWellness",
+                desc: "Natural quality at a price that reaches every Indian household.",
+              },
+              {
+                icon: <Truck className="w-6 h-6" />,
+                title: "Direct-to-\nConsumer",
+                desc: "Order direct. Better pricing. Faster support. Real relationship.",
+              },
+              {
+                icon: <Users className="w-6 h-6" />,
+                title: "Community\nFirst",
+                desc: "Built with feedback from real health-conscious Indian families.",
+              },
+            ].map((item, idx) => (
+              <div
+                key={idx}
+                className="p-6 bg-[#1F684B]/50 hover:bg-[#1F684B] border border-[#74B487]/30 rounded-2xl text-center space-y-3 transition-colors duration-300 group"
+              >
+                <div className="w-12 h-12 rounded-xl bg-[#E67E22] text-white flex items-center justify-center mx-auto shadow-md group-hover:scale-110 transition-transform duration-300">
+                  {item.icon}
+                </div>
+                <h4 className="text-sm font-extrabold text-white whitespace-pre-line leading-tight">
+                  {item.title}
+                </h4>
+                <p className="text-[11px] text-[#E8F1E9] leading-relaxed font-normal">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* 5. Collections Banner Grid */}
-      <section className="py-24 px-4 sm:px-8 md:px-12 lg:px-16 w-full">
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
+      <section className="py-24 px-4 sm:px-8 md:px-12 lg:px-16 w-full">        <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
           <span className="text-xs uppercase tracking-[0.25em] text-[#E67E22] font-extrabold">
             CURATED COLLECTIONS
           </span>

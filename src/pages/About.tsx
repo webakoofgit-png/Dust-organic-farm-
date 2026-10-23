@@ -10,6 +10,10 @@ import {
   Compass,
   Target,
   Award,
+  Users,
+  BookOpen,
+  Briefcase,
+  ShoppingBag,
 } from "lucide-react";
 import { companyInfo } from "@/lib/data";
 
@@ -302,6 +306,72 @@ export const About: React.FC = () => {
               "Building India's next generation of consumer brands."
             </p>
           </div>
+        </div>
+      </div>
+
+      {/* WHO IS DUST FOR — Target Audience Section */}
+      <div className="mb-12 space-y-10">
+        <div className="text-center max-w-2xl mx-auto space-y-3">
+          <span className="text-xs uppercase tracking-[0.25em] text-[#E67E22] font-extrabold">
+            OUR CUSTOMERS
+          </span>
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0E382E]">
+            Who Is DUST Made For?
+          </h2>
+          <p className="text-sm text-[#1F684B]">
+            DUST is built for people who care about what goes into their body — without wanting to compromise on taste, time, or budget.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            {
+              icon: <HeartHandshake className="w-7 h-7" />,
+              title: "Health-Conscious Consumers",
+              desc: "Individuals actively prioritizing natural ingredients, clean labels, and wellness in their everyday choices.",
+              badge: "Primary Audience",
+            },
+            {
+              icon: <Briefcase className="w-7 h-7" />,
+              title: "Families & Working Professionals",
+              desc: "Busy people seeking convenient, quick solutions for daily nutrition without sacrificing quality.",
+              badge: "Core Market",
+            },
+            {
+              icon: <BookOpen className="w-7 h-7" />,
+              title: "Students",
+              desc: "Looking for affordable, easy-to-prepare nutritious options that fit a fast-paced student lifestyle.",
+              badge: "Growing Segment",
+            },
+            {
+              icon: <ShoppingBag className="w-7 h-7" />,
+              title: "Retailers & Distributors",
+              desc: "Business partners looking to expand their portfolio with a trusted, fast-growing Indian consumer brand.",
+              badge: "B2B Partners",
+            },
+          ].map((item, idx) => (
+            <div
+              key={idx}
+              className="bg-white p-7 rounded-3xl border border-[#74B487]/40 shadow-xs space-y-4 hover:border-[#E67E22] hover:shadow-md transition-all duration-300 group flex flex-col"
+            >
+              <div className="w-12 h-12 rounded-2xl bg-[#E8F1E9] text-[#E67E22] flex items-center justify-center group-hover:bg-[#E67E22] group-hover:text-white transition-colors duration-300">
+                {item.icon}
+              </div>
+              <div className="flex-1 space-y-2">
+                <span className="text-[9px] uppercase tracking-widest font-extrabold text-[#E67E22] bg-[#E8F1E9] px-2.5 py-0.5 rounded-full inline-block">
+                  {item.badge}
+                </span>
+                <h3 className="text-base font-extrabold text-[#0E382E] leading-tight">{item.title}</h3>
+                <p className="text-xs text-[#1F684B] leading-relaxed font-normal">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="p-5 bg-[#0E382E] rounded-2xl border border-[#74B487]/30 text-center shadow-md">
+          <p className="text-sm font-extrabold text-white tracking-wide">
+            <span className="text-[#E67E22]">✦</span>&nbsp; NOT MADE FOR EVERYONE — MADE FOR THOSE WHO CHOOSE BETTER &nbsp;<span className="text-[#E67E22]">✦</span>
+          </p>
         </div>
       </div>
     </div>
