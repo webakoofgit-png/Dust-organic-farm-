@@ -50,7 +50,7 @@ export const companyInfo = {
   address: "Silver Gracia, Ravet, Pune – 412101, Maharashtra, India",
   tagline: "CHOICE OF MOTHERLAND",
   coreProposition: "Indian Taste × Convenience × Ingredient Transparency × Accessible Pricing",
-  purpose: "Building India’s next generation of consumer brands — from nourishing food and wholesome millet mixes to fruit powders and personal care.",
+  purpose: "Building India’s next generation of consumer brands — from nourishing food and Wholesome Laddoo premix mixes to fruit powders and personal care.",
   vision: "Build a nationally recognized Indian consumer brand that originates in India and scales globally.",
 };
 
@@ -128,10 +128,10 @@ export const products: Product[] = [
     slug: "shahi-ragi-dry-fruit-laddoo-mix",
     name: "Shahi Ragi & Dry Fruit Laddoo Mix",
     shortName: "Ragi Laddoo Mix",
-    subtitle: "Wholesome Millets | Premium Nuts | Traditional Taste",
-    pitch: "Wholesome Millets & Premium Nuts — Ready to Shape",
+    subtitle: "Wholesome Laddoo premixs | Premium Nuts | Traditional Taste",
+    pitch: "Wholesome Laddoo premixs & Premium Nuts — Ready to Shape",
     category: "wholesome-millets",
-    categoryLabel: "Wholesome Millets",
+    categoryLabel: "Wholesome Laddoo premixs",
     price: 199,
     originalPrice: 249,
     priceDisplay: "₹199",
@@ -139,7 +139,7 @@ export const products: Product[] = [
     unitDisplay: "₹199 / 250g Pack",
     savePercent: 20,
     netWeight: "250g",
-    badges: ["Wholesome Millets", "Premium Dry Fruits", "No Added Sugar"],
+    badges: ["Wholesome Laddoo premixs", "Premium Dry Fruits", "No Added Sugar"],
     description: [
       "Made with nutritious Ragi and a delicious blend of dry fruits, our Ragi & Dry Fruit Laddoo Mix is a convenient way to prepare tasty, wholesome laddoos at home.",
       "Perfect for breakfast, snacking, or whenever you crave something naturally delicious.",
@@ -192,7 +192,7 @@ export const products: Product[] = [
           "Shape the mixture by hand into round, wholesome laddoos. Enjoy fresh, healthy nutrition anytime.",
       },
     ],
-    heritageTitle: "Wholesome Millet Heritage",
+    heritageTitle: "Wholesome Laddoo premix Heritage",
     heritageQuote:
       "Natural nutrition for a healthier tomorrow. Made for those who choose better — crafted with pure finger millet (ragi), crunchy roasted nuts, and pure date powder.",
     images: [
@@ -320,7 +320,7 @@ export const products: Product[] = [
 export const collections: Collection[] = [
   {
     slug: "wholesome-millets",
-    name: "Wholesome Millets",
+    name: "Wholesome Laddoo premixs",
     titleLines: ["Wholesome", "Millets."],
     tagline: "Ancient grains & traditional dry fruit mixes crafted for everyday nutrition.",
     description:
@@ -392,7 +392,7 @@ export const collections: Collection[] = [
     crossTitle: "Looking for wholesome nutrition?",
     crossText:
       "Cross over to our superfoods shelf — traditional Shahi Ragi & Dry Fruit Laddoo Mix for everyday bone health and sustained energy.",
-    crossCta: "Explore Wholesome Millets",
+    crossCta: "Explore Wholesome Laddoo premixs",
     crossHref: "/collections/wholesome-millets",
     heroImage: "/paan_image_1.jpeg",
   },
@@ -410,7 +410,7 @@ export interface JournalPost {
 export const journalPosts: JournalPost[] = [
   {
     slug: "the-art-of-traditional-ragi-laddoos",
-    tag: "Wholesome Millets",
+    tag: "Wholesome Laddoo premixs",
     date: "June 2025",
     title: "The Art of Wholesome Ragi & Dry Fruit Laddoos",
     excerpt:

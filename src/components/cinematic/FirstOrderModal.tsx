@@ -50,7 +50,7 @@ export const FirstOrderModal: React.FC = () => {
             Get 10% OFF Your First DUST Order
           </h2>
           <p className="text-xs text-[#1F684B]">
-            Taste India's finest wholesome millets and Paan Digestive Shots with instant 10% savings.
+            Taste India's finest Wholesome Laddoo premixs and Paan Digestive Shots with instant 10% savings.
           </p>
         </div>
 

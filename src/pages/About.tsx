@@ -227,7 +227,7 @@ export const About: React.FC = () => {
             Originated in India. Scaled for the World.
           </h2>
           <p className="text-sm text-[#1F684B] leading-relaxed font-normal">
-            {companyInfo.brand} is parented by <strong>{companyInfo.name}</strong>. Our vision goes beyond a single product category. Starting with wholesome millet mixes, convenient fruit powders, and heritage digestive shots, we are building a broad portfolio of Indian consumer products.
+            {companyInfo.brand} is parented by <strong>{companyInfo.name}</strong>. Our vision goes beyond a single product category. Starting with Wholesome Laddoo premix mixes, convenient fruit powders, and heritage digestive shots, we are building a broad portfolio of Indian consumer products.
           </p>
           <p className="text-sm text-[#1F684B] leading-relaxed font-normal">
             We believe traditional Indian culinary and wellness wisdom holds global appeal when paired with modern hygienic packaging discipline.

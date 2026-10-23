@@ -40,7 +40,7 @@ export const Combos: React.FC = () => {
             </h2>
 
             <p className="text-xs text-[#1F684B] leading-relaxed">
-              1× Shahi Ragi & Dry Fruit Laddoo Mix (250g) + 1× Paan Digestive Shot Box (20g). The ideal combination of wholesome millet nutrition and royal post-meal digestive freshness.
+              1× Shahi Ragi & Dry Fruit Laddoo Mix (250g) + 1× Paan Digestive Shot Box (20g). The ideal combination of Wholesome Laddoo premix nutrition and royal post-meal digestive freshness.
             </p>
 
             <ul className="space-y-2 text-xs text-[#0E382E] font-semibold">
