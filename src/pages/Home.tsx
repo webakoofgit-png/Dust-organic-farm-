@@ -43,10 +43,10 @@ export const Home: React.FC = () => {
     slug: "shahi-ragi-dry-fruit-laddoo-mix",
     name: "Shahi Ragi & Dry Fruit Laddoo Mix",
     shortName: "Ragi Laddoo Mix",
-    subtitle: "Wholesome Laddoo premixs | Premium Nuts | Traditional Taste",
-    pitch: "Wholesome Laddoo premixs & Premium Nuts — Ready to Shape",
+    subtitle: "Wholesome Laddoo Premix | Premium Nuts | Traditional Taste",
+    pitch: "Wholesome Laddoo Premix & Premium Nuts — Ready to Shape",
     category: "wholesome-millets",
-    categoryLabel: "Wholesome Laddoo premixs",
+    categoryLabel: "Wholesome Laddoo Premix",
     price: 199,
     originalPrice: 249,
     priceDisplay: "₹199",
@@ -54,7 +54,7 @@ export const Home: React.FC = () => {
     unitDisplay: "₹199 / 250g Pack",
     savePercent: 20,
     netWeight: "250g",
-    badges: ["Wholesome Laddoo premixs", "Premium Dry Fruits", "No Added Sugar"],
+    badges: ["Wholesome Laddoo Premix", "Premium Dry Fruits", "No Added Sugar"],
     description: ["Made with nutritious Ragi and a delicious blend of dry fruits."],
     ingredients: "Ragi, Date Powder, Almond, Cashew, Pumpkin Seed, Sunflower Seed, Watermelon Seed, Flax Seed, Cardamom.",
     storage: "Keep in a cool dry place.",
@@ -142,7 +142,7 @@ export const Home: React.FC = () => {
                 to="/collections/wholesome-millets"
                 className="px-8 py-4 bg-[#E8F1E9] hover:bg-[#74B487]/20 border border-[#74B487] text-[#0E382E] text-xs font-extrabold uppercase tracking-[0.2em] rounded-full transition-all"
               >
-                Wholesome Laddoo premixs
+                Wholesome Laddoo Premix
               </Link>
             </div>
           </div>
@@ -220,7 +220,7 @@ export const Home: React.FC = () => {
             NOT MADE FOR EVERYONE • MADE FOR THOSE WHO CHOOSE BETTER
           </span>
           <span>•</span>
-          <span>Wholesome Laddoo premixS & DRY FRUITS</span>
+          <span>Wholesome Laddoo Premix & DRY FRUITS</span>
           <span>•</span>
           <span>ROYAL PAAN DIGESTIVE SHOT</span>
           <span>•</span>
@@ -234,7 +234,7 @@ export const Home: React.FC = () => {
             NOT MADE FOR EVERYONE • MADE FOR THOSE WHO CHOOSE BETTER
           </span>
           <span>•</span>
-          <span>Wholesome Laddoo premixS & DRY FRUITS</span>
+          <span>Wholesome Laddoo Premix & DRY FRUITS</span>
           <span>•</span>
           <span>ZERO ADDED SUGAR</span>
           <span>•</span>
@@ -249,7 +249,7 @@ export const Home: React.FC = () => {
             NOT MADE FOR EVERYONE • MADE FOR THOSE WHO CHOOSE BETTER
           </span>
           <span>•</span>
-          <span>Wholesome Laddoo premixS & DRY FRUITS</span>
+          <span>Wholesome Laddoo Premix & DRY FRUITS</span>
           <span>•</span>
           <span>ROYAL PAAN DIGESTIVE SHOT</span>
           <span>•</span>
@@ -263,7 +263,7 @@ export const Home: React.FC = () => {
             NOT MADE FOR EVERYONE • MADE FOR THOSE WHO CHOOSE BETTER
           </span>
           <span>•</span>
-          <span>Wholesome Laddoo premixS & DRY FRUITS</span>
+          <span>Wholesome Laddoo Premix & DRY FRUITS</span>
           <span>•</span>
           <span>ZERO ADDED SUGAR</span>
           <span>•</span>
@@ -424,7 +424,7 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto space-y-16 relative z-10">
           <div className="text-center space-y-3 max-w-3xl mx-auto">
             <span className="text-xs uppercase tracking-[0.3em] text-[#E67E22] font-extrabold bg-white px-4 py-1.5 rounded-full border border-[#74B487]/40 inline-block shadow-xs">
-              Wholesome Laddoo premixS • 100% NATURAL NUTRITION
+              Wholesome Laddoo Premix • 100% NATURAL NUTRITION
             </span>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0E382E] tracking-tight">
               TRADITION REIMAGINED. <br />

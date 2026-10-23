@@ -69,7 +69,7 @@ export const Admin: React.FC = () => {
 
   // State 2: Categories
   const [categories, setCategories] = useState([
-    { id: 1, name: "Wholesome Laddoo premixs", slug: "wholesome-millets", count: 1, desc: "Traditional millet mixes and dry fruit laddoo premixes with zero added sugar." },
+    { id: 1, name: "Wholesome Laddoo Premix", slug: "wholesome-millets", count: 1, desc: "Traditional millet mixes and dry fruit laddoo premixes with zero added sugar." },
     { id: 2, name: "Heritage Wellness", slug: "heritage-wellness", count: 1, desc: "Post-meal digestive mixes and royal paan shots inspired by Banaras traditions." },
   ]);
 
@@ -82,7 +82,7 @@ export const Admin: React.FC = () => {
   // State 4: Homepage Banners
   const [banners, setBanners] = useState([
     { id: 1, title: "Royal Paan Digestive Shot", subtitle: "Real Betel Leaf & Gulkand After-Meal Shot", cta: "Shop Digestives", status: "Active" },
-    { id: 2, title: "Shahi Ragi & Dry Fruit Laddoo Mix", subtitle: "Wholesome Laddoo premixs & Real Nuts - Zero Added Sugar", cta: "Explore Range", status: "Active" },
+    { id: 2, title: "Shahi Ragi & Dry Fruit Laddoo Mix", subtitle: "Wholesome Laddoo Premix & Real Nuts - Zero Added Sugar", cta: "Explore Range", status: "Active" },
   ]);
 
   // State 5: Customer Reviews Moderation
@@ -162,7 +162,7 @@ export const Admin: React.FC = () => {
       subtitle: newProductServings,
       pitch: newProductDescription,
       category: newProductCategory,
-      categoryLabel: newProductCategory === "wholesome-millets" ? "Wholesome Laddoo premixs" : "Heritage Wellness",
+      categoryLabel: newProductCategory === "wholesome-millets" ? "Wholesome Laddoo Premix" : "Heritage Wellness",
       price: newProductPrice,
       originalPrice: newProductOriginalPrice,
       priceDisplay: `₹${newProductPrice}`,
@@ -894,7 +894,7 @@ export const Admin: React.FC = () => {
                     onChange={(e) => setNewProductCategory(e.target.value as any)}
                     className="w-full bg-[#F6F5F0] border border-[#74B487]/40 rounded-xl p-3 text-[#0E382E] font-semibold"
                   >
-                    <option value="wholesome-millets">Wholesome Laddoo premixs</option>
+                    <option value="wholesome-millets">Wholesome Laddoo Premix</option>
                     <option value="heritage-wellness">Heritage Wellness</option>
                   </select>
                 </div>

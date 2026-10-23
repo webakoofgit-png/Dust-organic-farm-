@@ -128,10 +128,10 @@ export const products: Product[] = [
     slug: "shahi-ragi-dry-fruit-laddoo-mix",
     name: "Shahi Ragi & Dry Fruit Laddoo Mix",
     shortName: "Ragi Laddoo Mix",
-    subtitle: "Wholesome Laddoo premixs | Premium Nuts | Traditional Taste",
-    pitch: "Wholesome Laddoo premixs & Premium Nuts — Ready to Shape",
+    subtitle: "Wholesome Laddoo Premix | Premium Nuts | Traditional Taste",
+    pitch: "Wholesome Laddoo Premix & Premium Nuts — Ready to Shape",
     category: "wholesome-millets",
-    categoryLabel: "Wholesome Laddoo premixs",
+    categoryLabel: "Wholesome Laddoo Premix",
     price: 199,
     originalPrice: 249,
     priceDisplay: "₹199",
@@ -139,7 +139,7 @@ export const products: Product[] = [
     unitDisplay: "₹199 / 250g Pack",
     savePercent: 20,
     netWeight: "250g",
-    badges: ["Wholesome Laddoo premixs", "Premium Dry Fruits", "No Added Sugar"],
+    badges: ["Wholesome Laddoo Premix", "Premium Dry Fruits", "No Added Sugar"],
     description: [
       "Made with nutritious Ragi and a delicious blend of dry fruits, our Ragi & Dry Fruit Laddoo Mix is a convenient way to prepare tasty, wholesome laddoos at home.",
       "Perfect for breakfast, snacking, or whenever you crave something naturally delicious.",
@@ -248,7 +248,7 @@ export const products: Product[] = [
     description: [
       "Crafted with real betel leaf extract, aromatic gulkand, fennel, rose and cardamom.",
       "DUST Paan Digestive Shot is your perfect after-meal ritual for freshness and digestion.",
-      "Mix half sachet (10g) in 100ml cold water and drink within 5 minutes of your meal.",
+      "Mix sachet in 60 ml of water and drink after your meal",
     ],
     caution:
       "Pregnant or lactating women and people with medical conditions should consult a health professional before use.",
@@ -320,7 +320,7 @@ export const products: Product[] = [
 export const collections: Collection[] = [
   {
     slug: "wholesome-millets",
-    name: "Wholesome Laddoo premixs",
+    name: "Wholesome Laddoo Premix",
     titleLines: ["Wholesome", "Millets."],
     tagline: "Ancient grains & traditional dry fruit mixes crafted for everyday nutrition.",
     description:
@@ -392,7 +392,7 @@ export const collections: Collection[] = [
     crossTitle: "Looking for wholesome nutrition?",
     crossText:
       "Cross over to our superfoods shelf — traditional Shahi Ragi & Dry Fruit Laddoo Mix for everyday bone health and sustained energy.",
-    crossCta: "Explore Wholesome Laddoo premixs",
+    crossCta: "Explore Wholesome Laddoo Premix",
     crossHref: "/collections/wholesome-millets",
     heroImage: "/paan_image_1.jpeg",
   },
@@ -410,7 +410,7 @@ export interface JournalPost {
 export const journalPosts: JournalPost[] = [
   {
     slug: "the-art-of-traditional-ragi-laddoos",
-    tag: "Wholesome Laddoo premixs",
+    tag: "Wholesome Laddoo Premix",
     date: "June 2025",
     title: "The Art of Wholesome Ragi & Dry Fruit Laddoos",
     excerpt:

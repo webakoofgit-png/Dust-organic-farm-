@@ -268,17 +268,6 @@ export const ProductDetail: React.FC = () => {
             Preparation Ritual
           </h2>
 
-          {product.preparation && (
-            <div className="p-5 bg-[#E8F1E9] rounded-2xl border border-[#74B487]/50 shadow-xs">
-              <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#E67E22] block mb-1">
-                Preparation Instructions
-              </span>
-              <p className="text-xs text-[#0E382E] font-bold leading-relaxed">
-                "{product.preparation}"
-              </p>
-            </div>
-          )}
-
           <div className="space-y-6">
             {product.ritual.map((step, idx) => (
               <div

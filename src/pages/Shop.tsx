@@ -49,7 +49,7 @@ export const Shop: React.FC = () => {
           Shop All Creations
         </h1>
         <p className="text-[#1F684B] text-sm max-w-xl font-normal">
-          Explore our range of Wholesome Laddoo premixs, nutritious laddoo mixes, and heritage wellness creations — Choice of Motherland.
+          Explore our range of Wholesome Laddoo Premix, nutritious laddoo mixes, and heritage wellness creations — Choice of Motherland.
         </p>
       </div>
 
@@ -75,7 +75,7 @@ export const Shop: React.FC = () => {
                 : "bg-white text-[#0E382E] hover:bg-[#74B487]/20 border border-[#74B487]/40"
             }`}
           >
-            Wholesome Laddoo premixs
+            Wholesome Laddoo Premix
           </button>
           <button
             onClick={() => setSelectedCategory("heritage-wellness")}
