@@ -233,9 +233,9 @@ export const Home: React.FC = () => {
               </button>
             </div>
 
-            {/* Slide Navigation Controls & Quick Action Buttons */}
-            <div className="w-full max-w-lg pt-3 flex flex-wrap items-center justify-between gap-3">
-              <div className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-[#74B487]/40 shadow-xs">
+            {/* Slide Navigation Controls */}
+            <div className="w-full max-w-lg pt-3 flex items-center justify-center">
+              <div className="flex items-center gap-2 bg-white px-3.5 py-1.5 rounded-full border border-[#74B487]/40 shadow-xs">
                 {homeHeroBanners.map((_, idx) => (
                   <button
                     key={idx}
@@ -250,21 +250,6 @@ export const Home: React.FC = () => {
                 <span className="text-[10px] font-black uppercase tracking-wider text-[#0E382E] ml-1 pl-1.5 border-l border-stone-200">
                   0{activeHeroBannerIdx + 1} / 0{homeHeroBanners.length}
                 </span>
-              </div>
-
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={() => addToCart(products[homeHeroBanners[activeHeroBannerIdx]?.productIndex ?? 0] ?? heroProduct)}
-                  className="px-4 py-2 btn-dust-orange text-white font-extrabold text-[11px] uppercase tracking-wider rounded-xl flex items-center gap-1.5 shadow-md hover:scale-105 transition-all"
-                >
-                  <ShoppingBag className="w-3.5 h-3.5" /> Add to Cart
-                </button>
-                <button
-                  onClick={() => handleBuyNow(products[homeHeroBanners[activeHeroBannerIdx]?.productIndex ?? 0] ?? heroProduct)}
-                  className="px-3.5 py-2 bg-[#0E382E] hover:bg-[#1F684B] text-white font-extrabold text-[11px] uppercase tracking-wider rounded-xl transition-all shadow-md flex items-center gap-1"
-                >
-                  <Zap className="w-3.5 h-3.5 text-[#E67E22]" /> Buy
-                </button>
               </div>
             </div>
           </div>
