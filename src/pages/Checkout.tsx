@@ -31,12 +31,8 @@ export const Checkout: React.FC = () => {
 
   const handleApplyPromo = (e: React.FormEvent) => {
     e.preventDefault();
-    if (promoCode.trim().toUpperCase() === "DUST10") {
-      setDiscountPercent(10);
-      setPromoApplied(true);
-    } else {
-      alert("Invalid Promo Code. Try 'DUST10' for 10% OFF!");
-    }
+    if (!promoCode.trim()) return;
+    alert("Invalid or expired Promo Code.");
   };
 
   const handleCompleteOrder = (e: React.FormEvent) => {
@@ -233,7 +229,7 @@ export const Checkout: React.FC = () => {
           <form onSubmit={handleApplyPromo} className="flex gap-2 pt-2 border-t border-[#74B487]/30">
             <input
               type="text"
-              placeholder="Promo Code (DUST10)"
+              placeholder="Enter Promo Code"
               value={promoCode}
               onChange={(e) => setPromoCode(e.target.value)}
               className="flex-1 bg-white px-3 py-2 text-xs text-[#0E382E] rounded-xl border border-[#74B487]/40 outline-none uppercase font-extrabold"

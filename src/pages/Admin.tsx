@@ -75,8 +75,7 @@ export const Admin: React.FC = () => {
 
   // State 3: Coupons
   const [coupons, setCoupons] = useState([
-    { id: 1, code: "DUSTFIRST10", type: "Percentage", value: "10% OFF", minOrder: "₹200", status: "Active", expiry: "31 Dec 2026" },
-    { id: 2, code: "PANINDIA15", type: "Percentage", value: "15% OFF", minOrder: "₹500", status: "Active", expiry: "31 Dec 2026" },
+    { id: 2, code: "PANINDIA15", type: "Percentage", value: "15% OFF", minOrder: "₹500", status: "Inactive", expiry: "31 Dec 2026" },
   ]);
 
   // State 4: Homepage Banners

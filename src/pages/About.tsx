@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowUpRight,
@@ -14,10 +14,57 @@ import {
   BookOpen,
   Briefcase,
   ShoppingBag,
+  AlertTriangle,
+  TrendingUp,
+  Recycle,
+  CheckCircle2,
+  ChevronRight,
+  ArrowRight,
+  Sprout,
+  Check,
 } from "lucide-react";
 import { companyInfo } from "@/lib/data";
+import farmerWastedHarvest from "@/assets/farmer-wasted-harvest.png";
+import farmersHarvestLost from "@/assets/farmers-harvest-lost.png";
+import farmSurplusWaste from "@/assets/farm-surplus-waste.png";
+
+const storySlides = [
+  {
+    image: farmerWastedHarvest,
+    alt: "Farmer amidst wasted harvest in India",
+    tag: "Market Vulnerability & Distress Sales",
+    title: "The Heartbreak in the Fields",
+    caption:
+      "When bumper harvests arrive without adequate cold chain or immediate market access, prices crash. Hardworking farmers are forced to watch months of labor turn into roadside waste.",
+    stat: "16%+",
+    statLabel: "Agricultural produce lost post-harvest in India",
+  },
+  {
+    image: farmersHarvestLost,
+    alt: "Harvest lost to lack of preservation",
+    tag: "The Supply Chain Gap",
+    title: "Severe Losses for Farmer Families",
+    caption:
+      "India loses millions of tonnes of perishable fruits and agricultural produce every year before reaching consumers, wiping out agricultural earnings and depleting precious natural resources.",
+    stat: "₹15,000+ Cr",
+    statLabel: "Annual seasonal produce value lost across mandis",
+  },
+  {
+    image: farmSurplusWaste,
+    alt: "From farm surplus to preventable food waste",
+    tag: "The Upcycling Opportunity",
+    title: "The Food Waste Paradox",
+    caption:
+      "While surplus crops rot in regional mandis, modern families struggle to find 100% natural, unadulterated fruit nutrition. DUST™ turns this tragic loss into shelf-stable everyday wellness.",
+    stat: "Zero Waste",
+    statLabel: "DUST's circular mission from farm to table",
+  },
+];
 
 export const About: React.FC = () => {
+  const [activeStoryIdx, setActiveStoryIdx] = useState(0);
+  const currentSlide = storySlides[activeStoryIdx] || storySlides[0]!;
+
   return (
     <div className="pt-32 pb-24 px-4 sm:px-8 md:px-12 lg:px-16 w-full min-h-screen bg-[#F6F5F0] text-[#0E382E]">
       {/* Hero Banner */}
@@ -36,16 +83,261 @@ export const About: React.FC = () => {
             {companyInfo.brand} is rooted in nature and made for modern India — thoughtfully bringing together nourishing food blends, fruit-powered refreshments, everyday nutrition, and nature-inspired personal care.
           </p>
 
-          <div className="pt-4 flex flex-wrap gap-4">
+          <div className="pt-4 flex flex-wrap items-center gap-4">
             <Link
               to="/shop"
-              className="btn-dust-orange px-8 py-4 text-white text-xs font-extrabold uppercase tracking-[0.2em] rounded-full inline-flex items-center gap-3 shadow-lg"
+              className="btn-dust-orange px-8 py-4 text-white text-xs font-extrabold uppercase tracking-[0.2em] rounded-full inline-flex items-center gap-3 shadow-lg hover:scale-105 transition-all duration-300"
             >
               Explore Catalogue <ArrowUpRight className="w-4 h-4" />
             </Link>
+            <a
+              href="#our-story"
+              className="px-8 py-4 bg-white/10 hover:bg-white/20 border border-[#74B487]/50 text-white text-xs font-extrabold uppercase tracking-[0.2em] rounded-full inline-flex items-center gap-2 transition-all duration-300"
+            >
+              Read Our Story <ArrowRight className="w-4 h-4" />
+            </a>
           </div>
         </div>
       </div>
+
+      {/* OUR STORY: The Problem & The Mission Section */}
+      <section
+        id="our-story"
+        className="mb-20 bg-white rounded-3xl border border-[#74B487]/40 p-6 sm:p-12 shadow-sm relative overflow-hidden"
+      >
+        <div className="relative z-10 max-w-6xl mx-auto space-y-12">
+          {/* Section Header */}
+          <div className="text-center space-y-3 max-w-3xl mx-auto">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#E8F1E9] border border-[#74B487]/40 rounded-full text-xs font-extrabold uppercase tracking-widest text-[#E67E22]">
+              <Sparkles className="w-4 h-4" />
+              <span>THE PROBLEM & OUR PURPOSE</span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0E382E] leading-tight">
+              The Untold Crisis in Our Fields.
+            </h2>
+            <p className="text-base text-[#1F684B] leading-relaxed">
+              Why <strong>Everest Edges Pvt. Ltd.</strong> created <strong>DUST™</strong>: turning vulnerable agricultural surplus into pure, shelf-stable nutrition for everyday life.
+            </p>
+          </div>
+
+          {/* Interactive 2-Column Split: The Problem vs The Solution */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
+            {/* Left Column: Visual Ground Reality & Crisis */}
+            <div className="lg:col-span-6 flex flex-col justify-between bg-[#F6F5F0] rounded-3xl border border-[#74B487]/40 p-6 sm:p-7 shadow-xs">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-rose-100 border border-rose-300 text-rose-800 rounded-full text-[11px] font-black uppercase tracking-wider">
+                    <AlertTriangle className="w-3.5 h-3.5 text-rose-600" />
+                    <span>The Problem We Solve</span>
+                  </div>
+                  <span className="text-[11px] font-bold text-[#1F684B]">
+                    Image {activeStoryIdx + 1} of {storySlides.length}
+                  </span>
+                </div>
+
+                {/* Main Feature Image Container */}
+                <div className="relative rounded-2xl overflow-hidden border border-[#74B487]/30 bg-[#0E382E] shadow-md group">
+                  <img
+                    key={activeStoryIdx}
+                    src={currentSlide.image}
+                    alt={currentSlide.alt}
+                    className="w-full h-72 sm:h-80 object-cover object-center transition-transform duration-500 group-hover:scale-102"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  
+                  {/* Overlay Badges */}
+                  <div className="absolute bottom-4 left-4 right-4 text-white space-y-1">
+                    <span className="inline-block px-2.5 py-0.5 bg-[#E67E22] text-white text-[10px] font-black uppercase tracking-widest rounded-md">
+                      {currentSlide.tag}
+                    </span>
+                    <h3 className="text-lg font-extrabold text-white leading-snug drop-shadow-sm">
+                      {currentSlide.title}
+                    </h3>
+                  </div>
+                </div>
+
+                {/* Caption Description */}
+                <p className="text-xs sm:text-sm text-[#1F684B] leading-relaxed font-normal">
+                  {currentSlide.caption}
+                </p>
+
+                {/* Thumbnail / Selector Tabs */}
+                <div className="space-y-2 pt-2">
+                  <span className="text-[10px] uppercase tracking-wider font-extrabold text-[#0E382E]/70 block">
+                    Select Visual Case Study:
+                  </span>
+                  <div className="grid grid-cols-3 gap-2">
+                    {storySlides.map((slide, idx) => (
+                      <button
+                        key={idx}
+                        type="button"
+                        onClick={() => setActiveStoryIdx(idx)}
+                        className={`text-left p-2.5 rounded-xl border text-xs transition-all duration-200 cursor-pointer ${
+                          activeStoryIdx === idx
+                            ? "bg-[#0E382E] text-white border-[#0E382E] shadow-sm ring-2 ring-[#E67E22]/50"
+                            : "bg-white text-[#0E382E] border-[#74B487]/40 hover:bg-[#E8F1E9]"
+                        }`}
+                      >
+                        <span className="block text-[9px] font-black uppercase tracking-wider opacity-75">
+                          Slide 0{idx + 1}
+                        </span>
+                        <span className="font-extrabold line-clamp-1 text-[11px]">
+                          {idx === 0 ? "Wasted Harvest" : idx === 1 ? "Farmer Loss" : "Food Waste Gap"}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Hard Stat Banner */}
+              <div className="mt-6 pt-4 border-t border-[#74B487]/30 flex items-center justify-between bg-white/70 p-4 rounded-2xl">
+                <div>
+                  <span className="text-2xl sm:text-3xl font-extrabold text-[#E67E22] block">
+                    {currentSlide.stat}
+                  </span>
+                  <span className="text-[11px] font-semibold text-[#1F684B] block">
+                    {currentSlide.statLabel}
+                  </span>
+                </div>
+                <div className="w-10 h-10 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center shrink-0">
+                  <TrendingUp className="w-5 h-5" />
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: The DUST™ Innovation & Mission */}
+            <div className="lg:col-span-6 flex flex-col justify-between bg-[#0E382E] text-white rounded-3xl border border-[#74B487]/40 p-6 sm:p-8 shadow-md relative overflow-hidden">
+              <div className="space-y-6 relative z-10">
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-[#74B487]/40 text-[#E8F1E9] rounded-full text-[11px] font-extrabold uppercase tracking-wider">
+                  <Leaf className="w-3.5 h-3.5 text-[#E67E22]" />
+                  <span>The Everest Edges Pvt. Ltd. Mission</span>
+                </div>
+
+                <div className="space-y-3">
+                  <h3 className="text-2xl sm:text-4xl font-extrabold text-white leading-tight">
+                    Transforming Farm Surplus into Wholesome Goodness.
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[#E8F1E9] leading-relaxed font-normal">
+                    In India, an abundance of fresh fruits and agricultural produce rots while consumers end up purchasing artificially flavored, heavily chemicalized snacks and drinks.
+                  </p>
+                  <p className="text-xs sm:text-sm text-[#E8F1E9] leading-relaxed font-normal">
+                    <strong>DUST™ was created to change this story forever.</strong> We absorb seasonal surplus directly from agricultural communities at fair prices — preventing distress sales and eliminating post-harvest food waste.
+                  </p>
+                </div>
+
+                {/* 3 Pillars of Transformation */}
+                <div className="space-y-3 pt-2">
+                  <div className="p-4 bg-white/5 rounded-2xl border border-white/10 flex items-start gap-3.5">
+                    <div className="w-8 h-8 rounded-xl bg-[#E67E22] text-white flex items-center justify-center shrink-0 mt-0.5">
+                      <Sprout className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-extrabold text-white">
+                        1. Guaranteed Fair Farmer Income
+                      </h4>
+                      <p className="text-xs text-[#E8F1E9]/80 leading-relaxed mt-0.5">
+                        By creating reliable off-take for surplus yields, we protect farmers from devastating price collapses during bumper harvests.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="p-4 bg-white/5 rounded-2xl border border-white/10 flex items-start gap-3.5">
+                    <div className="w-8 h-8 rounded-xl bg-[#74B487] text-[#0E382E] flex items-center justify-center shrink-0 mt-0.5">
+                      <Recycle className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-extrabold text-white">
+                        2. Gentle Nutrient-Lock Dehydration
+                      </h4>
+                      <p className="text-xs text-[#E8F1E9]/80 leading-relaxed mt-0.5">
+                        Our gentle dehydration techniques preserve 100% natural aroma, vitamins, and minerals without synthetic preservatives or additives.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="p-4 bg-white/5 rounded-2xl border border-white/10 flex items-start gap-3.5">
+                    <div className="w-8 h-8 rounded-xl bg-white/20 text-[#E67E22] flex items-center justify-center shrink-0 mt-0.5">
+                      <ShieldCheck className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-extrabold text-white">
+                        3. Clean Daily Nutrition for India
+                      </h4>
+                      <p className="text-xs text-[#E8F1E9]/80 leading-relaxed mt-0.5">
+                        Turn fresh farm produce into tear-and-pour fruit sachets, heritage Shahi Ragi laddoo mixes, and royal Paan digestive shots.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom Quote Banner */}
+              <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                <span className="text-[11px] uppercase tracking-widest text-[#E67E22] font-black">
+                  Zero Waste • Pure Nutrition • Farmer First
+                </span>
+                <Link
+                  to="/shop"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-white hover:text-[#E67E22] transition-colors"
+                >
+                  View Products <ChevronRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* 3-Step Circular Economy Infographic */}
+          <div className="p-6 sm:p-8 bg-[#E8F1E9] rounded-3xl border border-[#74B487]/40 space-y-6">
+            <div className="text-center space-y-1">
+              <span className="text-[10px] uppercase tracking-[0.25em] text-[#E67E22] font-extrabold">
+                HOW THE CYCLE WORKS
+              </span>
+              <h3 className="text-xl sm:text-2xl font-extrabold text-[#0E382E]">
+                From Orchard Surplus to Your Daily Cup
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-white p-5 rounded-2xl border border-[#74B487]/30 space-y-2">
+                <div className="w-8 h-8 rounded-xl bg-[#0E382E] text-[#E67E22] font-black text-xs flex items-center justify-center">
+                  01
+                </div>
+                <h4 className="text-sm font-extrabold text-[#0E382E]">
+                  Surplus Produce Sourced
+                </h4>
+                <p className="text-xs text-[#1F684B] leading-relaxed">
+                  We step in during bumper harvests to buy nutritious fruits and crops that would otherwise spoil due to logistics barriers.
+                </p>
+              </div>
+
+              <div className="bg-white p-5 rounded-2xl border border-[#74B487]/30 space-y-2">
+                <div className="w-8 h-8 rounded-xl bg-[#0E382E] text-[#E67E22] font-black text-xs flex items-center justify-center">
+                  02
+                </div>
+                <h4 className="text-sm font-extrabold text-[#0E382E]">
+                  Hygienic Dehydration & Milling
+                </h4>
+                <p className="text-xs text-[#1F684B] leading-relaxed">
+                  Moisture is gently removed, locking in authentic flavours, natural dietary fibre, and micronutrients for long shelf life.
+                </p>
+              </div>
+
+              <div className="bg-white p-5 rounded-2xl border border-[#74B487]/30 space-y-2">
+                <div className="w-8 h-8 rounded-xl bg-[#0E382E] text-[#E67E22] font-black text-xs flex items-center justify-center">
+                  03
+                </div>
+                <h4 className="text-sm font-extrabold text-[#0E382E]">
+                  Everyday Consumer Formats
+                </h4>
+                <p className="text-xs text-[#1F684B] leading-relaxed">
+                  Consumers get easy, preservative-free convenience — instant fruit refreshers, digestive shots, and authentic laddoo premixes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Brand Identity & Manifesto Section */}
       <section className="mb-20 bg-white rounded-3xl border border-[#74B487]/40 p-8 sm:p-12 shadow-sm relative overflow-hidden">

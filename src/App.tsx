@@ -31,7 +31,6 @@ import { Account } from "@/pages/Account";
 import { Admin } from "@/pages/Admin";
 import { AdminLogin } from "@/pages/AdminLogin";
 import { Login } from "@/pages/Login";
-import { FirstOrderModal } from "@/components/cinematic/FirstOrderModal";
 import { AuthModal } from "@/components/cinematic/AuthModal";
 
 function ScrollToTop() {
@@ -83,7 +82,6 @@ export default function App() {
         <QuickViewModal />
         <SearchOverlay />
         <WhatsAppWidget />
-        <FirstOrderModal />
         <AuthModal />
       </div>
     </BrowserRouter>
