@@ -103,7 +103,7 @@ export const ProductDetail: React.FC = () => {
               className="w-full h-80 object-cover opacity-100"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-8 flex flex-col justify-end text-white">
-              <span className="text-xs uppercase tracking-[0.2em] text-[#E67E22] font-extrabold">
+              <span className="text-xs uppercase tracking-[0.2em] text-[#f1efee] font-extrabold">
                 HERITAGE STORY
               </span>
               <h3 className="text-2xl font-extrabold text-white mt-1">
@@ -240,18 +240,50 @@ export const ProductDetail: React.FC = () => {
             </div>
           </div>
 
-          {/* Claims & Highlights */}
-          <div className="bg-[#E8F1E9] p-5 rounded-2xl border border-[#74B487]/40 space-y-2">
-            <h4 className="text-xs uppercase tracking-widest text-[#0E382E] font-extrabold">
-              Product Highlights
-            </h4>
-            <div className="space-y-1.5 text-xs text-stone-700 font-medium">
+          {/* Claims & Highlights (Bold Premium Card) */}
+          <div className="bg-gradient-to-br from-[#E8F1E9] via-[#F6F5F0] to-[#E8F1E9]/80 p-5 sm:p-6 rounded-3xl border-2 border-[#74B487]/50 shadow-sm space-y-4">
+            {/* Header with Title and Trust Badge */}
+            <div className="flex items-center justify-between pb-3 border-b border-[#74B487]/30">
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-xl bg-[#E67E22] text-white flex items-center justify-center shadow-xs">
+                  <Sparkles className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-black uppercase tracking-[0.2em] text-[#0E382E]">
+                    Product Highlights
+                  </h4>
+                  <p className="text-[10px] text-[#1F684B] font-bold">
+                    Purity & Quality Promises
+                  </p>
+                </div>
+              </div>
+              <span className="text-[9px] font-black uppercase tracking-widest text-white bg-[#0E382E] px-2.5 py-1 rounded-full border border-[#74B487]/40 shadow-xs">
+                ✦ 100% PURE
+              </span>
+            </div>
+
+            {/* 2-Column Responsive Grid with Bold Badges */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
               {product.claims.map((claim, idx) => (
-                <div key={idx} className="flex items-start gap-2">
-                  <Sparkles className="w-3.5 h-3.5 text-[#E67E22] shrink-0 mt-0.5" />
-                  <span>{claim}</span>
+                <div
+                  key={idx}
+                  className="flex items-center gap-2.5 px-3 py-2.5 bg-white/95 hover:bg-white rounded-xl border border-[#74B487]/40 shadow-xs hover:border-[#E67E22] hover:shadow-sm transition-all duration-200 group"
+                >
+                  <div className="w-5 h-5 rounded-md bg-[#E8F1E9] group-hover:bg-[#E67E22] text-[#0E382E] group-hover:text-white flex items-center justify-center shrink-0 transition-colors">
+                    <Check className="w-3.5 h-3.5 stroke-[3]" />
+                  </div>
+                  <span className="text-xs font-extrabold text-[#0E382E] tracking-tight group-hover:text-[#E67E22] transition-colors leading-tight">
+                    {claim}
+                  </span>
                 </div>
               ))}
+            </div>
+
+            {/* Micro-footer Guarantee */}
+            <div className="pt-2 text-center border-t border-[#74B487]/25">
+              <span className="text-[10px] uppercase tracking-widest text-[#1F684B] font-black">
+                Zero Preservatives • Clean Label • Wholesome Taste
+              </span>
             </div>
           </div>
         </div>
