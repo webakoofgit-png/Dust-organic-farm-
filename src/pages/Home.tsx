@@ -10,6 +10,8 @@ import {
   Leaf,
   CheckCircle2,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   Flame,
   Award,
   Zap,
@@ -27,10 +29,34 @@ import { useCartStore } from "@/lib/cart-store";
 import dustStandeeImg from "@/assets/dust-brand-usp-standee.jpg";
 import ragiPoster from "@/assets/ragi-poster.png";
 import ragiInfographic from "@/assets/ragi-infographic.png";
+import aboutBannerFarmWaste from "@/assets/about-banner-farm-waste.png";
+import aboutBannerLaddoo from "@/assets/about-banner-laddoo.png";
+
+const homeHeroBanners = [
+  {
+    image: aboutBannerLaddoo,
+    alt: "Warm Family Laddoo Mix - DUST Wholesome Goodness",
+    title: "Shahi Ragi & Dry Fruit Laddoo Mix",
+    subtitle: "Wholesome Laddoo Premix | Premium Nuts",
+    price: "₹199",
+    tag: "BEST SELLER",
+    productIndex: 0,
+  },
+  {
+    image: aboutBannerFarmWaste,
+    alt: "From Farm Waste to Nourishing Goodness - DUST",
+    title: "From Farm Surplus to Superfoods",
+    subtitle: "100% Real Fruit & Pure Nutrition",
+    price: "₹249",
+    tag: "HERITAGE WELLNESS",
+    productIndex: 1,
+  },
+];
 
 export const Home: React.FC = () => {
   const navigate = useNavigate();
   const [introFinished, setIntroFinished] = useState(false);
+  const [activeHeroBannerIdx, setActiveHeroBannerIdx] = useState(0);
   const { addToCart, toggleWishlist, isInWishlist, setQuickViewProduct } =
     useCartStore();
 
@@ -44,6 +70,14 @@ export const Home: React.FC = () => {
       setIntroFinished(true);
     }, 1200);
     return () => clearTimeout(timer);
+  }, []);
+
+  // Auto-rotate hero banners every 2.8 seconds
+  useEffect(() => {
+    const bannerTimer = setInterval(() => {
+      setActiveHeroBannerIdx((prev) => (prev + 1) % homeHeroBanners.length);
+    }, 2800);
+    return () => clearInterval(bannerTimer);
   }, []);
 
   const heroProduct: Product = products[0] ?? {
@@ -155,51 +189,82 @@ export const Home: React.FC = () => {
             </div>
           </div>
 
-          {/* Hero Visual Spotlight */}
-          <div className="lg:col-span-5 relative flex justify-center">
-            <div className="relative group w-full max-w-md aspect-[4/5] rounded-3xl overflow-hidden border border-[#74B487]/50 bg-white p-6 flex flex-col justify-between shadow-2xl">
-              <img
-                src={heroProduct.storyImage}
-                alt={heroProduct.name}
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0E382E]/95 via-[#0E382E]/40 to-transparent" />
+          {/* Hero Visual Spotlight: Auto-changing Banner Carousel */}
+          <div className="lg:col-span-5 relative flex flex-col items-center justify-center w-full">
+            <div className="relative group w-full max-w-lg aspect-[3/2] rounded-3xl overflow-hidden border-2 border-[#74B487]/50 bg-white shadow-2xl">
+              {homeHeroBanners.map((banner, idx) => (
+                <div
+                  key={idx}
+                  className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                    activeHeroBannerIdx === idx ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+                  }`}
+                >
+                  <img
+                    src={banner.image}
+                    alt={banner.alt}
+                    className="w-full h-full object-contain object-center bg-white"
+                  />
+                </div>
+              ))}
 
-              <div className="relative z-10 flex justify-between items-start">
-                <span className="badge-orange text-[11px] uppercase tracking-widest px-3 py-1.5 rounded-full shadow-md flex items-center gap-1">
-                  <Flame className="w-3.5 h-3.5 fill-current" /> BEST SELLER
-                </span>
-                <span className="text-xl font-extrabold text-white bg-[#0E382E]/80 px-3.5 py-1 rounded-lg backdrop-blur border border-[#74B487]/30">
-                  {heroProduct.priceDisplay}
+              {/* Prev / Next Controls on hover */}
+              <button
+                type="button"
+                onClick={() =>
+                  setActiveHeroBannerIdx(
+                    (prev) => (prev - 1 + homeHeroBanners.length) % homeHeroBanners.length
+                  )
+                }
+                aria-label="Previous banner"
+                className="absolute left-2.5 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-black/60 hover:bg-[#E67E22] text-white flex items-center justify-center backdrop-blur-md border border-white/30 transition-all opacity-80 sm:opacity-0 sm:group-hover:opacity-100 cursor-pointer shadow-md"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+
+              <button
+                type="button"
+                onClick={() =>
+                  setActiveHeroBannerIdx((prev) => (prev + 1) % homeHeroBanners.length)
+                }
+                aria-label="Next banner"
+                className="absolute right-2.5 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-black/60 hover:bg-[#E67E22] text-white flex items-center justify-center backdrop-blur-md border border-white/30 transition-all opacity-80 sm:opacity-0 sm:group-hover:opacity-100 cursor-pointer shadow-md"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Slide Navigation Controls & Quick Action Buttons */}
+            <div className="w-full max-w-lg pt-3 flex flex-wrap items-center justify-between gap-3">
+              <div className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-[#74B487]/40 shadow-xs">
+                {homeHeroBanners.map((_, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => setActiveHeroBannerIdx(idx)}
+                    aria-label={`Switch to banner ${idx + 1}`}
+                    className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                      activeHeroBannerIdx === idx ? "w-6 bg-[#E67E22]" : "w-2 bg-stone-300 hover:bg-stone-400"
+                    }`}
+                  />
+                ))}
+                <span className="text-[10px] font-black uppercase tracking-wider text-[#0E382E] ml-1 pl-1.5 border-l border-stone-200">
+                  0{activeHeroBannerIdx + 1} / 0{homeHeroBanners.length}
                 </span>
               </div>
 
-              <div className="relative z-10 space-y-2 text-white">
-                <span className="text-xs uppercase font-extrabold tracking-wider text-[#E67E22]">
-                  {heroProduct.subtitle}
-                </span>
-                <h3 className="text-2xl font-extrabold text-white">
-                  {heroProduct.name}
-                </h3>
-                <p className="text-xs text-[#E8F1E9] line-clamp-2">
-                  {heroProduct.pitch}
-                </p>
-
-                <div className="pt-2 flex items-center gap-3">
-                  <button
-                    onClick={() => addToCart(heroProduct)}
-                    className="flex-1 py-3.5 btn-dust-orange text-white font-extrabold text-xs uppercase tracking-wider rounded-xl flex items-center justify-center gap-2 shadow-md"
-                  >
-                    <ShoppingBag className="w-4 h-4" /> Add to Cart
-                  </button>
-                  <button
-                    onClick={() => handleBuyNow(heroProduct)}
-                    data-cursor="BUY"
-                    className="px-4 py-3.5 bg-[#0E382E] hover:bg-[#1F684B] text-white font-extrabold text-xs uppercase tracking-wider rounded-xl transition-colors shadow-md flex items-center gap-1.5"
-                  >
-                    <Zap className="w-4 h-4 text-[#E67E22]" /> Buy Now
-                  </button>
-                </div>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => addToCart(products[homeHeroBanners[activeHeroBannerIdx]?.productIndex ?? 0] ?? heroProduct)}
+                  className="px-4 py-2 btn-dust-orange text-white font-extrabold text-[11px] uppercase tracking-wider rounded-xl flex items-center gap-1.5 shadow-md hover:scale-105 transition-all"
+                >
+                  <ShoppingBag className="w-3.5 h-3.5" /> Add to Cart
+                </button>
+                <button
+                  onClick={() => handleBuyNow(products[homeHeroBanners[activeHeroBannerIdx]?.productIndex ?? 0] ?? heroProduct)}
+                  className="px-3.5 py-2 bg-[#0E382E] hover:bg-[#1F684B] text-white font-extrabold text-[11px] uppercase tracking-wider rounded-xl transition-all shadow-md flex items-center gap-1"
+                >
+                  <Zap className="w-3.5 h-3.5 text-[#E67E22]" /> Buy
+                </button>
               </div>
             </div>
           </div>
