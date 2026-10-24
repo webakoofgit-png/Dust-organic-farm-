@@ -255,6 +255,8 @@ export const products: Product[] = [
     ingredients:
       "Cane sugar, gulkand powder, betel leaf extract, fennel powder, coconut powder, rose petal powder, cardamom powder, mint powder, inulin (prebiotic fiber), calcium citrate, citric acid, natural paan flavor.",
     storage: "Store in dry, cool conditions. Shelf life 9 months from manufacture.",
+    disclaimer:
+      "Product images, serving suggestions, and packaging visuals are for illustrative purposes only. Actual product appearance, packaging, and color may vary. Please refer to the physical product label for complete details.",
     nutrition: {
       serving: "Serving Size: 10g (Half Pouch)",
       note: "Per 20g Pouch",

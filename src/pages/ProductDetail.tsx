@@ -95,6 +95,11 @@ export const ProductDetail: React.FC = () => {
             ))}
           </div>
 
+          {/* Image Disclaimer Caption */}
+          <p className="text-[11px] text-stone-500 italic text-center sm:text-left flex items-center justify-center sm:justify-start gap-1.5 pt-1">
+            <span className="text-[#E67E22] font-black">*</span> Product images, packaging, and serving presentations are shown for illustrative purposes only.
+          </p>
+
           {/* Product Story Photography Banner */}
           <div className="relative rounded-3xl overflow-hidden border border-[#74B487]/40 bg-stone-900 mt-8 shadow-xl">
             <img
@@ -369,10 +374,14 @@ export const ProductDetail: React.FC = () => {
                 <strong className="text-[#0E382E]">Storage:</strong> {product.storage}
               </p>
               {product.disclaimer && (
-                <p className="pt-2 text-[10px] text-stone-500 italic border-t border-[#74B487]/20 leading-relaxed">
-                  <strong className="not-italic text-[#0E382E] font-bold">Disclaimer:</strong>{" "}
-                  {product.disclaimer}
-                </p>
+                <div className="pt-2.5 mt-2 border-t border-[#74B487]/30 flex items-start gap-2">
+                  <span className="text-[10px] font-black uppercase tracking-wider text-[#E67E22] shrink-0">
+                    Disclaimer:
+                  </span>
+                  <p className="text-[10px] text-stone-600 leading-relaxed italic">
+                    {product.disclaimer}
+                  </p>
+                </div>
               )}
             </div>
           </div>
