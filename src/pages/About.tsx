@@ -130,63 +130,82 @@ export const About: React.FC = () => {
         </div>
       </div>
 
-      {/* Hero Visual Banner Showcase Carousel (Rotates every 2-3s with 100% full image clarity) */}
-      <div className="relative rounded-3xl overflow-hidden border-2 border-[#74B487]/40 bg-white shadow-xl mb-16 group">
-        <div className="relative w-full aspect-[3/2] sm:aspect-[16/9] md:aspect-[2/1] lg:aspect-[2.2/1] overflow-hidden">
-          {heroBanners.map((banner, idx) => (
-            <div
-              key={idx}
-              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                activeHeroIdx === idx ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
-              }`}
-            >
-              <img
-                src={banner.image}
-                alt={banner.alt}
-                className="w-full h-full object-cover sm:object-cover object-center bg-white"
-              />
-            </div>
-          ))}
+      {/* Hero Visual Banner Showcase Carousel (Full 100% Image Visibility, No Cropping) */}
+      <div className="mb-16 space-y-4">
+        <div className="relative rounded-3xl overflow-hidden border-2 border-[#74B487]/40 bg-white shadow-xl group">
+          {/* Exact 3:2 (1536x1024) Aspect Ratio Container - Zero Cropping */}
+          <div className="relative w-full aspect-[3/2] overflow-hidden bg-[#0E382E]">
+            {heroBanners.map((banner, idx) => (
+              <div
+                key={idx}
+                className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                  activeHeroIdx === idx ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+                }`}
+              >
+                <img
+                  src={banner.image}
+                  alt={banner.alt}
+                  className="w-full h-full object-contain object-center"
+                />
+              </div>
+            ))}
 
-          {/* Left Arrow Control */}
+            {/* Left Arrow Control */}
+            <button
+              type="button"
+              onClick={() => setActiveHeroIdx((prev) => (prev - 1 + heroBanners.length) % heroBanners.length)}
+              aria-label="Previous slide"
+              className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 z-20 w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-black/60 hover:bg-[#E67E22] text-white flex items-center justify-center backdrop-blur-md border border-white/30 transition-all opacity-80 sm:opacity-0 sm:group-hover:opacity-100 cursor-pointer shadow-lg"
+            >
+              <ChevronLeft className="w-5 sm:w-6 h-5 sm:h-6" />
+            </button>
+
+            {/* Right Arrow Control */}
+            <button
+              type="button"
+              onClick={() => setActiveHeroIdx((prev) => (prev + 1) % heroBanners.length)}
+              aria-label="Next slide"
+              className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-20 w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-black/60 hover:bg-[#E67E22] text-white flex items-center justify-center backdrop-blur-md border border-white/30 transition-all opacity-80 sm:opacity-0 sm:group-hover:opacity-100 cursor-pointer shadow-lg"
+            >
+              <ChevronRight className="w-5 sm:w-6 h-5 sm:h-6" />
+            </button>
+          </div>
+        </div>
+
+        {/* Clean External Indicator Controls (Placed below banner so it never covers artwork) */}
+        <div className="flex items-center justify-center gap-3">
           <button
             type="button"
             onClick={() => setActiveHeroIdx((prev) => (prev - 1 + heroBanners.length) % heroBanners.length)}
-            aria-label="Previous slide"
-            className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 z-20 w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-black/60 hover:bg-[#E67E22] text-white flex items-center justify-center backdrop-blur-md border border-white/30 transition-all opacity-80 sm:opacity-0 sm:group-hover:opacity-100 cursor-pointer shadow-lg"
+            className="p-1.5 rounded-full hover:bg-[#E8F1E9] text-[#0E382E] transition-colors cursor-pointer"
+            aria-label="Previous banner"
           >
-            <ChevronLeft className="w-5 sm:w-6 h-5 sm:h-6" />
+            <ChevronLeft className="w-5 h-5" />
           </button>
-
-          {/* Right Arrow Control */}
+          <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full border border-[#74B487]/40 shadow-xs">
+            {heroBanners.map((_, idx) => (
+              <button
+                key={idx}
+                type="button"
+                onClick={() => setActiveHeroIdx(idx)}
+                aria-label={`Slide ${idx + 1}`}
+                className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                  activeHeroIdx === idx ? "w-8 bg-[#E67E22]" : "w-2.5 bg-stone-300 hover:bg-stone-400"
+                }`}
+              />
+            ))}
+            <span className="text-xs font-black uppercase tracking-wider text-[#0E382E] ml-2 pl-2 border-l border-stone-200">
+              0{activeHeroIdx + 1} / 0{heroBanners.length}
+            </span>
+          </div>
           <button
             type="button"
             onClick={() => setActiveHeroIdx((prev) => (prev + 1) % heroBanners.length)}
-            aria-label="Next slide"
-            className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-20 w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-black/60 hover:bg-[#E67E22] text-white flex items-center justify-center backdrop-blur-md border border-white/30 transition-all opacity-80 sm:opacity-0 sm:group-hover:opacity-100 cursor-pointer shadow-lg"
+            className="p-1.5 rounded-full hover:bg-[#E8F1E9] text-[#0E382E] transition-colors cursor-pointer"
+            aria-label="Next banner"
           >
-            <ChevronRight className="w-5 sm:w-6 h-5 sm:h-6" />
+            <ChevronRight className="w-5 h-5" />
           </button>
-
-          {/* Bottom Dots & Slide Indicator Pill */}
-          <div className="absolute bottom-3 sm:bottom-4 left-0 right-0 z-20 flex items-center justify-center">
-            <div className="flex items-center gap-2 bg-black/60 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20 shadow-lg">
-              {heroBanners.map((_, idx) => (
-                <button
-                  key={idx}
-                  type="button"
-                  onClick={() => setActiveHeroIdx(idx)}
-                  aria-label={`Slide ${idx + 1}`}
-                  className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                    activeHeroIdx === idx ? "w-7 bg-[#E67E22]" : "w-2 bg-white/50 hover:bg-white"
-                  }`}
-                />
-              ))}
-              <span className="text-[10px] font-black uppercase tracking-widest text-white/90 ml-1.5 pl-2 border-l border-white/30">
-                0{activeHeroIdx + 1} / 0{heroBanners.length}
-              </span>
-            </div>
-          </div>
         </div>
       </div>
 
