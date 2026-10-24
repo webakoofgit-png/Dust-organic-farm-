@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowUpRight,
@@ -27,6 +27,25 @@ import { companyInfo } from "@/lib/data";
 import farmerWastedHarvest from "@/assets/farmer-wasted-harvest.png";
 import farmersHarvestLost from "@/assets/farmers-harvest-lost.png";
 import farmSurplusWaste from "@/assets/farm-surplus-waste.png";
+import aboutBannerFarmWaste from "@/assets/about-banner-farm-waste.png";
+import aboutBannerLaddoo from "@/assets/about-banner-laddoo.png";
+
+const heroBanners = [
+  {
+    image: aboutBannerFarmWaste,
+    alt: "From Farm Waste to Nourishing Goodness - DUST",
+    badge: "FROM FARM SURPLUS TO SUPERFOODS",
+    title: "Building India’s Next Generation of Consumer Brands.",
+    desc: `${companyInfo.brand} is rooted in nature and made for modern India — thoughtfully bringing together nourishing food blends, fruit-powered refreshments, everyday nutrition, and nature-inspired personal care.`,
+  },
+  {
+    image: aboutBannerLaddoo,
+    alt: "Warm Family Laddoo Mix - DUST Wholesome Goodness",
+    badge: "AUTHENTIC NOSTALGIC TASTE",
+    title: "Pure Indian Nutrition Made for Every Household.",
+    desc: "From wholesome traditional Ragi & Dry Fruit Laddoos to royal Paan digestive shots, DUST delivers clean-label nourishment without artificial preservatives or refined sugars.",
+  },
+];
 
 const storySlides = [
   {
@@ -63,27 +82,59 @@ const storySlides = [
 
 export const About: React.FC = () => {
   const [activeStoryIdx, setActiveStoryIdx] = useState(0);
+  const [activeHeroIdx, setActiveHeroIdx] = useState(0);
   const currentSlide = storySlides[activeStoryIdx] || storySlides[0]!;
+
+  // Auto-rotate hero banner images every 2.5 - 3 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveHeroIdx((prev) => (prev + 1) % heroBanners.length);
+    }, 2800);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const currentHero = heroBanners[activeHeroIdx] || heroBanners[0]!;
 
   return (
     <div className="pt-32 pb-24 px-4 sm:px-8 md:px-12 lg:px-16 w-full min-h-screen bg-[#F6F5F0] text-[#0E382E]">
-      {/* Hero Banner */}
-      <div className="relative rounded-3xl overflow-hidden border border-[#74B487]/40 bg-[#0E382E] text-white p-8 sm:p-16 mb-16 shadow-xl">
+      {/* Hero Banner Carousel (Cycles between images every 2-3s) */}
+      <div className="relative rounded-3xl overflow-hidden border border-[#74B487]/40 bg-[#0E382E] text-white p-8 sm:p-14 lg:p-16 mb-16 shadow-xl min-h-[460px] sm:min-h-[500px] flex flex-col justify-between">
+        {/* Background Images with Crossfade */}
+        {heroBanners.map((banner, idx) => (
+          <div
+            key={idx}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              activeHeroIdx === idx ? "opacity-100" : "opacity-0 pointer-events-none"
+            }`}
+          >
+            <img
+              src={banner.image}
+              alt={banner.alt}
+              className="w-full h-full object-cover object-center"
+            />
+            {/* Rich cinematic gradient overlays for contrast and readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0E382E]/95 via-[#0E382E]/85 to-[#0E382E]/40" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0E382E]/90 via-transparent to-black/30" />
+          </div>
+        ))}
+
+        {/* Content */}
         <div className="relative z-10 max-w-3xl space-y-6">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-[#74B487]/40 rounded-full text-xs font-extrabold uppercase tracking-widest text-[#E67E22]">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/15 backdrop-blur-md border border-[#74B487]/40 rounded-full text-xs font-extrabold uppercase tracking-widest text-[#E67E22] shadow-sm">
             <Sparkles className="w-4 h-4" />
-            <span>OUR BRAND PURPOSE</span>
+            <span>{currentHero.badge}</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl font-extrabold leading-tight">
-            Building India’s Next Generation of Consumer Brands.
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight drop-shadow-sm transition-all duration-700">
+            {currentHero.title}
           </h1>
 
-          <p className="text-base sm:text-xl text-[#E8F1E9] font-normal leading-relaxed">
-            {companyInfo.brand} is rooted in nature and made for modern India — thoughtfully bringing together nourishing food blends, fruit-powered refreshments, everyday nutrition, and nature-inspired personal care.
+          <p className="text-base sm:text-xl text-[#E8F1E9] font-normal leading-relaxed max-w-2xl drop-shadow-xs transition-all duration-700">
+            {currentHero.desc}
           </p>
 
-          <div className="pt-4 flex flex-wrap items-center gap-4">
+          <div className="pt-2 flex flex-wrap items-center gap-4">
             <Link
               to="/shop"
               className="btn-dust-orange px-8 py-4 text-white text-xs font-extrabold uppercase tracking-[0.2em] rounded-full inline-flex items-center gap-3 shadow-lg hover:scale-105 transition-all duration-300"
@@ -92,10 +143,35 @@ export const About: React.FC = () => {
             </Link>
             <a
               href="#our-story"
-              className="px-8 py-4 bg-white/10 hover:bg-white/20 border border-[#74B487]/50 text-white text-xs font-extrabold uppercase tracking-[0.2em] rounded-full inline-flex items-center gap-2 transition-all duration-300"
+              className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-[#74B487]/50 text-white text-xs font-extrabold uppercase tracking-[0.2em] rounded-full inline-flex items-center gap-2 transition-all duration-300"
             >
               Read Our Story <ArrowRight className="w-4 h-4" />
             </a>
+          </div>
+        </div>
+
+        {/* Indicators & Slide Progress */}
+        <div className="relative z-10 pt-8 flex items-center justify-between border-t border-white/10 mt-6">
+          <div className="flex items-center gap-2.5">
+            {heroBanners.map((_, idx) => (
+              <button
+                key={idx}
+                type="button"
+                onClick={() => setActiveHeroIdx(idx)}
+                aria-label={`Switch to banner slide ${idx + 1}`}
+                className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                  activeHeroIdx === idx
+                    ? "w-8 bg-[#E67E22]"
+                    : "w-2.5 bg-white/40 hover:bg-white/70"
+                }`}
+              />
+            ))}
+          </div>
+
+          <div className="flex items-center gap-2">
+            <span className="text-[10px] font-black uppercase tracking-widest text-[#E8F1E9]/80 bg-black/40 backdrop-blur-sm px-3 py-1 rounded-full border border-white/10">
+              0{activeHeroIdx + 1} / 0{heroBanners.length}
+            </span>
           </div>
         </div>
       </div>
