@@ -444,6 +444,11 @@ export const About: React.FC = () => {
                 </p>
               </div>
             </div>
+
+            {/* Visual Disclaimer Footnote */}
+            <p className="text-[10px] text-stone-500 italic text-center pt-2 border-t border-[#74B487]/20">
+              * Photographs, case-study visuals, and brand graphics are for representational, awareness, and educational purposes.
+            </p>
           </div>
         </div>
       </section>

@@ -132,7 +132,17 @@ export const Footer: React.FC = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-[#74B487] font-bold gap-4">
+      {/* Global Image & Visual Representation Disclaimer */}
+      <div className="max-w-7xl mx-auto pt-8 pb-6 border-t border-[#74B487]/30 text-center">
+        <p className="text-[11px] text-[#E8F1E9]/75 leading-relaxed max-w-4xl mx-auto font-normal">
+          <strong className="text-[#E67E22] font-black uppercase tracking-wider mr-1.5">
+            ✦ Image Disclaimer:
+          </strong>
+          All product images, packaging designs, creative banners, infographics, and serving representations used across this website are for illustrative and storytelling purposes only. Actual product appearance, packaging, color, and finish may vary. Please refer to physical product packaging and labels for final details.
+        </p>
+      </div>
+
+      <div className="max-w-7xl mx-auto pt-4 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center text-xs text-[#74B487] font-bold gap-4">
         <p>© {new Date().getFullYear()} {companyInfo.name}. All rights reserved. Design by <a href="https://webakoof.com/" target="_blank" rel="noopener noreferrer" className="text-[#E67E22] font-bold hover:underline">Webakoof</a></p>
         <p className="text-[#E67E22]">DUST — CHOICE OF MOTHERLAND</p>
       </div>

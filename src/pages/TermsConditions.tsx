@@ -38,6 +38,9 @@ export const TermsConditions: React.FC = () => {
             <p>
               Prices listed are in Indian Rupees (INR) inclusive of applicable taxes. DUST products are packaged food products, wholesome mixes, and digestive shots formulated with traditional Indian ingredients, real fruits, and spices.
             </p>
+            <p className="mt-2 text-[#0E382E]/80">
+              <strong>Website Images & Visual Representation Disclaimer:</strong> All product images, digital mockups, banners, infographics, packaging renders, and serving suggestions displayed anywhere on this website are for illustrative, informational, and representational purposes only. Actual product packaging, proportions, color shades, and visual appearance may vary. Customers should always refer to the physical packaging and nutritional labels for final ingredient and regulatory information.
+            </p>
           </section>
 
           <section className="space-y-2">
