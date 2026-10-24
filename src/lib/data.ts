@@ -286,14 +286,14 @@ export const products: Product[] = [
     ritualLabel: "How to Enjoy",
     ritual: [
       {
-        title: "Measure half",
-        detail: "Empty 10g (half sachet) of the digestive shot powder into a glass.",
+        title: "Tear & Pour",
+        detail: "Empty the digestive shot powder from the pouch into a glass.",
       },
-      { title: "Add Water", detail: "Pour 100ml of chilled water into the glass." },
+      { title: "Add Water", detail: "Pour 60 ml of chilled water into the glass." },
       {
         title: "Stir Well",
         detail:
-          "Stir vigorously for 15 seconds until the gulkand and betel leaf extracts dissolve.",
+          "Stir well until the gulkand and betel leaf extracts dissolve completely.",
       },
       {
         title: "Enjoy After Meals",
@@ -497,7 +497,7 @@ export const faqs = [
   },
   {
     q: "How do I prepare a DUST sachet?",
-    a: "Tear and empty one sachet into a glass. Add 180-200ml of chilled water, stir well for 10-15 seconds, and add ice to taste. For the Paan Digestive Shot, consume after meals.",
+    a: "Tear and empty one sachet into a glass. Add chilled water (60 ml for the Paan Digestive Shot, or 180-200ml for fruit blends), stir well until dissolved, and consume as directed.",
   },
   {
     q: "Do you offer free shipping?",
