@@ -23,6 +23,9 @@ import {
   ArrowRight,
   Sprout,
   Check,
+  FileText,
+  Download,
+  ExternalLink,
 } from "lucide-react";
 import { companyInfo } from "@/lib/data";
 import farmerWastedHarvest from "@/assets/farmer-wasted-harvest.png";
@@ -30,6 +33,7 @@ import farmersHarvestLost from "@/assets/farmers-harvest-lost.png";
 import farmSurplusWaste from "@/assets/farm-surplus-waste.png";
 import aboutBannerFarmWaste from "@/assets/about-banner-farm-waste.png";
 import aboutBannerLaddoo from "@/assets/about-banner-laddoo.png";
+import startupIndiaCertificateImg from "@/assets/startup-india-certificate.png";
 
 const heroBanners = [
   {
@@ -651,7 +655,7 @@ export const About: React.FC = () => {
                 {companyInfo.tagline}
               </p>
               <p className="text-[11px] text-[#74B487] font-semibold">
-                CIN: {companyInfo.cin}
+                CIN: {companyInfo.cin} • DPIIT: {companyInfo.dipp}
               </p>
             </div>
           </div>
@@ -714,6 +718,152 @@ export const About: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* GOVERNMENT OF INDIA RECOGNITION & TRUST: Startup India / DPIIT Certificate */}
+      <section className="mb-20 bg-white rounded-3xl border border-[#74B487]/40 p-6 sm:p-12 shadow-sm relative overflow-hidden">
+        {/* Subtle accent glow */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#74B487]/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="relative z-10 max-w-6xl mx-auto space-y-10">
+          {/* Header */}
+          <div className="text-center space-y-3 max-w-3xl mx-auto">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#E8F1E9] border border-[#74B487]/40 rounded-full text-xs font-extrabold uppercase tracking-widest text-[#E67E22]">
+              <ShieldCheck className="w-4 h-4" />
+              <span>OFFICIAL GOVERNMENT RECOGNITION</span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0E382E] leading-tight">
+              Certified & Recognized by DPIIT
+            </h2>
+            <p className="text-sm sm:text-base text-[#1F684B] leading-relaxed">
+              <strong>Everest Edges Private Limited</strong> is officially recognized as an innovative startup by the <strong>Department for Promotion of Industry and Internal Trade (DPIIT)</strong>, Ministry of Commerce & Industry, Government of India.
+            </p>
+          </div>
+
+          {/* Certificate Showcase Card: Document Preview + Details */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#F6F5F0] rounded-3xl border border-[#74B487]/40 p-6 sm:p-8 shadow-xs">
+            {/* Left: Certificate Preview Document Frame */}
+            <div className="lg:col-span-5 flex flex-col items-center space-y-4">
+              <a
+                href="/startup-india-certificate.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative block w-full max-w-sm rounded-2xl overflow-hidden border-2 border-[#74B487]/50 bg-white shadow-xl hover:shadow-2xl hover:border-[#E67E22] transition-all duration-300"
+              >
+                <img
+                  src={startupIndiaCertificateImg}
+                  alt="DPIIT Certificate of Recognition - Everest Edges Private Limited"
+                  className="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 text-white font-extrabold text-xs uppercase tracking-wider backdrop-blur-xs">
+                  <ExternalLink className="w-5 h-5 text-[#E67E22]" />
+                  <span>Click to View Full PDF</span>
+                </div>
+              </a>
+
+              {/* Action Buttons */}
+              <div className="flex flex-wrap items-center justify-center gap-3 w-full">
+                <a
+                  href="/startup-india-certificate.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-2.5 bg-[#0E382E] hover:bg-[#1F684B] text-white text-xs font-extrabold uppercase tracking-wider rounded-xl inline-flex items-center gap-2 shadow-sm transition-all hover:scale-105"
+                >
+                  <FileText className="w-4 h-4 text-[#E67E22]" /> View Certificate (PDF)
+                </a>
+                <a
+                  href="/startup-india-certificate.pdf"
+                  download="DPIIT_Everest_Edges_Certificate_DIPP284597.pdf"
+                  className="px-5 py-2.5 bg-white hover:bg-[#E8F1E9] border border-[#74B487]/50 text-[#0E382E] text-xs font-extrabold uppercase tracking-wider rounded-xl inline-flex items-center gap-2 shadow-xs transition-all hover:scale-105"
+                >
+                  <Download className="w-4 h-4 text-[#E67E22]" /> Download
+                </a>
+              </div>
+            </div>
+
+            {/* Right: Official Trust Badges & Certificate Data */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="space-y-2">
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#0E382E] text-white rounded-lg text-xs font-black uppercase tracking-wider shadow-xs">
+                  <Award className="w-4 h-4 text-[#E67E22]" />
+                  <span>Certificate No: {companyInfo.dipp}</span>
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0E382E]">
+                  Certificate of Recognition
+                </h3>
+                <p className="text-xs text-[#1F684B] font-semibold leading-relaxed">
+                  Ministry of Commerce & Industry • Department for Promotion of Industry and Internal Trade (DPIIT) • Government of India
+                </p>
+              </div>
+
+              {/* Verification Details Table / Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <div className="p-4 bg-white rounded-2xl border border-[#74B487]/30 space-y-1 shadow-xs">
+                  <span className="text-[10px] uppercase tracking-wider font-black text-[#E67E22] block">
+                    Recognized Entity
+                  </span>
+                  <p className="text-xs font-extrabold text-[#0E382E]">
+                    EVEREST EDGES PRIVATE LIMITED
+                  </p>
+                  <span className="text-[10px] text-stone-500 font-medium block">
+                    CIN: {companyInfo.cin}
+                  </span>
+                </div>
+
+                <div className="p-4 bg-white rounded-2xl border border-[#74B487]/30 space-y-1 shadow-xs">
+                  <span className="text-[10px] uppercase tracking-wider font-black text-[#E67E22] block">
+                    Industry & Sector
+                  </span>
+                  <p className="text-xs font-extrabold text-[#0E382E]">
+                    Food & Beverages
+                  </p>
+                  <span className="text-[10px] text-stone-500 font-medium block">
+                    Sector: Food Processing
+                  </span>
+                </div>
+
+                <div className="p-4 bg-white rounded-2xl border border-[#74B487]/30 space-y-1 shadow-xs">
+                  <span className="text-[10px] uppercase tracking-wider font-black text-[#E67E22] block">
+                    Issue Date
+                  </span>
+                  <p className="text-xs font-extrabold text-[#0E382E]">
+                    22-09-2026
+                  </p>
+                  <span className="text-[10px] text-stone-500 font-medium block">
+                    Incorporated: 04-08-2026
+                  </span>
+                </div>
+
+                <div className="p-4 bg-white rounded-2xl border border-[#74B487]/30 space-y-1 shadow-xs">
+                  <span className="text-[10px] uppercase tracking-wider font-black text-[#E67E22] block">
+                    Validity
+                  </span>
+                  <p className="text-xs font-extrabold text-emerald-700 flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> Valid Upto 03-08-2036
+                  </p>
+                  <span className="text-[10px] text-stone-500 font-medium block">
+                    10-Year Government Startup Recognition
+                  </span>
+                </div>
+              </div>
+
+              {/* Trust statement */}
+              <div className="p-4 bg-[#0E382E] text-white rounded-2xl border border-[#74B487]/30 flex items-start gap-3.5 shadow-sm">
+                <div className="w-8 h-8 rounded-xl bg-white/10 text-[#E67E22] flex items-center justify-center shrink-0 mt-0.5">
+                  <ShieldCheck className="w-5 h-5" />
+                </div>
+                <div className="space-y-0.5">
+                  <h4 className="text-xs font-black uppercase tracking-wider text-white">
+                    Verified for National Trust & Innovation
+                  </h4>
+                  <p className="text-[11px] text-[#E8F1E9] leading-relaxed font-normal">
+                    This official recognition validates our mission of pioneering food processing, upcycling agricultural harvests, and bringing pure, wholesome nutrition to Indian households.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* WHO IS DUST FOR — Target Audience Section */}
       <div className="mb-12 space-y-10">
