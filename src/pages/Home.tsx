@@ -148,8 +148,8 @@ export const Home: React.FC = () => {
         {/* Ambient glow backgrounds */}
         <div className="absolute bottom-10 right-10 w-[450px] h-[450px] bg-[#E67E22]/5 rounded-full blur-[130px] pointer-events-none" />
 
-        <div className="relative z-10 my-auto text-center md:text-left grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-4">
-          <div className="lg:col-span-7 space-y-6">
+        <div className="relative z-10 my-auto text-center md:text-left grid grid-cols-1 lg:grid-cols-12 gap-8 xl:gap-12 items-center pt-4">
+          <div className="lg:col-span-6 xl:col-span-5 space-y-6">
             <div className="inline-flex items-center gap-2 sm:gap-3 px-4 py-1.5 bg-[#0E382E] border-2 border-[#E67E22] rounded-full text-white text-xs font-extrabold uppercase tracking-wider shadow-md">
               <span className="text-[#E67E22] font-black">✦</span>
               <span className="text-white/90 font-extrabold tracking-[0.14em]">NOT MADE FOR EVERYONE</span>
@@ -161,7 +161,7 @@ export const Home: React.FC = () => {
               <Sparkles className="w-4 h-4" /> DUST — CHOICE OF MOTHERLAND
             </div>
 
-            <h1 className="text-4xl sm:text-6xl xl:text-7xl font-extrabold text-[#0E382E] tracking-tight leading-[1.05]">
+            <h1 className="text-4xl sm:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold text-[#0E382E] tracking-tight leading-[1.05]">
               ROOTED IN NATURE. <br />
               <span className="text-[#E67E22]">
                 MADE FOR MODERN INDIA.
@@ -175,23 +175,23 @@ export const Home: React.FC = () => {
             <div className="flex flex-wrap items-center gap-4 pt-4 justify-center md:justify-start">
               <Link
                 to="/shop"
-                className="px-8 py-4 btn-dust-orange text-white font-extrabold text-xs uppercase tracking-[0.2em] rounded-full transition-all flex items-center gap-3 shadow-lg"
+                className="px-8 py-4 btn-dust-orange text-white font-extrabold text-xs uppercase tracking-[0.2em] rounded-full transition-all flex items-center gap-3 shadow-lg hover:scale-105"
                 data-cursor="SHOP"
               >
                 Explore Catalogue <ArrowUpRight className="w-4 h-4" />
               </Link>
               <Link
                 to="/collections/wholesome-millets"
-                className="px-8 py-4 bg-[#E8F1E9] hover:bg-[#74B487]/20 border border-[#74B487] text-[#0E382E] text-xs font-extrabold uppercase tracking-[0.2em] rounded-full transition-all"
+                className="px-8 py-4 bg-[#E8F1E9] hover:bg-[#74B487]/20 border border-[#74B487] text-[#0E382E] text-xs font-extrabold uppercase tracking-[0.2em] rounded-full transition-all hover:scale-105"
               >
                 Wholesome Laddoo Premix
               </Link>
             </div>
           </div>
 
-          {/* Hero Visual Spotlight: Auto-changing Banner Carousel */}
-          <div className="lg:col-span-5 relative flex flex-col items-center justify-center w-full">
-            <div className="relative group w-full max-w-lg aspect-[3/2] rounded-3xl overflow-hidden border-2 border-[#74B487]/50 bg-white shadow-2xl">
+          {/* Hero Visual Spotlight: Auto-changing Banner Carousel (Expanded on Desktop) */}
+          <div className="lg:col-span-6 xl:col-span-7 relative flex flex-col items-center justify-center w-full">
+            <div className="relative group w-full max-w-xl xl:max-w-2xl 2xl:max-w-3xl aspect-[3/2] rounded-3xl overflow-hidden border-2 border-[#74B487]/50 bg-white shadow-2xl">
               {homeHeroBanners.map((banner, idx) => (
                 <div
                   key={idx}
@@ -216,9 +216,9 @@ export const Home: React.FC = () => {
                   )
                 }
                 aria-label="Previous banner"
-                className="absolute left-2.5 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-black/60 hover:bg-[#E67E22] text-white flex items-center justify-center backdrop-blur-md border border-white/30 transition-all opacity-80 sm:opacity-0 sm:group-hover:opacity-100 cursor-pointer shadow-md"
+                className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-black/60 hover:bg-[#E67E22] text-white flex items-center justify-center backdrop-blur-md border border-white/30 transition-all opacity-80 sm:opacity-0 sm:group-hover:opacity-100 cursor-pointer shadow-lg"
               >
-                <ChevronLeft className="w-5 h-5" />
+                <ChevronLeft className="w-5 sm:w-6 h-5 sm:h-6" />
               </button>
 
               <button
@@ -227,14 +227,14 @@ export const Home: React.FC = () => {
                   setActiveHeroBannerIdx((prev) => (prev + 1) % homeHeroBanners.length)
                 }
                 aria-label="Next banner"
-                className="absolute right-2.5 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-black/60 hover:bg-[#E67E22] text-white flex items-center justify-center backdrop-blur-md border border-white/30 transition-all opacity-80 sm:opacity-0 sm:group-hover:opacity-100 cursor-pointer shadow-md"
+                className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-black/60 hover:bg-[#E67E22] text-white flex items-center justify-center backdrop-blur-md border border-white/30 transition-all opacity-80 sm:opacity-0 sm:group-hover:opacity-100 cursor-pointer shadow-lg"
               >
-                <ChevronRight className="w-5 h-5" />
+                <ChevronRight className="w-5 sm:w-6 h-5 sm:h-6" />
               </button>
             </div>
 
             {/* Slide Navigation Controls */}
-            <div className="w-full max-w-lg pt-3 flex items-center justify-center">
+            <div className="w-full max-w-xl xl:max-w-2xl 2xl:max-w-3xl pt-3 flex items-center justify-center">
               <div className="flex items-center gap-2 bg-white px-3.5 py-1.5 rounded-full border border-[#74B487]/40 shadow-xs">
                 {homeHeroBanners.map((_, idx) => (
                   <button
@@ -242,8 +242,8 @@ export const Home: React.FC = () => {
                     type="button"
                     onClick={() => setActiveHeroBannerIdx(idx)}
                     aria-label={`Switch to banner ${idx + 1}`}
-                    className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                      activeHeroBannerIdx === idx ? "w-6 bg-[#E67E22]" : "w-2 bg-stone-300 hover:bg-stone-400"
+                    className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                      activeHeroBannerIdx === idx ? "w-7 bg-[#E67E22]" : "w-2.5 bg-stone-300 hover:bg-stone-400"
                     }`}
                   />
                 ))}
