@@ -26,6 +26,7 @@ import {
   FileText,
   Download,
   ExternalLink,
+  Quote,
 } from "lucide-react";
 import { companyInfo } from "@/lib/data";
 import farmerWastedHarvest from "@/assets/farmer-wasted-harvest.png";
@@ -34,6 +35,7 @@ import farmSurplusWaste from "@/assets/farm-surplus-waste.png";
 import aboutBannerFarmWaste from "@/assets/about-banner-farm-waste.png";
 import aboutBannerLaddoo from "@/assets/about-banner-laddoo.png";
 import startupIndiaCertificateImg from "@/assets/startup-india-certificate.png";
+import chetanShelarImg from "@/assets/chetan-shelar.png";
 
 const heroBanners = [
   {
@@ -630,6 +632,120 @@ export const About: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* MEET THE FOUNDER — Chetan Shelar */}
+      <section className="mb-20 bg-white rounded-3xl border border-[#74B487]/40 p-6 sm:p-12 shadow-sm relative overflow-hidden">
+        {/* Subtle decorative glow */}
+        <div className="absolute top-0 right-0 w-80 h-80 bg-[#E67E22]/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#74B487]/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="relative z-10 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left Column: Portrait Photo with Trust Badges */}
+            <div className="lg:col-span-5 flex flex-col items-center">
+              <div className="relative w-full max-w-sm rounded-3xl overflow-hidden border-2 border-[#74B487]/50 bg-[#0E382E] shadow-xl group">
+                <img
+                  src={chetanShelarImg}
+                  alt="Mr. Chetan Shelar - Founder, DUST & Everest Edges Pvt. Ltd."
+                  className="w-full h-auto object-cover object-top transition-transform duration-500 group-hover:scale-102"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0E382E]/90 via-transparent to-transparent pointer-events-none" />
+
+                {/* Floating Bottom Card Over Image */}
+                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-[#74B487]/40 shadow-lg">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h4 className="text-base font-black text-[#0E382E] tracking-tight">
+                        Mr. Chetan Shelar
+                      </h4>
+                      <p className="text-[11px] font-extrabold text-[#E67E22] uppercase tracking-wider">
+                        Founder & Authorized Person
+                      </p>
+                      <p className="text-[10px] text-stone-500 font-semibold">
+                        DUST™ • Everest Edges Pvt. Ltd.
+                      </p>
+                    </div>
+                    <span className="w-9 h-9 rounded-xl bg-[#0E382E] text-[#E67E22] flex items-center justify-center shrink-0 shadow-xs">
+                      <Sparkles className="w-4 h-4" />
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Authorized Signatory Pill */}
+              <div className="mt-4 inline-flex items-center gap-2 px-4 py-1.5 bg-[#E8F1E9] border border-[#74B487]/40 rounded-full text-[11px] font-black uppercase tracking-wider text-[#0E382E]">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                <span>Founder & Authorized Signatory</span>
+              </div>
+            </div>
+
+            {/* Right Column: Founder Narrative & Vision */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="space-y-3">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#E8F1E9] border border-[#74B487]/40 rounded-full text-xs font-extrabold uppercase tracking-widest text-[#E67E22]">
+                  <Sparkles className="w-4 h-4" />
+                  <span>LEADERSHIP & VISION</span>
+                </div>
+
+                <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0E382E] leading-tight tracking-tight">
+                  Meet the Founder — Chetan Shelar
+                </h2>
+
+                <p className="text-xs sm:text-sm font-extrabold text-[#E67E22] uppercase tracking-wider">
+                  Founder, DUST™ | Everest Edges Pvt. Ltd.
+                </p>
+
+                <h3 className="text-lg sm:text-xl font-extrabold text-[#0E382E] pt-1">
+                  Building a Healthier Future, Inspired by Nature
+                </h3>
+              </div>
+
+              <div className="space-y-4 text-xs sm:text-sm text-[#1F684B] leading-relaxed font-normal">
+                <p>
+                  <strong>Chetan Shelar</strong> is an entrepreneur driven by a vision to bring nature-inspired, thoughtfully crafted products into everyday life. As the founder behind <strong>DUST™</strong>, he believes that everyday essentials should combine simplicity, quality, convenience and a deep respect for nature.
+                </p>
+                <p>
+                  With a focus on traditional Indian ingredients and modern consumer needs, Chetan is building DUST™ as a brand that brings together natural food innovations and personal care products. From fruit-based beverage powders and traditional Indian formulations to herbal hair care and skincare, his goal is to make nature-inspired choices more accessible to modern consumers.
+                </p>
+              </div>
+
+              {/* Core Philosophy Quote Callout */}
+              <div className="p-5 bg-[#0E382E] text-white rounded-2xl border-2 border-[#E67E22]/60 shadow-md relative overflow-hidden space-y-2">
+                <div className="flex items-start gap-3">
+                  <Quote className="w-6 h-6 text-[#E67E22] shrink-0 rotate-180 opacity-80" />
+                  <p className="text-xs sm:text-sm font-bold text-[#E8F1E9] italic leading-relaxed">
+                    "The best ideas often come from our roots, and innovation gives them a place in the future."
+                  </p>
+                </div>
+                <div className="text-right">
+                  <span className="text-[10px] uppercase tracking-widest text-[#E67E22] font-black">
+                    — Chetan Shelar, Founder
+                  </span>
+                </div>
+              </div>
+
+              <div className="space-y-4 text-xs sm:text-sm text-[#1F684B] leading-relaxed font-normal">
+                <p>
+                  Through <strong>Everest Edges Pvt. Ltd.</strong>, Chetan aims to develop products that celebrate India's rich ingredient heritage while meeting the expectations of today's consumers for quality, convenience and thoughtful product design.
+                </p>
+                <p className="italic font-medium text-[#0E382E]">
+                  His vision is to build DUST™ into a trusted Indian brand, proudly inspired by nature and created for everyday living.
+                </p>
+              </div>
+
+              {/* Tagline Motto Footer */}
+              <div className="pt-2 flex items-center justify-between border-t border-[#74B487]/30">
+                <span className="text-[11px] font-black uppercase tracking-[0.2em] text-[#E67E22]">
+                  DUST™ — CHOICE OF MOTHERLAND
+                </span>
+                <span className="text-[10px] text-stone-500 font-bold uppercase tracking-wider">
+                  Everest Edges Pvt. Ltd.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Brand Story & Vision Section */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-white p-8 sm:p-12 rounded-3xl border border-[#74B487]/40 shadow-sm mb-20">
