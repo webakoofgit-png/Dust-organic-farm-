@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight, Sparkles, Tag, ShoppingBag, CheckCircle2, Building2, BadgePercent, Truck, Store, Send } from "lucide-react";
 import { products, companyInfo } from "@/lib/data";
 import laddooMix from "@/assets/laddooMix.png";
-import paanPack from "@/assets/paan-pack.png";
+import paanPouchStick from "@/assets/paan-pouch-stick.png";
+import paanPouchBack from "@/assets/paan-pouch-back.png";
 
 export const Combos: React.FC = () => {
   return (
@@ -43,20 +44,28 @@ export const Combos: React.FC = () => {
               </div>
 
               {/* Duo Product Mockup Arrangement */}
-              <div className="flex items-center justify-center gap-3 sm:gap-6 w-full h-full pt-4">
+              <div className="flex items-center justify-center gap-2 sm:gap-4 w-full h-full pt-4">
                 <img
                   src={laddooMix}
                   alt="Shahi Ragi & Dry Fruit Laddoo Mix"
-                  className="h-44 sm:h-52 w-auto object-contain drop-shadow-xl -rotate-3 group-hover:rotate-0 group-hover:scale-105 transition-all duration-300"
+                  className="h-36 sm:h-48 w-auto object-contain drop-shadow-xl -rotate-2 group-hover:rotate-0 group-hover:scale-105 transition-all duration-300"
                 />
                 <span className="w-8 h-8 rounded-full bg-[#0E382E] text-[#E67E22] font-black text-sm flex items-center justify-center shadow-md shrink-0 z-10">
                   +
                 </span>
-                <img
-                  src={paanPack}
-                  alt="Paan Digestive Shot Box"
-                  className="h-40 sm:h-48 w-auto object-contain drop-shadow-xl rotate-3 group-hover:rotate-0 group-hover:scale-105 transition-all duration-300"
-                />
+                {/* Authentic Paan Pouch Duo (matching official client packaging) */}
+                <div className="relative flex items-center justify-center h-44 sm:h-52 shrink-0 group-hover:scale-105 transition-all duration-300">
+                  <img
+                    src={paanPouchBack}
+                    alt="DUST Paan Digestive Shot Back Packaging"
+                    className="h-36 sm:h-44 w-auto object-contain drop-shadow-md rotate-6 translate-x-4 opacity-75"
+                  />
+                  <img
+                    src={paanPouchStick}
+                    alt="DUST Paan Digestive Shot Official Sachet"
+                    className="h-44 sm:h-52 w-auto object-contain drop-shadow-xl -rotate-3 z-10"
+                  />
+                </div>
               </div>
 
               {/* Bottom Pack Tag */}
@@ -126,24 +135,24 @@ export const Combos: React.FC = () => {
               </div>
 
               {/* 3-Pack Visual Arrangement */}
-              <div className="flex items-center justify-center w-full h-full pt-4 relative">
-                {/* Background Shadow Pack Left */}
+              <div className="flex items-center justify-center w-full h-full pt-4 relative group-hover:scale-105 transition-all duration-300">
+                {/* Left Angled Official Pouch */}
                 <img
-                  src={paanPack}
-                  alt="Paan Digestive Shot Pack"
-                  className="h-32 sm:h-40 w-auto object-contain opacity-40 -rotate-12 -translate-x-12 translate-y-2 pointer-events-none"
+                  src={paanPouchStick}
+                  alt="DUST Paan Digestive Shot"
+                  className="h-36 sm:h-44 w-auto object-contain drop-shadow-lg -rotate-12 -translate-x-10 sm:-translate-x-14 translate-y-1 opacity-90 transition-all duration-300 group-hover:-translate-x-12"
                 />
-                {/* Foreground Hero Pack */}
+                {/* Center Upright Hero Pouch */}
                 <img
-                  src={paanPack}
-                  alt="Paan Digestive Shot Family Box 3 Packs"
-                  className="h-44 sm:h-52 w-auto object-contain drop-shadow-2xl z-10 group-hover:scale-105 transition-all duration-300"
+                  src={paanPouchStick}
+                  alt="DUST Paan Digestive Shot Official Sachet"
+                  className="h-44 sm:h-52 w-auto object-contain drop-shadow-2xl z-10 transition-all duration-300"
                 />
-                {/* Background Shadow Pack Right */}
+                {/* Right Angled Back Details Pouch */}
                 <img
-                  src={paanPack}
-                  alt="Paan Digestive Shot Pack"
-                  className="h-32 sm:h-40 w-auto object-contain opacity-40 rotate-12 translate-x-12 translate-y-2 pointer-events-none"
+                  src={paanPouchBack}
+                  alt="DUST Paan Digestive Shot Back Details"
+                  className="h-36 sm:h-44 w-auto object-contain drop-shadow-lg rotate-12 translate-x-10 sm:translate-x-14 translate-y-1 opacity-90 transition-all duration-300 group-hover:translate-x-12"
                 />
               </div>
 
