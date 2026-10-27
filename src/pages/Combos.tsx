@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Sparkles, Tag, ShoppingBag, CheckCircle2, Building2, BadgePercent, Truck, Store, Send } from "lucide-react";
 import { products, companyInfo } from "@/lib/data";
+import laddooMix from "@/assets/laddooMix.png";
+import paanPack from "@/assets/paan-pack.png";
 
 export const Combos: React.FC = () => {
   return (
@@ -24,36 +26,68 @@ export const Combos: React.FC = () => {
       {/* Featured Combo Deals */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
         {/* Combo 1 */}
-        <div className="bg-white rounded-3xl border border-[#74B487]/40 p-8 flex flex-col justify-between shadow-md space-y-6">
-          <div className="space-y-4">
-            <div className="flex justify-between items-start">
-              <span className="badge-orange text-[10px] uppercase font-extrabold tracking-widest px-3 py-1 rounded-full">
-                BEST SELLER COMBO
-              </span>
-              <span className="text-xs font-extrabold text-[#E67E22] bg-[#E8F1E9] px-3 py-1 rounded-full">
-                SAVE 20%
-              </span>
+        <div className="bg-white rounded-3xl border border-[#74B487]/40 p-6 sm:p-8 flex flex-col justify-between shadow-md space-y-6 hover:shadow-xl hover:border-[#E67E22]/60 transition-all duration-300 group">
+          <div className="space-y-5">
+            {/* Combo Visual Showcase */}
+            <div className="relative w-full h-60 sm:h-72 rounded-2xl bg-gradient-to-br from-[#E8F1E9]/70 via-[#F6F5F0] to-[#E8F1E9]/40 border border-[#74B487]/30 overflow-hidden flex items-center justify-center p-4">
+              {/* Floating Badges */}
+              <div className="absolute top-3 left-3 z-10">
+                <span className="badge-orange text-[10px] uppercase font-extrabold tracking-widest px-3 py-1 rounded-full shadow-xs">
+                  BEST SELLER COMBO
+                </span>
+              </div>
+              <div className="absolute top-3 right-3 z-10">
+                <span className="text-xs font-black text-[#E67E22] bg-white border border-[#E67E22]/30 px-3 py-1 rounded-full shadow-xs">
+                  SAVE 20%
+                </span>
+              </div>
+
+              {/* Duo Product Mockup Arrangement */}
+              <div className="flex items-center justify-center gap-3 sm:gap-6 w-full h-full pt-4">
+                <img
+                  src={laddooMix}
+                  alt="Shahi Ragi & Dry Fruit Laddoo Mix"
+                  className="h-44 sm:h-52 w-auto object-contain drop-shadow-xl -rotate-3 group-hover:rotate-0 group-hover:scale-105 transition-all duration-300"
+                />
+                <span className="w-8 h-8 rounded-full bg-[#0E382E] text-[#E67E22] font-black text-sm flex items-center justify-center shadow-md shrink-0 z-10">
+                  +
+                </span>
+                <img
+                  src={paanPack}
+                  alt="Paan Digestive Shot Box"
+                  className="h-40 sm:h-48 w-auto object-contain drop-shadow-xl rotate-3 group-hover:rotate-0 group-hover:scale-105 transition-all duration-300"
+                />
+              </div>
+
+              {/* Bottom Pack Tag */}
+              <div className="absolute bottom-2 left-0 right-0 flex justify-center">
+                <span className="text-[10px] uppercase tracking-widest font-black text-[#0E382E] bg-white/90 backdrop-blur-xs px-3 py-0.5 rounded-full border border-[#74B487]/40 shadow-2xs">
+                  Dual Superfood Duo Pack
+                </span>
+              </div>
             </div>
 
-            <h2 className="text-2xl font-extrabold text-[#0E382E]">
-              The Royal Heritage & Superfood Pack
-            </h2>
+            <div className="space-y-2">
+              <h2 className="text-2xl font-extrabold text-[#0E382E] leading-tight">
+                The Royal Heritage & Superfood Pack
+              </h2>
 
-            <p className="text-xs text-[#1F684B] leading-relaxed">
-              1× Shahi Ragi & Dry Fruit Laddoo Mix (250g) + 1× Paan Digestive Shot Box (20g). The ideal combination of Wholesome Laddoo premix nutrition and royal post-meal digestive freshness.
-            </p>
+              <p className="text-xs text-[#1F684B] leading-relaxed">
+                1× Shahi Ragi & Dry Fruit Laddoo Mix (250g) + 1× Paan Digestive Shot Box (20g). The ideal combination of Wholesome Laddoo premix nutrition and royal post-meal digestive freshness.
+              </p>
+            </div>
 
-            <ul className="space-y-2 text-xs text-[#0E382E] font-semibold">
+            <ul className="space-y-2 text-xs text-[#0E382E] font-semibold pt-1">
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#E67E22]" />
+                <CheckCircle2 className="w-4 h-4 text-[#E67E22] shrink-0" />
                 <span>250g Pure Millet & Nut Laddoo Mix (Zero Added Sugar)</span>
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#E67E22]" />
+                <CheckCircle2 className="w-4 h-4 text-[#E67E22] shrink-0" />
                 <span>4 Royal Paan Digestive Shots</span>
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#E67E22]" />
+                <CheckCircle2 className="w-4 h-4 text-[#E67E22] shrink-0" />
                 <span>Free Express Shipping Pan-India</span>
               </li>
             </ul>
@@ -67,7 +101,7 @@ export const Combos: React.FC = () => {
 
             <Link
               to="/product/shahi-ragi-dry-fruit-laddoo-mix"
-              className="btn-dust-orange px-6 py-3 text-white font-extrabold text-xs uppercase tracking-wider rounded-full inline-flex items-center gap-2 shadow-md"
+              className="btn-dust-orange px-6 py-3 text-white font-extrabold text-xs uppercase tracking-wider rounded-full inline-flex items-center gap-2 shadow-md hover:scale-105 transition-all"
             >
               Order Combo <ArrowUpRight className="w-4 h-4" />
             </Link>
@@ -75,36 +109,73 @@ export const Combos: React.FC = () => {
         </div>
 
         {/* Combo 2 */}
-        <div className="bg-white rounded-3xl border border-[#74B487]/40 p-8 flex flex-col justify-between shadow-md space-y-6">
-          <div className="space-y-4">
-            <div className="flex justify-between items-start">
-              <span className="bg-[#0E382E] text-white text-[10px] uppercase font-extrabold tracking-widest px-3 py-1 rounded-full">
-                HERITAGE BUNDLE
-              </span>
-              <span className="text-xs font-extrabold text-[#E67E22] bg-[#E8F1E9] px-3 py-1 rounded-full">
-                SAVE 25%
-              </span>
+        <div className="bg-white rounded-3xl border border-[#74B487]/40 p-6 sm:p-8 flex flex-col justify-between shadow-md space-y-6 hover:shadow-xl hover:border-[#E67E22]/60 transition-all duration-300 group">
+          <div className="space-y-5">
+            {/* Combo Visual Showcase */}
+            <div className="relative w-full h-60 sm:h-72 rounded-2xl bg-gradient-to-br from-[#E8F1E9]/70 via-[#F6F5F0] to-[#E8F1E9]/40 border border-[#74B487]/30 overflow-hidden flex items-center justify-center p-4">
+              {/* Floating Badges */}
+              <div className="absolute top-3 left-3 z-10">
+                <span className="bg-[#0E382E] text-white text-[10px] uppercase font-extrabold tracking-widest px-3 py-1 rounded-full shadow-xs">
+                  HERITAGE BUNDLE
+                </span>
+              </div>
+              <div className="absolute top-3 right-3 z-10">
+                <span className="text-xs font-black text-[#E67E22] bg-white border border-[#E67E22]/30 px-3 py-1 rounded-full shadow-xs">
+                  SAVE 25%
+                </span>
+              </div>
+
+              {/* 3-Pack Visual Arrangement */}
+              <div className="flex items-center justify-center w-full h-full pt-4 relative">
+                {/* Background Shadow Pack Left */}
+                <img
+                  src={paanPack}
+                  alt="Paan Digestive Shot Pack"
+                  className="h-32 sm:h-40 w-auto object-contain opacity-40 -rotate-12 -translate-x-12 translate-y-2 pointer-events-none"
+                />
+                {/* Foreground Hero Pack */}
+                <img
+                  src={paanPack}
+                  alt="Paan Digestive Shot Family Box 3 Packs"
+                  className="h-44 sm:h-52 w-auto object-contain drop-shadow-2xl z-10 group-hover:scale-105 transition-all duration-300"
+                />
+                {/* Background Shadow Pack Right */}
+                <img
+                  src={paanPack}
+                  alt="Paan Digestive Shot Pack"
+                  className="h-32 sm:h-40 w-auto object-contain opacity-40 rotate-12 translate-x-12 translate-y-2 pointer-events-none"
+                />
+              </div>
+
+              {/* Bottom Pack Tag */}
+              <div className="absolute bottom-2 left-0 right-0 flex justify-center z-10">
+                <span className="text-[10px] uppercase tracking-widest font-black text-[#0E382E] bg-white/90 backdrop-blur-xs px-3 py-0.5 rounded-full border border-[#74B487]/40 shadow-2xs">
+                  Triple Multipack • 3 Boxes (12 Shots)
+                </span>
+              </div>
             </div>
 
-            <h2 className="text-2xl font-extrabold text-[#0E382E]">
-              Paan Digestive Shot Family Box (3 Packs)
-            </h2>
+            <div className="space-y-2">
+              <h2 className="text-2xl font-extrabold text-[#0E382E] leading-tight">
+                Paan Digestive Shot Family Box (3 Packs)
+              </h2>
 
-            <p className="text-xs text-[#1F684B] leading-relaxed">
-              Stock up on the finest after-meal digestive shots. 3 boxes of real betel leaf and gulkand Digestives for post-dinner family rituals.
-            </p>
+              <p className="text-xs text-[#1F684B] leading-relaxed">
+                Stock up on the finest after-meal digestive shots. 3 boxes of real betel leaf and gulkand Digestives for post-dinner family rituals.
+              </p>
+            </div>
 
-            <ul className="space-y-2 text-xs text-[#0E382E] font-semibold">
+            <ul className="space-y-2 text-xs text-[#0E382E] font-semibold pt-1">
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#E67E22]" />
+                <CheckCircle2 className="w-4 h-4 text-[#E67E22] shrink-0" />
                 <span>12 Individual Digestive Shots</span>
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#E67E22]" />
+                <CheckCircle2 className="w-4 h-4 text-[#E67E22] shrink-0" />
                 <span>Enriched with Prebiotic Inulin Fiber</span>
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#E67E22]" />
+                <CheckCircle2 className="w-4 h-4 text-[#E67E22] shrink-0" />
                 <span>Zero Artificial Preservatives</span>
               </li>
             </ul>
@@ -118,7 +189,7 @@ export const Combos: React.FC = () => {
 
             <Link
               to="/product/paan-digestive-shot"
-              className="btn-dust-orange px-6 py-3 text-white font-extrabold text-xs uppercase tracking-wider rounded-full inline-flex items-center gap-2 shadow-md"
+              className="btn-dust-orange px-6 py-3 text-white font-extrabold text-xs uppercase tracking-wider rounded-full inline-flex items-center gap-2 shadow-md hover:scale-105 transition-all"
             >
               Order Combo <ArrowUpRight className="w-4 h-4" />
             </Link>
