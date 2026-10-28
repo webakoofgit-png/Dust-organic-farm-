@@ -44,26 +44,26 @@ export const Combos: React.FC = () => {
               </div>
 
               {/* Duo Product Mockup Arrangement */}
-              <div className="flex items-center justify-center gap-2 sm:gap-4 w-full h-full pt-4">
+              <div className="flex items-center justify-center gap-1.5 sm:gap-4 w-full h-full pt-4 max-w-full">
                 <img
                   src={laddooMix}
                   alt="Shahi Ragi & Dry Fruit Laddoo Mix"
-                  className="h-36 sm:h-48 w-auto object-contain drop-shadow-xl -rotate-2 group-hover:rotate-0 group-hover:scale-105 transition-all duration-300"
+                  className="h-28 sm:h-40 md:h-48 w-auto max-w-[55%] sm:max-w-none object-contain drop-shadow-xl -rotate-2 group-hover:rotate-0 group-hover:scale-105 transition-all duration-300 shrink-0"
                 />
-                <span className="w-8 h-8 rounded-full bg-[#0E382E] text-[#E67E22] font-black text-sm flex items-center justify-center shadow-md shrink-0 z-10">
+                <span className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[#0E382E] text-[#E67E22] font-black text-xs sm:text-sm flex items-center justify-center shadow-md shrink-0 z-10">
                   +
                 </span>
                 {/* Authentic Paan Pouch Duo (matching official client packaging) */}
-                <div className="relative flex items-center justify-center h-44 sm:h-52 shrink-0 group-hover:scale-105 transition-all duration-300">
+                <div className="relative flex items-center justify-center h-32 sm:h-44 md:h-52 shrink-0 group-hover:scale-105 transition-all duration-300">
                   <img
                     src={paanPouchBack}
                     alt="DUST Paan Digestive Shot Back Packaging"
-                    className="h-36 sm:h-44 w-auto object-contain drop-shadow-md rotate-6 translate-x-4 opacity-75"
+                    className="h-26 sm:h-36 md:h-42 w-auto object-contain drop-shadow-md rotate-6 translate-x-2 sm:translate-x-3 opacity-75"
                   />
                   <img
                     src={paanPouchStick}
                     alt="DUST Paan Digestive Shot Official Sachet"
-                    className="h-44 sm:h-52 w-auto object-contain drop-shadow-xl -rotate-3 z-10"
+                    className="h-32 sm:h-44 md:h-52 w-auto object-contain drop-shadow-xl -rotate-3 z-10"
                   />
                 </div>
               </div>
@@ -140,19 +140,19 @@ export const Combos: React.FC = () => {
                 <img
                   src={paanPouchStick}
                   alt="DUST Paan Digestive Shot"
-                  className="h-36 sm:h-44 w-auto object-contain drop-shadow-lg -rotate-12 -translate-x-10 sm:-translate-x-14 translate-y-1 opacity-90 transition-all duration-300 group-hover:-translate-x-12"
+                  className="h-28 sm:h-38 md:h-44 w-auto object-contain drop-shadow-lg -rotate-12 -translate-x-7 sm:-translate-x-12 translate-y-1 opacity-90 transition-all duration-300 group-hover:-translate-x-9"
                 />
                 {/* Center Upright Hero Pouch */}
                 <img
                   src={paanPouchStick}
                   alt="DUST Paan Digestive Shot Official Sachet"
-                  className="h-44 sm:h-52 w-auto object-contain drop-shadow-2xl z-10 transition-all duration-300"
+                  className="h-34 sm:h-46 md:h-52 w-auto object-contain drop-shadow-2xl z-10 transition-all duration-300"
                 />
                 {/* Right Angled Back Details Pouch */}
                 <img
                   src={paanPouchBack}
                   alt="DUST Paan Digestive Shot Back Details"
-                  className="h-36 sm:h-44 w-auto object-contain drop-shadow-lg rotate-12 translate-x-10 sm:translate-x-14 translate-y-1 opacity-90 transition-all duration-300 group-hover:translate-x-12"
+                  className="h-28 sm:h-38 md:h-44 w-auto object-contain drop-shadow-lg rotate-12 translate-x-7 sm:translate-x-12 translate-y-1 opacity-90 transition-all duration-300 group-hover:translate-x-9"
                 />
               </div>
 
