@@ -39,7 +39,7 @@ export const Combos: React.FC = () => {
               </div>
               <div className="absolute top-3 right-3 z-10">
                 <span className="text-xs font-black text-[#E67E22] bg-white border border-[#E67E22]/30 px-3 py-1 rounded-full shadow-xs">
-                  SAVE 20%
+                  SAVE ₹100
                 </span>
               </div>
 
@@ -104,8 +104,8 @@ export const Combos: React.FC = () => {
 
           <div className="pt-4 border-t border-[#74B487]/30 flex items-center justify-between">
             <div>
-              <span className="text-xs line-through text-stone-400 font-bold block">₹498</span>
-              <span className="text-3xl font-extrabold text-[#0E382E]">₹398</span>
+              <span className="text-xs line-through text-stone-400 font-bold block">₹598</span>
+              <span className="text-3xl font-extrabold text-[#0E382E]">₹498</span>
             </div>
 
             <Link
