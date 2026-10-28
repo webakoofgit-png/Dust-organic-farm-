@@ -36,6 +36,7 @@ import aboutBannerFarmWaste from "@/assets/about-banner-farm-waste.png";
 import aboutBannerLaddoo from "@/assets/about-banner-laddoo.png";
 import startupIndiaCertificateImg from "@/assets/startup-india-certificate.png";
 import chetanShelarImg from "@/assets/chetan-shelar.png";
+import mrunalPhotoImg from "@/assets/mrunal-photo.png";
 
 const heroBanners = [
   {
@@ -741,6 +742,99 @@ export const About: React.FC = () => {
                 <span className="text-[10px] text-stone-500 font-bold uppercase tracking-wider">
                   Everest Edges Pvt. Ltd.
                 </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* LEADERSHIP & NATION-BUILDING VISION — Mrunal Shelar */}
+      <section className="mb-20 bg-white rounded-3xl border border-[#74B487]/40 p-6 sm:p-12 shadow-sm relative overflow-hidden">
+        {/* Subtle decorative glows */}
+        <div className="absolute top-0 left-0 w-80 h-80 bg-[#74B487]/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#E67E22]/5 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="relative z-10 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left Column: Vision, Mission & Nation Building */}
+            <div className="lg:col-span-7 space-y-6 order-2 lg:order-1">
+              <div className="space-y-3">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#E8F1E9] border border-[#74B487]/40 rounded-full text-xs font-extrabold uppercase tracking-widest text-[#E67E22]">
+                  <Sparkles className="w-4 h-4" />
+                  <span>LEADERSHIP VISION • ATMANIRBHAR BHARAT 🇮🇳</span>
+                </div>
+
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0E382E] leading-tight">
+                  Building for India. Innovating for the World.
+                </h2>
+                <h3 className="text-base sm:text-lg font-bold text-[#1F684B]">
+                  Mrunal Shelar — <em>Everest Edges Pvt. Ltd.</em>
+                </h3>
+              </div>
+
+              {/* Core Quote Box */}
+              <div className="p-6 bg-[#0E382E] text-white rounded-2xl border-2 border-[#E67E22]/60 shadow-md relative overflow-hidden space-y-3">
+                <div className="flex items-start gap-3.5">
+                  <Quote className="w-7 h-7 text-[#E67E22] shrink-0 rotate-180 opacity-90 mt-0.5" />
+                  <p className="text-sm sm:text-base font-bold text-white italic leading-relaxed">
+                    "At Everest Edges, we believe true independence is also about building in India, innovating in India, and creating products for India and the world." 🇮🇳
+                  </p>
+                </div>
+              </div>
+
+              {/* Mission Narrative */}
+              <div className="space-y-4 text-xs sm:text-sm text-[#1F684B] leading-relaxed font-normal">
+                <p>
+                  Our vision is to contribute to a <strong>self-reliant India</strong> by bringing innovative Indian food products to consumers everywhere and creating opportunities across the Indian food ecosystem.
+                </p>
+                <p>
+                  By connecting regional agricultural abundance with modern consumer convenience, we strive to build transparent, clean-label essentials that every household can trust and take pride in.
+                </p>
+              </div>
+
+              {/* Tagline Callout Banner */}
+              <div className="p-4 bg-[#E8F1E9] border-2 border-[#74B487]/40 rounded-2xl shadow-xs flex items-center justify-between gap-4">
+                <div className="flex items-center gap-2.5">
+                  <span className="text-xl">🌱</span>
+                  <span className="text-xs sm:text-sm font-black text-[#0E382E] tracking-wide">
+                    From Indian ideas to Indian products — and from India to the world. 🌱🇮🇳
+                  </span>
+                </div>
+              </div>
+
+              {/* Footer */}
+              <div className="pt-2 flex items-center justify-between border-t border-[#74B487]/30">
+                <span className="text-[11px] font-black uppercase tracking-[0.2em] text-[#E67E22]">
+                  EVEREST EDGES PVT. LTD.
+                </span>
+                <span className="text-[10px] text-stone-500 font-bold uppercase tracking-wider">
+                  Mrunal Shelar
+                </span>
+              </div>
+            </div>
+
+            {/* Right Column: Portrait Photo */}
+            <div className="lg:col-span-5 flex flex-col items-center order-1 lg:order-2">
+              <div className="relative w-full max-w-sm rounded-3xl overflow-hidden border-2 border-[#74B487]/50 bg-[#0E382E] shadow-xl group">
+                <img
+                  src={mrunalPhotoImg}
+                  alt="Mrunal Shelar - Everest Edges Pvt. Ltd."
+                  className="w-full h-auto object-cover object-top transition-transform duration-500 group-hover:scale-102"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent pointer-events-none" />
+
+                {/* Overlaid Title Badge */}
+                <div className="absolute bottom-4 left-4 right-4 text-white text-center space-y-1">
+                  <span className="inline-block px-3 py-1 bg-[#E67E22] text-white text-[10px] font-black uppercase tracking-widest rounded-full shadow-md">
+                    Everest Edges Pvt. Ltd.
+                  </span>
+                  <h4 className="text-lg font-extrabold text-white">
+                    Mrunal Shelar
+                  </h4>
+                  <p className="text-[11px] text-[#E8F1E9] font-medium">
+                    Building in India • Innovating in India 🇮🇳
+                  </p>
+                </div>
               </div>
             </div>
           </div>
