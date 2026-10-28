@@ -212,12 +212,12 @@ export const Combos: React.FC = () => {
               {/* Floating Badges */}
               <div className="absolute top-3 left-3 z-10">
                 <span className="bg-[#0E382E] text-white text-[10px] uppercase font-extrabold tracking-widest px-3 py-1 rounded-full shadow-xs">
-                  HERITAGE BUNDLE
+                  MONTHLY RITUAL PACK
                 </span>
               </div>
               <div className="absolute top-3 right-3 z-10">
                 <span className="text-xs font-black text-[#E67E22] bg-white border border-[#E67E22]/30 px-3 py-1 rounded-full shadow-xs">
-                  SAVE 25%
+                  SAVE ₹101
                 </span>
               </div>
 
@@ -246,25 +246,25 @@ export const Combos: React.FC = () => {
               {/* Bottom Pack Tag */}
               <div className="absolute bottom-2 left-0 right-0 flex justify-center z-10">
                 <span className="text-[10px] uppercase tracking-widest font-black text-[#0E382E] bg-white/90 backdrop-blur-xs px-3 py-0.5 rounded-full border border-[#74B487]/40 shadow-2xs">
-                  Triple Multipack • 3 Boxes (30 Sachets)
+                  30 Shots Monthly Combo • 3 Boxes
                 </span>
               </div>
             </div>
 
             <div className="space-y-2">
               <h2 className="text-2xl font-extrabold text-[#0E382E] leading-tight">
-                Paan Digestive Shot Family Box (3 Packs)
+                30 Shots Monthly Combo
               </h2>
 
               <p className="text-xs text-[#1F684B] leading-relaxed">
-                Stock up on the finest after-meal digestive shots. 3 boxes (30 individual sachets) of real betel leaf and gulkand Digestives for post-dinner family rituals.
+                Your complete 30-day post-dinner digestive ritual. 3 boxes (30 digestive shots) of authentic Banarasi betel leaf, rose gulkand, and prebiotic inulin fiber.
               </p>
             </div>
 
             <ul className="space-y-2 text-xs text-[#0E382E] font-semibold pt-1">
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#E67E22] shrink-0" />
-                <span>30 Individual Digestive Sachets (Makes 60 Shots)</span>
+                <span>30 Royal Paan Digestive Shots (30-Day Ritual)</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#E67E22] shrink-0" />
@@ -272,15 +272,19 @@ export const Combos: React.FC = () => {
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#E67E22] shrink-0" />
-                <span>Zero Artificial Preservatives</span>
+                <span>Zero Artificial Preservatives & 100% Vegetarian</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#E67E22] shrink-0" />
+                <span>Free Express Shipping Pan-India</span>
               </li>
             </ul>
           </div>
 
           <div className="pt-4 border-t border-[#74B487]/30 flex items-center justify-between">
             <div>
-              <span className="text-xs line-through text-stone-400 font-bold block">₹897</span>
-              <span className="text-3xl font-extrabold text-[#0E382E]">₹670</span>
+              <span className="text-xs line-through text-stone-400 font-bold block">₹900</span>
+              <span className="text-3xl font-extrabold text-[#0E382E]">₹799</span>
             </div>
 
             <Link
