@@ -748,7 +748,7 @@ export const About: React.FC = () => {
         </div>
       </section>
 
-      {/* LEADERSHIP & NATION-BUILDING VISION — Mrunal Shelar */}
+      {/* LEADERSHIP & NATION-BUILDING VISION — Mrunalini Shelar */}
       <section className="mb-20 bg-white rounded-3xl border border-[#74B487]/40 p-6 sm:p-12 shadow-sm relative overflow-hidden">
         {/* Subtle decorative glows */}
         <div className="absolute top-0 left-0 w-80 h-80 bg-[#74B487]/10 rounded-full blur-3xl pointer-events-none" />
@@ -768,7 +768,7 @@ export const About: React.FC = () => {
                   Building for India. Innovating for the World.
                 </h2>
                 <h3 className="text-base sm:text-lg font-bold text-[#1F684B]">
-                  Mrunal Shelar — <em>Everest Edges Pvt. Ltd.</em>
+                  Mrunalini Shelar — <em>Everest Edges Pvt. Ltd.</em>
                 </h3>
               </div>
 
@@ -808,7 +808,7 @@ export const About: React.FC = () => {
                   EVEREST EDGES PVT. LTD.
                 </span>
                 <span className="text-[10px] text-stone-500 font-bold uppercase tracking-wider">
-                  Mrunal Shelar
+                  Mrunalini Shelar
                 </span>
               </div>
             </div>
@@ -818,7 +818,7 @@ export const About: React.FC = () => {
               <div className="relative w-full max-w-sm rounded-3xl overflow-hidden border-2 border-[#74B487]/50 bg-[#0E382E] shadow-xl group">
                 <img
                   src={mrunalPhotoImg}
-                  alt="Mrunal Shelar - Everest Edges Pvt. Ltd."
+                  alt="Mrunalini Shelar - Everest Edges Pvt. Ltd."
                   className="w-full h-auto object-cover object-top transition-transform duration-500 group-hover:scale-102"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent pointer-events-none" />
@@ -829,7 +829,7 @@ export const About: React.FC = () => {
                     Everest Edges Pvt. Ltd.
                   </span>
                   <h4 className="text-lg font-extrabold text-white">
-                    Mrunal Shelar
+                    Mrunalini Shelar
                   </h4>
                   <p className="text-[11px] text-[#E8F1E9] font-medium">
                     Building in India • Innovating in India 🇮🇳
