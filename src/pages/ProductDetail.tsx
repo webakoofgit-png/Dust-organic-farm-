@@ -159,9 +159,11 @@ export const ProductDetail: React.FC = () => {
                   {product.originalPriceDisplay}
                 </span>
               )}
-              <span className="text-xs text-[#1F684B] font-bold border-l border-[#74B487]/40 pl-3">
-                {product.unitDisplay}
-              </span>
+              {product.unitDisplay && (
+                <span className="text-xs text-[#1F684B] font-bold border-l border-[#74B487]/40 pl-3">
+                  {product.unitDisplay}
+                </span>
+              )}
             </div>
           </div>
 

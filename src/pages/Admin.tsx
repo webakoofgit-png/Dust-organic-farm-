@@ -174,7 +174,7 @@ export const Admin: React.FC = () => {
       storage: "Store in a cool dry place away from direct sunlight.",
       nutrition: { serving: newProductWeight, note: "100% Natural", rows: [["Energy", "45 kcal", "2%"]] },
       claims: ["100% Natural", "Zero Preservatives"],
-      ritual: [{ title: "Stir & Enjoy", detail: "Mix with 150ml chilled water." }],
+      ritual: [{ title: "Stir & Enjoy", detail: "Mix with 60ml chilled water." }],
       ritualLabel: "Preparation Ritual",
       heritageTitle: "Traditional Wellness",
       heritageQuote: "Inspired by Banaras digestive recipes.",

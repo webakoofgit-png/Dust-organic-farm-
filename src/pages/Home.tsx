@@ -47,7 +47,7 @@ const homeHeroBanners = [
     alt: "From Farm Waste to Nourishing Goodness - DUST",
     title: "From Farm Surplus to Superfoods",
     subtitle: "100% Real Fruit & Pure Nutrition",
-    price: "₹249",
+    price: "₹299",
     tag: "HERITAGE WELLNESS",
     productIndex: 1,
   },
@@ -680,7 +680,7 @@ export const Home: React.FC = () => {
                   <div className="flex items-center gap-2 text-[#E67E22] font-extrabold text-xs uppercase tracking-wider">
                     <Zap className="w-4 h-4" /> On-The-Go Convenience
                   </div>
-                  <p className="text-xs text-[#E8F1E9]">Easy-to-carry sachet — just add 150ml chilled water, stir & enjoy!</p>
+                  <p className="text-xs text-[#E8F1E9]">Easy-to-carry sachet — just add 60ml chilled water, stir & enjoy!</p>
                 </div>
               </div>
 

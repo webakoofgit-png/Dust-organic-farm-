@@ -82,7 +82,7 @@ export const Combos: React.FC = () => {
               </h2>
 
               <p className="text-xs text-[#1F684B] leading-relaxed">
-                1× Shahi Ragi & Dry Fruit Laddoo Mix (250g) + 1× Paan Digestive Shot Box (20g). The ideal combination of Wholesome Laddoo premix nutrition and royal post-meal digestive freshness.
+                1× Shahi Ragi & Dry Fruit Laddoo Mix (250g) + 1× Paan Digestive Shot Box (10 Sachets). The ideal combination of Wholesome Laddoo premix nutrition and royal post-meal digestive freshness.
               </p>
             </div>
 
@@ -93,7 +93,7 @@ export const Combos: React.FC = () => {
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#E67E22] shrink-0" />
-                <span>4 Royal Paan Digestive Shots</span>
+                <span>10 Royal Paan Digestive Sachets (Makes 20 Shots)</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#E67E22] shrink-0" />
@@ -104,8 +104,8 @@ export const Combos: React.FC = () => {
 
           <div className="pt-4 border-t border-[#74B487]/30 flex items-center justify-between">
             <div>
-              <span className="text-xs line-through text-stone-400 font-bold block">₹448</span>
-              <span className="text-3xl font-extrabold text-[#0E382E]">₹358</span>
+              <span className="text-xs line-through text-stone-400 font-bold block">₹498</span>
+              <span className="text-3xl font-extrabold text-[#0E382E]">₹398</span>
             </div>
 
             <Link
@@ -159,7 +159,7 @@ export const Combos: React.FC = () => {
               {/* Bottom Pack Tag */}
               <div className="absolute bottom-2 left-0 right-0 flex justify-center z-10">
                 <span className="text-[10px] uppercase tracking-widest font-black text-[#0E382E] bg-white/90 backdrop-blur-xs px-3 py-0.5 rounded-full border border-[#74B487]/40 shadow-2xs">
-                  Triple Multipack • 3 Boxes (12 Shots)
+                  Triple Multipack • 3 Boxes (30 Sachets)
                 </span>
               </div>
             </div>
@@ -170,14 +170,14 @@ export const Combos: React.FC = () => {
               </h2>
 
               <p className="text-xs text-[#1F684B] leading-relaxed">
-                Stock up on the finest after-meal digestive shots. 3 boxes of real betel leaf and gulkand Digestives for post-dinner family rituals.
+                Stock up on the finest after-meal digestive shots. 3 boxes (30 individual sachets) of real betel leaf and gulkand Digestives for post-dinner family rituals.
               </p>
             </div>
 
             <ul className="space-y-2 text-xs text-[#0E382E] font-semibold pt-1">
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#E67E22] shrink-0" />
-                <span>12 Individual Digestive Shots</span>
+                <span>30 Individual Digestive Sachets (Makes 60 Shots)</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#E67E22] shrink-0" />
@@ -192,8 +192,8 @@ export const Combos: React.FC = () => {
 
           <div className="pt-4 border-t border-[#74B487]/30 flex items-center justify-between">
             <div>
-              <span className="text-xs line-through text-stone-400 font-bold block">₹747</span>
-              <span className="text-3xl font-extrabold text-[#0E382E]">₹560</span>
+              <span className="text-xs line-through text-stone-400 font-bold block">₹897</span>
+              <span className="text-3xl font-extrabold text-[#0E382E]">₹670</span>
             </div>
 
             <Link
