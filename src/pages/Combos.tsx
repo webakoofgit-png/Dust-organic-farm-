@@ -6,12 +6,13 @@ import laddooMix from "@/assets/laddooMix.png";
 import ragiPouch from "@/assets/ragi-pouch.png";
 import paanPouchStick from "@/assets/paan-pouch-stick.png";
 import paanPouchBack from "@/assets/paan-pouch-back.png";
+import comboAdBanner from "@/assets/dust-wellness-combo-advertisement.png";
 
 export const Combos: React.FC = () => {
   return (
     <div className="pt-32 pb-24 px-4 sm:px-8 md:px-12 lg:px-16 w-full min-h-screen bg-[#F6F5F0] text-[#0E382E]">
       {/* Hero Header */}
-      <div className="relative rounded-3xl overflow-hidden border border-[#74B487]/40 bg-[#0E382E] text-white p-8 sm:p-12 mb-16 shadow-xl">
+      <div className="relative rounded-3xl overflow-hidden border border-[#74B487]/40 bg-[#0E382E] text-white p-8 sm:p-12 mb-10 shadow-xl">
         <div className="relative z-10 max-w-2xl space-y-4">
           <span className="text-xs uppercase tracking-[0.25em] text-[#E67E22] font-extrabold flex items-center gap-2">
             <Sparkles className="w-4 h-4" /> BUNDLE & SAVE MORE
@@ -22,6 +23,17 @@ export const Combos: React.FC = () => {
           <p className="text-sm text-[#E8F1E9] font-normal leading-relaxed">
             Get the complete DUST taste experience. Multipacks, Digestive duos, and seasonal refreshment bundles at exclusive direct-to-consumer prices.
           </p>
+        </div>
+      </div>
+
+      {/* Featured Promotional Advertisement Banner */}
+      <div className="mb-16">
+        <div className="relative w-full rounded-3xl overflow-hidden border-2 border-[#74B487]/50 shadow-2xl bg-[#0E382E] group">
+          <img
+            src={comboAdBanner}
+            alt="DUST Wellness Combo Advertisement — Digestive Care & Nutritious Snacking"
+            className="w-full h-auto object-contain block transition-transform duration-500 group-hover:scale-[1.01]"
+          />
         </div>
       </div>
 
