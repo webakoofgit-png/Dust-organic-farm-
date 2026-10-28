@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight, Sparkles, Tag, ShoppingBag, CheckCircle2, Building2, BadgePercent, Truck, Store, Send } from "lucide-react";
 import { products, companyInfo } from "@/lib/data";
 import laddooMix from "@/assets/laddooMix.png";
+import ragiPouch from "@/assets/ragi-pouch.png";
 import paanPouchStick from "@/assets/paan-pouch-stick.png";
 import paanPouchBack from "@/assets/paan-pouch-back.png";
 
@@ -25,7 +26,93 @@ export const Combos: React.FC = () => {
       </div>
 
       {/* Featured Combo Deals */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        {/* Combo 1: Laddoo Premix Twin Pack 500g */}
+        <div className="bg-white rounded-3xl border border-[#74B487]/40 p-6 sm:p-8 flex flex-col justify-between shadow-md space-y-6 hover:shadow-xl hover:border-[#E67E22]/60 transition-all duration-300 group">
+          <div className="space-y-5">
+            {/* Combo Visual Showcase */}
+            <div className="relative w-full h-60 sm:h-72 rounded-2xl bg-gradient-to-br from-[#E8F1E9]/70 via-[#F6F5F0] to-[#E8F1E9]/40 border border-[#74B487]/30 overflow-hidden flex items-center justify-center p-4">
+              {/* Floating Badges */}
+              <div className="absolute top-3 left-3 z-10">
+                <span className="badge-orange text-[10px] uppercase font-extrabold tracking-widest px-3 py-1 rounded-full shadow-xs">
+                  SUPER SAVER TWIN PACK
+                </span>
+              </div>
+              <div className="absolute top-3 right-3 z-10">
+                <span className="text-xs font-black text-[#E67E22] bg-white border border-[#E67E22]/30 px-3 py-1 rounded-full shadow-xs">
+                  SAVE 26%
+                </span>
+              </div>
+
+              {/* 2-Pack Laddoo Visual Arrangement */}
+              <div className="flex items-center justify-center gap-2 sm:gap-4 w-full h-full pt-4 relative group-hover:scale-105 transition-all duration-300">
+                <img
+                  src={ragiPouch}
+                  alt="Shahi Ragi & Dry Fruit Laddoo Mix 250g Pack 1"
+                  className="h-28 sm:h-38 md:h-44 w-auto object-contain drop-shadow-xl -rotate-6 -translate-x-3 sm:-translate-x-5 transition-all duration-300 group-hover:-translate-x-4 rounded-xl border border-[#74B487]/30 shadow-md"
+                />
+                <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#0E382E] text-[#E67E22] font-black text-xs sm:text-sm flex items-center justify-center shadow-md shrink-0 z-20">
+                  +
+                </span>
+                <img
+                  src={ragiPouch}
+                  alt="Shahi Ragi & Dry Fruit Laddoo Mix 250g Pack 2"
+                  className="h-28 sm:h-38 md:h-44 w-auto object-contain drop-shadow-xl rotate-6 translate-x-3 sm:translate-x-5 transition-all duration-300 group-hover:translate-x-4 rounded-xl border border-[#74B487]/30 shadow-md"
+                />
+              </div>
+
+              {/* Bottom Pack Tag */}
+              <div className="absolute bottom-2 left-0 right-0 flex justify-center">
+                <span className="text-[10px] uppercase tracking-widest font-black text-[#0E382E] bg-white/90 backdrop-blur-xs px-3 py-0.5 rounded-full border border-[#74B487]/40 shadow-2xs">
+                  500g Value Twin Pack (2× 250g)
+                </span>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <h2 className="text-2xl font-extrabold text-[#0E382E] leading-tight">
+                Shahi Ragi Laddoo Mix Twin Pack (500g)
+              </h2>
+
+              <p className="text-xs text-[#1F684B] leading-relaxed">
+                2× Shahi Ragi & Dry Fruit Laddoo Mix (250g each). Pure millet & nut laddoo premix with zero added sugar. Yields 20–24 nutritious home-made laddoos.
+              </p>
+            </div>
+
+            <ul className="space-y-2 text-xs text-[#0E382E] font-semibold pt-1">
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#E67E22] shrink-0" />
+                <span>2× 250g Pure Millet & Nut Laddoo Mix (500g Total)</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#E67E22] shrink-0" />
+                <span>Yields 20–24 Fresh Wholesome Laddoos</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#E67E22] shrink-0" />
+                <span>100% Wholesome Ingredients (Zero Added Sugar)</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#E67E22] shrink-0" />
+                <span>Free Express Shipping Pan-India</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="pt-4 border-t border-[#74B487]/30 flex items-center justify-between">
+            <div>
+              <span className="text-xs line-through text-stone-400 font-bold block">₹500</span>
+              <span className="text-3xl font-extrabold text-[#0E382E]">₹369</span>
+            </div>
+
+            <Link
+              to="/product/shahi-ragi-dry-fruit-laddoo-mix"
+              className="btn-dust-orange px-6 py-3 text-white font-extrabold text-xs uppercase tracking-wider rounded-full inline-flex items-center gap-2 shadow-md hover:scale-105 transition-all"
+            >
+              Order Combo <ArrowUpRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
         {/* Combo 1 */}
         <div className="bg-white rounded-3xl border border-[#74B487]/40 p-6 sm:p-8 flex flex-col justify-between shadow-md space-y-6 hover:shadow-xl hover:border-[#E67E22]/60 transition-all duration-300 group">
           <div className="space-y-5">
