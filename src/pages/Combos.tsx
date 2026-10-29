@@ -138,7 +138,7 @@ export const Combos: React.FC = () => {
               </div>
               <div className="absolute top-3 right-3 z-10">
                 <span className="text-xs font-black text-[#E67E22] bg-white border border-[#E67E22]/30 px-3 py-1 rounded-full shadow-xs">
-                  SAVE ₹100
+                  SAVE ₹201
                 </span>
               </div>
 
@@ -170,7 +170,7 @@ export const Combos: React.FC = () => {
               {/* Bottom Pack Tag */}
               <div className="absolute bottom-2 left-0 right-0 flex justify-center">
                 <span className="text-[10px] uppercase tracking-widest font-black text-[#0E382E] bg-white/90 backdrop-blur-xs px-3 py-0.5 rounded-full border border-[#74B487]/40 shadow-2xs">
-                  Dual Superfood Duo Pack
+                  500g Laddoo Mix (2 Packs) + 20 Paan Sachets
                 </span>
               </div>
             </div>
@@ -181,18 +181,18 @@ export const Combos: React.FC = () => {
               </h2>
 
               <p className="text-xs text-[#1F684B] leading-relaxed">
-                1× Shahi Ragi & Dry Fruit Laddoo Mix (250g) + 1× Paan Digestive Shot Box (10 Sachets). The ideal combination of Wholesome Laddoo premix nutrition and royal post-meal digestive freshness.
+                2× Shahi Ragi & Dry Fruit Laddoo Mix (250g each = 500g) + 20 Paan Digestive Shot Sachets (Makes 40 Fresh Shots). The ideal combination of Wholesome Laddoo premix nutrition and royal post-meal digestive freshness.
               </p>
             </div>
 
             <ul className="space-y-2 text-xs text-[#0E382E] font-semibold pt-1">
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#E67E22] shrink-0" />
-                <span>250g Pure Millet & Nut Laddoo Mix (Zero Added Sugar)</span>
+                <span>2 Packets Laddoo Mix (250g + 250g = 500g Total)</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#E67E22] shrink-0" />
-                <span>10 Royal Paan Digestive Sachets (Makes 20 Shots)</span>
+                <span>20 Royal Paan Digestive Sachets (Makes 40 Fresh Shots)</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#E67E22] shrink-0" />
@@ -203,8 +203,8 @@ export const Combos: React.FC = () => {
 
           <div className="pt-4 border-t border-[#74B487]/30 flex items-center justify-between">
             <div>
-              <span className="text-xs line-through text-stone-400 font-bold block">₹598</span>
-              <span className="text-3xl font-extrabold text-[#0E382E]">₹498</span>
+              <span className="text-xs line-through text-stone-400 font-bold block">₹1100</span>
+              <span className="text-3xl font-extrabold text-[#0E382E]">₹899</span>
             </div>
 
             <Link
